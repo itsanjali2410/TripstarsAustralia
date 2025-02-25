@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { HiH1 } from "react-icons/hi2";
 
 // Declare Trustindex in the global window object
 declare global {
@@ -42,9 +43,9 @@ const TrustindexWidget: React.FC = () => {
   return (
     <div style={{ padding: "50px 20px" }}>
       {/* Page Heading */}
-      <h2 style={{ textAlign: "center", marginBottom: "10px" }}>
-        Customer Reviews
-      </h2>
+      <h1 style={{ textAlign: "center", marginBottom: "10px"}}>
+        Google Review
+      </h1>
 
       <div ref={containerRef}>
         <div className="trustindex-widget">
