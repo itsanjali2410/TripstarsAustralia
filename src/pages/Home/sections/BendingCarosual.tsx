@@ -1,10 +1,10 @@
-import React, { useState, useCallback, useLayoutEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 // Import local images
 import image1 from "../../../assets/JourneyInFrame/dubai.webp";
 import image2 from "../../../assets/JourneyInFrame/disneyland.webp";
-import image3 from "../../../assets/JourneyInFrame/singapore.webp";
+import image3 from "../../../assets/JourneyInFrame/singapore.webp"
 import image16 from "../../../assets/JourneyInFrame/vietnam1.webp";
 import image6 from "../../../assets/JourneyInFrame/bali.webp";
 import image10 from "../../../assets/JourneyInFrame/ferrari-world.webp";
@@ -32,6 +32,9 @@ const images = [
   { src: image17, alt: "Warner Bros" },
 ];
 
+
+
+// Styled Components
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -39,8 +42,7 @@ const Container = styled.div`
   text-align: center;
   width: 100%;
   padding: 20px;
-
-  @media (max-width: 768px) {
+   @media (max-width: 768px) {
     padding: 0;
   }
 `;
@@ -49,13 +51,10 @@ const TitleFrame = styled.div`
   color: black;
   font-size: 24px;
   font-weight: bold;
+  padding: 15px 40px;
   border-radius: 10px;
   margin-bottom: 20px;
-`;
-
-const Subtitle = styled.div`
-  font-size: 16px;
-  font-weight: normal;
+  text-transform: uppercase;
 `;
 
 const CarouselContainer = styled.div`
@@ -81,9 +80,8 @@ const CarouselWrapper = styled.div<{ translateX: number }>`
   transform: translateX(${(props) => props.translateX}px);
 `;
 
-const Slide = styled.div`
+const Slide = styled.div<{ isFirst: boolean; isLast: boolean }>`
   position: relative;
-  /* On larger screens we use a fixed min-width */
   min-width: 280px;
   height: 400px;
   margin: 0 10px;
@@ -91,16 +89,40 @@ const Slide = styled.div`
   overflow: hidden;
   transition: transform 0.5s ease-in-out;
 
+  @media (min-width: 769px) {
+    clip-path: ${(props) =>
+      props.isFirst
+        ? `path(
+            "M 0% 12%  
+            C 25% -2%, 75% -2%, 100% 12%  
+            L 100% 88%  
+            C 75% 102%, 25% 102%, 0% 88%  
+            L 0% 12%  
+            Z"
+          )`
+        : props.isLast
+        ? `path(
+            "M 0% 0%  
+            L 100% 0%  
+            C 75% 100%, 25% 100%, 0% 100%  
+            L 0% 0%  
+            Z"
+          )`
+        : "none"};
+
+    transform: ${(props) =>
+      props.isFirst
+        ? "perspective(1000px) rotateY(15deg)"
+        : props.isLast
+        ? "perspective(1000px) rotateY(-15deg)"
+        : "none"};
+  }
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
-  }
-
-  /* On mobile, make the slide almost full width (container width minus horizontal margins) */
-  @media (max-width: 768px) {
-    min-width: calc(100% - 20px);
   }
 `;
 
@@ -113,7 +135,6 @@ const Caption = styled.div`
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 14px;
-
   @media (max-width: 768px) {
     background: white;
     color: black;
@@ -138,7 +159,6 @@ const Button = styled.button`
 
 const PrevButton = styled(Button)`
   left: 5px;
-
   @media (max-width: 768px) {
     display: none;
   }
@@ -146,54 +166,79 @@ const PrevButton = styled(Button)`
 
 const NextButton = styled(Button)`
   right: 5px;
-
   @media (max-width: 768px) {
     display: none;
   }
 `;
 
+// Image Data - 17 local images
+
+
 const BendingCarousel: React.FC = () => {
-  const totalSlides = images.length;
   const [index, setIndex] = useState(0);
-  const [slideWidth, setSlideWidth] = useState(300); // default value
-  const slideRef = useRef<HTMLDivElement>(null);
+  const totalSlides = images.length;
+  const slideWidth = 300; // Adjust slide width as needed
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
 
-  const handleNext = useCallback(() => {
+  useEffect(() => {
+    updateSlideStyles();
+  }, [index]);
+
+  const handleNext = () => {
     setIndex((prev) => (prev < totalSlides - 1 ? prev + 1 : 0));
-  }, [totalSlides]);
+  };
 
-  const handlePrev = useCallback(() => {
+  const handlePrev = () => {
     setIndex((prev) => (prev > 0 ? prev - 1 : totalSlides - 1));
-  }, [totalSlides]);
+  };
 
-  // Use useLayoutEffect to measure the slide width right after rendering
-  useLayoutEffect(() => {
-    const updateSlideWidth = () => {
-      if (slideRef.current) {
-        const rect = slideRef.current.getBoundingClientRect();
-        // Add 20px to account for the left and right margin (10px each)
-        setSlideWidth(rect.width + 20);
-      }
-    };
+  // Handle touch gestures
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
 
-    updateSlideWidth();
-    window.addEventListener("resize", updateSlideWidth);
-    return () => window.removeEventListener("resize", updateSlideWidth);
-  }, []);
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    const swipeThreshold = 50; // Minimum swipe distance to trigger action
+    if (touchStartX - touchEndX > swipeThreshold) {
+      handleNext();
+    } else if (touchEndX - touchStartX > swipeThreshold) {
+      handlePrev();
+    }
+  };
+
+  // Update first & last slide styles dynamically
+  const updateSlideStyles = () => {
+    document.querySelectorAll(".slide").forEach((slide) => {
+      slide.classList.remove("first-visible", "last-visible");
+    });
+  };
 
   return (
     <Container>
       <TitleFrame>
         JOURNEY IN FRAMES
         <br />
-        <Subtitle>Pictures Perfect Moments</Subtitle>
+        <span style={{ fontSize: "16px", fontWeight: "normal" }}>
+          Pictures Perfect Moments
+        </span>
       </TitleFrame>
+
       <CarouselContainer>
         <PrevButton onClick={handlePrev}>&#10094;</PrevButton>
-        <CarouselWrapper translateX={-index * slideWidth}>
+        <CarouselWrapper
+          translateX={-index * slideWidth}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           {images.map((image, idx) => (
-            <Slide key={idx} ref={idx === 0 ? slideRef : null}>
-              <img src={image.src} alt={image.alt} loading="lazy" />
+            <Slide key={idx} isFirst={idx === index} isLast={idx === index + 3}>
+              <img src={image.src} alt={image.alt} />
               <Caption>{image.alt}</Caption>
             </Slide>
           ))}
