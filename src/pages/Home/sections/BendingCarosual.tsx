@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
 
 // Import local images
@@ -83,6 +83,7 @@ const CarouselWrapper = styled.div<{ translateX: number }>`
 
 const Slide = styled.div`
   position: relative;
+  /* On larger screens we use a fixed min-width */
   min-width: 280px;
   height: 400px;
   margin: 0 10px;
@@ -95,6 +96,11 @@ const Slide = styled.div`
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+  }
+
+  /* On mobile, make the slide almost full width (container width minus horizontal margins) */
+  @media (max-width: 768px) {
+    min-width: calc(100% - 20px);
   }
 `;
 
@@ -124,7 +130,7 @@ const Button = styled.button`
   border-radius: 50%;
   font-size: 20px;
   z-index: 1000;
-  
+
   &:hover {
     background: #007acc;
   }
@@ -146,11 +152,11 @@ const NextButton = styled(Button)`
   }
 `;
 
-const slideWidth = 300; // Centralized slide width constant
-
 const BendingCarousel: React.FC = () => {
   const totalSlides = images.length;
   const [index, setIndex] = useState(0);
+  const [slideWidth, setSlideWidth] = useState(300); // default value
+  const slideRef = useRef<HTMLDivElement>(null);
 
   const handleNext = useCallback(() => {
     setIndex((prev) => (prev < totalSlides - 1 ? prev + 1 : 0));
@@ -159,6 +165,21 @@ const BendingCarousel: React.FC = () => {
   const handlePrev = useCallback(() => {
     setIndex((prev) => (prev > 0 ? prev - 1 : totalSlides - 1));
   }, [totalSlides]);
+
+  // Use useLayoutEffect to measure the slide width right after rendering
+  useLayoutEffect(() => {
+    const updateSlideWidth = () => {
+      if (slideRef.current) {
+        const rect = slideRef.current.getBoundingClientRect();
+        // Add 20px to account for the left and right margin (10px each)
+        setSlideWidth(rect.width + 20);
+      }
+    };
+
+    updateSlideWidth();
+    window.addEventListener("resize", updateSlideWidth);
+    return () => window.removeEventListener("resize", updateSlideWidth);
+  }, []);
 
   return (
     <Container>
@@ -171,7 +192,7 @@ const BendingCarousel: React.FC = () => {
         <PrevButton onClick={handlePrev}>&#10094;</PrevButton>
         <CarouselWrapper translateX={-index * slideWidth}>
           {images.map((image, idx) => (
-            <Slide key={idx}>
+            <Slide key={idx} ref={idx === 0 ? slideRef : null}>
               <img src={image.src} alt={image.alt} loading="lazy" />
               <Caption>{image.alt}</Caption>
             </Slide>
