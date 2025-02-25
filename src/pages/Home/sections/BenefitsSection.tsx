@@ -4,19 +4,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
-// Define Benefit type
 interface Benefit {
   title: string;
   description: string;
   iconUrl: string;
 }
 
-// Benefits Data
 const benefits: Benefit[] = [
   {
     title: "Customised Bespoke",
     description:
-      "Enjoy our bespoke tour packages that can tailored according to your preferences for a good experience with best services.",
+      "Enjoy our bespoke tour packages that can be tailored according to your preferences for a great experience with the best services.",
     iconUrl: "https://images.emtcontent.com/holiday-img/home-img/sun_bed.png",
   },
   {
@@ -28,7 +26,7 @@ const benefits: Benefit[] = [
   {
     title: "Exciting Deals",
     description:
-      "Our platform comprises perfect deals and discounts on all exclusive holiday packages to ensure value-for-money.",
+      "Our platform comprises perfect deals and discounts on all exclusive holiday packages to ensure value for money.",
     iconUrl: "https://images.emtcontent.com/holiday-img/home-img/ec_deal.png",
   },
   {
@@ -39,7 +37,6 @@ const benefits: Benefit[] = [
   },
 ];
 
-// Styled components for layout and styling
 const Section = styled.section`
   padding: 4rem 15rem;
   background: #fff;
@@ -59,13 +56,11 @@ const Section = styled.section`
 const Title = styled.h2`
   font-size: 24px;
   font-weight: bold;
-
 `;
 
 const Description = styled.p`
   font-size: 16px;
   color: #333;
-
   margin: 10px auto;
 `;
 
@@ -80,17 +75,12 @@ const Card = styled.div`
   flex-direction: column;
   align-items: center;
   height: 100%;
-  @media (max-width: 768px) {
-    padding: 40px;
-  }
 `;
 
 const Icon = styled.div<{ imageUrl: string }>`
   width: 70px;
   height: 70px;
-  background: url(${(props) => props.imageUrl});
-  background-size: cover;
-  background-position: center;
+  background: url(${({ imageUrl }) => imageUrl}) center/cover no-repeat;
   margin-bottom: 15px;
 `;
 
@@ -107,42 +97,38 @@ const CardText = styled.div`
   }
 `;
 
-// BenefitsSection Component as a slider
-const BenefitsSection: React.FC = () => {
-  return (
-    <Section>
-      <Title>Benefits of Booking With us</Title>
-      <Description>
-        Discover the unrivalled benefits that promise memorable journeys all along.
-      </Description>
+const BenefitsSection: React.FC = () => (
+  <Section>
+    <Title>Benefits of Booking With Us</Title>
+    <Description>
+      Discover the unrivaled benefits that promise memorable journeys all along.
+    </Description>
 
-      <Swiper
-        loop={true} // Enable infinite loop mode
-        speed={1200} // Transition speed in ms
-        autoplay={{ delay: 1800 }} // Auto slide every 1800ms
-        modules={[Autoplay]}
-        slidesPerView={1} // Default number of slides
-        spaceBetween={20} // Space between slides
-        breakpoints={{
-          768: { slidesPerView: 2 },
-          1080: { slidesPerView: 3 },
-        }}
-      >
-        {benefits.map((benefit, index) => (
-          <SwiperSlide key={index}>
-            <Card>
-              <Icon imageUrl={benefit.iconUrl} />
-              <CardText>
-                <h3>{benefit.title}</h3>
-                <p>{benefit.description}</p>
-              </CardText>
-            </Card>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
-    </Section>
-  );
-};
+    <Swiper
+      loop
+      speed={1200}
+      autoplay={{ delay: 1800, disableOnInteraction: false }}
+      modules={[Autoplay]}
+      slidesPerView={1}
+      spaceBetween={20}
+      breakpoints={{
+        768: { slidesPerView: 2 },
+        1080: { slidesPerView: 3 },
+      }}
+    >
+      {benefits.map(({ title, description, iconUrl }, index) => (
+        <SwiperSlide key={index}>
+          <Card>
+            <Icon imageUrl={iconUrl} />
+            <CardText>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </CardText>
+          </Card>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </Section>
+);
 
 export default BenefitsSection;
