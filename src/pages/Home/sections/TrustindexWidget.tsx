@@ -9,6 +9,7 @@ declare global {
   }
 }
 
+
 const TrustindexWidget: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
