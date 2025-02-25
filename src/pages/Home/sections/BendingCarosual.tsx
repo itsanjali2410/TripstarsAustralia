@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 
 // Import local images
@@ -39,6 +39,7 @@ const Container = styled.div`
   text-align: center;
   width: 100%;
   padding: 20px;
+
   @media (max-width: 768px) {
     padding: 0;
   }
@@ -49,6 +50,12 @@ const TitleFrame = styled.div`
   font-size: 24px;
   font-weight: bold;
   border-radius: 10px;
+  margin-bottom: 20px;
+`;
+
+const Subtitle = styled.div`
+  font-size: 16px;
+  font-weight: normal;
 `;
 
 const CarouselContainer = styled.div`
@@ -56,6 +63,7 @@ const CarouselContainer = styled.div`
   width: 90%;
   overflow: hidden;
   padding: 20px 0;
+
   @media (max-width: 1340px) {
     margin: 0 5rem;
   }
@@ -99,6 +107,7 @@ const Caption = styled.div`
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 14px;
+
   @media (max-width: 768px) {
     background: white;
     color: black;
@@ -115,6 +124,7 @@ const Button = styled.button`
   border-radius: 50%;
   font-size: 20px;
   z-index: 1000;
+  
   &:hover {
     background: #007acc;
   }
@@ -122,6 +132,7 @@ const Button = styled.button`
 
 const PrevButton = styled(Button)`
   left: 5px;
+
   @media (max-width: 768px) {
     display: none;
   }
@@ -129,32 +140,32 @@ const PrevButton = styled(Button)`
 
 const NextButton = styled(Button)`
   right: 5px;
+
   @media (max-width: 768px) {
     display: none;
   }
 `;
 
+const slideWidth = 300; // Centralized slide width constant
+
 const BendingCarousel: React.FC = () => {
-  const [index, setIndex] = useState(0);
   const totalSlides = images.length;
-  const slideWidth = 300;
+  const [index, setIndex] = useState(0);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setIndex((prev) => (prev < totalSlides - 1 ? prev + 1 : 0));
-  };
+  }, [totalSlides]);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     setIndex((prev) => (prev > 0 ? prev - 1 : totalSlides - 1));
-  };
+  }, [totalSlides]);
 
   return (
     <Container>
       <TitleFrame>
         JOURNEY IN FRAMES
         <br />
-        <span style={{ fontSize: "16px", fontWeight: "normal" }}>
-          Pictures Perfect Moments
-        </span>
+        <Subtitle>Pictures Perfect Moments</Subtitle>
       </TitleFrame>
       <CarouselContainer>
         <PrevButton onClick={handlePrev}>&#10094;</PrevButton>

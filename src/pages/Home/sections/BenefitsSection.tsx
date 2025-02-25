@@ -16,7 +16,7 @@ const benefits: Benefit[] = [
   {
     title: "Customised Bespoke",
     description:
-      "Enjoy our bespoke tour packages that can tailored according to your preferences for a good experience.",
+      "Enjoy our bespoke tour packages that can tailored according to your preferences for a good experience with best services.",
     iconUrl: "https://images.emtcontent.com/holiday-img/home-img/sun_bed.png",
   },
   {
@@ -80,11 +80,14 @@ const Card = styled.div`
   flex-direction: column;
   align-items: center;
   height: 100%;
+  @media (max-width: 768px) {
+    padding: 40px;
+  }
 `;
 
 const Icon = styled.div<{ imageUrl: string }>`
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   background: url(${(props) => props.imageUrl});
   background-size: cover;
   background-position: center;

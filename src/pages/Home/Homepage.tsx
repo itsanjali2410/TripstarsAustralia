@@ -27,7 +27,7 @@ import BendingCarosual from "./sections/BendingCarosual";
 import TrendingOffers2 from "./sections/TrandingOffers2";
 import TravelSection from "./sections/TravelSection";
 import Reviews from "./sections/reviews";
-
+import TrustindexWidget from "./sections/TrustindexWidget";
 
 export default function HomePage() {
   return (
@@ -37,16 +37,17 @@ export default function HomePage() {
       <SwipeableSlider />
       <TrendingOffers title="Trending Offers" />
       <ExploreDestinations />
-      <VideoTestimonials />
+      <VideoTestimonials/>
       <VideoThumbnail />
       <WhyTripstars />
       <ExploreEurope />
       <TrendingOffers22 title="Explore India" cards={similar} />
-      <Reviews/>
+      {/* <Reviews/> */}
       <PartnersSection />
       <BudgetSection />
       <BenefitsSection />
       <Popup />
+      <TrustindexWidget/>
       <BendingCarosual />
     </>
   );
