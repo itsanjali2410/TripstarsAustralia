@@ -20,10 +20,6 @@ const SliderContainer = styled.div`
   max-width: 2000px;
   margin: 50px auto;
 
-  @media (max-width: 1920px) {
-    width: 65%;
-  }
-
   @media (max-width: 1360px) {
     width: 90%;
   }
@@ -41,8 +37,13 @@ const SliderContainer = styled.div`
   @media (max-width: 360px) {
     max-width: 90%;
   }
+  /* For large screens (1920px and above) */
+  @media (min-width: 1920px) {
+    width: 80%;      /* Increase the slide width */
+    height: 300px;   /* Increase the height to adjust image size */
+    background-size: cover; /* Optionally, adjust this if you prefer 'contain' */
+  }
 `;
-
 const SliderWrapper = styled.div<{ translateX: number }>`
   display: flex;
   transition: transform 0.4s ease-in-out;
