@@ -34,7 +34,7 @@ const TrustindexWidget: React.FC = () => {
     if (!document.getElementById("trustindex-script")) {
       const script = document.createElement("script");
       script.src =
-        "https://cdn.trustindex.io/loader.js?c31e44841710990a8b16dcd4ddb";
+      "https://cdn.trustindex.io/loader.js?c31e44841710990a8b16dcd4ddb";
       script.async = true;
       script.defer = true;
       script.id = "trustindex-script";
@@ -57,8 +57,7 @@ const TrustindexWidget: React.FC = () => {
   return (
     <Container>
       {/* Page Heading */}
-      <h1 style={{ marginBottom: "10px" }}>Google Reviews</h1>
-
+      <h1 style={{ marginBottom: "10px", textAlign: "center" }}>Google Reviews</h1>
       <div ref={containerRef}>
         <div className="trustindex-widget">
           {/* Trustindex widget will render reviews here */}
