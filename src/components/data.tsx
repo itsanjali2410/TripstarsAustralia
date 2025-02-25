@@ -7,153 +7,140 @@ import north from "../assets/explore-india/north-east.webp";
 import nepal from "../assets/explore-india/nepal.webp";
 
 
-import bali1 from "../assets/Tripdetails/bali/bali1.jpg"
-import bali2 from "../assets/Tripdetails/bali/bali2.jpg"
-import bali3 from "../assets/Tripdetails/bali/bali3.jpg"
-import bali4 from "../assets/Tripdetails/bali/bali4.jpg"
-import bali5 from "../assets/Tripdetails/bali/bali5.jpg"
+import bali1 from "../assets/Tripdetails/bali/bali1.webp"
+import bali2 from "../assets/Tripdetails/bali/bali2.webp"
+import bali3 from "../assets/Tripdetails/bali/bali3.webp"
+import bali4 from "../assets/Tripdetails/bali/bali4.webp"
+import bali5 from "../assets/Tripdetails/bali/bali5.webp"
 
-import Vietnam1 from "../assets/Tripdetails/vietnam/Vietnam 1.jpg"
-import Vietnam2 from "../assets/Tripdetails/vietnam/Vietnam 2.jpg"
-import Vietnam3 from "../assets/Tripdetails/vietnam/Vietnam 3.jpg"
-import Vietnam4 from "../assets/Tripdetails/vietnam/Vietnam 4.jpg"
-import Vietnam5 from "../assets/Tripdetails/vietnam/Vietnam 5.jpg"
-import Vietnam6 from "../assets/Tripdetails/vietnam/Vietnam 6.jpg"
-import Vietnam7 from "../assets/Tripdetails/vietnam/Vietnam 7.jpg"
+import Vietnam1 from "../assets/Tripdetails/vietnam/Vietnam 1.webp"
+import Vietnam2 from "../assets/Tripdetails/vietnam/Vietnam 2.webp"
+import Vietnam3 from "../assets/Tripdetails/vietnam/Vietnam 3.webp"
+import Vietnam4 from "../assets/Tripdetails/vietnam/Vietnam 4.webp"
+import Vietnam5 from "../assets/Tripdetails/vietnam/Vietnam 5.webp"
+import Vietnam6 from "../assets/Tripdetails/vietnam/Vietnam 6.webp"
+import Vietnam7 from "../assets/Tripdetails/vietnam/Vietnam 7.webp"
 
-import dubai1 from "../assets/Tripdetails/dubai/dubai 1.jpg"
-import dubai2 from "../assets/Tripdetails/dubai/dubai 2.jpg"
-import dubai3 from "../assets/Tripdetails/dubai/dubai 3.jpg"
-import dubai4 from "../assets/Tripdetails/dubai/dubai 4.jpg"
-import dubai5 from "../assets/Tripdetails/dubai/dubai 5.jpg"
-import dubai6 from "../assets/Tripdetails/dubai/dubai 6.jpg"
-import dubai7 from "../assets/Tripdetails/dubai/dubai 7.jpg"
+import dubai1 from "../assets/Tripdetails/dubai/dubai 1.webp"
+import dubai2 from "../assets/Tripdetails/dubai/dubai 2.webp"
+import dubai3 from "../assets/Tripdetails/dubai/dubai 3.webp"
+import dubai4 from "../assets/Tripdetails/dubai/dubai 4.webp"
+import dubai5 from "../assets/Tripdetails/dubai/dubai 5.webp"
+import dubai6 from "../assets/Tripdetails/dubai/dubai 6.webp"
+import dubai7 from "../assets/Tripdetails/dubai/dubai 7.webp"
 
 
-import thailand1 from "../assets/Tripdetails/thailand/Thailand 1.jpg"
-import thailand2 from "../assets/Tripdetails/thailand/Thailand 2.jpg"
-import thailand3 from "../assets/Tripdetails/thailand/Thailand 3.jpg"
-import thailand4 from "../assets/Tripdetails/thailand/Thailand 4.jpg"
-import thailand5 from "../assets/Tripdetails/thailand/Thailand 5.jpg"
-import thailand7 from "../assets/Tripdetails/thailand/Thailand 7.jpg"
-import thailand8 from "../assets/Tripdetails/thailand/Thailand 8.jpg"
+import thailand1 from "../assets/Tripdetails/thailand/Thailand 1.webp"
+import thailand2 from "../assets/Tripdetails/thailand/Thailand 2.webp"
+import thailand3 from "../assets/Tripdetails/thailand/Thailand 3.webp"
+import thailand4 from "../assets/Tripdetails/thailand/Thailand 4.webp"
+import thailand5 from "../assets/Tripdetails/thailand/Thailand 5.webp"
+import thailand7 from "../assets/Tripdetails/thailand/Thailand 7.webp"
+import thailand8 from "../assets/Tripdetails/thailand/Thailand 8.webp"
 
-import europe1 from "../assets/Tripdetails/europe/Europe 1.jpg"
-import europe2 from "../assets/Tripdetails/europe/Europe 2.jpg"
-import europe3 from "../assets/Tripdetails/europe/Europe 3.jpg"
-import europe4 from "../assets/Tripdetails/europe/Europe 4.jpg"
-import europe5 from "../assets/Tripdetails/europe/Europe 5.jpg"
+import europe1 from "../assets/Tripdetails/europe/Europe 1.webp"
+import europe2 from "../assets/Tripdetails/europe/Europe 2.webp"
+import europe3 from "../assets/Tripdetails/europe/Europe 3.webp"
+import europe4 from "../assets/Tripdetails/europe/Europe 4.webp"
+import europe5 from "../assets/Tripdetails/europe/Europe 5.webp"
 
 //australia
-import australia1 from "../assets/Tripdetails/new/australia/Australia 1.jpg"
-import australia2 from "../assets/Tripdetails/new/australia/Australia 2.jpg"
-import australia3 from "../assets/Tripdetails/new/australia/Australia 3.jpg"
-import australia4 from "../assets/Tripdetails/new/australia/Australia 4.jpg"
-import australia5 from "../assets/Tripdetails/new/australia/Australia 5.jpg"
+import australia1 from "../assets/Tripdetails/new/australia/Australia 1.webp"
+import australia2 from "../assets/Tripdetails/new/australia/Australia 2.webp"
+import australia3 from "../assets/Tripdetails/new/australia/Australia 3.webp"
+import australia4 from "../assets/Tripdetails/new/australia/Australia 4.webp"
+import australia5 from "../assets/Tripdetails/new/australia/Australia 5.webp"
 
 
 //baku
-import baku1 from "../assets/Tripdetails/new/baku/baku 1.jpg";
-import baku2 from "../assets/Tripdetails/new/baku/baku 2.jpg";
-import baku3 from "../assets/Tripdetails/new/baku/baku 3(1).jpg";
-import baku4 from "../assets/Tripdetails/new/baku/baku 3.jpg";
-import baku5 from "../assets/Tripdetails/new/baku/baku 4(1).jpg";
-import baku6 from "../assets/Tripdetails/new/baku/baku 4.jpg";
-
-import baku7 from "../assets/Tripdetails/new/baku/baku 5.jpg";
-import baku8 from "../assets/Tripdetails/new/baku/baku 6.jpg";
+import baku1 from "../assets/Tripdetails/new/baku/baku 1.webp";
+import baku2 from "../assets/Tripdetails/new/baku/baku 2.webp";
+import baku3 from "../assets/Tripdetails/new/baku/baku 3(1).webp";
+import baku4 from "../assets/Tripdetails/new/baku/baku 3.webp";
+import baku5 from "../assets/Tripdetails/new/baku/baku 4(1).webp";
+import baku6 from "../assets/Tripdetails/new/baku/baku 4.webp";
+import baku7 from "../assets/Tripdetails/new/baku/baku 5.webp";
+import baku8 from "../assets/Tripdetails/new/baku/baku 6.webp";
 
 //hong-kong
-import hong1 from "../assets/Tripdetails/new/hong-kong/Hong kong 1 (1).jpg"
-import hong2 from "../assets/Tripdetails/new/hong-kong/Hong kong 1.jpg"
-import hong3 from "../assets/Tripdetails/new/hong-kong/Hong kong 2 (1).jpg"
-import hong4 from "../assets/Tripdetails/new/hong-kong/Hong kong 2.jpg"
-import hong5 from "../assets/Tripdetails/new/hong-kong/Hong kong 3.jpg"
-import hong7 from "../assets/Tripdetails/new/hong-kong/Hong kong 4.jpg"
-import hong8 from "../assets/Tripdetails/new/hong-kong/Hong kong 5.jpg"
-import hong9 from "../assets/Tripdetails/new/hong-kong/Hong kong 6.jpg"
-import hong10 from "../assets/Tripdetails/new/hong-kong/Hong kong 7.jpg"
+import hong1 from "../assets/Tripdetails/new/hong-kong/Hong kong 1 (1).webp"
+import hong2 from "../assets/Tripdetails/new/hong-kong/Hong kong 1.webp"
+import hong3 from "../assets/Tripdetails/new/hong-kong/Hong kong 2 (1).webp"
+import hong4 from "../assets/Tripdetails/new/hong-kong/Hong kong 2.webp"
+import hong5 from "../assets/Tripdetails/new/hong-kong/Hong kong 3.webp"
+import hong7 from "../assets/Tripdetails/new/hong-kong/Hong kong 4.webp"
+import hong8 from "../assets/Tripdetails/new/hong-kong/Hong kong 5.webp"
+import hong9 from "../assets/Tripdetails/new/hong-kong/Hong kong 6.webp"
+import hong10 from "../assets/Tripdetails/new/hong-kong/Hong kong 7.webp"
 
 
 
 //japan
-import japan1 from "../assets/Tripdetails/new/japan/Japan 1.jpg"
-import japan2 from "../assets/Tripdetails/new/japan/Japan 2(1).jpg"
-import japan3 from "../assets/Tripdetails/new/japan/Japan 2.jpg"
-import japan4 from "../assets/Tripdetails/new/japan/Japan 3.jpg"
+import japan1 from "../assets/Tripdetails/new/japan/Japan 1.webp"
+import japan2 from "../assets/Tripdetails/new/japan/Japan 2(1).webp"
+import japan3 from "../assets/Tripdetails/new/japan/Japan 2.webp"
+import japan4 from "../assets/Tripdetails/new/japan/Japan 3.webp"
 
-import japan5 from "../assets/Tripdetails/new/japan/Japan 4.jpg"
-import japan6 from "../assets/Tripdetails/new/japan/Japan 5.jpg"
-import japan7 from "../assets/Tripdetails/new/japan/Japan 6.jpg"
-import japan8 from "../assets/Tripdetails/new/japan/Japan 7.jpg"
+import japan5 from "../assets/Tripdetails/new/japan/Japan 4.webp"
+import japan6 from "../assets/Tripdetails/new/japan/Japan 5.webp"
+import japan7 from "../assets/Tripdetails/new/japan/Japan 6.webp"
+import japan8 from "../assets/Tripdetails/new/japan/Japan 7.webp"
 
 //turkey
 //malaysia
-import turkey1 from "../assets/Tripdetails/new/turkey/Turkey 1.jpg"
-import turkey2 from "../assets/Tripdetails/new/turkey/Turkey 2 (1).jpg"
-import turkey3 from "../assets/Tripdetails/new/turkey/Turkey 2.jpg"
-import turkey4 from "../assets/Tripdetails/new/turkey/Turkey 3 (1).jpg"
-import turkey5 from "../assets/Tripdetails/new/turkey/Turkey 3.jpg"
-import turkey6 from "../assets/Tripdetails/new/turkey/Turkey 4.jpg"
-import turkey7 from "../assets/Tripdetails/new/turkey/Turkey 5.jpg"
-
-import turkey8 from "../assets/Tripdetails/new/turkey/Turkey 6.jpg"
-
-import turkey9 from "../assets/Tripdetails/new/turkey/Turkey 7.jpg"
+import turkey1 from "../assets/Tripdetails/new/turkey/Turkey 1.webp"
+import turkey2 from "../assets/Tripdetails/new/turkey/Turkey 2 (1).webp"
+import turkey3 from "../assets/Tripdetails/new/turkey/Turkey 2.webp"
+import turkey4 from "../assets/Tripdetails/new/turkey/Turkey 3 (1).webp"
+import turkey5 from "../assets/Tripdetails/new/turkey/Turkey 3.webp"
+import turkey6 from "../assets/Tripdetails/new/turkey/Turkey 4.webp"
+import turkey7 from "../assets/Tripdetails/new/turkey/Turkey 5.webp"
+import turkey8 from "../assets/Tripdetails/new/turkey/Turkey 6.webp"
+import turkey9 from "../assets/Tripdetails/new/turkey/Turkey 7.webp"
 
 
 //malaysia
-import malaysia1 from "../assets/Tripdetails/new/malaysia/Malaysia 1.jpg"
-import malaysia2 from "../assets/Tripdetails/new/malaysia/Malaysia 2.jpg"
-import malaysia3 from "../assets/Tripdetails/new/malaysia/Malaysia 3.jpg"
-import malaysia4 from "../assets/Tripdetails/new/malaysia/Malaysia 4.jpg"
-import malaysia5 from "../assets/Tripdetails/new/malaysia/Malaysia 5.jpg"
-import malaysia6 from "../assets/Tripdetails/new/malaysia/Malaysia 6.jpg"
+import malaysia1 from "../assets/Tripdetails/new/malaysia/Malaysia 1.webp"
+import malaysia2 from "../assets/Tripdetails/new/malaysia/Malaysia 2.webp"
+import malaysia3 from "../assets/Tripdetails/new/malaysia/Malaysia 3.webp"
+import malaysia4 from "../assets/Tripdetails/new/malaysia/Malaysia 4.webp"
+import malaysia5 from "../assets/Tripdetails/new/malaysia/Malaysia 5.webp"
+import malaysia6 from "../assets/Tripdetails/new/malaysia/Malaysia 6.webp"
 
 //singapore
-
-import singapore1 from   "../assets/Tripdetails/new/singapore/singapore 1.jpg"
-import singapore2 from   "../assets/Tripdetails/new/singapore/singapore 2.jpg"
-import singapore3 from   "../assets/Tripdetails/new/singapore/singapore 3.jpg"
-import singapore4 from   "../assets/Tripdetails/new/singapore/singapore 6.jpg"
-import singapore5 from   "../assets/Tripdetails/new/singapore/singapore 5.jpg";
+import singapore1 from   "../assets/Tripdetails/new/singapore/singapore 1.webp"
+import singapore2 from   "../assets/Tripdetails/new/singapore/singapore 2.webp"
+import singapore3 from   "../assets/Tripdetails/new/singapore/singapore 3.webp"
+import singapore4 from   "../assets/Tripdetails/new/singapore/singapore 6.webp"
+import singapore5 from   "../assets/Tripdetails/new/singapore/singapore 5.webp";
 
 //maldives
-import maldives1 from "../assets/Tripdetails/new/maldives/Maldives 1.jpg";
-import maldives2 from "../assets/Tripdetails/new/maldives/Maldives 2.jpg";
-
-import maldives3 from "../assets/Tripdetails/new/maldives/Maldives 3.jpg";
-
-import maldives4 from "../assets/Tripdetails/new/maldives/Maldives 4.jpg";
-
-import maldives5 from "../assets/Tripdetails/new/maldives/Maldives 5.jpg";
-
-import maldives6 from "../assets/Tripdetails/new/maldives/Maldives 6.jpg";
-import maldives7 from "../assets/Tripdetails/new/maldives/Maldives 7.jpg";
-
+import maldives1 from "../assets/Tripdetails/new/maldives/Maldives 1.webp";
+import maldives2 from "../assets/Tripdetails/new/maldives/Maldives 2.webp";
+import maldives3 from "../assets/Tripdetails/new/maldives/Maldives 3.webp";
+import maldives4 from "../assets/Tripdetails/new/maldives/Maldives 4.webp";
+import maldives5 from "../assets/Tripdetails/new/maldives/Maldives 5.webp";
+import maldives6 from "../assets/Tripdetails/new/maldives/Maldives 6.webp";
+import maldives7 from "../assets/Tripdetails/new/maldives/Maldives 7.webp";
 
 //mauritius
-
-import mauritius1 from "../assets/Tripdetails/new/mauritius/Mauritius 1.jpg"
-import mauritius2 from "../assets/Tripdetails/new/mauritius/Mauritius 2.jpg"
-import mauritius3 from "../assets/Tripdetails/new/mauritius/Mauritius 3.jpg"
-import mauritius4 from "../assets/Tripdetails/new/mauritius/Mauritius 4.jpg"
-import mauritius5 from "../assets/Tripdetails/new/mauritius/Mauritius 5.jpg"
-import mauritius6 from "../assets/Tripdetails/new/mauritius/Mauritius 6.jpg"
-
-import mauritius7 from "../assets/Tripdetails/new/mauritius/Mauritius 7.jpg"
-import mauritius8 from "../assets/Tripdetails/new/mauritius/Mauritius 8.jpg"
-import mauritius9 from "../assets/Tripdetails/new/mauritius/Mauritius 9.jpg"
+import mauritius1 from "../assets/Tripdetails/new/mauritius/Mauritius 1.webp"
+import mauritius2 from "../assets/Tripdetails/new/mauritius/Mauritius 2.webp"
+import mauritius3 from "../assets/Tripdetails/new/mauritius/Mauritius 3.webp"
+import mauritius4 from "../assets/Tripdetails/new/mauritius/Mauritius 4.webp"
+import mauritius5 from "../assets/Tripdetails/new/mauritius/Mauritius 5.webp"
+import mauritius6 from "../assets/Tripdetails/new/mauritius/Mauritius 6.webp"
+import mauritius7 from "../assets/Tripdetails/new/mauritius/Mauritius 7.webp"
+import mauritius8 from "../assets/Tripdetails/new/mauritius/Mauritius 8.webp"
+import mauritius9 from "../assets/Tripdetails/new/mauritius/Mauritius 9.webp"
  
-
-
 //south aftric
-import southafrica1 from "../assets/Tripdetails/new/south affrica/South affrica 1.jpg"
-import southafrica2 from "../assets/Tripdetails/new/south affrica/South affrica 2.jpg"
-import southafrica3 from "../assets/Tripdetails/new/south affrica/South affrica 3.jpg"
-import southafrica4 from "../assets/Tripdetails/new/south affrica/South affrica 4.jpg"
-import southafrica5 from "../assets/Tripdetails/new/south affrica/South affrica 5.jpg"
-import southafrica6 from "../assets/Tripdetails/new/south affrica/South affrica 6.jpg"
+import southafrica1 from "../assets/Tripdetails/new/south affrica/South affrica 1.webp"
+import southafrica2 from "../assets/Tripdetails/new/south affrica/South affrica 2.webp"
+import southafrica3 from "../assets/Tripdetails/new/south affrica/South affrica 3.webp"
+import southafrica4 from "../assets/Tripdetails/new/south affrica/South affrica 4.webp"
+import southafrica5 from "../assets/Tripdetails/new/south affrica/South affrica 5.webp"
+import southafrica6 from "../assets/Tripdetails/new/south affrica/South affrica 6.webp"
 // Card 1 - Bali Popular Destination
 export const Bali = [
   {

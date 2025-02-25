@@ -5,12 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 
 // Importing images
-import family from "../../../assets/travelstyle/family.jpg";
-import couple from "../../../assets/travelstyle/couple.jpg";
-import group from "../../../assets/travelstyle/group.jpg";
-import honeymoon from "../../../assets/travelstyle/honeymoon.jpg";
-import adventure from "../../../assets/travelstyle/adventure.jpg";
-import beach from "../../../assets/travelstyle/beach.jpg";
+import family from "../../../assets/travelstyle/family.webp";
+import couple from "../../../assets/travelstyle/couple.webp";
+import group from "../../../assets/travelstyle/group.webp";
+import honeymoon from "../../../assets/travelstyle/honeymoon.webp";
+import adventure from "../../../assets/travelstyle/adventure.webp";
+import beach from "../../../assets/travelstyle/beach.webp";
 // Importing golden icons
 import familyIcon from "../../../assets/icons/family.svg";
 import coupleIcon from "../../../assets/icons/couple.svg";
