@@ -26,39 +26,28 @@ import VideoThumbnail from "./sections/VideoThumbnail";
 import BendingCarosual from "./sections/BendingCarosual";
 import TrendingOffers2 from "./sections/TrandingOffers2";
 import TravelSection from "./sections/TravelSection";
+import Reviews from "./sections/reviews";
+
+
 export default function HomePage() {
   return (
     <>
       <HeroSection />
       <PopularDestinations />
-      <SwipeableSlider/>
-      <TrendingOffers title="Trending Offers"/>
-      {/* <SwipeableSlider/> */}
-      {/* <CardSection 
-        title="Trending Offers"
-      /> */}
+      <SwipeableSlider />
+      <TrendingOffers title="Trending Offers" />
       <ExploreDestinations />
-      {/* <Loader /> */}
-
       <VideoTestimonials />
-      <VideoThumbnail/>
-      {/* <ImageSlider /> */}
-    {/* <NewComponent /> */}
+      <VideoThumbnail />
       <WhyTripstars />
       <ExploreEurope />
-  
-      {/* <TrendingOffers2 title="Explore India"/> */}
-      <TrendingOffers22 title="Explore India" cards={similar}/>
-      {/* <BudgetFriendly /> */}
+      <TrendingOffers22 title="Explore India" cards={similar} />
+      <Reviews/>
       <PartnersSection />
-      <BudgetSection/>
-      <BenefitsSection/>
-      {/* <Banner/>  */}
-      <Popup/>
+      <BudgetSection />
+      <BenefitsSection />
+      <Popup />
       <BendingCarosual />
-      {/* <TravelSection /> */}
-     {/* <ResponsiveBanner /> */}
-      {/* <MediaMentions /> */}
     </>
   );
 }
