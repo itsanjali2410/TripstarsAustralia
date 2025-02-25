@@ -39,7 +39,7 @@ const SliderContainer = styled.div`
   }
   /* For large screens (1920px and above) */
   @media (min-width: 1920px) {
-    width: 80%;      /* Increase the slide width */
+    width: 90%;      /* Increase the slide width */
     height: 300px;   /* Increase the height to adjust image size */
     background-size: cover; /* Optionally, adjust this if you prefer 'contain' */
   }

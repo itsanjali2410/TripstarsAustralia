@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { HiH1 } from "react-icons/hi2";
+import styled from "styled-components";
 
 // Declare Trustindex in the global window object
 declare global {
@@ -9,6 +9,20 @@ declare global {
     };
   }
 }
+
+// Styled Container
+const Container = styled.div`
+   padding: 0 15rem;
+  @media (max-width: 1340px) {
+    padding: 0 5rem;
+  }
+  @media (max-width: 1080px) {
+    padding: 0 3rem;
+  }
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+`;
 
 const TrustindexWidget: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -41,18 +55,16 @@ const TrustindexWidget: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ padding: "50px 20px" }}>
+    <Container>
       {/* Page Heading */}
-      <h1 style={{ textAlign: "center", marginBottom: "10px"}}>
-        Google Review
-      </h1>
+      <h1 style={{ marginBottom: "10px" }}>Google Reviews</h1>
 
       <div ref={containerRef}>
         <div className="trustindex-widget">
           {/* Trustindex widget will render reviews here */}
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 
