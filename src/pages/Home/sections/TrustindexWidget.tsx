@@ -9,11 +9,13 @@ declare global {
   }
 }
 
-
 const TrustindexWidget: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Set the page title
+    document.title = "Customer Reviews | Trustindex";
+
     if (!document.getElementById("trustindex-script")) {
       const script = document.createElement("script");
       script.src =
@@ -38,9 +40,16 @@ const TrustindexWidget: React.FC = () => {
   }, []);
 
   return (
-    <div ref={containerRef}>
-      <div className="trustindex-widget">
-        {/* Trustindex widget will render reviews here */}
+    <div style={{ padding: "50px 20px" }}>
+      {/* Page Heading */}
+      <h2 style={{ textAlign: "center", marginBottom: "10px" }}>
+        Customer Reviews
+      </h2>
+
+      <div ref={containerRef}>
+        <div className="trustindex-widget">
+          {/* Trustindex widget will render reviews here */}
+        </div>
       </div>
     </div>
   );

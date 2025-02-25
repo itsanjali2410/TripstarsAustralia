@@ -46,8 +46,9 @@ export default function HomePage() {
       <PartnersSection />
       <BudgetSection />
       <BenefitsSection />
-      <TrustindexWidget/>
       <Popup />
+      <TrustindexWidget/>
+
       <BendingCarosual />
     </>
   );

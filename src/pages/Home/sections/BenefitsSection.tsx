@@ -111,7 +111,7 @@ const CardText = styled.div`
 const BenefitsSection: React.FC = () => {
   return (
     <Section>
-      <Title>Benefits of Booking With Us</Title>
+      <Title>Benefits of Booking With us</Title>
       <Description>
         Discover the unrivalled benefits that promise memorable journeys all along.
       </Description>
@@ -140,6 +140,7 @@ const BenefitsSection: React.FC = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+
     </Section>
   );
 };
