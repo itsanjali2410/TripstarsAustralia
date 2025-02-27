@@ -39,9 +39,8 @@ const SliderContainer = styled.div`
   }
   /* For large screens (1920px and above) */
   @media (min-width: 1920px) {
-    width: 90%;      /* Increase the slide width */
-    height: 300px;   /* Increase the height to adjust image size */
-    background-size: cover; /* Optionally, adjust this if you prefer 'contain' */
+    width: 75%;      /* Increase the slide width */
+    height: 500px;   /* Increase the height to adjust image size */
   }
 `;
 const SliderWrapper = styled.div<{ translateX: number }>`
@@ -64,10 +63,12 @@ const Slide = styled.div<{ background: string }>`
   position: relative; /* Important for overlay positioning */
 
   @media (max-width: 2000px) {
-    height: 300px;
+    height: 450px;
+    width: 80%;
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1366px) {
     height: 300px;
+    width: 80%;
   }
   @media (max-width: 768px) {
     height: 200px;
@@ -133,6 +134,12 @@ const DotsContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 15px;
+
+  @media(min-width:2000){
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  }
 `;
 
 const Dot = styled.div<{ active: boolean }>`

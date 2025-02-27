@@ -14,19 +14,19 @@ const benefits: Benefit[] = [
   {
     title: "Customised Bespoke",
     description:
-      "Enjoy our bespoke tour packages that can be tailored according to your preferences for a great experience with the best services.",
+      "Enjoy our customizable tour packages for a seamless and exceptional experience with top-tier services.",
     iconUrl: "https://images.emtcontent.com/holiday-img/home-img/sun_bed.png",
   },
   {
     title: "Wallet-Friendly Prices",
     description:
-      "Every traveller from worldwide can embark on unforgettable journeys with our unbeatable holiday package prices.",
+      "Travelers worldwide can enjoy unforgettable journeys with our unbeatable holiday packages.",
     iconUrl: "https://images.emtcontent.com/holiday-img/home-img/low.png",
   },
   {
     title: "Exciting Deals",
     description:
-      "Our platform comprises perfect deals and discounts on all exclusive holiday packages to ensure value for money.",
+      "Our platform offers the best deals and discounts on exclusive holiday packages for great value.",
     iconUrl: "https://images.emtcontent.com/holiday-img/home-img/ec_deal.png",
   },
   {
@@ -38,7 +38,7 @@ const benefits: Benefit[] = [
 ];
 
 const Section = styled.section`
-  padding: 4rem 15rem;
+  padding: 5rem 15rem;
   background: #fff;
   text-align: center;
 
