@@ -52,6 +52,7 @@ const NavLinksContainer = styled.div`
   align-items: center;
   justify-content: end;
   width: 50%;
+  list-style: none;
   li {
     padding: 0 0.6rem;
     a {

@@ -14,7 +14,7 @@ import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 
 // Styles
-import GlobalStyles from "./GlobalStyles"; 
+// import GlobalStyles from "./GlobalStyles"; 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <GlobalStyles /> 
+      {/* <GlobalStyles />  */}
       <div className="App">
         {!isVideoPage && <Navbar />}
         <Routes>
