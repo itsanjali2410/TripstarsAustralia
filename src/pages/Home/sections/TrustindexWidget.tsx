@@ -12,7 +12,8 @@ declare global {
 
 // Styled Container
 const Container = styled.div`
-   padding: 0 15rem;
+   padding: 0 15rem
+   
   @media (max-width: 1340px) {
     padding: 0 5rem;
   }
@@ -57,7 +58,7 @@ const TrustindexWidget: React.FC = () => {
   return (
     <Container>
       {/* Page Heading */}
-      <h1 style={{ marginBottom: "10px", textAlign: "center" }}>Google Reviews</h1>
+      <h1 style={{ textAlign: "center" }}>Google Reviews</h1>
       <div ref={containerRef}>
         <div className="trustindex-widget">
           {/* Trustindex widget will render reviews here */}

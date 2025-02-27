@@ -55,7 +55,6 @@ const ImageWrapper = styled.div`
 `;
 
 const SectionTitle = styled.div`
-  padding-top: 2rem;
   padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
