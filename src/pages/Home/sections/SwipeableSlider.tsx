@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import styled from "styled-components";
 import { useSwipeable } from "react-swipeable";
 // Importing images from the assets folder
 import image1 from "../../../assets/advertisebanner/banner-1.webp";
 import image2 from "../../../assets/advertisebanner/banner-2.webp";
 import image3 from "../../../assets/advertisebanner/banner-3.webp";
+import image4 from "../../../assets/advertisebanner/banner-4.webp";
+import image5 from "../../../assets/advertisebanner/banner-5.webp";
 
 const SliderContainer = styled.div`
+
   position: relative;
   overflow: hidden;
   width: 70%;
@@ -14,14 +18,21 @@ const SliderContainer = styled.div`
   margin: 20px auto;
 
   @media (max-width: 1340px) {
-    width:90%;
+    width: 90%;
   }
 
   @media (max-width: 1024px) {
     width: 90%;
   }
+
   @media (max-width: 768px) {
     width: 90%;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
+    margin-top: 40px;
   }
 `;
 
@@ -42,6 +53,7 @@ const Slide = styled.div<{ background: string }>`
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   margin: 0 auto;
+  cursor: pointer; /* Add pointer cursor to indicate clickability */
 
   @media (max-width: 2000px) {
     height: 300px;
@@ -50,9 +62,11 @@ const Slide = styled.div<{ background: string }>`
   @media (max-width: 1024px) {
     height: 300px;
   }
+
   @media (max-width: 768px) {
     height: 200px;
   }
+
   @media (max-width: 480px) {
     height: 150px;
   }
@@ -75,10 +89,18 @@ const Dot = styled.div<{ active: boolean }>`
 
 const SwipeableSlider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
- 
-  // Updated slides array with images from assets
-  const slides = [image1, image2, image3];
+  const navigate = useNavigate(); // Initialize useNavigate
 
+  // Define slides with corresponding routes
+  const slides = [
+    { image: image5, route: "bali" },
+    { image: image3, route: "vietnam" },
+    { image: image1, route: "/turkey" }, // Redirects to /turkey
+    { image: image2, route: "/europe" }, // No redirection
+
+    { image: image4, route: "baku" }
+
+  ];
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev < slides.length - 1 ? prev + 1 : 0));
@@ -96,8 +118,16 @@ const SwipeableSlider: React.FC = () => {
   return (
     <SliderContainer {...handlers}>
       <SliderWrapper translateX={-currentIndex * (100 / slides.length)}>
-        {slides.map((image, index) => (
-          <Slide key={index} background={image} />
+        {slides.map((slide, index) => (
+          <Slide
+            key={index}
+            background={slide.image}
+            onClick={() => {
+              if (slide.route !== "#") {
+                navigate(slide.route); // Redirect within the app
+              }
+            }}
+          />
         ))}
       </SliderWrapper>
 
@@ -111,3 +141,4 @@ const SwipeableSlider: React.FC = () => {
 };
 
 export default SwipeableSlider;
+
