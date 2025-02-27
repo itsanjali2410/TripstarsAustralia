@@ -39,7 +39,7 @@ const SliderContainer = styled.div`
   }
   /* For large screens (1920px and above) */
   @media (min-width: 1920px) {
-    width: 75%;      /* Increase the slide width */
+    width: 90%;      /* Increase the slide width */
     height: 500px;   /* Increase the height to adjust image size */
   }
 `;
@@ -63,7 +63,7 @@ const Slide = styled.div<{ background: string }>`
   position: relative; /* Important for overlay positioning */
 
   @media (max-width: 2000px) {
-    height: 450px;
+    height: 500px;
     width: 80%;
   }
   @media (max-width: 1366px) {

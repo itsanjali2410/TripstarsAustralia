@@ -17,7 +17,6 @@ a {
 body {
   font-family: "Poppins", serif;
   color: #000;
-  overflow-x: hidden;
 }
 
 .swiper-container-free-mode > .swiper-wrapper {
