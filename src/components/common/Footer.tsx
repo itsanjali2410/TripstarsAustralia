@@ -427,16 +427,17 @@ const Footer: React.FC = () => {
 
       <FooterContact>
         <p><strong>Tripstars Holidays Pvt LTD</strong></p>
-        <p> B, Iscon, 1817/18 Navratna Corporate Park, Ambli Rd, Ahmedabad, Gujarat 380058</p>
+        <p> 1817/1818, Navratna Corporate Park - B, Iscon - Ambli Road, Ahmedabad - 380058
+</p>
         <div className="contact-horizontal">
           <p>
             <a href="mailto:hello@wanderon.in">hello@tripstars.in</a>
           </p>
           <p>
-            <a href="tel:+919090403075">+91 98750 97169</a>
+            <a href="tel:+919090403075">+91 9875097159</a>
           </p>
           <p>
-            <a href="https://www.wanderon.in">www.tripstars.in</a>
+            <a href="https://tripstarsholidays.com/">tripstarsholidays.com</a>
           </p>
         </div>
       </FooterContact>

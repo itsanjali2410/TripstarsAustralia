@@ -10,13 +10,13 @@ const NavbarContainer = styled.nav`
   left: 0;
   width: 100%;
   display: flex;
-  height:86px;
+  height: 86px;
   justify-content: space-between;
   padding: 1rem 2rem;
   z-index: 999999;
   background: #071A29;
   opacity: 0.9;
-   border-bottom-left-radius: 10px;   /* Adds radius to bottom left */
+  border-bottom-left-radius: 10px;   /* Adds radius to bottom left */
   border-bottom-right-radius: 10px;  /* Adds radius to bottom right */
 
 
@@ -57,6 +57,7 @@ const NavLinksContainer = styled.div`
     padding: 0 0.6rem;
     a {
       color: #fff;
+      text-decoration: none;
     }
   }
 
@@ -102,6 +103,7 @@ const MenuBtn = styled.div`
   svg {
     width: 2rem;
     fill: #fff;
+    style: none;
   }
   display: none;
   @media (max-width: 1080px) {
@@ -152,6 +154,7 @@ export default function Navbar() {
           <svg
             stroke="currentColor"
             fill="none"
+            link-style="none"
             stroke-width="0"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
@@ -163,16 +166,16 @@ export default function Navbar() {
           </svg>
         </li>
         <li>
-          <Link to="/">Flights</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/">Hotels</Link>
+          <Link to="/">Destinations</Link>
         </li>
         <li>
           <Link to="/">Holidays</Link>
         </li>
         <li>
-          <Link to="/">Blog</Link>
+          <Link to="/">Themes</Link>
         </li>
         <li>
           <Link to="/">Offers</Link>

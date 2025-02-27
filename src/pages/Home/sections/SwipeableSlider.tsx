@@ -54,7 +54,6 @@ const Slide = styled.div<{ background: string }>`
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   margin: 0 auto;
   cursor: pointer; /* Add pointer cursor to indicate clickability */
-
   @media (max-width: 2000px) {
     height: 300px;
   }
