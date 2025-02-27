@@ -5,9 +5,24 @@ import SearchBar from "./SearchBar";
 import RatingBar from "./RatingBar";
 
 // Importing images for mobile and desktop
-import europe from "../../../assets/banner/europe.webp";
+import australia from "../../../assets/banner/europe.webp";
+// import bali from "../../../assets/banner/turkey.webp";
+import europe from "../../../assets/banner/australia.webp";
+import hongKong from "../../../assets/banner/hong-kong.webp";
+import vietnam from "../../../assets/banner/vietnam.webp";
+
 // Mobile images
+import australiaMobile from "../../../assets/banner/mobile web banner/australia.webp";
+import baliMobile from "../../../assets/banner/mobile web banner/bali.webp";
 import europeMobile from "../../../assets/banner/mobile web banner/europe.webp";
+// import hongKongMobile from "../../../assets/banner/mobile web banner/hong-kong.webp";
+import vietnamMobile from "../../../assets/banner/mobile web banner/vietnam.webp";
+
+// Define types for styled component props
+type SlideProps = {
+  bgImage: string;
+  active: boolean;
+};
 
 // Styled Components
 const SliderContainer = styled.section`
@@ -15,22 +30,22 @@ const SliderContainer = styled.section`
   width: 100%;
   height: 60vh;
 
+  @media (max-width: 768px) {
+
+  }
+
   @media (max-width: 360px) { /* iPhone SE */
     height: 45vh;
   }
 `;
 
-// Define the props for the new SlideImage component
-type SlideImageProps = {
-  src: string;
-  active: boolean;
-};
 
-// New SlideImage component using <img> tag
-const SlideImage = styled.img<SlideImageProps>`
+const Slide = styled.div<SlideProps>`
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  background-image: url(${(props) => props.bgImage});
+  background-size: cover;
+  background-position: center;
   transition: opacity 0.5s ease-in-out;
   opacity: ${(props) => (props.active ? 1 : 0)};
   position: absolute;
@@ -38,6 +53,7 @@ const SlideImage = styled.img<SlideImageProps>`
   left: 0;
 `;
 
+// Wrapper for search bar and text
 // Adjusted Search Bar Wrapper
 const SearchBarWrapper = styled.div`
   position: absolute;
@@ -56,10 +72,13 @@ const SearchBarWrapper = styled.div`
   @media (max-width: 375px) { /* iPhone SE */
     top: 52%;
     width: 85%;
-    display: flex;
-    flex-direction: column; /* Stack elements instead of squeezing */
-    align-items: center;
   }
+  @media (max-width: 375px) {
+  display: flex;
+  flex-direction: column; /* Stack elements instead of squeezing */
+  align-items: center;
+}
+
 `;
 
 // Adjusted HeroText (if text looks too big)
@@ -83,7 +102,6 @@ const HeroText = styled.h1`
     font-size: 1.2rem;
   }
 `;
-
 const RatingContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -101,11 +119,12 @@ const RatingContainer = styled.div`
     max-width: 80%;
   }
 
-  @media (max-width: 375px) { /* iPhone SE */
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ensures each item stays readable */
-    gap: 6px;
-    max-width: 95%;
-  }
+@media (max-width: 375px) { /* iPhone SE */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ensures each item stays readable */
+  gap: 6px;
+  max-width: 95%;
+}
+
 `;
 
 const RatingItem = styled.div`
@@ -121,22 +140,25 @@ const RatingItem = styled.div`
   min-width: 140px;
   text-align: center;
 
-  @media (max-width: 375px) { /* iPhone SE */
-    font-size: 0.9rem;
-    padding: 6px 10px;
-    min-width: 120px; /* Prevent collapse */
-    width: auto; /* Avoid stretching */
-  }
+@media (max-width: 375px) { /* iPhone SE */
+  font-size: 0.9rem;
+  padding: 6px 10px;
+  min-width: 120px; /* Prevent collapse */
+  width: auto; /* Avoid stretching */
+}
+
 `;
+
+
 
 // HeroSection Component
 const HeroSection: React.FC = () => {
   // Default desktop images and mobile images
-  const desktopImages = [europe];
-  const mobileImages = [europeMobile];
-
+  const desktopImages = [australia, europe, hongKong, vietnam];
+  const mobileImages = [australiaMobile, baliMobile, europeMobile, vietnamMobile];
+  
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? desktopImages.length - 1 : prevIndex - 1
@@ -153,7 +175,7 @@ const HeroSection: React.FC = () => {
     onSwipedLeft: goToNext,
     onSwipedRight: goToPrevious,
     preventScrollOnSwipe: true,
-    trackMouse: true, // Enables swipe on desktop using mouse drag
+    trackMouse: true, // Optional: Enables swipe on desktop using mouse drag
   });
 
   // Detect screen size to decide which image set to use
@@ -163,13 +185,7 @@ const HeroSection: React.FC = () => {
   return (
     <SliderContainer {...swipeHandlers}>
       {images.map((image, index) => (
-        <SlideImage
-          key={index}
-          src={image}
-          alt="Hero Slide"
-          active={index === currentIndex}
-          loading={index === 0 ? "eager" : "lazy"}
-        />
+        <Slide key={index} bgImage={image} active={index === currentIndex} />
       ))}
 
       {/* Overlay text and SearchBar */}
