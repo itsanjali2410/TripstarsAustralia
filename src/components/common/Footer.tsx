@@ -286,19 +286,15 @@ const footerSections: { title: string; links: FooterLink[] }[] = [
     links: [
       {
         label:
-          "Delhi - NO-WZ-112-B, 3RD FLOOR,Subhash Nagar, Meenakshi Garden Subhash Nagar, near Utkarsh Bank, South West, Delhi, 110018",
+          "105/315, Sai Arcade, N.S. Road, Mulund West, Mumbai - 400080",
         href: "#",
-        contacts: [{ phone: "+91-9667775223", whatsapp: "+91-9667775223" }],
+        contacts: [{ phone: "+91-8655351948", whatsapp: "+91-9875097169" }],
       },
+      
       {
-        label: "Lucknow - B3/31, Vibhuti Khand, Gomti Nagar, Lucknow, Uttar Pradesh, 226010",
+        label: "1817/1818, Navratna Corporate Park - B, Iscon - Ambli Road, Ahmedabad - 380058",
         href: "#",
-        contacts: [{ phone: "+91-8188913377", whatsapp: "+91-8188913377" }],
-      },
-      {
-        label: "Kaithal - Bank Colony Rd, Mohalla Sundraon, Kaithal, Haryana, 136027",
-        href: "#",
-        contacts: [{ phone: "+91-7027737887", whatsapp: "+91-7027737887" }],
+        contacts: [{ phone: "+91-8655351949", whatsapp: "+91-9875097169" }],
       },
     ],
   },
