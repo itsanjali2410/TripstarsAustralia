@@ -259,6 +259,8 @@ const socialMediaLinks = [
   { href: "https://www.instagram.com/tripstars.in?igsh=MWlpNHVhMHp6aXA2bA==", src: "https://images.wanderon.in/icons/instagram", alt: "Instagram" },
   { href: "https://www.linkedin.com/company/tripstarsholidays/", src: "https://images.wanderon.in/icons/linkedin", alt: "LinkedIn" },
   { href: "https://www.youtube.com/@tripstarsholidays108", src: "https://images.wanderon.in/icons/youtube", alt: "YouTube" },
+  { href: "tel:+919875097169", src: "https://cdn-icons-png.flaticon.com/512/724/724664.png", alt: "Call" },
+  { href: "https://wa.me/919875097159", src: "https://img.icons8.com/color/96/whatsapp.png", alt: "WhatsApp" },
 ];
 
 // Dropdown content
@@ -437,7 +439,7 @@ const Footer: React.FC = () => {
             <a href="tel:+919090403075">+91 9875097159</a>
           </p>
           <p>
-            <a href="https://tripstarsholidays.com/">tripstarsholidays.com</a>
+            <a href="https://tripstarsholidays.in/">tripstarsholidays.in</a>
           </p>
         </div>
       </FooterContact>
