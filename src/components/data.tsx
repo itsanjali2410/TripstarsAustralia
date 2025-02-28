@@ -5,7 +5,7 @@ import himachal from "../assets/explore-india/himachal.webp";
 import ladakh from "../assets/explore-india/ladakh.webp";
 import north from "../assets/explore-india/north-east.webp";
 import nepal from "../assets/explore-india/nepal.webp";
-
+import kerala from "../assets/explore-india/kerala.webp";
 
 import bali1 from "../assets/Tripdetails/bali/bali1.webp"
 import bali2 from "../assets/Tripdetails/bali/bali2.webp"
@@ -455,8 +455,8 @@ export const similar = [
     ],
   },
   {
-    title: 'Essence of Andaman',
-    image: andaman,  // ✅ Correct imported image
+    title: 'Kerala',
+    image: kerala,  // ✅ Correct imported image
     pricing: '₹45,999/- Onwards',
     info: [
       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
@@ -493,6 +493,24 @@ export const similar = [
   {
     title: 'Nepal',
     image: nepal,  // ✅ Correct imported image
+    pricing: '₹55,999/- Onwards',
+    info: [
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '8N/9D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
+    ],
+  },
+  {
+    title: 'Andaman',
+    image: andaman,  // ✅ Correct imported image
+    pricing: '₹32,999/- Onwards',
+    info: [
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
+    ],
+  },
+  {
+    title: 'Kashmir',
+    image: kashmir,  // ✅ Correct imported image
     pricing: '₹32,999/- Onwards',
     info: [
       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
