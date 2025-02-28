@@ -275,7 +275,7 @@ const footerSections: { title: string; links: FooterLink[] }[] = [
   {
     title: "Talk to us",
     links: [
-      { label: "+91-9875097169", href: "", icon: <FaWhatsapp /> },
+      { label: "+91-9875097169", href: "+919875097169", icon: <FaWhatsapp /> },
       { label: "+91-8655351948", href: "tel:+918655351948", icon: <FaPhoneAlt /> },
       { label: "+91 7969790000", href: "tel:+917969790000", icon: <FaPhoneAlt /> },
       { label: "info@travellandindia.com", href: "mailto:info@travellandindia.com", icon: <FaEnvelope /> },
@@ -346,6 +346,7 @@ const footerSections: { title: string; links: FooterLink[] }[] = [
   {
     title: "Quick Links",
     links: [
+      { label: "Payments", href: "/payment" },
       { label: "Travel Guides & Tips", href: "/travel-guides-tips" },
       { label: "FAQs", href: "/faqs" },
       { label: "Support / Help Center", href: "/support-help-center" },
