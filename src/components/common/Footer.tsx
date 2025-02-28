@@ -429,7 +429,7 @@ const Footer: React.FC = () => {
         <p> 1817/1818, Navratna Corporate Park - B, Iscon - Ambli Road, Ahmedabad - 380058
 </p>
         <div className="contact-horizontal">
-          <p>
+          <p>                                                                                                                                                                                  
             <a href="mailto:hello@wanderon.in">hello@tripstars.in</a>
           </p>
           <p>

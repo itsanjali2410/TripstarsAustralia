@@ -300,6 +300,7 @@ const cards = [
        { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Bangkok - Phuket' },
       ],
   },
+  
   ];
 
 interface ExploreIndiaProps {

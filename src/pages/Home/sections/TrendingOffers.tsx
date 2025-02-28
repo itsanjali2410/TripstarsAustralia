@@ -161,27 +161,27 @@ const Info = styled.div`
 const InfoItem = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 15px;
   font-size: 0.8rem;
-
   @media (max-width: 768px) {
     font-size: 0.7rem;
   }
 `;
 
 const Icon = styled.span<{ backgroundImage: string }>`
-  height: 18px;
-  width: 18px;
+  height: 25px;
+  width: 25px;
   display: inline-block;
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 5px;
   background-image: url(${({ backgroundImage }) => backgroundImage});
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1); /* Converts icons to white */
+
+  /* Rotate only the airplane icon */
   ${({ backgroundImage }) =>
-    backgroundImage.includes("airplane-mode-on.webp") && "transform: rotate(-90deg);"}
-  
+    backgroundImage.includes("airplane-mode-on.png") && "transform: rotate(-90deg);"}
 `;
+
 
 const cards = [
   {
@@ -189,8 +189,8 @@ const cards = [
     image: VietnamImage,
     pricing: '₹99,999/- Onwards',
     info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.webp', text: '7N/8D' },
-      { icon: FlightsIncludedIcon },
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'with Flight' },
     ],
   },
   {
@@ -198,8 +198,8 @@ const cards = [
     image: TurkeyImage,
     pricing: '₹32,999/- Onwards',
     info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.webp', text: '6N/7D' },
-      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.webp', text: 'Flight' },
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'with Flight' },
     ],
   },
   {
@@ -207,8 +207,8 @@ const cards = [
     image: ThailandImage,
     pricing: '₹38,999/- Onwards',
     info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.webp', text: '4N/5D' },
-      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.webp', text: 'Flight' },
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '4N/5D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'with Flight' },
     ],
   },
   {
@@ -216,8 +216,8 @@ const cards = [
     image: MauritiusImage,
     pricing: '₹89,999/- Onwards',
     info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.webp', text: '6N/7D' },
-      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.webp', text: ' Flight' },
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'with Flight' },
     ],
   },
   {
@@ -225,8 +225,8 @@ const cards = [
     image: MaldivesImage,
     pricing: '₹99,999/- Onwards',
     info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.webp', text: '3N/4D' },
-      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.webp', text: 'Flight' },
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '3N/4D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'with Flight' },
     ],
   },
   {
@@ -234,8 +234,8 @@ const cards = [
     image: EuropeImage,
     pricing: '₹2,75,000/- Onwards',
     info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.webp', text: '9N/10D' },
-      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.webp', text: ' Flight' },
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '9N/10D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'with Flight' },
     ],
   },
   {
@@ -243,8 +243,8 @@ const cards = [
     image: DubaiImage,
     pricing: '₹87,999/- Onwards',
     info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.webp', text: '5N/6D' },
-      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.webp', text: 'Flight' },
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'with Flight' },
     ],
   },
   {
@@ -252,11 +252,12 @@ const cards = [
     image: BaliImage,
     pricing: '₹74,999/- Onwards',
     info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.webp', text: '6N/7D' },
-      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.webp', text: ' Flight' },
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'with Flight' },
     ],
   },
 ];
+
 
 
 interface TrendingOffersProps {
