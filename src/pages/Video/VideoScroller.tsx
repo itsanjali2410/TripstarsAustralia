@@ -296,15 +296,20 @@ const VideoScroller: React.FC = () => {
 
   useEffect(() => {
     videoRefs.current.forEach((video, index) => {
-      if (index === activeIndex) {
-        video?.play().catch((error) =>
-          console.error("Auto-play failed:", error)
-        );
-      } else {
-        video?.pause();
+      if (video) {
+        if (index === activeIndex) {
+          video.muted = false; // Unmute active video
+          video
+            .play()
+            .then(() => setIsPlaying(true))
+            .catch((error) => console.error("Autoplay failed:", error));
+        } else {
+          video.pause();
+        }
       }
     });
   }, [activeIndex]);
+  
 
   const handleScroll = () => {
     if (!containerRef.current) return;
@@ -326,18 +331,26 @@ const VideoScroller: React.FC = () => {
   };
 
   const togglePlayPause = (index: number) => {
-    const video = videoRefs.current[index];
-    if (video) {
-      if (video.paused) {
-        video.muted = isMuted;
-        video.play();
-        setIsPlaying(true);
-      } else {
-        video.pause();
-        setIsPlaying(false);
+    videoRefs.current.forEach((video, idx) => {
+      if (video) {
+        if (idx === index) {
+          if (video.paused) {
+            video.muted = false; // Ensure audio starts immediately
+            video
+              .play()
+              .then(() => setIsPlaying(true))
+              .catch((error) => console.error("Playback failed:", error));
+          } else {
+            video.pause();
+            setIsPlaying(false);
+          }
+        } else {
+          video.pause(); // Pause all other videos
+        }
       }
-    }
+    });
   };
+  
 
   const handleShare = () => {
     if (navigator.share) {
@@ -360,17 +373,14 @@ const VideoScroller: React.FC = () => {
         {videoSources.map((video, index) => (
           <VideoWrapper key={index}>
             <Video
-              ref={(el) => (videoRefs.current[index] = el)}
-              src={video}
-              loop
-              playsInline
-              autoPlay
-              onClick={() => {
-                setIsMuted(false);
-                togglePlayPause(index);
-              }}
-              muted={isMuted}
-            />
+  ref={(el) => (videoRefs.current[index] = el)}
+  src={video}
+  loop
+  playsInline
+  onClick={() => togglePlayPause(index)}
+  muted={isMuted && activeIndex !== index} // Only mute inactive videos
+/>
+
 
             {/* Overlay appears only on small screens */}
             <Overlay>
