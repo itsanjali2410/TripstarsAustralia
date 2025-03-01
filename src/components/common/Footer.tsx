@@ -4,7 +4,6 @@ import DesktopFooter from "./DesktopFooter";
 import { FaWhatsapp, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 
-
 // Styled Components
 const FooterContainer = styled.footer`
   background-color: #101820;
@@ -114,6 +113,7 @@ const FooterSection = styled.div<{ isOpen: boolean }>`
         gap: 10px;
         color: #ffd700;
         text-decoration: none;
+        font-size: 14px; /* Default font size */
         
         .icon {
           font-size: 20px;
@@ -131,7 +131,18 @@ const FooterSection = styled.div<{ isOpen: boolean }>`
     border-top: 1px solid #333;
     margin: 10px 0;
   }
+
+  @media (max-width: 768px) {
+    h3 {
+      font-size: 16px; /* Reduce font size for mobile */
+    }
+
+    ul li a {
+      font-size: 12px; /* Reduce font size for links in mobile view */
+    }
+  }
 `;
+
 
 const FooterContact = styled.div`
   text-align: center;
@@ -278,7 +289,7 @@ const footerSections: { title: string; links: FooterLink[] }[] = [
       { label: "+91-9875097169", href: "+919875097169", icon: <FaWhatsapp /> },
       { label: "+91-8655351948", href: "tel:+918655351948", icon: <FaPhoneAlt /> },
       { label: "+91 7969790000", href: "tel:+917969790000", icon: <FaPhoneAlt /> },
-      { label: "info@travellandindia.com", href: "mailto:info@travellandindia.com", icon: <FaEnvelope /> },
+      { label: "Info@tripstars.in", href: "mailto:info@travellandindia.com", icon: <FaEnvelope /> },
     ],
   },
   {
