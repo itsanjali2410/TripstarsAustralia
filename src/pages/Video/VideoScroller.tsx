@@ -96,7 +96,7 @@ const ActionButton = styled.button<{ active?: boolean }>`
 
   &:hover {
     background: ${({ active }) =>
-      active ? "#d62828" : "rgba(255, 255, 255, 0.3)"};
+    active ? "#d62828" : "rgba(255, 255, 255, 0.3)"};
   }
 `;
 
@@ -241,10 +241,11 @@ const Tags = styled.div`
 
 const Tag = styled.span`
   background: linear-gradient(90deg, #c99603, #f4e628, #cd9c01, #b38201);
-  color: white;
+  color: black;
   padding: 0.3rem 0.7rem;
   margin: 0.3rem;
   font-size: 0.9rem;
+  font-weight: bold;
   border-radius: 20px;
 `;
 
@@ -255,7 +256,7 @@ const Hr = styled.hr`
 `;
 
 const Text = styled.p`
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.6;
 `;
 
@@ -309,7 +310,7 @@ const VideoScroller: React.FC = () => {
       }
     });
   }, [activeIndex]);
-  
+
 
   const handleScroll = () => {
     if (!containerRef.current) return;
@@ -350,7 +351,7 @@ const VideoScroller: React.FC = () => {
       }
     });
   };
-  
+
 
   const handleShare = () => {
     if (navigator.share) {
@@ -373,15 +374,13 @@ const VideoScroller: React.FC = () => {
         {videoSources.map((video, index) => (
           <VideoWrapper key={index}>
             <Video
-  ref={(el) => (videoRefs.current[index] = el)}
-  src={video}
-  loop
-  playsInline
-  onClick={() => togglePlayPause(index)}
-  muted={isMuted && activeIndex !== index} // Only mute inactive videos
-/>
-
-
+              ref={(el) => (videoRefs.current[index] = el)}
+              src={video}
+              loop
+              playsInline
+              onClick={() => togglePlayPause(index)}
+              muted={isMuted && activeIndex !== index} // Only mute inactive videos
+            />
             {/* Overlay appears only on small screens */}
             <Overlay>
               <OverlayTitle>{videoData[index].title}</OverlayTitle>
