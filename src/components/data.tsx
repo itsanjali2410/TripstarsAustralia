@@ -73,8 +73,6 @@ import hong8 from "../assets/Tripdetails/new/hong-kong/Hong kong 5.webp"
 import hong9 from "../assets/Tripdetails/new/hong-kong/Hong kong 6.webp"
 import hong10 from "../assets/Tripdetails/new/hong-kong/Hong kong 7.webp"
 
-
-
 //japan
 import japan1 from "../assets/Tripdetails/new/japan/Japan 1.webp"
 import japan2 from "../assets/Tripdetails/new/japan/Japan 2(1).webp"
@@ -141,6 +139,7 @@ import southafrica3 from "../assets/Tripdetails/new/south affrica/South affrica 
 import southafrica4 from "../assets/Tripdetails/new/south affrica/South affrica 4.webp"
 import southafrica5 from "../assets/Tripdetails/new/south affrica/South affrica 5.webp"
 import southafrica6 from "../assets/Tripdetails/new/south affrica/South affrica 6.webp"
+import { SwissFranc } from "lucide-react";
 // Card 1 - Bali Popular Destination
 export const Bali = [
   {
@@ -387,7 +386,7 @@ export const Thailand = [
 
 export const Europe = [
   {
-    title: "Himachal Pradesh",
+    title: "Eiffel tower",
     image: europe1,
     pricing: "₹35,999/- Onwards",
     info: [
@@ -395,17 +394,17 @@ export const Europe = [
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
+  // {
+  //   title: "Ladakh",
+  //   image: ladakh,
+  //   pricing: "₹61,699/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
   {
-    title: "Little Tibet Experience",
-    image: ladakh,
-    pricing: "₹61,699/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "North East",
+    title: "Vetican city",
     image: europe3,
     pricing: "₹55,999/- Onwards",
     info: [
@@ -414,7 +413,7 @@ export const Europe = [
     ],
   },
   {
-    title: "North East",
+    title: "Venice",
     image: europe4,
     pricing: "₹55,999/- Onwards",
     info: [
@@ -423,7 +422,7 @@ export const Europe = [
     ],
   },
   {
-    title: "North East",
+    title: "Rome",
     image: europe5,
     pricing: "₹55,999/- Onwards",
     info: [
@@ -431,6 +430,15 @@ export const Europe = [
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   }
+  // {
+  //   title: "Switzerland",
+  //   image: SwissFranc,
+  //   pricing: "₹55,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "8N/9D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // }
 ];
 
 
@@ -530,7 +538,7 @@ export const Australia = [
   //   ],
   // },
   {
-    title: "Goa",
+    title: "Sydney Opera House",
     image: australia2,
     pricing: "₹18,999/- Onwards",
     info: [
@@ -539,7 +547,7 @@ export const Australia = [
     ],
   },
   {
-    title: "Andamans Iconic Nature ",
+    title: "Sydney Harbour Bridge",
     image: australia3,
     pricing: "₹55,327/- Onwards",
     info: [
@@ -548,7 +556,7 @@ export const Australia = [
     ],
   },
   {
-    title: "Himachal Pradesh",
+    title: "Twelve Apostles",
     image: australia4,
     pricing: "₹35,999/- Onwards",
     info: [
@@ -557,7 +565,7 @@ export const Australia = [
     ],
   },
   {
-    title: "Ladakh",
+    title: "Eyre Highway",
     image: australia5,
     pricing: "₹49,999/- Onwards",
     info: [
@@ -831,7 +839,7 @@ export const Baku = [
 
 export const  Hongkong = [
   {
-    title: "Beautiful Kashmir",
+    title: "Victoria Harbour",
     image: hong1,
     pricing: "₹60,999/- Onwards",
     info: [
@@ -840,7 +848,7 @@ export const  Hongkong = [
     ],
   },
   {
-    title: "Goa",
+    title: "Disneyland",
     image: hong2,
     pricing: "₹18,999/- Onwards",
     info: [
@@ -858,7 +866,7 @@ export const  Hongkong = [
   //   ],
   // },
   {
-    title: "Himachal Pradesh",
+    title: "Ocean Park Hong Kong",
     image: hong4,
     pricing: "₹35,999/- Onwards",
     info: [
@@ -867,7 +875,7 @@ export const  Hongkong = [
     ],
   },
   {
-    title: "Ladakh",
+    title: "The Venetian Macao",
     image: hong5,
     pricing: "₹49,999/- Onwards",
     info: [
@@ -877,7 +885,7 @@ export const  Hongkong = [
   },
 
   {
-    title: "Goa",
+    title: "Lan Kwai Fong & Soho",
     image: hong7,
     pricing: "₹18,999/- Onwards",
     info: [
@@ -895,7 +903,7 @@ export const  Hongkong = [
   //   ],
   // },
   {
-    title: "Himachal Pradesh",
+    title: "Repulse Bay & Stanley Market",
     image: hong9,
     pricing: "₹35,999/- Onwards",
     info: [
@@ -904,7 +912,7 @@ export const  Hongkong = [
     ],
   },
   {
-    title: "Ladakh",
+    title: "Tai O Fishing Village",
     image: hong10,
     pricing: "₹49,999/- Onwards",
     info: [
@@ -994,7 +1002,7 @@ export const Japan = [
 
 export const Malaysia = [
   {
-    title: "Kashmir",
+    title: "Petronas Twin Towers",
     image: malaysia1,
     pricing: "₹29,999/- Onwards",
     info: [
@@ -1003,7 +1011,7 @@ export const Malaysia = [
     ],
   },
   {
-    title: "Goa",
+    title: "Batu Caves",
     image: malaysia2,
     pricing: "₹18,999/- Onwards",
     info: [
@@ -1021,7 +1029,7 @@ export const Malaysia = [
   //   ],
   // },
   {
-    title: "Himachal Pradesh",
+    title: "Jenting Hiland",
     image: malaysia4,
     pricing: "₹35,999/- Onwards",
     info: [
@@ -1030,7 +1038,7 @@ export const Malaysia = [
     ],
   },
   {
-    title: "Ladakh",
+    title: "Kuala Lumpur",
     image: malaysia5,
     pricing: "₹49,999/- Onwards",
     info: [
