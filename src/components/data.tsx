@@ -1117,7 +1117,7 @@ export const Maldives = [
 
 export const Turkey = [
   {
-    title: "Kashmir",
+    title: "Istanbul",
     image: turkey1,
     pricing: "₹29,999/- Onwards",
     info: [
@@ -1126,7 +1126,7 @@ export const Turkey = [
     ],
   },
   {
-    title: "Goa",
+    title: "Cappadocia",
     image: turkey2,
     pricing: "₹18,999/- Onwards",
     info: [
@@ -1135,7 +1135,7 @@ export const Turkey = [
     ],
   },
   {
-    title: "Andaman Blue",
+    title: "Pamukkale & Hierapolis",
     image: turkey3,
     pricing: "₹42,999/- Onwards",
     info: [
@@ -1144,7 +1144,7 @@ export const Turkey = [
     ],
   },
   {
-    title: "Himachal Pradesh",
+    title: "Ephesus",
     image: turkey4,
     pricing: "₹35,999/- Onwards",
     info: [
@@ -1153,7 +1153,7 @@ export const Turkey = [
     ],
   },
   {
-    title: "Ladakh",
+    title: "Antalya",
     image: turkey5,
     pricing: "₹49,999/- Onwards",
     info: [
@@ -1162,7 +1162,7 @@ export const Turkey = [
     ],
   },
   {
-    title: "Ladakh",
+    title: "Troy",
     image: turkey6,
     pricing: "₹49,999/- Onwards",
     info: [
@@ -1171,7 +1171,7 @@ export const Turkey = [
     ],
   },
   {
-    title: "Ladakh",
+    title: "Sumela Monastery",
     image: turkey7,
     pricing: "₹49,999/- Onwards",
     info: [
@@ -1180,7 +1180,7 @@ export const Turkey = [
     ],
   },
   {
-    title: "Ladakh",
+    title: "Mount Nemrut",
     image: turkey8,
     pricing: "₹49,999/- Onwards",
     info: [
@@ -1189,7 +1189,7 @@ export const Turkey = [
     ],
   },
   {
-    title: "Ladakh",
+    title: "Göbekli Tepe",
     image: turkey9,
     pricing: "₹49,999/- Onwards",
     info: [
