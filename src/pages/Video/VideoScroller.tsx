@@ -39,9 +39,9 @@ const videoData = [
     tags: ["Cuisine", "Street Food", "Traditional Dishes"],
   },
   {
-    title: "Vietnam’s Hidden Gems",
+    title: "Australia",
     description:
-      "Relax at peaceful beaches or explore historic temples in Vietnam.",
+      "Mayur",
     tags: ["Beaches", "Temples", "Nature"],
   },
   {
