@@ -41,6 +41,7 @@ const Container = styled.div`
   align-items: center;
   text-align: center;
   width: 100%;
+  padding: 20px;
    @media (max-width: 768px) {
     padding: 0;
   }
@@ -50,6 +51,10 @@ const TitleFrame = styled.div`
   color: black;
   font-size: 24px;
   font-weight: bold;
+  padding: 15px 40px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 `;
 
 const CarouselContainer = styled.div`
