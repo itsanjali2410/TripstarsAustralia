@@ -271,9 +271,14 @@ const Popup: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    if (!startDate) {
+        alert("Please select a travel date!");
+        return;
+    }
+    
     const formSubmission = {
         ...formData,
-        travelDate: startDate,
+        travelDate: startDate.toISOString(), // ✅ Fix: Ensures correct date format
         pax,
     };
     
@@ -298,11 +303,11 @@ const Popup: React.FC = () => {
         alert("Failed to submit form");
     }
     };
-    
+
   return (
     <PopupContainer id="popup-container" isVisible={isVisible} onClick={handleOutsideClick}>
       <PopupContent>
-      <LeftPanel>
+        <LeftPanel>
           {/* New main logo */}
           <div className="main-logo">
             <img src="http://localhost:5173/src/assets/images/logo/logo.png" alt="Main Logo" />
@@ -311,8 +316,8 @@ const Popup: React.FC = () => {
           {/* Additional logos */}
           <div className="logo-container">
             <img src={logo1} alt="15k Customers" style={{ width: "100px", height: "auto" }} />
-            <img src={logo2} alt="Award" style={{ width: "100px", height: "auto" }}/>
-            <img src={logo3} alt="Customer Service" style={{ width: "100px", height: "auto" }}/>
+            <img src={logo2} alt="Award" style={{ width: "100px", height: "auto" }} />
+            <img src={logo3} alt="Customer Service" style={{ width: "100px", height: "auto" }} />
           </div>
 
           <ul>
@@ -392,12 +397,13 @@ const Popup: React.FC = () => {
             <label>Travel Date</label>
             <DatePicker
               selected={startDate}
-
+              onChange={(date: Date | null) => setStartDate(date)} // ✅ Fixes date selection
               dateFormat="dd-MM-yyyy"
               placeholderText="Pick your travel date"
               isClearable
               className="custom-datepicker"
             />
+
             <label>Number of Pax</label>
             <PaxCounter>
               <button type="button" onClick={() => handlePaxChange(false)} disabled={pax <= 1}>
