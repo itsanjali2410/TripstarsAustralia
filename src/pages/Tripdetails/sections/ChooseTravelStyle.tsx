@@ -19,6 +19,7 @@ const Header = styled.div`
   align-items: center;
   width: 100%;
   max-width: 1100px;
+  
   margin-bottom: 1.5rem;
 `;
 
@@ -73,6 +74,7 @@ const CardImage = styled.img`
 
 const CardTitle = styled.h3`
   font-size: 1rem;
+  
   color: #444;
   text-align: center;
   margin: 0.8rem 0;

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import SearchBar from "../../Home/sections/SearchBar";
 
 const Container = styled.div`
   width: 100vw;
@@ -53,6 +54,7 @@ const Container = styled.div`
         margin: 0;
         text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
       }
+        
     }
   }
 `;
@@ -65,15 +67,21 @@ type BanProps = {
 const Ban2: React.FC<BanProps> = ({ image, destination }) => {
   return (
     <Container>
+     
       <div className="image-slider">
+      
         <img src={image} alt={destination} />
+        
         <div className="overlay"></div>
         <div className="text-overlay">
           <h1>Escape to</h1>
+          
           <h2>{destination}</h2>
+          <SearchBar/>
         </div>
       </div>
     </Container>
+    
   );
 };
 

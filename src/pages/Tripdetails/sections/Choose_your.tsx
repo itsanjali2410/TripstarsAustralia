@@ -40,6 +40,7 @@ const Title = styled.h2`
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
+  margin-top: 5%;
 `;
 
 // Styled "Travel Style" with gold linear gradient and cursive font

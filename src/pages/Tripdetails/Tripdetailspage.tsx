@@ -27,7 +27,7 @@ import baliImg13 from "../../assets/Tripdetails/bali/ThingsToDoInBali/bali_banne
 import baliImg14 from "../../assets/Tripdetails/bali/ThingsToDoInBali/mobile-banner-bali.jpg";
 import TrustindexWidget from "../Home/sections/TrustindexWidget";
 import Popup from "../../components/common/Popup";
-import SearchBar from "../Home/sections/SearchBar";
+
 
 type LocationKey = keyof typeof destinationsData;
 export default function Tripdetailspage() {
@@ -64,7 +64,7 @@ export default function Tripdetailspage() {
         destination={banner?.title}
 
       />
-      <SearchBar/>
+
       <PopularDestinations2 title="Things to do in" highlightWord={banner?.title} 
       thingsToDo={locationData.thingsToDo} />
       {/* <PopularDestinations /> */}
