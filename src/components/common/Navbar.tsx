@@ -6,21 +6,15 @@ import { useEffect, useState } from "react";
 
 const NavbarContainer = styled.nav`
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   display: flex;
-  height: 86px;
   justify-content: space-between;
   padding: 1rem 2rem;
-  z-index: 999999;
+  z-index: 9999;
   background: #071A29;
   opacity: 0.9;
   border-bottom-left-radius: 10px;   /* Adds radius to bottom left */
   border-bottom-right-radius: 10px;  /* Adds radius to bottom right */
-
-
-  transition: all 0.5s ease-in-out;
   &.active {
     background-color: #000;
     padding: 1rem 2rem;
@@ -64,7 +58,7 @@ const NavLinksContainer = styled.div`
   @media (max-width: 1080px) {
     /* display: none; */
     position: absolute;
-    background-color: #000000;
+    background-color: #071A29;
     width: 80vw;
     height: 100svh;
     top: 0;
@@ -77,7 +71,7 @@ const NavLinksContainer = styled.div`
     }
     li {
       padding: 1rem 1rem;
-      border-bottom: 1px solid #ffffff43;
+      border-bottom: 1px solid #071A29;
       a {
         font-size: 0.9rem;
       }
