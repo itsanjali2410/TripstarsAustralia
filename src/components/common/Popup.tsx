@@ -304,7 +304,7 @@ const Popup: React.FC = () => {
         console.error("Error:", error);
         alert("Failed to submit form");
     }
-    };
+    };  
 
   return (
     <PopupContainer id="popup-container" isVisible={isVisible} onClick={handleOutsideClick}>
