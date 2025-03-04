@@ -76,7 +76,7 @@ const InfoItem = styled.div`
 // RatingBar Component
 const RatingBar = () => {
   const infoItems = [
-    { text: "4.6 Rated" },
+    { text: "4.9 Rated" },
     { text: "100% Customised Trips" },
     { text: "95% Visa Success Rate" },
     { text: "24x7 Concierge" },

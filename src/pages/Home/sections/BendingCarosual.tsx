@@ -76,7 +76,7 @@ const CarouselContainer = styled.div`
 
 const CarouselWrapper = styled.div<{ translateX: number }>`
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out;
   transform: translateX(${(props) => props.translateX}px);
 `;
 
