@@ -26,6 +26,9 @@ import StaticReviews from "./sections/StaticReviews";
 import baliImg13 from "../../assets/Tripdetails/bali/ThingsToDoInBali/bali_banner.png";
 import baliImg14 from "../../assets/Tripdetails/bali/ThingsToDoInBali/mobile-banner-bali.jpg";
 import TrustindexWidget from "../Home/sections/TrustindexWidget";
+import Popup from "../../components/common/Popup";
+import SearchBar from "../Home/sections/SearchBar";
+
 type LocationKey = keyof typeof destinationsData;
 export default function Tripdetailspage() {
   // const location = "Bali"; // Set to "Bali" for now
@@ -54,7 +57,6 @@ export default function Tripdetailspage() {
  // ✅ Correctly set the banner image for Bali (desktop vs mobile)
  const bannerImage =
  location === "bali" ? (isMobile ? baliImg14 : baliImg13) : locationData.banner.image;
-
   return (
     <>
       <Ban2
@@ -62,6 +64,7 @@ export default function Tripdetailspage() {
         destination={banner?.title}
 
       />
+      <SearchBar/>
       <PopularDestinations2 title="Things to do in" highlightWord={banner?.title} 
       thingsToDo={locationData.thingsToDo} />
       {/* <PopularDestinations /> */}
@@ -100,7 +103,7 @@ export default function Tripdetailspage() {
       {/* <DestinationSlider/>
        */}
       <Choose_your />
-
+      <Popup/>
        
        <TrustindexWidget />
       {/* <TravelStyleCarousel /> */}

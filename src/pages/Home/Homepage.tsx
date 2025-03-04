@@ -12,7 +12,7 @@ import VideoTestimonials from "./sections/VideoTestimonials";
 import {similar} from "../../components/data";
 import WhyTripstars from "./sections/WhyTripstars";
 import NewComponent from "./sections/NewComponent";
-import Popup from "../../components/common/Popup";
+import Popup from "../../components/common/StaticForm";
 import ImageSlider from "./sections/ImageSlider";
 import ResponsiveBanner from "./sections/ResponsiveBanner";
 import CardSection from "./sections/CardSection";
@@ -28,7 +28,7 @@ import TrendingOffers2 from "./sections/TrandingOffers2";
 import TravelSection from "./sections/TravelSection";
 import Reviews from "./sections/reviews";
 import TrustindexWidget from "./sections/TrustindexWidget";
-
+import StaticForm from "../../components/common/StaticForm";
 export default function HomePage() {
   return (
     <>
@@ -46,7 +46,7 @@ export default function HomePage() {
       <PartnersSection />
       <BudgetSection />
       <BenefitsSection />
-      <Popup />
+      <StaticForm />
       <TrustindexWidget/>
 
       <BendingCarosual />

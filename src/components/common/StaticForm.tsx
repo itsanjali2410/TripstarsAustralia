@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import { FaCheckCircle, FaTimes } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -8,7 +8,8 @@ import logo1 from "../../assets/popup/Customers.png";
 import logo2 from "../../assets/popup/Awardwinners .png";
 import logo3 from "../../assets/popup/Customerservice.png";
 import logoImg from "../../assets/images/logo/logo.png";
-// Animation for popup fade-in
+
+// Optional fade-in animation (can be removed if not needed)
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -20,35 +21,25 @@ const fadeIn = keyframes`
   }
 `;
 
-const PopupContainer = styled.div<{ isVisible: boolean }>`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: ${({ isVisible }) => (isVisible ? "flex" : "none")};
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
+// Use a static container instead of a Popup overlay
+const StaticContainer = styled.div`
+  padding: 2rem;
+  background:rgb(255, 255, 255);
   animation: ${fadeIn} 0.4s ease-out;
 `;
 
-const PopupContent = styled.div`
+const ContentWrapper = styled.div`
   background: white;
   border-radius: 15px;
-  width: 600px;
+  max-width: 900px;
+  margin: 0 auto;
   display: flex;
-  position: relative;
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  max-height: 90vh;
-  overflow-y: auto;
+  animation: ${fadeIn} 0.4s ease-out;
 
   @media (max-width: 768px) {
-    width: 90%;
     flex-direction: column;
-    max-height: 90vh;
   }
 `;
 
@@ -64,7 +55,6 @@ const LeftPanel = styled.div`
 
   .main-logo {
     margin-bottom: 20px;
-    
     img {
       width: 150px;
       height: auto;
@@ -75,11 +65,11 @@ const LeftPanel = styled.div`
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
-    
-    img {
-      width: 100px;
-      height: auto;
-    }
+  }
+
+  img {
+    width: 70px;
+    height: auto;
   }
 
   ul {
@@ -107,7 +97,6 @@ const RightPanel = styled.div`
   position: relative;
 
   @media (max-width: 768px) {
-    flex: none;
     padding-left: 33px;
     padding-top: 14%;
     height: 80vh;
@@ -142,17 +131,17 @@ const RightPanel = styled.div`
   input,
   select {
     width: 100%;
-    padding: 12px;
+    padding: 5px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 12px;
     outline: none;
     transition: border-color 0.3s;
 
     &:focus {
       border-color: #0a0a52;
     }
-    
+
     @media (max-width: 768px) {
       padding: 11px;
     }
@@ -161,8 +150,8 @@ const RightPanel = styled.div`
   .custom-datepicker {
     width: 100%;
     border: 1px solid #ddd;
-    padding: 12px;
-    font-size: 14px;
+    padding: 5px;
+    font-size: 12px;
     border-radius: 5px;
     cursor: pointer;
     outline: none;
@@ -170,14 +159,14 @@ const RightPanel = styled.div`
     &:hover {
       border-color: #0a0a52;
     }
-    
+
     @media (max-width: 768px) {
       padding: 11px;
     }
   }
 
   button {
-    padding: 12px;
+    padding: 8px;
     background: rgb(9, 9, 9);
     color: white;
     border: none;
@@ -188,21 +177,8 @@ const RightPanel = styled.div`
     transition: background 0.3s;
 
     &:hover {
-      background: #218838;
+      background:rgb(255, 255, 255);
     }
-  }
-`;
-
-const CloseButton = styled.div`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  cursor: pointer;
-  color: black;
-
-  &:hover {
-    color: #555;
   }
 `;
 
@@ -217,7 +193,6 @@ const PaxCounter = styled.div`
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
 
     &:hover {
       background: #bbb;
@@ -227,12 +202,10 @@ const PaxCounter = styled.div`
   span {
     font-size: 14px;
   }
+
 `;
 
-
-
-const Popup: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
+const StaticForm: React.FC = () => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [pax, setPax] = useState(1);
   const [formData, setFormData] = useState({
@@ -243,20 +216,9 @@ const Popup: React.FC = () => {
     departureCity: "",
   });
 
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 5000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const closePopup = () => setIsVisible(false);
-
-  const handleOutsideClick = (e: React.MouseEvent) => {
-    if ((e.target as HTMLElement).id === "popup-container") {
-      closePopup();
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -274,21 +236,20 @@ const Popup: React.FC = () => {
   };
 
   return (
-    <PopupContainer id="popup-container" isVisible={isVisible} onClick={handleOutsideClick}>
-      <PopupContent>
-      <LeftPanel>
-          {/* New main logo */}
+    <StaticContainer>
+      <ContentWrapper>
+        <LeftPanel>
+          {/* Main Logo */}
           <div className="main-logo">
-            <img src="http://localhost:5173/src/assets/images/logo/logo.png" alt="Main Logo" />
+          <img src={logoImg} alt="Main Logo" />
+
           </div>
 
-          {/* Additional logos */}
           <div className="logo-container">
             <img src={logo1} alt="15k Customers" style={{ width: "100px", height: "auto" }} />
             <img src={logo2} alt="Award" style={{ width: "100px", height: "auto" }}/>
             <img src={logo3} alt="Customer Service" style={{ width: "100px", height: "auto" }}/>
           </div>
-
           <ul>
             <li>
               <FaCheckCircle size={14} /> 100% Customised Trips
@@ -303,9 +264,6 @@ const Popup: React.FC = () => {
         </LeftPanel>
 
         <RightPanel>
-          <CloseButton onClick={closePopup}>
-            <FaTimes />
-          </CloseButton>
           <h3>Plan Your Dream Vacation</h3>
           <form onSubmit={handleSubmit}>
             <label>Name</label>
@@ -317,6 +275,7 @@ const Popup: React.FC = () => {
               placeholder="Your Name"
               required
             />
+
             <label>Contact Number</label>
             <input
               type="tel"
@@ -326,6 +285,7 @@ const Popup: React.FC = () => {
               placeholder="Your Contact Number"
               required
             />
+
             <label>Email</label>
             <input
               type="email"
@@ -335,6 +295,7 @@ const Popup: React.FC = () => {
               placeholder="Your Email"
               required
             />
+
             <div className="row">
               <div>
                 <label>Destination</label>
@@ -363,18 +324,24 @@ const Popup: React.FC = () => {
                 />
               </div>
             </div>
+
             <label>Travel Date</label>
             <DatePicker
               selected={startDate}
-
               dateFormat="dd-MM-yyyy"
               placeholderText="Pick your travel date"
               isClearable
               className="custom-datepicker"
+              onChange={(date) => setStartDate(date)}
             />
+
             <label>Number of Pax</label>
             <PaxCounter>
-              <button type="button" onClick={() => handlePaxChange(false)} disabled={pax <= 1}>
+              <button
+                type="button"
+                onClick={() => handlePaxChange(false)}
+                disabled={pax <= 1}
+              >
                 -
               </button>
               <span>{pax}</span>
@@ -382,13 +349,13 @@ const Popup: React.FC = () => {
                 +
               </button>
             </PaxCounter>
+
             <button type="submit">Submit</button>
           </form>
         </RightPanel>
-      </PopupContent>
-    </PopupContainer>
+      </ContentWrapper>
+    </StaticContainer>
   );
 };
 
-export default Popup;
-
+export default StaticForm;

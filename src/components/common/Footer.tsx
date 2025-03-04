@@ -447,7 +447,7 @@ const Footer: React.FC = () => {
             <a href="tel:+919090403075">+91 9875097159</a>
           </p>
           <p>
-            <a href="https://tripstarsholidays.in/">tripstarsholidays.in</a>
+            <a href="https://tripstarsholidays.in/">http://tripstars.in/</a>
           </p>
         </div>
       </FooterContact>
