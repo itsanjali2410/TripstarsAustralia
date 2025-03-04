@@ -285,7 +285,7 @@ const Popup: React.FC = () => {
     console.log("🟢 Sending Data to Backend:", JSON.stringify(formSubmission, null, 2));
     
     try {
-        const response = await fetch("https://148.135.138.32/api/popups", {
+        const response = await fetch("http://148.135.138.32/api/popups", {
          method: "POST",
          headers: {
             "Content-Type": "application/json",
