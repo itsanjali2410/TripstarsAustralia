@@ -278,14 +278,14 @@ const Popup: React.FC = () => {
     
     const formSubmission = {
         ...formData,
-        travelDate: startDate.toISOString(), // ✅ Ensure correct date format
+        travelDate: startDate.toISOString(), // ✅ Ensure Date is formatted correctly
         pax,
     };
     
-    console.log("Submitting Data:", formSubmission); // ✅ Debug log
+    console.log("🟢 Sending Data to Backend:", JSON.stringify(formSubmission, null, 2));
     
     try {
-        const response = await fetch("http://148.135.138.32:5000/api/popups", {
+        const response = await fetch("https://148.135.138.32/api/popups", {
          method: "POST",
          headers: {
             "Content-Type": "application/json",
@@ -293,18 +293,23 @@ const Popup: React.FC = () => {
          body: JSON.stringify(formSubmission),
         });
     
+        console.log("🟡 Response Status:", response.status);
+        console.log("🟡 Response Headers:", response.headers);
+    
+        const data = await response.json();
+        console.log("🟢 Response Data:", data);
+    
         if (!response.ok) {
          throw new Error("Failed to submit form");
         }
     
-        const data = await response.json();
         alert("Form submitted successfully!");
         setIsVisible(false);
     } catch (error) {
-        console.error("Error:", error);
-        alert("Failed to submit form");
+        console.error("🔴 Error in Frontend:", error);
+        alert("Failed to submit form. Check console for details.");
     }
-    };  
+    };
 
   return (
     <PopupContainer id="popup-container" isVisible={isVisible} onClick={handleOutsideClick}>
