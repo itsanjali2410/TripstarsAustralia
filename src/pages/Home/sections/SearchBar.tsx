@@ -12,11 +12,17 @@ const SearchBarContainer = styled.div`
   background-color: #fff;
   border-radius: 50px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  @media (max-width: 600px) {
-    max-width: 87%;
+  @media (max-width: 768px) {
+    width: 100%;  /* Adjust width for tablets */
     height: 54px;
   }
+
+  @media (max-width: 480px) {
+    width: 100%;  /* Adjust for smaller phones */
+    height: 50px;
+  }
 `;
+
 
 const SearchIcon = styled.img`
   position: absolute;
@@ -25,6 +31,9 @@ const SearchIcon = styled.img`
   transform: translateY(-50%);
   width: 25px;
   height: 25px;
+  max-width: 25px;  /* Ensures it doesn't scale beyond this */
+  max-height: 25px; /* Prevents unintended stretching */
+
 `;
 
 const SearchInput = styled.input`
@@ -40,7 +49,12 @@ const SearchInput = styled.input`
     color: #999;
     text-align: center;
   }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem; /* Reduce font size for smaller screens */
+  }
 `;
+
 
 const SearchButton = styled.button`
   background: #EF6614;
@@ -70,10 +84,17 @@ const SearchButton = styled.button`
     transform: scale(0.98);
   }
 
+  @media (max-width: 768px) {
+    width: 100px; /* Make button smaller for tablets */
+    height: 50px;
+    font-size: 16px;
+  }
+
   @media (max-width: 600px) {
-    display: none;
+    display: none; /* Hide button on smaller screens */
   }
 `;
+
 
 const SearchBar = () => {
   const [showTrending, setShowTrending] = useState(false);
@@ -113,7 +134,8 @@ const SearchBar = () => {
         onChange={handleInputChange}
         onClick={() => setShowTrending(true)}
       />
-      <SearchButton>Search</SearchButton>
+      <SearchButton onClick={() => setShowTrending(true)}>Search</SearchButton>
+
 
       {/* Pass searchTerm as a prop */}
       {showTrending && <TrendingDestinations searchTerm={searchTerm} />}

@@ -36,6 +36,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h2`
+
   font-family: 'Dancing Script', cursive;
   font-size: 2.5rem;
   font-weight: bold;

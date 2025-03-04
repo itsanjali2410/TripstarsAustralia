@@ -141,8 +141,11 @@ export default function Navbar() {
   return (
     <NavbarContainer className={navBg ? "active" : ""}>
       <Logo>
-        <img src={logoImg} alt="" />
+        <a href="https://tripstarsholidays.com/" target="_blank" rel="noopener noreferrer">
+          <img src={logoImg} alt="TripStars Holidays" />
+        </a>
       </Logo>
+
       <NavLinksContainer className={active ? "active_menu" : ""}>
         <li className="close_icon" onClick={toggleMenu}>
           <svg
