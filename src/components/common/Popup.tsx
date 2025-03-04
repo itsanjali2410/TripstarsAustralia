@@ -4,7 +4,7 @@ import { FaCheckCircle, FaTimes } from "react-icons/fa";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import logo1 from "../../assets/popup/Customers.png";
-import logo2 from "../../assets/popup/Awardwinners.png";
+import logo2 from "../../assets/popup/Awardwinners .png";
 import logo3 from "../../assets/popup/Customerservice.png";
 import logoImg from "../../assets/images/logo/logo.png";
 
