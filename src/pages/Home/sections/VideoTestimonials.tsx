@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import bgImage from "../../../assets/images/backgrounds/Videotestimonials-bg.png";
-import Video1 from "../../../assets/Videos/Testimonial gif/1.gif";
-import Video2 from "../../../assets/Videos/Testimonial gif/2.gif";
-import Video3 from "../../../assets/Videos/Testimonial gif/3.gif";
-import Video4 from "../../../assets/Videos/Testimonial gif/4.gif";
-import Video5 from "../../../assets/Videos/Testimonial gif/5.gif";
-import Video6 from "../../../assets/Videos/Testimonial gif/6.gif";
+import Video1 from "../../../assets/Videos/Testimonial gif/2.gif";
+import Video2 from "../../../assets/Videos/Testimonial gif/3.gif";
+import Video3 from "../../../assets/Videos/Testimonial gif/4.gif";
+import Video4 from "../../../assets/Videos/Testimonial gif/5.gif";
+import Video5 from "../../../assets/Videos/Testimonial gif/6.gif";
+import Video6 from "../../../assets/Videos/Testimonial gif/1.gif";
 import Video7 from "../../../assets/Videos/Testimonial gif/7.gif";
 
 const Container = styled.div`
@@ -64,14 +64,14 @@ const Title = styled.h2`
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: #000;
+  color: #fff;
   font-family: "Cursive", sans-serif;
 `;
 
 const Subtitle = styled.p`
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
-  
+  color: #fff;
 `;
 
 const Reviews = styled.div`
