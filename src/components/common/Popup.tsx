@@ -268,11 +268,37 @@ const Popup: React.FC = () => {
     setPax((prev) => (increment ? prev + 1 : prev - 1));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData, startDate, pax);
-  };
-
+    
+    const formSubmission = {
+        ...formData,
+        travelDate: startDate,
+        pax,
+    };
+    
+    try {
+        const response = await fetch("http://your-vps-ip:5000/api/popups", {
+         method: "POST",
+         headers: {
+            "Content-Type": "application/json",
+         },
+         body: JSON.stringify(formSubmission),
+        });
+    
+        if (!response.ok) {
+         throw new Error("Failed to submit form");
+        }
+    
+        const data = await response.json();
+        alert("Form submitted successfully!");
+        setIsVisible(false);
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Failed to submit form");
+    }
+    };
+    
   return (
     <PopupContainer id="popup-container" isVisible={isVisible} onClick={handleOutsideClick}>
       <PopupContent>
