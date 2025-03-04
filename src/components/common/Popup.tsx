@@ -278,9 +278,11 @@ const Popup: React.FC = () => {
     
     const formSubmission = {
         ...formData,
-        travelDate: startDate.toISOString(), // ✅ Fix: Ensures correct date format
+        travelDate: startDate.toISOString(), // ✅ Ensure correct date format
         pax,
     };
+    
+    console.log("Submitting Data:", formSubmission); // ✅ Debug log
     
     try {
         const response = await fetch("http://148.135.138.32:5000/api/popups", {
