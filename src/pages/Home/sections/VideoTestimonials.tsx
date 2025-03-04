@@ -71,7 +71,7 @@ const Title = styled.h2`
 const Subtitle = styled.p`
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
-  color: #fff;
+  color: white !important; 
 `;
 
 const Reviews = styled.div`
@@ -166,7 +166,8 @@ export default function VideoTestimonials() {
                       <img src={item.videoUrl} alt={item.title} />
                     </ImageWrapper>
                   </a>
-                  <p>{item.title}</p>
+                  <p style={{ color: "white" }}>{item.title}</p>
+
                 </Card>
               </SwiperSlide>
             ))}
