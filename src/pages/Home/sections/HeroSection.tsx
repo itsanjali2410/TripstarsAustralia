@@ -83,7 +83,7 @@ const SearchBarWrapper = styled.div`
 
 // Adjusted HeroText (if text looks too big)
 const HeroText = styled.h1`
-  font-size: 5rem;
+  font-size: 2rem;
   color: #fff;
   margin-bottom: 20px;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
@@ -179,9 +179,12 @@ const HeroSection: React.FC = () => {
 "https://media.easemytrip.com/media/Deal/DL638676942969235947/SightSeeing/SightSeeing3JmQ7i.jpg",
 "https://media.easemytrip.com/media/Deal/DL638557908991826204/SightSeeing/SightSeeing3L1E8U.jpg",
 "https://media.easemytrip.com/media/Deal/DL638739122186568950/SightSeeing/SightSeeingFil0Os.png",
-"https://media1.thrillophilia.com/filestore/raf6suoqxtabzfuyrnc1o0bmoocm_shutterstock_2324082951.jpg?w=1920&dpr=1"
-
-
+"https://media1.thrillophilia.com/filestore/raf6suoqxtabzfuyrnc1o0bmoocm_shutterstock_2324082951.jpg?w=1920&dpr=1",
+"https://media1.thrillophilia.com/filestore/raf6suoqxtabzfuyrnc1o0bmoocm_shutterstock_2324082951.jpg?w=1920&dpr=1",
+"https://media1.thrillophilia.com/filestore/ilsyhdcg5pd6ixq3x1mz4o5gozj8_Global%20Village%202.jpg?w=1080&h=auto&dpr=2",
+"https://assets.telegraphindia.com/telegraph/bdddc173-91a9-4b82-a7e5-001eb685faa0.jpg",
+"https://media1.thrillophilia.com/filestore/um5b73yngoa8yifbc5c3zrqp3b85_shutterstock_1347511184.jpg?w=580&dpr=2",
+"https://media1.thrillophilia.com/filestore/s79igecqqqayutcn39jh9b1unbvq_shutterstock_711535798.jpg?w=580&dpr=2",
 
 
 
@@ -209,7 +212,6 @@ const HeroSection: React.FC = () => {
 "https://media1.thrillophilia.com/filestore/lwnmyjtny42stcmk2iw237a1oe4r_shutterstock_2385561217.jpg?w=1920&dpr=1",
 "https://media1.thrillophilia.com/filestore/pfkfv6qfobdvdyi4ry5jvqetvbtd_576434519-shutterstock_2360921289.jpg",
 "https://media1.thrillophilia.com/filestore/ngxbozm452mtzlm7g0lu9fqiiv3u_576435387-shutterstock_2359094599.jpg?w=1440&dpr=2",
-"https://media.easemytrip.com/media/Deal/DL638739413742963032/SightSeeing/SightSeeingiP4fqc.png",
 "https://media.easemytrip.com/media/Deal/DL638735946501335115/SightSeeing/SightSeeing459dzv.png",
 "https://media.easemytrip.com/media/Deal/DL638676942969235947/SightSeeing/SightSeeing3JmQ7i.jpg",
 "https://media.easemytrip.com/media/Deal/DL638557908991826204/SightSeeing/SightSeeing3L1E8U.jpg",
@@ -254,7 +256,7 @@ const HeroSection: React.FC = () => {
       {/* Overlay text and SearchBar */}
       <SearchBarWrapper>
         <HeroText>Find Your Dream Destination</HeroText>
-        {/* <SearchBar /> */}
+        <SearchBar />
       </SearchBarWrapper>
 
       <RatingBar />
