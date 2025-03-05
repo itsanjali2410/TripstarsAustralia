@@ -185,79 +185,78 @@ const Icon = styled.span<{ backgroundImage: string }>`
 
 const cards = [
   {
-    title: 'Vietnam',
+    title: "Vietnam",
     image: VietnamImage,
-    pricing: '₹99,999/- Onwards',
+    pricing: "₹99,999/- Onwards",
     info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
-      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'with Flight' },
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "with Flight" },
     ],
   },
   {
-    title: 'Turkey',
-    image: TurkeyImage,
-    pricing: '₹32,999/- Onwards',
-    info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
-      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'with Flight' },
-    ],
-  },
-  {
-    title: 'Thailand',
-    image: ThailandImage,
-    pricing: '₹38,999/- Onwards',
-    info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '4N/5D' },
-      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'with Flight' },
-    ],
-  },
-  {
-    title: 'Mauritius',
-    image: MauritiusImage,
-    pricing: '₹89,999/- Onwards',
-    info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
-      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'with Flight' },
-    ],
-  },
-  {
-    title: 'Maldives',
-    image: MaldivesImage,
-    pricing: '₹99,999/- Onwards',
-    info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '3N/4D' },
-      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'with Flight' },
-    ],
-  },
-  {
-    title: 'Europe',
-    image: EuropeImage,
-    pricing: '₹2,75,000/- Onwards',
-    info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '9N/10D' },
-      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'with Flight' },
-    ],
-  },
-  {
-    title: 'Dubai',
-    image: DubaiImage,
-    pricing: '₹87,999/- Onwards',
-    info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
-      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'with Flight' },
-    ],
-  },
-  {
-    title: 'Bali',
+    title: "Bali",
     image: BaliImage,
-    pricing: '₹74,999/- Onwards',
+    pricing: "₹74,999/- Onwards",
     info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
-      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'with Flight' },
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "with Flight" },
+    ],
+  },
+  {
+    title: "Thailand",
+    image: ThailandImage,
+    pricing: "₹38,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "with Flight" },
+    ],
+  },
+  {
+    title: "Turkey",
+    image: TurkeyImage,
+    pricing: "₹1,39,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "with Flight" },
+    ],
+  },
+  {
+    title: "Mauritius",
+    image: MauritiusImage,
+    pricing: "₹89,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "with Flight" },
+    ],
+  },
+  {
+    title: "Maldives",
+    image: MaldivesImage,
+    pricing: "₹99,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "with Flight" },
+    ],
+  },
+  {
+    title: "Europe",
+    image: EuropeImage,
+    pricing: "₹2,75,000/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "9N/10D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "with Flight" },
+    ],
+  },
+  {
+    title: "Dubai",
+    image: DubaiImage,
+    pricing: "₹87,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "with Flight" },
     ],
   },
 ];
-
 
 
 interface TrendingOffersProps {

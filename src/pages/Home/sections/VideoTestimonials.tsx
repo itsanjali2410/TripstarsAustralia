@@ -11,7 +11,7 @@ import Video6 from "../../../assets/Videos/Testimonial gif/1.gif";
 import Video7 from "../../../assets/Videos/Testimonial gif/7.gif";
 
 const Container = styled.div`
-  padding: 3rem 10rem;
+  padding: 3rem 5rem;
   margin-top:50px;
   background-image: url(${bgImage});
   background-size: cover;
@@ -33,9 +33,8 @@ const Container = styled.div`
 
 const ContentWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   width: 100%;
-  gap: 2rem;
+
 
   @media (max-width: 1080px) {
     flex-direction: column;
@@ -44,7 +43,7 @@ const ContentWrapper = styled.div`
 `;
 
 const LeftContent = styled.div`
-  width: 30%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,23 +54,29 @@ const LeftContent = styled.div`
     align-items: center;
     text-align: center;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 375px) {
     width: 100%;
   }
 `;
 
 const Title = styled.h2`
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 1rem;
   color: #fff;
-  font-family: "Cursive", sans-serif;
+  font-family: "Cursive", !important;
+  @media (max-width: 768px) {
+    width: 100%;
+    font-size:1.7rem;
+  }
 `;
 
 const Subtitle = styled.p`
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  font-size: 1rem;
   color: white !important; 
+  @media (max-width: 768px) {
+    width: 100%;
+    font-size:0.9rem;
+  }
 `;
 
 const Reviews = styled.div`
@@ -118,12 +123,12 @@ const ImageWrapper = styled.div`
 `;
 
 const testimonials = [
-  { videoUrl: Video1, title: "Aishwarya's Dubai Vacation" },
+  { videoUrl: Video1, title: "Roma's Bali Vacation" },
   { videoUrl: Video2, title: "Malaika's Dubai Vacation" },
   { videoUrl: Video3, title: "Vidyu Lekha's Vietnam Vacation" },
-  { videoUrl: Video4, title: "Sakthi Mohan's Sri Lanka Vacation" },
-  { videoUrl: Video5, title: "Testimonial 5" },
-  { videoUrl: Video6, title: "Testimonial 6" },
+  { videoUrl: Video4, title: "Binieka's Dubai Vacation" },
+  { videoUrl: Video5, title: "Sandip's Dubai Vacation" },
+  { videoUrl: Video6, title: "Mayur's Australia Vacation" },
   { videoUrl: Video7, title: "Testimonial 7" },
 ];
 

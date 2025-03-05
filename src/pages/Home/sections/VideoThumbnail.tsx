@@ -168,7 +168,6 @@ const VideoThumbnail = () => {
           modules={[Pagination, Autoplay]}
           spaceBetween={20}
           slidesPerView={1} // Default for mobile
-          autoplay={{ delay: 5000 }}
           pagination={false} // Removed the dots
           breakpoints={{
             768: { slidesPerView: 3 }, // Show 3 videos per row on desktop

@@ -5,15 +5,15 @@ import { useNavigate } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 
 // Import your images
-import Australia from "../../../assets/PopularDestination/Australia.webp";
-import Bali from "../../../assets/PopularDestination/Bali.webp";
 import Dubai from "../../../assets/PopularDestination/Dubai.webp";
-import Europe from "../../../assets/PopularDestination/Europe.webp";
-import HongKong from "../../../assets/PopularDestination/Hong kong.webp";
-import Malaysia from "../../../assets/PopularDestination/Malaysia.webp";
 import Thailand from "../../../assets/PopularDestination/Thailand.webp";
-import Vietnam from "../../../assets/PopularDestination/Vietnam.webp";
 import Singapore from "../../../assets/PopularDestination/Singapore.webp";
+import Malaysia from "../../../assets/PopularDestination/Malaysia.webp";
+import Bali from "../../../assets/PopularDestination/Bali.webp";
+import HongKong from "../../../assets/PopularDestination/Hong kong.webp";
+import Europe from "../../../assets/PopularDestination/Europe.webp";
+import Vietnam from "../../../assets/PopularDestination/Vietnam.webp";
+import Australia from "../../../assets/PopularDestination/Australia.webp";
 
 // Styled components
 const Container = styled.div`
@@ -113,15 +113,15 @@ type Destination = {
 
 // Destination data
 const popularDestinationsData: Destination[] = [
-  { name: "Malaysia", imgUrl: Malaysia },
+  { name: "Dubai", imgUrl: Dubai },
   { name: "Thailand", imgUrl: Thailand },
+  { name: "Singapore", imgUrl: Singapore },
+  { name: "Malaysia", imgUrl: Malaysia },
+  { name: "Bali", imgUrl: Bali },
+  { name: "Hong Kong", imgUrl: HongKong },
+  { name: "Europe", imgUrl: Europe },
   { name: "Vietnam", imgUrl: Vietnam },
   { name: "Australia", imgUrl: Australia },
-  { name: "Bali", imgUrl: Bali },
-  { name: "Dubai", imgUrl: Dubai },
-  { name: "Europe", imgUrl: Europe },
-  { name: "HongKong", imgUrl: HongKong },
-  { name: "Singapore", imgUrl: Singapore },
 ];
 
 export default function PopularDestinations() {

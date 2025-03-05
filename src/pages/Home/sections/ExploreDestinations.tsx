@@ -165,7 +165,7 @@ const cards = [
   {
     image: TurkeyImage,
     location: "Turkey",
-    price: "₹ 2,09,999/-",
+    price: "₹ 1,39,999/-",
     url: "/turkey",
   },
   {

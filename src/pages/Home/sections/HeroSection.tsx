@@ -83,7 +83,7 @@ const SearchBarWrapper = styled.div`
 
 // Adjusted HeroText (if text looks too big)
 const HeroText = styled.h1`
-  font-size: 2rem;
+  font-size: 5rem;
   color: #fff;
   margin-bottom: 20px;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
@@ -191,7 +191,7 @@ const HeroSection: React.FC = () => {
       {/* Overlay text and SearchBar */}
       <SearchBarWrapper>
         <HeroText>Find Your Dream Destination</HeroText>
-        <SearchBar />
+        {/* <SearchBar /> */}
       </SearchBarWrapper>
 
       <RatingBar />
