@@ -151,36 +151,73 @@ const RatingItem = styled.div`
 
 const HeroSection: React.FC = () => {
   // Updated desktop images with the new URLs (larger images for desktop)
+  // const desktopImages = [
+  //   "https://media1.thrillophilia.com/filestore/pfkfv6qfobdvdyi4ry5jvqetvbtd_576434519-shutterstock_2360921289.jpg", // Larger image
+  //   "https://media1.thrillophilia.com/filestore/ltvaqcm5l2s9xzgueqme71bk922h_shutterstock_2131706207.jpg?w=340&dpr=2", // Medium image
+  //   "https://media.easemytrip.com/media/Deal/DL638739122186568950/SightSeeing/SightSeeingFil0Os.png", // Medium image
+  //   "https://media.easemytrip.com/media/Deal/DL638557908991826204/SightSeeing/SightSeeing3L1E8U.jpg", // Medium image
+  //   "https://media1.thrillophilia.com/filestore/raf6suoqxtabzfuyrnc1o0bmoocm_shutterstock_2324082951.jpg?w=1920&dpr=1", // Large image
+  //   "https://media.easemytrip.com/media/Deal/DL638676942969235947/SightSeeing/SightSeeing3JmQ7i.jpg", // Medium image
+  //   "https://media1.thrillophilia.com/filestore/lwnmyjtny42stcmk2iw237a1oe4r_shutterstock_2385561217.jpg?w=1920&dpr=1", // Large image
+  //   "https://media1.thrillophilia.com/filestore/az36j4igu7ptnvvz6ezrxx2oqzd1_shutterstock_2068557497.jpg?w=1440&dpr=2", // Large image
+  //   "https://media1.thrillophilia.com/filestore/2wjxo4jwhi79km0hmiz0hmo1vn5a_shutterstock_155068436.jpg?w=1440&dpr=2", // Large image
+  //   "https://images.wanderon.in/gallery/new/2025/01/20/golden-hands-bridge.avif" // New large desktop image
+  // ];
   const desktopImages = [
-    "https://media1.thrillophilia.com/filestore/pfkfv6qfobdvdyi4ry5jvqetvbtd_576434519-shutterstock_2360921289.jpg", // Larger image
-    "https://media1.thrillophilia.com/filestore/ltvaqcm5l2s9xzgueqme71bk922h_shutterstock_2131706207.jpg?w=340&dpr=2", // Medium image
-    "https://media.easemytrip.com/media/Deal/DL638739122186568950/SightSeeing/SightSeeingFil0Os.png", // Medium image
-    "https://media.easemytrip.com/media/Deal/DL638557908991826204/SightSeeing/SightSeeing3L1E8U.jpg", // Medium image
-    "https://media1.thrillophilia.com/filestore/raf6suoqxtabzfuyrnc1o0bmoocm_shutterstock_2324082951.jpg?w=1920&dpr=1", // Large image
-    "https://media.easemytrip.com/media/Deal/DL638676942969235947/SightSeeing/SightSeeing3JmQ7i.jpg", // Medium image
-    "https://media1.thrillophilia.com/filestore/lwnmyjtny42stcmk2iw237a1oe4r_shutterstock_2385561217.jpg?w=1920&dpr=1", // Large image
-    "https://media1.thrillophilia.com/filestore/az36j4igu7ptnvvz6ezrxx2oqzd1_shutterstock_2068557497.jpg?w=1440&dpr=2", // Large image
-    "https://media1.thrillophilia.com/filestore/2wjxo4jwhi79km0hmiz0hmo1vn5a_shutterstock_155068436.jpg?w=1440&dpr=2", // Large image
-    "https://images.wanderon.in/gallery/new/2025/01/20/golden-hands-bridge.avif" // New large desktop image
-  ];
+"https://images.wanderon.in/gallery/new/2025/01/20/hoi-an.png",
+"https://media1.thrillophilia.com/filestore/az36j4igu7ptnvvz6ezrxx2oqzd1_shutterstock_2068557497.jpg?w=1440&dpr=2",
+"https://images.wanderon.in/gallery/new/2025/01/20/golden-hands-bridge.avif",
+"https://images.wanderon.in/gallery/new/2025/01/20/hoi-an.png",
+"https://images.wanderon.in/gallery/new/2025/01/20/ba-na-hills.avif",
+"https://media1.thrillophilia.com/filestore/az36j4igu7ptnvvz6ezrxx2oqzd1_shutterstock_2068557497.jpg?w=1440&dpr=2",
+"https://media1.thrillophilia.com/filestore/2wjxo4jwhi79km0hmiz0hmo1vn5a_shutterstock_155068436.jpg?w=1440&dpr=2",
+"https://media1.thrillophilia.com/filestore/lwnmyjtny42stcmk2iw237a1oe4r_shutterstock_2385561217.jpg?w=1920&dpr=1",
+"https://media1.thrillophilia.com/filestore/pfkfv6qfobdvdyi4ry5jvqetvbtd_576434519-shutterstock_2360921289.jpg",
+"https://media1.thrillophilia.com/filestore/ngxbozm452mtzlm7g0lu9fqiiv3u_576435387-shutterstock_2359094599.jpg?w=1440&dpr=2",
+"https://media.easemytrip.com/media/Deal/DL638739413742963032/SightSeeing/SightSeeingiP4fqc.png",
+"https://media.easemytrip.com/media/Deal/DL638735946501335115/SightSeeing/SightSeeing459dzv.png",
+"https://media.easemytrip.com/media/Deal/DL638676942969235947/SightSeeing/SightSeeing3JmQ7i.jpg",
+"https://media.easemytrip.com/media/Deal/DL638557908991826204/SightSeeing/SightSeeing3L1E8U.jpg",
+"https://media.easemytrip.com/media/Deal/DL638739122186568950/SightSeeing/SightSeeingFil0Os.png",
+"https://media1.thrillophilia.com/filestore/raf6suoqxtabzfuyrnc1o0bmoocm_shutterstock_2324082951.jpg?w=1920&dpr=1"
 
+
+
+
+
+
+
+
+
+
+  ];
   // Updated mobile images with the new URLs (smaller images for mobile)
   const mobileImages = [
-    "https://media1.thrillophilia.com/filestore/pfkfv6qfobdvdyi4ry5jvqetvbtd_576434519-shutterstock_2360921289.jpg", // Larger image, but good for mobile
-    "https://media1.thrillophilia.com/filestore/ltvaqcm5l2s9xzgueqme71bk922h_shutterstock_2131706207.jpg?w=340&dpr=2", // Medium image
-    "https://media.easemytrip.com/media/Deal/DL638739122186568950/SightSeeing/SightSeeingFil0Os.png", // Medium image
-    "https://media.easemytrip.com/media/Deal/DL638557908991826204/SightSeeing/SightSeeing3L1E8U.jpg", // Medium image
-    "https://media1.thrillophilia.com/filestore/raf6suoqxtabzfuyrnc1o0bmoocm_shutterstock_2324082951.jpg?w=1920&dpr=1", // Larger image
-    "https://media.easemytrip.com/media/Deal/DL638676942969235947/SightSeeing/SightSeeing3JmQ7i.jpg", // Medium image
-    "https://media1.thrillophilia.com/filestore/lwnmyjtny42stcmk2iw237a1oe4r_shutterstock_2385561217.jpg?w=1920&dpr=1", // Larger image
-    "https://media1.thrillophilia.com/filestore/az36j4igu7ptnvvz6ezrxx2oqzd1_shutterstock_2068557497.jpg?w=1440&dpr=2", // Large image, good for mobile
-    "https://media1.thrillophilia.com/filestore/2wjxo4jwhi79km0hmiz0hmo1vn5a_shutterstock_155068436.jpg?w=1440&dpr=2", // Large image
-    "https://media1.thrillophilia.com/filestore/j9vu3zxlc4vlp7uc4ugm2ao6yt4j_dhowboat.jpg?w=240&dpr=2", // Small mobile image
-    "https://media1.thrillophilia.com/filestore/gnwumrnh0t3r4uinkisyyxfmgl1p_shutterstock_2338075347.jpg?w=340&dpr=2", // Smaller mobile image
-    "https://media1.thrillophilia.com/filestore/ngxbozm452mtzlm7g0lu9fqiiv3u_576435387-shutterstock_2359094599.jpg?w=1440&dpr=2", // Larger image
-    "https://media1.thrillophilia.com/filestore/50lnyp1577qlyziezocuk370rlmk_shutterstock_2335189457.jpg?w=340&dpr=2", // Medium image
-    "https://media.easemytrip.com/media/Deal/DL638735946501335115/SightSeeing/SightSeeing459dzv.png", // Medium image
-    "https://images.wanderon.in/gallery/new/2024/12/16/vietnam-honeymoon-tour-package-with-flights-5n-6d-new.avif" // New mobile image
+"https://media1.thrillophilia.com/filestore/50lnyp1577qlyziezocuk370rlmk_shutterstock_2335189457.jpg?w=340&dpr=2",
+"https://media1.thrillophilia.com/filestore/gnwumrnh0t3r4uinkisyyxfmgl1p_shutterstock_2338075347.jpg?w=340&dpr=2",
+"https://media1.thrillophilia.com/filestore/kjjvfwu34jmy50bsh54g7pr6iy3a_u0cc95tjq56da7m8xzccxrscbhpw_shutterstock_735735871.jpg?w=340&dpr=2",
+"https://media1.thrillophilia.com/filestore/ltvaqcm5l2s9xzgueqme71bk922h_shutterstock_2131706207.jpg?w=340&dpr=2",
+"https://images.wanderon.in/gallery/new/2024/12/16/vietnam-honeymoon-tour-package-with-flights-5n-6d-new.avif",
+
+"https://images.wanderon.in/gallery/new/2025/01/20/hoi-an.png",
+"https://media1.thrillophilia.com/filestore/az36j4igu7ptnvvz6ezrxx2oqzd1_shutterstock_2068557497.jpg?w=1440&dpr=2",
+"https://images.wanderon.in/gallery/new/2025/01/20/golden-hands-bridge.avif",
+"https://images.wanderon.in/gallery/new/2025/01/20/hoi-an.png",
+"https://images.wanderon.in/gallery/new/2025/01/20/ba-na-hills.avif",
+"https://media1.thrillophilia.com/filestore/az36j4igu7ptnvvz6ezrxx2oqzd1_shutterstock_2068557497.jpg?w=1440&dpr=2",
+"https://media1.thrillophilia.com/filestore/2wjxo4jwhi79km0hmiz0hmo1vn5a_shutterstock_155068436.jpg?w=1440&dpr=2",
+"https://media1.thrillophilia.com/filestore/lwnmyjtny42stcmk2iw237a1oe4r_shutterstock_2385561217.jpg?w=1920&dpr=1",
+"https://media1.thrillophilia.com/filestore/pfkfv6qfobdvdyi4ry5jvqetvbtd_576434519-shutterstock_2360921289.jpg",
+"https://media1.thrillophilia.com/filestore/ngxbozm452mtzlm7g0lu9fqiiv3u_576435387-shutterstock_2359094599.jpg?w=1440&dpr=2",
+"https://media.easemytrip.com/media/Deal/DL638739413742963032/SightSeeing/SightSeeingiP4fqc.png",
+"https://media.easemytrip.com/media/Deal/DL638735946501335115/SightSeeing/SightSeeing459dzv.png",
+"https://media.easemytrip.com/media/Deal/DL638676942969235947/SightSeeing/SightSeeing3JmQ7i.jpg",
+"https://media.easemytrip.com/media/Deal/DL638557908991826204/SightSeeing/SightSeeing3L1E8U.jpg",
+"https://media.easemytrip.com/media/Deal/DL638739122186568950/SightSeeing/SightSeeingFil0Os.png",
+"https://media1.thrillophilia.com/filestore/raf6suoqxtabzfuyrnc1o0bmoocm_shutterstock_2324082951.jpg?w=1920&dpr=1"
+
+
+
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
