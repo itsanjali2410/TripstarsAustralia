@@ -152,10 +152,25 @@ const RatingItem = styled.div`
 
 
 // HeroSection Component
+// HeroSection Component
 const HeroSection: React.FC = () => {
-  // Default desktop images and mobile images
-  const desktopImages = [australia, europe, hongKong, vietnam];
-  const mobileImages = [australiaMobile, baliMobile, europeMobile, vietnamMobile];
+  // Updated desktop images with the new URLs
+  const desktopImages = [
+    "https://media.easemytrip.com/media/Deal/DL638739122186568950/SightSeeing/SightSeeingFil0Os.png",
+    "https://media1.thrillophilia.com/filestore/ltvaqcm5l2s9xzgueqme71bk922h_shutterstock_2131706207.jpg?w=340&dpr=2",
+    "https://media1.thrillophilia.com/filestore/pfkfv6qfobdvdyi4ry5jvqetvbtd_576434519-shutterstock_2360921289.jpg"
+  ];
+
+  // Updated mobile images with the new URLs
+  const mobileImages = [
+    australiaMobile, 
+    baliMobile, 
+    europeMobile, 
+    vietnamMobile,
+    "https://media1.thrillophilia.com/filestore/j9vu3zxlc4vlp7uc4ugm2ao6yt4j_dhowboat.jpg?w=240&dpr=2", // Existing new mobile image
+    "https://media1.thrillophilia.com/filestore/gnwumrnh0t3r4uinkisyyxfmgl1p_shutterstock_2338075347.jpg?w=340&dpr=2", // New mobile image
+    "https://media1.thrillophilia.com/filestore/ngxbozm452mtzlm7g0lu9fqiiv3u_576435387-shutterstock_2359094599.jpg?w=1440&dpr=2" // New mobile image
+  ];
   
   const [currentIndex, setCurrentIndex] = useState(0);
   
