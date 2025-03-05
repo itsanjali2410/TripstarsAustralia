@@ -201,7 +201,7 @@ const cards = [
     {
       title: 'Goa',
       image: goa,  // ✅ Correct imported image
-      pricing: '₹18,999/- Onwards',
+      pricing: '₹19,999/- Onwards',
       info: [
         { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '4N/5D' },
         { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },

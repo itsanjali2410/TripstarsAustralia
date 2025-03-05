@@ -10,7 +10,6 @@ import image4 from "../../../assets/advertisebanner/banner-4.webp";
 import image5 from "../../../assets/advertisebanner/banner-5.webp";
 
 const SliderContainer = styled.div`
-
   position: relative;
   overflow: hidden;
   width: 70%;
