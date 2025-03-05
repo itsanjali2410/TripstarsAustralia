@@ -1,225 +1,265 @@
-
-
-
-import React, { useState } from "react";
 import styled from "styled-components";
-import { FaTimes, FaPlane, FaFacebook, FaPinterest, FaInstagram, FaLinkedin, FaYoutube, FaTwitter } from "react-icons/fa";
-import { FiMenu } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import logoImg from "../../assets/images/logo/logo.png";
+import { useEffect, useState } from "react";
 
-// Styled Components
 const NavbarContainer = styled.nav`
   position: fixed;
-  top: 0;
   width: 100%;
-  background: #0a485f;
-  color: white;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 15px 50px;
-  z-index: 1000;
-
+  padding: 1rem 2rem;
+  z-index: 9999;
+  background: #071A29;
+  opacity: 0.9;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  &.active {
+    background-color: #000;
+    padding: 1rem 2rem;
+  }
+  @media (max-width: 1080px) {
+    &.active {
+      padding: 1rem 2rem;
+    }
+  }
   @media (max-width: 768px) {
-    padding: 10px 20px;
+    height: 71px;
   }
 `;
 
 const Logo = styled.div`
-  font-size: 24px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-`;
-
-const MenuIcon = styled(FiMenu)`
-  font-size: 28px;
-  cursor: pointer;
-  display: none;
-
+  width: 25%;
   @media (max-width: 768px) {
-    display: block;
-  }
-`;
-
-const CloseIcon = styled(FaTimes)`
-  font-size: 24px;
-  cursor: pointer;
-  float: right;
-`;
-
-const NavLinks = styled.ul`
-  display: flex;
-  list-style: none;
-  gap: 30px;
-
-  @media (max-width: 768px) {
-    display: none; /* Hide desktop menu on mobile */
-  }
-`;
-
-const NavItem = styled.li`
-  position: relative;
-  cursor: pointer;
-  font-size: 18px;
-
-  &:hover > ul {
-    display: block;
-  }
-`;
-
-const DropdownMenu = styled.ul`
-  display: none;
-  position: absolute;
-  top: 25px;
-  left: 0;
-  background: white;
-  color: black;
-  list-style: none;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  min-width: 150px;
-
-  li {
-    padding: 8px 12px;
-    cursor: pointer;
-
-    &:hover {
-      background: #f0f0f0;
+    width: 25%;
+    img {
+      width: 5rem;
     }
   }
 `;
 
-const Badge = styled.span`
-  background: #ffdfdf;
-  padding: 3px 6px;
-  border-radius: 5px;
-  font-size: 12px;
-  color: black;
-  margin-left: 5px;
-`;
-
-// Sidebar for Mobile
-const SidebarOverlay = styled.div<{ isOpen: boolean }>`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  display: ${(props) => (props.isOpen ? "block" : "none")};
-`;
-
-const Sidebar = styled.div<{ isOpen: boolean }>`
-  position: fixed;
-  top: 0;
-  left: ${(props) => (props.isOpen ? "0" : "-80%")};
-  width: 80%;
-  height: 100%;
-  background: white;
-  transition: left 0.3s ease-in-out;
-  box-shadow: ${(props) => (props.isOpen ? "2px 0px 10px rgba(0, 0, 0, 0.2)" : "none")};
-  padding: 20px;
-  z-index: 1001;
-`;
-
-const MobileNavList = styled.ul`
-  list-style: none;
-  padding: 20px 0;
-`;
-
-const MobileNavItem = styled.li`
-  font-size: 18px;
-  padding: 12px 0;
-  cursor: pointer;
-`;
-
-const SocialIcons = styled.div`
+const NavLinksContainer = styled.div`
   display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
+  align-items: center;
+  justify-content: end;
+  width: 50%;
+  list-style: none;
+  li {
+    padding: 0 0.6rem;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    position: relative; /* Added for dropdown positioning */
+  }
+
+  @media (max-width: 768px) {
+    position: absolute;
+    background-color: #071A29;
+    width: 80vw;
+    height: 100svh;
+    top: 0;
+    right: 0;
+    display: block;
+    transform: translateX(80vw);
+    transition: all 0.4s ease-in-out;
+    &.active_menu {
+      transform: translateX(0px);
+    }
+    li {
+      padding: 1rem 1rem;
+      border-bottom: 1px solid #071A29;
+      a {
+        font-size: 0.9rem;
+      }
+    }
+    .close_icon {
+      display: flex;
+      justify-content: end;
+      svg {
+        width: 2rem;
+        path {
+          fill: #fff;
+        }
+      }
+      display: none;
+      @media (max-width: 768px) {
+        display: flex;
+      }
+    }
+  }
 `;
 
-const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+const Dropdown = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #071A29;
+  display: none;
+  z-index: 1;
+  width: 400px; /* Adjust width for both categories */
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between; /* Aligns the categories side by side */
+  }
+
+  li {
+    padding: 0.8rem;
+    a {
+      font-size: 0.9rem;
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  /* Show the dropdown on hover */
+  ${NavLinksContainer} li:hover & {
+    display: block;
+  }
+
+  /* Styles for the categories (Domestic and International) */
+  .category {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+  .category strong {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; /* Take full width on mobile */
+    padding: 15px;
+    ul {
+      flex-direction: column; /* Stack the categories vertically */
+      justify-content: flex-start; /* Align items at the top */
+    }
+    .category {
+      width: 100%; /* Full width for each category on mobile */
+      margin-bottom: 15px;
+    }
+    .category strong {
+      font-size: 1rem; /* Increase font size for better readability */
+    }
+  }
+`;
+
+const MenuBtn = styled.div`
+  svg {
+    width: 2rem;
+    fill: #fff;
+    style: none;
+  }
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
+export default function Navbar() {
+  const [navBg, setNavBg] = useState<boolean>(false);
+  const [active, setIsActive] = useState<boolean>(false);
+
+  const toggleMenu = () => {
+    setIsActive((prev) => !prev);
+  };
+
+  const changeNavBg = () => {
+    window.scrollY >= 300 ? setNavBg(true) : setNavBg(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeNavBg);
+  }, []);
 
   return (
-    <>
-      {/* Navbar (Shared for Desktop & Mobile) */}
-      <NavbarContainer>
-        <Logo>
-          TRIPZYGO <FaPlane />
-        </Logo>
+    <NavbarContainer className={navBg ? "active" : ""}>
+      <Logo>
+        <a href="https://tripstarsholidays.com/" target="_blank" rel="noopener noreferrer">
+          <img src={logoImg} alt="TripStars Holidays" />
+        </a>
+      </Logo>
 
-        {/* Desktop Nav */}
-        <NavLinks>
-          <NavItem>Home</NavItem>
+      <NavLinksContainer className={active ? "active_menu" : ""}>
+        <li className="close_icon" onClick={toggleMenu}>
+          <svg
+            stroke="currentColor"
+            fill="none"
+            link-style="none"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li className="dropdown">
+          <Link to="/">Destinations</Link>
+          <Dropdown>
+            <ul>
+              <li className="category">
+                <strong>Domestic</strong>
+                <Link to="/destinations/ladakh">Ladakh Trending</Link>
+                <Link to="/destinations/kerala">Kerala</Link>
+                <Link to="/destinations/kashmir">Kashmir</Link>
+                <Link to="/destinations/andaman">Andaman</Link>
+                <Link to="/destinations/rajasthan">Rajasthan</Link>
+              </li>
+              <li className="category">
+                <strong>International</strong>
+                <Link to="/destinations/europe">Europe</Link>
+                <Link to="/destinations/dubai">Dubai</Link>
+                <Link to="/destinations/bali">Bali</Link>
+                <Link to="/destinations/maldives">Maldives</Link>
+                <Link to="/destinations/vietnam">Vietnam</Link>
+                <Link to="/destinations/singapore">Singapore</Link>
+                <Link to="/destinations/malaysia">Malaysia</Link>
+                <Link to="/destinations/thailand">Thailand</Link>
+                <Link to="/destinations/mauritius">Mauritius</Link>
+              </li>
+            </ul>
+          </Dropdown>
+        </li>
+        <li>
+          <Link to="/">Holidays</Link>
+        </li>
+        <li>
+          <Link to="/">Themes</Link>
+        </li>
+        <li>
+          <Link to="/">Offers</Link>
+        </li>
+        <li>
+          <Link to="/">Contact</Link>
+        </li>
+      </NavLinksContainer>
 
-          <NavItem>
-            Destinations ▼
-            <DropdownMenu>
-              <li>Ladakh</li>
-              <li>Kerala</li>
-              <li>Kashmir</li>
-              <li>Dubai</li>
-              <li>Bali</li>
-            </DropdownMenu>
-          </NavItem>
-
-          <NavItem>
-            Themes ▼
-            <DropdownMenu>
-              <li>Adventure</li>
-              <li>Honeymoon</li>
-              <li>Nature</li>
-              <li>Beach</li>
-            </DropdownMenu>
-          </NavItem>
-          <NavItem>Fgfgfgfg</NavItem>
-
-          <NavItem>
-            Trip Planner <Badge>New</Badge>
-          </NavItem>
-
-          <NavItem>Contact Us</NavItem>
-        </NavLinks>
-
-        {/* Mobile Menu Icon */}
-        <MenuIcon onClick={() => setMenuOpen(true)} />
-      </NavbarContainer>
-
-      {/* Mobile Sidebar */}
-      <SidebarOverlay isOpen={menuOpen} onClick={() => setMenuOpen(false)} />
-      <Sidebar isOpen={menuOpen}>
-        <CloseIcon onClick={() => setMenuOpen(false)} />
-
-        <MobileNavList>
-          <MobileNavItem>Home</MobileNavItem>
-          <MobileNavItem>Destinations</MobileNavItem>
-          <MobileNavItem>Themes</MobileNavItem>
-          <MobileNavItem>Fgfgfgfg</MobileNavItem>
-          <MobileNavItem>
-            Trip Planner <Badge>New</Badge>
-          </MobileNavItem>
-          <MobileNavItem>Contact Us</MobileNavItem>
-        </MobileNavList>
-
-        {/* Social Icons */}
-        <h4 style={{ textAlign: "center", marginTop: "20px" }}>Follow us on</h4>
-        <SocialIcons>
-          <FaFacebook size={22} />
-          <FaPinterest size={22} />
-          <FaInstagram size={22} />
-          <FaLinkedin size={22} />
-          <FaYoutube size={22} />
-          <FaTwitter size={22} />
-        </SocialIcons>
-      </Sidebar>
-    </>
+      <MenuBtn onClick={toggleMenu}>
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M432 176H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 272H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 368H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16z"></path>
+        </svg>
+      </MenuBtn>
+    </NavbarContainer>
   );
-};
-
-export default Navbar;
+}

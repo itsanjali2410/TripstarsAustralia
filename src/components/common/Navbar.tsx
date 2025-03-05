@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
 import logoImg from "../../assets/images/logo/logo.png";
 import { useEffect, useState } from "react";
 
@@ -13,8 +12,8 @@ const NavbarContainer = styled.nav`
   z-index: 9999;
   background: #071A29;
   opacity: 0.9;
-  border-bottom-left-radius: 10px;   /* Adds radius to bottom left */
-  border-bottom-right-radius: 10px;  /* Adds radius to bottom right */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   &.active {
     background-color: #000;
     padding: 1rem 2rem;
@@ -25,14 +24,12 @@ const NavbarContainer = styled.nav`
     }
   }
   @media (max-width: 768px) {
-  height: 71px;
+    height: 71px;
   }
 `;
 
 const Logo = styled.div`
   width: 25%;
-  @media (max-width: 1080px) {
-  }
   @media (max-width: 768px) {
     width: 25%;
     img {
@@ -53,10 +50,10 @@ const NavLinksContainer = styled.div`
       color: #fff;
       text-decoration: none;
     }
+    position: relative; /* Added for dropdown positioning */
   }
 
-  @media (max-width: 1080px) {
-    /* display: none; */
+  @media (max-width: 768px) {
     position: absolute;
     background-color: #071A29;
     width: 80vw;
@@ -86,9 +83,72 @@ const NavLinksContainer = styled.div`
         }
       }
       display: none;
-      @media (max-width: 1080px) {
+      @media (max-width: 768px) {
         display: flex;
       }
+    }
+  }
+`;
+
+const Dropdown = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #071A29;
+  display: none;
+  z-index: 1;
+  width: 400px; /* Adjust width for both categories */
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between; /* Aligns the categories side by side */
+  }
+
+  li {
+    padding: 0.8rem;
+    a {
+      font-size: 0.9rem;
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  /* Show the dropdown on hover */
+  ${NavLinksContainer} li:hover & {
+    display: block;
+  }
+
+  /* Styles for the categories (Domestic and International) */
+  .category {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+  .category strong {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; /* Take full width on mobile */
+    padding: 15px;
+    ul {
+      flex-direction: column; /* Stack the categories vertically */
+      justify-content: flex-start; /* Align items at the top */
+    }
+    .category {
+      width: 100%; /* Full width for each category on mobile */
+      margin-bottom: 15px;
+    }
+    .category strong {
+      font-size: 1rem; /* Increase font size for better readability */
     }
   }
 `;
@@ -100,27 +160,10 @@ const MenuBtn = styled.div`
     style: none;
   }
   display: none;
-  @media (max-width: 1080px) {
+  @media (max-width: 768px) {
     display: block;
   }
 `;
-
-// const AuthButtonContainer = styled.div`
-//   width: 25%;
-//   display: flex;
-//   justify-content: flex-end;
-//   align-items: center;
-//   .login_btn {
-//     margin-right: 1.3rem;
-//     color: #fff;
-//   }
-//   .signup_btn {
-//     background-color: #000;
-//     color: #fff;
-//     padding: 0.7rem 1.2rem;
-//     border-radius: 0.5rem;
-//   }
-// `;
 
 export default function Navbar() {
   const [navBg, setNavBg] = useState<boolean>(false);
@@ -165,8 +208,35 @@ export default function Navbar() {
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li>
+        <li className="dropdown">
           <Link to="/">Destinations</Link>
+          <Dropdown>
+            <ul>
+              <li className="category">
+                <strong>Domestic</strong>
+                <Link to="https://tripstarsholidays.com/ladakh">Ladakh</Link>
+                <Link to="https://tripstarsholidays.com/kerala">Kerala</Link>
+                <Link to="https://tripstarsholidays.com/kashmir">Kashmir</Link>
+                <Link to="https://tripstarsholidays.com/andaman">Andaman</Link>
+                <Link to="https://tripstarsholidays.com/rajasthan">Rajasthan</Link>
+              </li>
+              <li className="category">
+                <strong>International</strong>
+                <Link to="https://tripstarsholidays.com/dubai">Dubai</Link>
+                <Link to="https://tripstarsholidays.com/thailand">Thailand</Link>
+                <Link to="https://tripstarsholidays.com/singapore">Singapore</Link>
+                <Link to="https://tripstarsholidays.com/malaysia">Malaysia</Link>
+                <Link to="https://tripstarsholidays.com/bali">Bali</Link>
+                <Link to="https://tripstarsholidays.com/hong-kong">Hong Kong</Link>
+                <Link to="https://tripstarsholidays.com/europe">Europe</Link>
+                <Link to="https://tripstarsholidays.com/vietnam">Vietnam</Link>
+                <Link to="https://tripstarsholidays.com/maldives">Maldives</Link>
+                <Link to="https://tripstarsholidays.com/australia">Australia</Link>
+                <Link to="https://tripstarsholidays.com/mauritius">Mauritius</Link>
+                <Link to="https://tripstarsholidays.com/japan">Japan</Link>
+              </li>
+            </ul>
+          </Dropdown>
         </li>
         <li>
           <Link to="/">Holidays</Link>
@@ -193,10 +263,6 @@ export default function Navbar() {
           <path d="M432 176H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 272H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 368H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16z"></path>
         </svg>
       </MenuBtn>
-      {/* <AuthButtonContainer>
-        <div className="login_btn">Log in</div>
-        <div className="signup_btn">Sign Up</div>
-      </AuthButtonContainer> */}
     </NavbarContainer>
   );
 }
