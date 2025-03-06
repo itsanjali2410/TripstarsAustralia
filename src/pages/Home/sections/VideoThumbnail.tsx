@@ -41,7 +41,6 @@ const Title = styled.h2`
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 1.5rem;
   color:rgb(92, 20, 11);
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 

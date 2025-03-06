@@ -43,7 +43,7 @@ const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto; /* ✅ Centers the image */
+  margin: 0px auto; /* ✅ Centers the image */
 
 
   img {
@@ -64,7 +64,7 @@ const ImageWrapper = styled.div`
 `;
 
 const SectionTitle = styled.div`
-  padding-top: 2rem;
+  padding-top: 3rem;
   padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
@@ -84,6 +84,7 @@ const SectionTitle = styled.div`
 
 const TitleHeading = styled.h2`
   font-size: 1.5rem;
+  padding-top: 1.5rem;
   font-weight: 600;
   text-transform: uppercase;
   @media (max-width: 1080px) {

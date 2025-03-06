@@ -147,15 +147,14 @@ import southafricaImg3 from "../../assets/Tripdetails/new/south affrica/things-t
 import southafricaImg4 from "../../assets/Tripdetails/new/south affrica/things-to-do-south-africa/knysna-elephant-park.png";
 import southafricaImg5 from "../../assets/Tripdetails/new/south affrica/things-to-do-south-africa/kruger-national-park.png";
 import southafricaImg6 from "../../assets/Tripdetails/new/south affrica/things-to-do-south-africa/maclear_s-beacon.png";
+import { Andaman } from "../../components/data";
 
 export const destinationsData = {
   bali: {
     banner: {
-      image:
-        baliImg13,
+      image: baliImg13,
       title: "Bali",
-      description:
-        "Discover stunning locations and create unforgettable memories.",
+      description: "Discover stunning locations and create unforgettable memories.",
     },
     thingsToDo: [
       { name: "ATV Ride", image: baliImg1 },
@@ -174,11 +173,9 @@ export const destinationsData = {
   },
   malaysia: {
     banner: {
-      image:
-        "https://media.easemytrip.com/media/ppc/destination/Common/CommontQP9xd.png",
+      image: "https://media.easemytrip.com/media/ppc/destination/Common/CommontQP9xd.png",
       title: "Malaysia",
-      description:
-        "Discover stunning locations and create unforgettable memories.",
+      description: "Discover stunning locations and create unforgettable memories.",
     },
     thingsToDo: [
       { name: "Bako National Park", image: malaysiaImg1 },
@@ -192,6 +189,102 @@ export const destinationsData = {
       { name: "Putra Mosque", image: malaysiaImg9 },
     ],
   },
+  kerala: {
+    banner: {
+      image: "https://www.financialexpress.com/wp-content/uploads/2021/09/Kerala-Tourism.jpg?w=1024", // Add image URL here
+      title: "Kerala",
+      description: "Discover stunning locations and create unforgettable memories.",
+    },
+    thingsToDo: [
+      { name: "Banova Water Sport", image: baliImg2 },
+      { name: "Kechak Dance", image: baliImg3 },
+      { name: "Kintamani Tour", image: baliImg4 },
+      { name: "Nusa Paneda", image: baliImg5 },
+      { name: "Tanah Lot Temple", image: baliImg6 },
+      { name: "Ulun Danu Temple", image: baliImg7 },
+      { name: "MTV Ride", image: baliImg8 },
+      { name: "Rice Terrace", image: baliImg9 },
+    ],
+  },
+  andaman: {
+    banner: {
+      image: "", // Add image URL here
+      title: "Andaman",
+      description: "Discover stunning locations and create unforgettable memories.",
+    },
+    thingsToDo: [
+      { name: "Banova Water Sport", image: baliImg2 },
+      { name: "Kechak Dance", image: baliImg3 },
+      { name: "Kintamani Tour", image: baliImg4 },
+      { name: "Nusa Paneda", image: baliImg5 },
+      { name: "Tanah Lot Temple", image: baliImg6 },
+      { name: "Ulun Danu Temple", image: baliImg7 },
+      { name: "MTV Ride", image: baliImg8 },
+      { name: "Rice Terrace", image: baliImg9 },
+    ],
+  },
+  ladakh: {
+    banner: {
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRGucWRGhMAGcI9fnO5DJXFyjH5HM7_stE_g&s", // Add image URL here for Ladakh
+      title: "Ladakh",
+      description: "Experience the breathtaking beauty of the Himalayan desert.",
+    },
+    thingsToDo: [
+      { name: "Leh Palace", image: singaporeImg1 },
+      { name: "Pangong Lake", image: singaporeImg2 },
+      { name: "Nubra Valley", image: singaporeImg3 },
+      { name: "Khardung La", image: singaporeImg4 },
+      { name: "Magnetic Hill", image: singaporeImg4 },
+      { name: "Hemis Monastery", image: singaporeImg1 },
+    ],
+  },
+  kashmir: {
+    banner: {
+      image: "https://www.ekashmirtourism.com/wp-content/uploads/2022/08/Shikara-boats-floating-on-Dal-Lake.jpg", // Add image URL here for Kashmir
+      title: "Kashmir",
+      description: "Explore the mesmerizing landscapes and serene beauty of Kashmir.",
+    },
+    thingsToDo: [
+      { name: "Dal Lake", image: baliImg1 },
+      { name: "Gulmarg", image: baliImg11 },
+      { name: "Sonamarg", image: baliImg7 },
+      { name: "Shankaracharya Temple", image: baliImg4 },
+      { name: "Shikara Ride", image: baliImg8 },
+      { name: "Pahalgam", image: baliImg3 },
+    ],
+  },
+  rajasthan: {
+    banner: {
+      image: "https://ranthamborenationalpark-india.com/wp-content/uploads/2024/05/1569232483_rajasthan_budget_tour.jpg", // Add image URL here for Rajasthan
+      title: "Rajasthan",
+      description: "Discover the royal heritage and grandeur of Rajasthan.",
+    },
+    thingsToDo: [
+      { name: "Jaipur", image: australiaImg1 },
+      { name: "Udaipur", image: australiaImg2 },
+      { name: "Jaisalmer", image: australiaImg3 },
+      { name: "Jodhpur", image: australiaImg4 },
+      { name: "Pushkar", image: australiaImg5 },
+      { name: "Mehrangarh Fort", image: australiaImg6 },
+    ],
+  },
+  goa: {
+    banner: {
+      image: "https://static.businessworld.in/Untitled%20design%20-%202024-12-31T052430.892_20241231105033_original_image_31.webp", // Add image URL here for Goa
+      title: "Goa",
+      description: "Enjoy sun, sand, and sea in the tropical paradise of Goa.",
+    },
+    thingsToDo: [
+      { name: "Anjuna Beach", image: vietnamImg1 },
+      { name: "Baga Beach", image: vietnamImg2 },
+      { name: "Dudhsagar Waterfalls", image: vietnamImg3 },
+      { name: "Fort Aguada", image: vietnamImg4 },
+      { name: "Basilica of Bom Jesus", image: vietnamImg5 },
+      { name: "Dona Paula", image: vietnamImg6 },
+    ],
+  },
+
+
   australia: {
     banner: {
       image:
