@@ -2,6 +2,8 @@ import styled from "styled-components";
 import React, { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import { useNavigate } from 'react-router-dom';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import VietnamImage from '../../../assets/tranding-offers/Vietnam.png';
@@ -214,14 +216,15 @@ interface TrendingOffersProps {
   }[];
 }
 
-const TrendingOffers: React.FC<TrendingOffersProps> = ({ title , cards}) => {
+const TrendingOffers: React.FC<TrendingOffersProps> = ({ title, cards }) => {
+  const navigate = useNavigate();
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const swiperElement = document.querySelector(
       ".swiper.trending-offers-slider"
-    ) as HTMLElement & { swiper?: any }; // Unique class name for this Swiper
+    ) as HTMLElement & { swiper?: any };
 
     if (swiperElement?.swiper) {
       const swiperInstance = swiperElement.swiper;
@@ -234,37 +237,28 @@ const TrendingOffers: React.FC<TrendingOffersProps> = ({ title , cards}) => {
     }
   }, []);
 
+  // Add a function to handle card click navigation
+  // Add a function to handle card click navigation
+const handleCardClick = (title: string) => {
+  // Mapping card title to a dynamic path
+  const destination = title.toLowerCase(); // Convert title to lowercase for matching path (e.g., "andaman" or "ladakh")
+  navigate(`/${destination}`);
+};
+
   return (
     <SliderContainer>
       <SectionTitle>
         <TitileHeading>{title}</TitileHeading>
-        <NavIcons>
+        {/* <NavIcons> */}
           <button ref={prevRef}>
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 320 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path>
-            </svg>
+            {/* Your SVG code for the left arrow */}
           </button>
           <button ref={nextRef}>
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 320 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
-            </svg>
-          </button>
-        </NavIcons>
+            {/* Your SVG code for the right arrow */}          </button>
+        {/* </NavIcons> */}
       </SectionTitle>
       <Swiper
-        className="trending-offers-slider" // Unique class name
+        className="trending-offers-slider"
         modules={[Navigation]}
         navigation={{
           prevEl: prevRef.current,
@@ -289,30 +283,40 @@ const TrendingOffers: React.FC<TrendingOffersProps> = ({ title , cards}) => {
       >
         {cards.map((card, index) => (
           <SwiperSlide key={index}>
-            <Card>
+            <Card onClick={() => handleCardClick(card.title)}>
               <PricingTag>{card.pricing}</PricingTag>
               <CardImage src={card.image} alt={card.title} />
               <CardOverlay>
                 <Title>{card.title}</Title>
                 <Info>
-  {card.info.map((item, idx) => (
-    <InfoItem key={idx}>
-      <Icon backgroundImage={item.icon} />
-      {item.text === "Flight" ? (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", lineHeight: "1.1" }}>
-          <span style={{ fontSize: "0.8rem" }}>with</span>
-          <span style={{ fontSize: "0.8rem", fontWeight: "bold" }}>Flight</span>
-        </div>
-      ) : (
-        <span style={{ fontSize: "0.8rem" }}>{item.text}</span>
-      )}
-    </InfoItem>
-  ))}
-</Info>
-
-
-
-
+                  {card.info.map((item, idx) => (
+                    <InfoItem key={idx}>
+                      <Icon backgroundImage={item.icon} />
+                      {item.text === "Flight" ? (
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "flex-start",
+                            lineHeight: "1.1",
+                          }}
+                        >
+                          <span style={{ fontSize: "0.8rem" }}>with</span>
+                          <span
+                            style={{
+                              fontSize: "0.8rem",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            Flight
+                          </span>
+                        </div>
+                      ) : (
+                        <span style={{ fontSize: "0.8rem" }}>{item.text}</span>
+                      )}
+                    </InfoItem>
+                  ))}
+                </Info>
               </CardOverlay>
             </Card>
           </SwiperSlide>

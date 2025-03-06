@@ -10,10 +10,10 @@ const NavbarContainer = styled.nav`
   justify-content: space-between;
   padding: 1rem 2rem;
   z-index: 9999;
-  background: #071A29;
+  background:rgb(0, 0, 0);
   opacity: 0.9;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  // border-bottom-left-radius: 10px;
+  // border-bottom-right-radius: 10px;
   &.active {
     background-color: #000;
     padding: 1rem 2rem;
@@ -55,7 +55,7 @@ const NavLinksContainer = styled.div`
 
   @media (max-width: 768px) {
     position: absolute;
-    background-color: #071A29;
+    background-color:rgb(0, 0, 0);
     width: 80vw;
     height: 100svh;
     top: 0;
@@ -68,7 +68,7 @@ const NavLinksContainer = styled.div`
     }
     li {
       padding: 1rem 1rem;
-      border-bottom: 1px solid #071A29;
+      border-bottom: 1px solidrgb(0, 0, 0);
       a {
         font-size: 0.9rem;
       }

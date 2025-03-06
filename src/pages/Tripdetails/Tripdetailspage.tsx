@@ -88,6 +88,7 @@ export default function Tripdetailspage() {
       {location == "europe" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Europe} /> : ""}
       {location == "thailand" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Thailand} /> : ""}
       {location == "australia" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Australia} /> : ""}
+      
       {/* <TrendingOffers title={`Trending Offers in ${location}`} data={trendingOffers}/> */}
       {/* <CherryBlossomsSection title={`Experience Best Selling Packages in ${location}`}images={cherryBlossoms}/> */}
       <VideoTestimonials />
