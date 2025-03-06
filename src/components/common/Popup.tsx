@@ -295,9 +295,12 @@ const Popup: React.FC = () => {
 
   const handleOutsideClick = (e: React.MouseEvent) => {
     if ((e.target as HTMLElement).id === "popup-container") {
-      closePopup();
+      if (window.confirm("Are you sure you want to close the form? Your data will be lost.")) {
+        closePopup();
+      }
     }
   };
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -320,15 +323,16 @@ const Popup: React.FC = () => {
 
     const formSubmission = {
       ...formData,
-      travelDate: startDate.toISOString(),
+      travelDate: startDate ? startDate.toISOString() : null, // Ensures it's always a valid value
       pax,
       child,
     };
 
     try {
-      const API_URL = process.env.REACT_APP_API_URL || "https://tripstarsholidays.com";
+      const API_URL = import.meta.env.VITE_API_URL || "https://tripstarsholidays.com";
 
-const response = await fetch(`${API_URL}/api/form`, {
+
+      const response = await fetch(`${API_URL}/api/form`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -450,20 +454,19 @@ const response = await fetch(`${API_URL}/api/form`, {
                   </button>
                 </div>
               </PaxCounter>
-
-
               <PaxCounter>
                 <label>Number of Children</label>
                 <div className="counter-row">
-                  <button type="button" onClick={() => handlePaxChange(false)} disabled={pax <= 1}>
+                  <button type="button" onClick={() => handleChildChange(false)} disabled={child <= 0}>
                     -
                   </button>
-                  <span>{pax}</span>
-                  <button type="button" onClick={() => handlePaxChange(true)}>
+                  <span>{child}</span>
+                  <button type="button" onClick={() => handleChildChange(true)}>
                     +
                   </button>
                 </div>
               </PaxCounter>
+
             </PaxCounterWrapper>
 
             <button type="submit">Submit</button>
