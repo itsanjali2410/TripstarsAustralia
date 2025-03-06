@@ -256,7 +256,7 @@ const HeroSection: React.FC = () => {
       {/* Overlay text and SearchBar */}
       <SearchBarWrapper>
         <HeroText>Find Your Dream Destination</HeroText>
-        <SearchBar />
+        {/* <SearchBar /> */}
       </SearchBarWrapper>
 
       <RatingBar />
