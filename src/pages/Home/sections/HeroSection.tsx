@@ -4,9 +4,9 @@ import styled from 'styled-components';
 // Styled components
 const Banner = styled.div`
   width: 100%;
-  height: 500px;
-  background: url('https://static.wixstatic.com/media/ce4a22_791cf55edff1465b9addedcecb4b6023~mv2.jpg/v1/fill/w_1032,h_585,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Tripoly%20Website%20Banner%20.jpg') no-repeat center center/cover;
-  display: flex;
+  height: 60vh;
+  background: url('https://static.wixstatic.com/media/ce4a22_791cf55edff1465b9addedcecb4b6023~mv2.jpg/v1/fill/w_1032,h_585,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Tripoly%20Website%20Banner%20.jpg') 
+    no-repeat right;
   align-items: center;
   padding-left: 5%;
   color: black;
@@ -20,7 +20,7 @@ const Banner = styled.div`
 
 const BannerContent = styled.div`
   max-width: 50%;
- 
+  height:60vh;
   @media (max-width: 768px) {
     max-width: 100%;
     text-align: center;
@@ -30,6 +30,7 @@ const BannerContent = styled.div`
 
 const Heading = styled.h2`
   font-size: 50px;
+  padding-top:50px;
   font-family: 'Great Vibes', cursive;
   color: #FF7F00;
  
@@ -74,19 +75,21 @@ const Button = styled.a`
 `;
 
 const OfferBox = styled.div`
-  background:rgb(208, 219, 223);
+  background: rgb(208, 219, 223);
   padding: 20px;
   display: flex;
   width: 100%;
   margin-top: 20px;
-  gap:50px;
+  gap: 50px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 50px;
   justify-content: center;
 
   @media (max-width: 768px) {
-    flex-direction: column;
     width: 100%;
+    
+    padding: 15px; /* Adjust padding */
+    border-radius: 20px; /* Reduce border-radius */
   }
 `;
 
@@ -109,16 +112,28 @@ const OfferNumber = styled.div`
   border-radius: 50%;
   font-size: 18px;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
 `;
 
 const OfferText = styled.div`
   font-size: 18px;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+    widtyh:100%;
+  }
 `;
 
 const GreenText = styled.span`
   color: red;
   font-weight: bold;
 `;
+
 
 const Divider = styled.div`
   font-size: 18px;
@@ -155,7 +170,7 @@ const EuropeGroupTourBanner: React.FC = () => {
           <Offer>
             <OfferNumber>3</OfferNumber>
             <OfferText>
-              <GreenText>100% Customised Trips</GreenText>
+              <GreenText>100% Customised </GreenText>
             </OfferText>
           </Offer>
         </OfferBox>

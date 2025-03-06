@@ -101,12 +101,12 @@ const NavIcons = styled.div`
 `;
 
 const SectionTitle = styled.div`
-  padding-top: 2rem;
+  padding-top: 4rem;
   padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 4rem;
+
 
   @media (max-width: 1340px) {
     padding-top: 4rem;
@@ -250,11 +250,12 @@ const handleCardClick = (title: string) => {
       <SectionTitle>
         <TitileHeading>{title}</TitileHeading>
         {/* <NavIcons> */}
-          <button ref={prevRef}>
+          {/* <button ref={prevRef}> */}
             {/* Your SVG code for the left arrow */}
-          </button>
-          <button ref={nextRef}>
-            {/* Your SVG code for the right arrow */}          </button>
+          {/* </button> */}
+          {/* <button ref={nextRef}> */}
+            {/* Your SVG code for the right arrow           */}
+            {/* </button> */}
         {/* </NavIcons> */}
       </SectionTitle>
       <Swiper

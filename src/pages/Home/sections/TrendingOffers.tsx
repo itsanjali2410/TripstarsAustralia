@@ -98,7 +98,7 @@ const SectionTitle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // margin-top: 4rem;
+
 
   @media (max-width: 1340px) {
     // padding-top: 4rem;
