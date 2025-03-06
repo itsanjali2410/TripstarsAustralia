@@ -52,19 +52,12 @@ import dubaiImg6 from "../../assets/Tripdetails/dubai/Things to do/Dhow cruise d
 import dubaiImg7 from "../../assets/Tripdetails/dubai/Things to do/Dubai City tour.png";
 import dubaiImg8 from "../../assets/Tripdetails/dubai/Things to do/Ferrari world.png";
 import dubaiImg9 from "../../assets/Tripdetails/dubai/Things to do/Museum of future.png";
-
-
 import dubaiImg10 from "../../assets/Tripdetails/dubai/Things to do/Sea world Yas Island.png";
-
 import dubaiTrendingImg1 from "../../assets/Tripdetails/dubai/itinerary/Artboard 1.png";
 import dubaiTrendingImg2 from "../../assets/Tripdetails/dubai/itinerary/Artboard 2.png";
-
 import dubaiTrendingImg3 from "../../assets/Tripdetails/dubai/itinerary/Artboard 3 copy 2.png";
-
 import dubaiTrendingImg4 from "../../assets/Tripdetails/dubai/itinerary/Artboard 3 copy.png";
-
 import dubaiTrendingImg5 from "../../assets/Tripdetails/dubai/itinerary/Artboard 3.png";
-
 import dubaiCherryImg1 from "../../assets/Tripdetails/dubai/Best selling/Artboard 1.png";
 import dubaiCherryImg2 from "../../assets/Tripdetails/dubai/Best selling/Artboard 2.png";
 
@@ -104,6 +97,37 @@ import thailandCherryImg1 from "../../assets/Tripdetails/thailand/Best selling/A
 import thailandCherryImg2 from "../../assets/Tripdetails/thailand/Best selling/Artboard 2.png";
 
 export const destinationsData = {
+  kerala: {
+    banner: {
+      image:
+        "https://media.easemytrip.com/media/ppc/destination/Common/CommonnzjdHm.png",
+      title: "kerala",
+      description: "Discover stunning locations and create unforgettable memories.",
+    },
+    thingsToDo: [
+      // { name: "Bali Swing", image: baliImg1 },
+      { name: "Banova Water Sport", image: baliImg2 },
+      { name: "Kechak Dance", image: baliImg3 },
+      { name: "Kintamani Tour", image: baliImg4 },
+      { name: "Nusa Paneda", image: baliImg5 },
+      { name: "Tanah Lot Temple", image: baliImg6 },
+      { name: "Ulun Danu Temple", image: baliImg7 },
+      { name: "MTV Ride", image: baliImg8 },
+      { name: "Rice Terrace", image: baliImg9 },
+    ],
+    trendingOffers: [
+      { name: "Artboard 1", imgUrl: trendingImg1 },
+      { name: "Artboard 2", imgUrl: trendingImg2 },
+      { name: "Artboard 3", imgUrl: trendingImg3 },
+      { name: "Artboard 4", imgUrl: trendingImg4 },
+      { name: "Artboard 5", imgUrl: trendingImg5 },
+      { name: "Artboard 6", imgUrl: trendingImg6 },
+    ],
+    cherryBlossoms: [
+      { name: "Discover Bali 1", imgUrl: cherryImg1 },
+      { name: "Discover Bali 2", imgUrl: cherryImg2 },
+    ],
+  },
   bali: {
     banner: {
       image:
@@ -197,7 +221,7 @@ export const destinationsData = {
       { name: "Discover Bali 2", imgUrl: cherryImg2 },
     ],
   },
- europe: {
+  europe: {
     banner: {
       image:
         "https://media.easemytrip.com/media/ppc/destination/Common/CommonnzjdHm.png",
@@ -228,7 +252,7 @@ export const destinationsData = {
       { name: "Discover Bali 2", imgUrl: cherryImg2 },
     ],
   },
-hongkong: {
+  hongkong: {
     banner: {
       image:
         "https://media.easemytrip.com/media/ppc/destination/Common/CommonnzjdHm.png",
@@ -259,349 +283,349 @@ hongkong: {
       { name: "Discover Bali 2", imgUrl: cherryImg2 },
     ],
   },
-vietnam: {
-  banner: {
-    image:
-      "https://media.easemytrip.com/media/ppc/destination/Common/CommonXjSWKT.png",
-    title: "Vietnam",
-    description: "Discover stunning locations and create unforgettable memories.",
-  },
-  thingsToDo: [
-    { name: "Ba Na Hills", image: vietnamImg1 },
-    { name: "Cu Chi Tunnel", image: vietnamImg2 },
-    { name: "City Tour Hanoi", image: vietnamImg3 },
-    { name: "Cruise", image: vietnamImg4 },
-    { name: "French Village", image: vietnamImg5 },
-    { name: "Golden Bridge", image: vietnamImg6 },
-    { name: "Mekong Delta", image: vietnamImg7 },
-  ],
-  trendingOffers: [
-    { name: "Artboard 1", imgUrl: vietnamTrendingImg1 },
-    { name: "Artboard 2", imgUrl: vietnamTrendingImg2 },
-    { name: "Artboard 3", imgUrl: vietnamTrendingImg3 },
-    { name: "Artboard 4", imgUrl: vietnamTrendingImg4 },
-    { name: "Artboard 5", imgUrl: vietnamTrendingImg5 },
-  ],
-  cherryBlossoms: [
-    { name: "Discover Vietnam 1", imgUrl: vietnamCherryImg1 },
-    { name: "Discover Vietnam 2", imgUrl: vietnamCherryImg2 },
-    // Optional: Include trending offers in cherryBlossoms if required
+  vietnam: {
+    banner: {
+      image:
+        "https://media.easemytrip.com/media/ppc/destination/Common/CommonXjSWKT.png",
+      title: "Vietnam",
+      description: "Discover stunning locations and create unforgettable memories.",
+    },
+    thingsToDo: [
+      { name: "Ba Na Hills", image: vietnamImg1 },
+      { name: "Cu Chi Tunnel", image: vietnamImg2 },
+      { name: "City Tour Hanoi", image: vietnamImg3 },
+      { name: "Cruise", image: vietnamImg4 },
+      { name: "French Village", image: vietnamImg5 },
+      { name: "Golden Bridge", image: vietnamImg6 },
+      { name: "Mekong Delta", image: vietnamImg7 },
+    ],
+    trendingOffers: [
+      { name: "Artboard 1", imgUrl: vietnamTrendingImg1 },
+      { name: "Artboard 2", imgUrl: vietnamTrendingImg2 },
+      { name: "Artboard 3", imgUrl: vietnamTrendingImg3 },
+      { name: "Artboard 4", imgUrl: vietnamTrendingImg4 },
+      { name: "Artboard 5", imgUrl: vietnamTrendingImg5 },
+    ],
+    cherryBlossoms: [
+      { name: "Discover Vietnam 1", imgUrl: vietnamCherryImg1 },
+      { name: "Discover Vietnam 2", imgUrl: vietnamCherryImg2 },
+      // Optional: Include trending offers in cherryBlossoms if required
 
-  ],
-},
-dubai: {
-  banner: {
-    image:
-      "https://media.easemytrip.com/media/ppc/destination/Common/CommonmylK0q.png",
-    title: "Dubai",
-    description: "Discover stunning locations and create unforgettable memories.",
+    ],
   },
-  thingsToDo: [
-    { name: "Abu Dhabi City Tour", image: dubaiImg1 },
-    { name: "BAPS Mandir", image: dubaiImg2 },
-    { name: "Burj Khalifa Inside", image: dubaiImg3 },
-    { name: "Burj Khalifa", image: dubaiImg4 },
-    { name: "Desert Safari", image: dubaiImg5 },
-    { name: "Dhow Cruise Dubai", image: dubaiImg6 },
-    { name: "Dubai City Tour", image: dubaiImg7 },
-    { name: "Ferrari World", image: dubaiImg8 },
-    { name: "Museum of the Future", image: dubaiImg9 },
-    { name: "Sea World Yas Island", image: dubaiImg10 },
-  ],
-  trendingOffers: [
-    { name: "Artboard 1", imgUrl: dubaiTrendingImg1 },
-    { name: "Artboard 2", imgUrl: dubaiTrendingImg2 },
-    { name: "Artboard 3", imgUrl: dubaiTrendingImg3 },
-    { name: "Artboard 4", imgUrl: dubaiTrendingImg4 },
-    { name: "Artboard 5", imgUrl: dubaiTrendingImg5 },
-  ],
-  cherryBlossoms: [
-    { name: "Discover Dubai 1", imgUrl: dubaiCherryImg1 },
-    { name: "Discover Dubai 2", imgUrl: dubaiCherryImg2 },
-    // Optional: Include trending offers in cherryBlossoms if required
-  ],
-},
-singapore: {
-  banner: {
-    image:
-      "https://media.easemytrip.com/media/ppc/destination/Common/Common9dXeUj.png",
-    title: "Singapore",
-    description: "Experience the vibrant culture and iconic landmarks of Singapore.",
+  dubai: {
+    banner: {
+      image:
+        "https://media.easemytrip.com/media/ppc/destination/Common/CommonmylK0q.png",
+      title: "Dubai",
+      description: "Discover stunning locations and create unforgettable memories.",
+    },
+    thingsToDo: [
+      { name: "Abu Dhabi City Tour", image: dubaiImg1 },
+      { name: "BAPS Mandir", image: dubaiImg2 },
+      { name: "Burj Khalifa Inside", image: dubaiImg3 },
+      { name: "Burj Khalifa", image: dubaiImg4 },
+      { name: "Desert Safari", image: dubaiImg5 },
+      { name: "Dhow Cruise Dubai", image: dubaiImg6 },
+      { name: "Dubai City Tour", image: dubaiImg7 },
+      { name: "Ferrari World", image: dubaiImg8 },
+      { name: "Museum of the Future", image: dubaiImg9 },
+      { name: "Sea World Yas Island", image: dubaiImg10 },
+    ],
+    trendingOffers: [
+      { name: "Artboard 1", imgUrl: dubaiTrendingImg1 },
+      { name: "Artboard 2", imgUrl: dubaiTrendingImg2 },
+      { name: "Artboard 3", imgUrl: dubaiTrendingImg3 },
+      { name: "Artboard 4", imgUrl: dubaiTrendingImg4 },
+      { name: "Artboard 5", imgUrl: dubaiTrendingImg5 },
+    ],
+    cherryBlossoms: [
+      { name: "Discover Dubai 1", imgUrl: dubaiCherryImg1 },
+      { name: "Discover Dubai 2", imgUrl: dubaiCherryImg2 },
+      // Optional: Include trending offers in cherryBlossoms if required
+    ],
   },
-  thingsToDo: [
-    { name: "Gardens by the Bay", image: singaporeImg1 },
-    { name: "Marina Bay Sands", image: singaporeImg2 },
-    { name: "Sentosa Island Tour", image: singaporeImg3 },
-    { name: "Singapore City Tour", image: singaporeImg4 },
-    { name: "Singapore Night Safari", image: singaporeImg5 },
-  ],
-  trendingOffers: [
-    { name: "Artboard 1", imgUrl: singaporeTrendingImg1 },
-    { name: "Artboard 2", imgUrl: singaporeTrendingImg2 },
-    { name: "Artboard 3", imgUrl: singaporeTrendingImg3 },
-    { name: "Artboard 4", imgUrl: singaporeTrendingImg4 },
-    { name: "Artboard 5", imgUrl: singaporeTrendingImg5 },
-  ],
-  cherryBlossoms: [
-    { name: "Discover Singapore 1", imgUrl: singaporeCherryImg1 },
-    { name: "Discover Singapore 2", imgUrl: singaporeCherryImg2 },
-  ],
-},
+  singapore: {
+    banner: {
+      image:
+        "https://media.easemytrip.com/media/ppc/destination/Common/Common9dXeUj.png",
+      title: "Singapore",
+      description: "Experience the vibrant culture and iconic landmarks of Singapore.",
+    },
+    thingsToDo: [
+      { name: "Gardens by the Bay", image: singaporeImg1 },
+      { name: "Marina Bay Sands", image: singaporeImg2 },
+      { name: "Sentosa Island Tour", image: singaporeImg3 },
+      { name: "Singapore City Tour", image: singaporeImg4 },
+      { name: "Singapore Night Safari", image: singaporeImg5 },
+    ],
+    trendingOffers: [
+      { name: "Artboard 1", imgUrl: singaporeTrendingImg1 },
+      { name: "Artboard 2", imgUrl: singaporeTrendingImg2 },
+      { name: "Artboard 3", imgUrl: singaporeTrendingImg3 },
+      { name: "Artboard 4", imgUrl: singaporeTrendingImg4 },
+      { name: "Artboard 5", imgUrl: singaporeTrendingImg5 },
+    ],
+    cherryBlossoms: [
+      { name: "Discover Singapore 1", imgUrl: singaporeCherryImg1 },
+      { name: "Discover Singapore 2", imgUrl: singaporeCherryImg2 },
+    ],
+  },
 
-thailand: {
-  banner: {
-    image:
-      "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
-    title: "Thailand",
-    description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
+  thailand: {
+    banner: {
+      image:
+        "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
+      title: "Thailand",
+      description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
+    },
+    thingsToDo: [
+      { name: "Grand Palace", image: thailandImg1 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+      { name: "Elephant Sanctuary", image: thailandImg5 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+    ],
+    trendingOffers: [
+      { name: "Artboard 1", imgUrl: thailandTrendingImg1 },
+      { name: "Artboard 2", imgUrl: thailandTrendingImg2 },
+      { name: "Artboard 3", imgUrl: thailandTrendingImg3 },
+      { name: "Artboard 4", imgUrl: thailandTrendingImg4 },
+      { name: "Artboard 5", imgUrl: thailandTrendingImg5 },
+    ],
+    cherryBlossoms: [
+      { name: "Discover Thailand 1", imgUrl: thailandCherryImg1 },
+      { name: "Discover Thailand 2", imgUrl: thailandCherryImg2 },
+    ],
   },
-  thingsToDo: [
-    { name: "Grand Palace", image: thailandImg1 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Elephant Sanctuary", image: thailandImg5 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-  ],
-  trendingOffers: [
-    { name: "Artboard 1", imgUrl: thailandTrendingImg1 },
-    { name: "Artboard 2", imgUrl: thailandTrendingImg2 },
-    { name: "Artboard 3", imgUrl: thailandTrendingImg3 },
-    { name: "Artboard 4", imgUrl: thailandTrendingImg4 },
-    { name: "Artboard 5", imgUrl: thailandTrendingImg5 },
-  ],
-  cherryBlossoms: [
-    { name: "Discover Thailand 1", imgUrl: thailandCherryImg1 },
-    { name: "Discover Thailand 2", imgUrl: thailandCherryImg2 },
-  ],
-},
-turkey: {
-  banner: {
-    image:
-      "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
-    title: "Thailand",
-    description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
+  turkey: {
+    banner: {
+      image:
+        "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
+      title: "Thailand",
+      description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
+    },
+    thingsToDo: [
+      { name: "Grand Palace", image: thailandImg1 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+      { name: "Elephant Sanctuary", image: thailandImg5 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+    ],
+    trendingOffers: [
+      { name: "Artboard 1", imgUrl: thailandTrendingImg1 },
+      { name: "Artboard 2", imgUrl: thailandTrendingImg2 },
+      { name: "Artboard 3", imgUrl: thailandTrendingImg3 },
+      { name: "Artboard 4", imgUrl: thailandTrendingImg4 },
+      { name: "Artboard 5", imgUrl: thailandTrendingImg5 },
+    ],
+    cherryBlossoms: [
+      { name: "Discover Thailand 1", imgUrl: thailandCherryImg1 },
+      { name: "Discover Thailand 2", imgUrl: thailandCherryImg2 },
+    ],
   },
-  thingsToDo: [
-    { name: "Grand Palace", image: thailandImg1 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Elephant Sanctuary", image: thailandImg5 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-  ],
-  trendingOffers: [
-    { name: "Artboard 1", imgUrl: thailandTrendingImg1 },
-    { name: "Artboard 2", imgUrl: thailandTrendingImg2 },
-    { name: "Artboard 3", imgUrl: thailandTrendingImg3 },
-    { name: "Artboard 4", imgUrl: thailandTrendingImg4 },
-    { name: "Artboard 5", imgUrl: thailandTrendingImg5 },
-  ],
-  cherryBlossoms: [
-    { name: "Discover Thailand 1", imgUrl: thailandCherryImg1 },
-    { name: "Discover Thailand 2", imgUrl: thailandCherryImg2 },
-  ],
-},
-southAfrica: {
-  banner: {
-    image:
-      "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
-    title: "Thailand",
-    description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
+  southAfrica: {
+    banner: {
+      image:
+        "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
+      title: "Thailand",
+      description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
+    },
+    thingsToDo: [
+      { name: "Grand Palace", image: thailandImg1 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+      { name: "Elephant Sanctuary", image: thailandImg5 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+    ],
+    trendingOffers: [
+      { name: "Artboard 1", imgUrl: thailandTrendingImg1 },
+      { name: "Artboard 2", imgUrl: thailandTrendingImg2 },
+      { name: "Artboard 3", imgUrl: thailandTrendingImg3 },
+      { name: "Artboard 4", imgUrl: thailandTrendingImg4 },
+      { name: "Artboard 5", imgUrl: thailandTrendingImg5 },
+    ],
+    cherryBlossoms: [
+      { name: "Discover Thailand 1", imgUrl: thailandCherryImg1 },
+      { name: "Discover Thailand 2", imgUrl: thailandCherryImg2 },
+    ],
   },
-  thingsToDo: [
-    { name: "Grand Palace", image: thailandImg1 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Elephant Sanctuary", image: thailandImg5 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-  ],
-  trendingOffers: [
-    { name: "Artboard 1", imgUrl: thailandTrendingImg1 },
-    { name: "Artboard 2", imgUrl: thailandTrendingImg2 },
-    { name: "Artboard 3", imgUrl: thailandTrendingImg3 },
-    { name: "Artboard 4", imgUrl: thailandTrendingImg4 },
-    { name: "Artboard 5", imgUrl: thailandTrendingImg5 },
-  ],
-  cherryBlossoms: [
-    { name: "Discover Thailand 1", imgUrl: thailandCherryImg1 },
-    { name: "Discover Thailand 2", imgUrl: thailandCherryImg2 },
-  ],
-},
-mauritius: {
-  banner: {
-    image:
-      "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
-    title: "Thailand",
-    description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
+  mauritius: {
+    banner: {
+      image:
+        "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
+      title: "Thailand",
+      description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
+    },
+    thingsToDo: [
+      { name: "Grand Palace", image: thailandImg1 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+      { name: "Elephant Sanctuary", image: thailandImg5 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+    ],
+    trendingOffers: [
+      { name: "Artboard 1", imgUrl: thailandTrendingImg1 },
+      { name: "Artboard 2", imgUrl: thailandTrendingImg2 },
+      { name: "Artboard 3", imgUrl: thailandTrendingImg3 },
+      { name: "Artboard 4", imgUrl: thailandTrendingImg4 },
+      { name: "Artboard 5", imgUrl: thailandTrendingImg5 },
+    ],
+    cherryBlossoms: [
+      { name: "Discover Thailand 1", imgUrl: thailandCherryImg1 },
+      { name: "Discover Thailand 2", imgUrl: thailandCherryImg2 },
+    ],
   },
-  thingsToDo: [
-    { name: "Grand Palace", image: thailandImg1 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Elephant Sanctuary", image: thailandImg5 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-  ],
-  trendingOffers: [
-    { name: "Artboard 1", imgUrl: thailandTrendingImg1 },
-    { name: "Artboard 2", imgUrl: thailandTrendingImg2 },
-    { name: "Artboard 3", imgUrl: thailandTrendingImg3 },
-    { name: "Artboard 4", imgUrl: thailandTrendingImg4 },
-    { name: "Artboard 5", imgUrl: thailandTrendingImg5 },
-  ],
-  cherryBlossoms: [
-    { name: "Discover Thailand 1", imgUrl: thailandCherryImg1 },
-    { name: "Discover Thailand 2", imgUrl: thailandCherryImg2 },
-  ],
-},
-maldives: {
-  banner: {
-    image:
-      "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
-    title: "Thailand",
-    description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
+  maldives: {
+    banner: {
+      image:
+        "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
+      title: "Thailand",
+      description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
+    },
+    thingsToDo: [
+      { name: "Grand Palace", image: thailandImg1 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+      { name: "Elephant Sanctuary", image: thailandImg5 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+    ],
+    trendingOffers: [
+      { name: "Artboard 1", imgUrl: thailandTrendingImg1 },
+      { name: "Artboard 2", imgUrl: thailandTrendingImg2 },
+      { name: "Artboard 3", imgUrl: thailandTrendingImg3 },
+      { name: "Artboard 4", imgUrl: thailandTrendingImg4 },
+      { name: "Artboard 5", imgUrl: thailandTrendingImg5 },
+    ],
+    cherryBlossoms: [
+      { name: "Discover Thailand 1", imgUrl: thailandCherryImg1 },
+      { name: "Discover Thailand 2", imgUrl: thailandCherryImg2 },
+    ],
   },
-  thingsToDo: [
-    { name: "Grand Palace", image: thailandImg1 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Elephant Sanctuary", image: thailandImg5 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-  ],
-  trendingOffers: [
-    { name: "Artboard 1", imgUrl: thailandTrendingImg1 },
-    { name: "Artboard 2", imgUrl: thailandTrendingImg2 },
-    { name: "Artboard 3", imgUrl: thailandTrendingImg3 },
-    { name: "Artboard 4", imgUrl: thailandTrendingImg4 },
-    { name: "Artboard 5", imgUrl: thailandTrendingImg5 },
-  ],
-  cherryBlossoms: [
-    { name: "Discover Thailand 1", imgUrl: thailandCherryImg1 },
-    { name: "Discover Thailand 2", imgUrl: thailandCherryImg2 },
-  ],
-},
-japan: {
-  banner: {
-    image:
-      "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
-    title: "Thailand",
-    description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
+  japan: {
+    banner: {
+      image:
+        "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
+      title: "Thailand",
+      description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
+    },
+    thingsToDo: [
+      { name: "Grand Palace", image: thailandImg1 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+      { name: "Elephant Sanctuary", image: thailandImg5 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+    ],
+    trendingOffers: [
+      { name: "Artboard 1", imgUrl: thailandTrendingImg1 },
+      { name: "Artboard 2", imgUrl: thailandTrendingImg2 },
+      { name: "Artboard 3", imgUrl: thailandTrendingImg3 },
+      { name: "Artboard 4", imgUrl: thailandTrendingImg4 },
+      { name: "Artboard 5", imgUrl: thailandTrendingImg5 },
+    ],
+    cherryBlossoms: [
+      { name: "Discover Thailand 1", imgUrl: thailandCherryImg1 },
+      { name: "Discover Thailand 2", imgUrl: thailandCherryImg2 },
+    ],
   },
-  thingsToDo: [
-    { name: "Grand Palace", image: thailandImg1 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Elephant Sanctuary", image: thailandImg5 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-  ],
-  trendingOffers: [
-    { name: "Artboard 1", imgUrl: thailandTrendingImg1 },
-    { name: "Artboard 2", imgUrl: thailandTrendingImg2 },
-    { name: "Artboard 3", imgUrl: thailandTrendingImg3 },
-    { name: "Artboard 4", imgUrl: thailandTrendingImg4 },
-    { name: "Artboard 5", imgUrl: thailandTrendingImg5 },
-  ],
-  cherryBlossoms: [
-    { name: "Discover Thailand 1", imgUrl: thailandCherryImg1 },
-    { name: "Discover Thailand 2", imgUrl: thailandCherryImg2 },
-  ],
-},
-hongKong: {
-  banner: {
-    image:
-      "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
-    title: "Thailand",
-    description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
+  hongKong: {
+    banner: {
+      image:
+        "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
+      title: "Thailand",
+      description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
+    },
+    thingsToDo: [
+      { name: "Grand Palace", image: thailandImg1 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+      { name: "Elephant Sanctuary", image: thailandImg5 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+    ],
+    trendingOffers: [
+      { name: "Artboard 1", imgUrl: thailandTrendingImg1 },
+      { name: "Artboard 2", imgUrl: thailandTrendingImg2 },
+      { name: "Artboard 3", imgUrl: thailandTrendingImg3 },
+      { name: "Artboard 4", imgUrl: thailandTrendingImg4 },
+      { name: "Artboard 5", imgUrl: thailandTrendingImg5 },
+    ],
+    cherryBlossoms: [
+      { name: "Discover Thailand 1", imgUrl: thailandCherryImg1 },
+      { name: "Discover Thailand 2", imgUrl: thailandCherryImg2 },
+    ],
   },
-  thingsToDo: [
-    { name: "Grand Palace", image: thailandImg1 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Elephant Sanctuary", image: thailandImg5 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-  ],
-  trendingOffers: [
-    { name: "Artboard 1", imgUrl: thailandTrendingImg1 },
-    { name: "Artboard 2", imgUrl: thailandTrendingImg2 },
-    { name: "Artboard 3", imgUrl: thailandTrendingImg3 },
-    { name: "Artboard 4", imgUrl: thailandTrendingImg4 },
-    { name: "Artboard 5", imgUrl: thailandTrendingImg5 },
-  ],
-  cherryBlossoms: [
-    { name: "Discover Thailand 1", imgUrl: thailandCherryImg1 },
-    { name: "Discover Thailand 2", imgUrl: thailandCherryImg2 },
-  ],
-},
-baku: {
-  banner: {
-    image:
-      "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
-    title: "Thailand",
-    description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
+  baku: {
+    banner: {
+      image:
+        "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
+      title: "Thailand",
+      description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
+    },
+    thingsToDo: [
+      { name: "Grand Palace", image: thailandImg1 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+      { name: "Elephant Sanctuary", image: thailandImg5 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+      { name: "Phuket Beaches", image: thailandImg2 },
+      { name: "Phi Phi Islands", image: thailandImg3 },
+      { name: "Floating Market", image: thailandImg4 },
+    ],
+    trendingOffers: [
+      { name: "Artboard 1", imgUrl: thailandTrendingImg1 },
+      { name: "Artboard 2", imgUrl: thailandTrendingImg2 },
+      { name: "Artboard 3", imgUrl: thailandTrendingImg3 },
+      { name: "Artboard 4", imgUrl: thailandTrendingImg4 },
+      { name: "Artboard 5", imgUrl: thailandTrendingImg5 },
+    ],
+    cherryBlossoms: [
+      { name: "Discover Thailand 1", imgUrl: thailandCherryImg1 },
+      { name: "Discover Thailand 2", imgUrl: thailandCherryImg2 },
+    ],
   },
-  thingsToDo: [
-    { name: "Grand Palace", image: thailandImg1 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Elephant Sanctuary", image: thailandImg5 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-  ],
-  trendingOffers: [
-    { name: "Artboard 1", imgUrl: thailandTrendingImg1 },
-    { name: "Artboard 2", imgUrl: thailandTrendingImg2 },
-    { name: "Artboard 3", imgUrl: thailandTrendingImg3 },
-    { name: "Artboard 4", imgUrl: thailandTrendingImg4 },
-    { name: "Artboard 5", imgUrl: thailandTrendingImg5 },
-  ],
-  cherryBlossoms: [
-    { name: "Discover Thailand 1", imgUrl: thailandCherryImg1 },
-    { name: "Discover Thailand 2", imgUrl: thailandCherryImg2 },
-  ],
-},
 };

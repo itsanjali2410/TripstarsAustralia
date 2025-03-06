@@ -13,8 +13,7 @@ import { Autoplay } from "swiper/modules";
 
 const Container = styled.div`
   padding: 0 15rem;
-  margin-bottom: 4rem;
-  margin-top: 2rem;
+
   @media (max-width: 1340px) {
     padding: 0 5rem;
   }
@@ -36,8 +35,6 @@ const LogoWrapper = styled.div`
 `;
 
 const SectionTitle = styled.div`
-  padding-top: 2rem;
-  padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,6 +50,7 @@ const SectionTitle = styled.div`
 `;
 
 const TitileHeading = styled.h2`
+  padding-top:4rem;
   font-size: 1.5rem;
   font-weight: 600;
   text-transform: uppercase;

@@ -12,8 +12,6 @@ import "swiper/css/navigation";
 const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
-  padding-bottom: 100px;
-  margin: -5rem 40rem 0;  /* Move it up by 2rem */
 
   @media (max-width: 1340px) {
     margin: 0 5rem;
@@ -82,13 +80,10 @@ const NavIcons = styled.div`
 `;
 
 const SectionTitle = styled.div`
-  padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding-top: 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 4rem;
-
   @media (max-width: 1340px) {
     padding-top: 4rem;
     padding-bottom: 1rem;
@@ -140,7 +135,7 @@ const Title = styled.div`
 const Info = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 10px;
+
 `;
 
 const InfoItem = styled.div`

@@ -3,13 +3,14 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate
 import styled from "styled-components";
 import { useSwipeable } from "react-swipeable";
 // Importing images from the assets folder
-import image1 from "../../../assets/advertisebanner/banner-1.webp";
+import image1 from "../../../assets/advertisebanner/banner-1.jpg";
 import image2 from "../../../assets/advertisebanner/banner-2.webp";
 import image3 from "../../../assets/advertisebanner/banner-3.webp";
 import image4 from "../../../assets/advertisebanner/banner-4.webp";
 import image5 from "../../../assets/advertisebanner/banner-5.webp";
 
 const SliderContainer = styled.div`
+  margin-top:5rem;
   position: relative;
   overflow: hidden;
   width: 70%;
@@ -55,7 +56,7 @@ const Slide = styled.div<{ background: string }>`
   background-repeat: no-repeat;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  margin: 0 auto;
+  margin: 30px auto;
   cursor: pointer; /* Add pointer cursor to indicate clickability */
   @media (max-width: 2500px) {
     height: 300px;
