@@ -35,7 +35,9 @@ const Heading = styled.h2`
   color: #FF7F00;
  
   @media (max-width: 768px) {
-    font-size: 30px;
+    font-size: 32px;
+    font-weight: bold;
+
   }
 `;
 
