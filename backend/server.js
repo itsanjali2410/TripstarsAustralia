@@ -33,7 +33,7 @@ child: { type: Number, required: true },
 const Form = mongoose.model("Form", formSchema);
 
 // API Route for Form Submission with Debugging
-app.post("/api/form", async (req, res) => {
+app.get("/api/form", async (req, res) => {
 console.log("🔹 Incoming Request Data:", req.body);
 
 try {

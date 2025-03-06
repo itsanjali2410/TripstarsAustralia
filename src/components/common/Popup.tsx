@@ -300,8 +300,6 @@ const Popup: React.FC = () => {
       }
     }
   };
-
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -327,7 +325,6 @@ const Popup: React.FC = () => {
       pax,
       child,
     };
-
     try {
       const API_URL = import.meta.env.VITE_API_URL || "https://tripstarsholidays.com";
 
