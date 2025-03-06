@@ -276,7 +276,7 @@ const Popup: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [pax, setPax] = useState(1);
-  const [child, setChild] = useState(0); 
+  const [child, setChild] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
     contact: "",
@@ -436,32 +436,32 @@ const Popup: React.FC = () => {
             />
 
             <PaxCounterWrapper>
-            <PaxCounter>
-  <label>Number of Adults</label>
-  <div className="counter-row">
-    <button type="button" onClick={() => handlePaxChange(false)} disabled={pax <= 1}>
-      -
-    </button>
-    <span>{pax}</span>
-    <button type="button" onClick={() => handlePaxChange(true)}>
-      +
-    </button>
-  </div>
-</PaxCounter>
+              <PaxCounter>
+                <label>Number of Adults</label>
+                <div className="counter-row">
+                  <button type="button" onClick={() => handlePaxChange(false)} disabled={pax <= 1}>
+                    -
+                  </button>
+                  <span>{pax}</span>
+                  <button type="button" onClick={() => handlePaxChange(true)}>
+                    +
+                  </button>
+                </div>
+              </PaxCounter>
 
 
-<PaxCounter>
-  <label>Number of Children</label>
-  <div className="counter-row">
-    <button type="button" onClick={() => handlePaxChange(false)} disabled={pax <= 1}>
-      -
-    </button>
-    <span>{pax}</span>
-    <button type="button" onClick={() => handlePaxChange(true)}>
-      +
-    </button>
-  </div>
-</PaxCounter>
+              <PaxCounter>
+                <label>Number of Children</label>
+                <div className="counter-row">
+                  <button type="button" onClick={() => handlePaxChange(false)} disabled={pax <= 1}>
+                    -
+                  </button>
+                  <span>{pax}</span>
+                  <button type="button" onClick={() => handlePaxChange(true)}>
+                    +
+                  </button>
+                </div>
+              </PaxCounter>
             </PaxCounterWrapper>
 
             <button type="submit">Submit</button>
