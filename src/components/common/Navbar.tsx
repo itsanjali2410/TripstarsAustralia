@@ -4,7 +4,7 @@ import logoImg from "../../assets/images/logo/logo.png";
 import { useEffect, useState } from "react";
 
 const NavbarContainer = styled.nav`
-  position: fixed;
+  position: sticky;
   width: 100%;
   display: flex;
   justify-content: space-between;

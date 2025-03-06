@@ -27,8 +27,9 @@ const benefits: Benefit[] = [
     title: "Exciting Deals",
     description:
       "Our platform offers the best deals and discounts on exclusive holiday packages for great value.",
-    iconUrl: "https://images.emtcontent.com/holiday-img/home-img/ec_deal.png",
-  },
+    iconUrl: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Font_Awesome_5_regular_star.svg", // New icon link
+},
+
   {
     title: "24/7 Support",
     description:
