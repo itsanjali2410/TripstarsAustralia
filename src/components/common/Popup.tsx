@@ -326,7 +326,7 @@ const Popup: React.FC = () => {
     };
 
     try {
-      const response = await fetch("https://:localhost:5050", {
+      const response = await fetch("https://tripstarsholidays/api", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
