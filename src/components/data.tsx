@@ -505,7 +505,7 @@ export const Goa = [
   {
     title: "Northern Goa",
     image: goa,
-    pricing: "₹19,699/- Onwards",
+    pricing: "₹19,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
