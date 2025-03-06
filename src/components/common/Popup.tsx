@@ -326,7 +326,7 @@ const Popup: React.FC = () => {
     };
 
     try {
-      const response = await fetch("https://148.135.138.32/api/popups", {
+      const response = await fetch("https://148.135.138.32:5050/api/popups", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
