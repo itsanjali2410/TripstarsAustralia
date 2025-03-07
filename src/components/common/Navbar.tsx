@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import logoImg from "../../assets/images/logo/logo.png";
 import { useEffect, useState } from "react";
 
+// Define prop types for the Dropdown component
+interface DropdownProps {
+  isOpen: boolean;
+}
+
 const NavbarContainer = styled.nav`
   position: sticky;
   width: 100%;
@@ -100,7 +105,7 @@ const NavLinksContainer = styled.div`
   }
 `;
 
-const Dropdown = styled.div`
+const Dropdown = styled.div<DropdownProps>`  /* Use the prop type here */
   position: absolute;
   top: 100%;
   left: 0;
