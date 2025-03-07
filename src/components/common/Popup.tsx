@@ -311,7 +311,9 @@ const Popup: React.FC = () => {
   const handlePaxChange = (increment: boolean) => setPax((prev) => (increment ? prev + 1 : prev - 1));
   const handleChildChange = (increment: boolean) => setChild((prev) => (increment ? prev + 1 : prev - 1));
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const API_URL = "https://tripstarsholidays.com"; // ✅ Use domain instead of localhost
+
+const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!startDate) {
@@ -319,21 +321,18 @@ const Popup: React.FC = () => {
         return;
     }
 
-    // Prepare form data to match backend API
     const formSubmission = {
         name: formData.name,
         contact: formData.contact,
         email: formData.email,
         destination: formData.destination,
         departureCity: formData.departureCity,
-        travelDate: startDate ? startDate.toISOString() : null, // Convert date to ISO format
+        travelDate: startDate ? startDate.toISOString() : null,
         pax,
         child
     };
 
     try {
-        const API_URL = "http://localhost:8000"; // Use your local backend
-
         const response = await fetch(`${API_URL}/api/form`, {
             method: "POST",
             headers: {
@@ -345,9 +344,8 @@ const Popup: React.FC = () => {
         if (!response.ok) throw new Error("Failed to submit form");
 
         alert("🎉 Form submitted successfully!");
-        setIsVisible(false); // Close popup after successful submission
+        setIsVisible(false);
 
-        // Reset form fields after submission
         setFormData({
             name: "",
             contact: "",
