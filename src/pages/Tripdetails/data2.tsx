@@ -137,7 +137,7 @@ export const destinationsData = {
     },
     thingsToDo: [
       // { name: "Bali Swing", image: baliImg1 },
-      { name: "Banova Water Sport", image: baliImg2 },
+      { name: "Banova Water Sports", image: baliImg2 },
       { name: "Kechak Dance", image: baliImg3 },
       { name: "Kintamani Tour", image: baliImg4 },
       { name: "Nusa Paneda", image: baliImg5 },

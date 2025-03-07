@@ -85,7 +85,6 @@ import japan7 from "../assets/Tripdetails/new/japan/Japan 6.webp"
 import japan8 from "../assets/Tripdetails/new/japan/Japan 7.webp"
 
 //turkey
-//malaysia
 import turkey1 from "../assets/Tripdetails/new/turkey/Turkey 1.webp"
 import turkey2 from "../assets/Tripdetails/new/turkey/Turkey 2 (1).webp"
 import turkey3 from "../assets/Tripdetails/new/turkey/Turkey 2.webp"
@@ -142,7 +141,7 @@ import southafrica6 from "../assets/Tripdetails/new/south affrica/South affrica 
 import { SwissFranc } from "lucide-react";
 import { south } from "@cloudinary/url-gen/qualifiers/compass";
 
-//kashmir 
+// kashmir 
 import kashmir1 from "../assets/Tripdetails/domestic/Kashmir/Packages/Kashmir 1.jpg"
 import kashmir2 from "../assets/Tripdetails/domestic/Kashmir/Packages/Kashmir 2.jpg";
 import kashmir3 from "../assets/Tripdetails/domestic/Kashmir/Packages/Kashmir 3.jpg";
@@ -346,9 +345,9 @@ export const Thailand = [
 
 export const Europe = [
   {
-    title: "Eiffel tower",
+    title: "Melodies of eastern Europe",
     image: europe1,
-    pricing: "₹35,999/- Onwards",
+    pricing: "₹2,99,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -356,32 +355,32 @@ export const Europe = [
   },
 
   {
-    title: "Vetican city",
+    title: "Europian highlights",
     image: europe3,
-    pricing: "₹55,999/- Onwards",
+    pricing: "₹2,99,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "8N/9D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
   {
-    title: "Venice",
+    title: "Europian Dreams",
     image: europe4,
-    pricing: "₹55,999/- Onwards",
+    pricing: "₹2,99,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "8N/9D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
-  {
-    title: "Rome",
-    image: europe5,
-    pricing: "₹55,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "8N/9D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  }
+  // {
+  //   title: "Rome",
+  //   image: europe5,
+  //   pricing: "₹55,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "8N/9D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // }
 
 ];
 //Himachal Pradesh
@@ -423,7 +422,45 @@ export const Himachal = [
     ],
   },
 ];
-
+//andaman
+export const Andaman = [
+  {
+    title: "Shimla & Manali Delight",
+    image: andaman1,
+    pricing: "₹39,299/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Shimla-Manali Magic",
+    image:andaman2,
+    pricing: "₹45,899/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Majestic Himachal",
+    image: andaman3,
+    pricing: "₹62,499/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "9N/10D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Himalayan Blessings",
+    image: andaman4,
+    pricing: "₹68,599/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "10N/11D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+];
 //ladakh
 export const Ladakh = [
   {
@@ -447,7 +484,7 @@ export const Ladakh = [
   },
 ];
 //North East
-export const North = [
+export const North_East = [
   {
     title: "Short break to Sikkim",
     image: north,
@@ -485,7 +522,45 @@ export const North = [
     ],
   },
 ];
-
+//kerala
+export const Kerala = [
+  {
+    title: "Exotic Kerala",
+    image: kerala1,
+    pricing: "₹45,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Shortbreak Kerala",
+    image: kerala2,
+    pricing: "₹31,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Getaway to Kerala",
+    image: kerala3,
+    pricing: "₹31,299/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Glimpse of Kerala",
+    image: kerala4,
+    pricing: "₹42,399/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+];
 // karnataka
 // export const karnataka = [
 //   {
@@ -718,7 +793,7 @@ export const southAfrica = [
   },
 ];
 
-export const Andaman = [
+export const Andaman1 = [
   {
     title: "Andaman-Super Saver",
     image: andaman1,
@@ -969,7 +1044,7 @@ export const Kashmir = [
     ],
   },
 ];
-
+//japan
 export const Japan = [
   {
     title: "Visit Mt Fuji and Hakone ",
