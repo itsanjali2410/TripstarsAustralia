@@ -441,13 +441,13 @@ const Footer: React.FC = () => {
 </p>
         <div className="contact-horizontal">
           <p>                                                                                                                                                                                  
-            <a href="mailto:hello@wanderon.in">hello@tripstars.in</a>
+            <a href="mailto:Info@tripstars.in">Info@tripstars.in</a>
           </p>
           <p>
-            <a href="tel:+919090403075">+91 9875097159</a>
+            <a href="tel:+919875097159">+91 9875097159</a>
           </p>
           <p>
-            <a href="https://tripstarsholidays.in/">http://tripstars.in/</a>
+            <a href="http://tripstars.in/">http://tripstars.in</a>
           </p>
         </div>
       </FooterContact>
@@ -461,7 +461,6 @@ const Footer: React.FC = () => {
           ))}
         </SocialLinks>
       </SocialContainer>
-
       <FooterBottom>
         {isMobile ? <FooterImage
           src="https://images.wanderon.in/footer-mobile?updatedAt=1734433384777"
@@ -470,7 +469,6 @@ const Footer: React.FC = () => {
           src="https://images.wanderon.in/footer-desktop?updatedAt=1734433384777"
           alt="Desktop Footer"
         />}
-        
         <p>© 2025 TripStars – Holidays PVT LTD, All rights reserved</p>
       </FooterBottom>
     </FooterContainer>

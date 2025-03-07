@@ -12,8 +12,8 @@ const NavbarContainer = styled.nav`
   z-index: 9999;
   background:rgb(0, 0, 0);
   opacity: 0.9;
-  // border-bottom-left-radius: 10px;
-  // border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   &.active {
     background-color: #000;
     padding: 1rem 2rem;
@@ -44,47 +44,56 @@ const NavLinksContainer = styled.div`
   justify-content: end;
   width: 50%;
   list-style: none;
+
   li {
     padding: 0 0.6rem;
     a {
       color: #fff;
       text-decoration: none;
     }
-    position: relative; /* Added for dropdown positioning */
+    position: relative;
   }
 
   @media (max-width: 768px) {
-    position: absolute;
-    background-color:rgb(0, 0, 0);
-    width: 80vw;
-    height: 100svh;
+    position: fixed;
+    background-color: rgb(0, 0, 0);
+    width: 100vw; /* Full screen width */
+    height: 100vh; /* Full screen height */
     top: 0;
     right: 0;
-    display: block;
-    transform: translateX(80vw);
-    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center items */
+    align-items: center;
+    transform: translateX(100%); /* Completely hidden */
+    transition: transform 0.4s ease-in-out;
+    z-index: 1000;
+
     &.active_menu {
-      transform: translateX(0px);
+      transform: translateX(0); /* Show the menu */
     }
+
     li {
-      padding: 1rem 1rem;
-      border-bottom: 1px solidrgb(0, 0, 0);
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
       a {
-        font-size: 0.9rem;
+        font-size: 1.2rem; /* Better visibility */
       }
     }
+
     .close_icon {
-      display: flex;
-      justify-content: end;
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      
       svg {
         width: 2rem;
         path {
           fill: #fff;
         }
-      }
-      display: none;
-      @media (max-width: 768px) {
-        display: flex;
       }
     }
   }
