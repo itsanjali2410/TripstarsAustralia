@@ -267,17 +267,17 @@ export default function Navbar() {
           </Dropdown>
         </li>
 
-        <li>
+        {/* <li>
           <Link to="/">Holidays</Link>
-        </li>
+        </li> */}
         <li>
-          <Link to="/">Themes</Link>
+          <Link to="/themes">Themes</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/">Offers</Link>
-        </li>
+        </li> */}
         <li>
-          <Link to="/">Contact</Link>
+          <Link to="/contact">Contact</Link>
         </li>
       </NavLinksContainer>
 

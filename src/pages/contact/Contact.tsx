@@ -50,7 +50,7 @@ const ContactForm = styled.form`
   text-align: center;
 
   h2 {
-    color: #007bff;
+    color:rgb(0, 0, 0);
     margin-bottom: 35px;
   }
 
@@ -64,7 +64,7 @@ const ContactForm = styled.form`
   }
 
   button {
-    background: #007bff;
+    background:rgb(0, 0, 0);
     color: white;
     padding: 12px;
     border: none;
@@ -75,7 +75,7 @@ const ContactForm = styled.form`
   }
 
   button:hover {
-    background: #0056b3;
+    background:rgb(0, 0, 0);
   }
 `;
 
@@ -91,7 +91,7 @@ const ContactInfo = styled.div`
   text-align: center;
 
   h3 {
-    color: #007bff;
+    color:rgb(0, 0, 0);
   }
 
   div {
@@ -120,7 +120,7 @@ const Contact: React.FC = () => {
   return (
     <ContactContainer>
       <Banner>
-        <img src="https://static.vecteezy.com/system/resources/previews/005/263/636/non_2x/contact-us-concept-icons.jpg" alt="Contact Us" />
+        <img src="https://www.eraindia.org/wp-content/uploads/2022/09/contact-banner.jpg" alt="Contact Us" />
       </Banner>
       <ContactSection>
         <ContactForm onSubmit={handleSubmit}>
