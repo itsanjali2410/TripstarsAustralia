@@ -10,7 +10,7 @@ const NavbarContainer = styled.nav`
   justify-content: space-between;
   padding: 1rem 2rem;
   z-index: 9999;
-  background:rgb(0, 0, 0);
+  background: rgb(0, 0, 0);
   opacity: 0.9;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -68,6 +68,7 @@ const NavLinksContainer = styled.div`
     transform: translateX(100%); /* Completely hidden */
     transition: transform 0.4s ease-in-out;
     z-index: 1000;
+    overflow: auto; /* Allow scrolling when the menu is open */
 
     &.active_menu {
       transform: translateX(0); /* Show the menu */
@@ -104,7 +105,7 @@ const Dropdown = styled.div`
   top: 100%;
   left: 0;
   background-color: #071A29;
-  display: none;
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")}; /* Toggle dropdown */
   z-index: 1;
   width: 400px; /* Adjust width for both categories */
   border-radius: 8px;
@@ -128,12 +129,6 @@ const Dropdown = styled.div`
     }
   }
 
-  /* Show the dropdown on hover */
-  ${NavLinksContainer} li:hover & {
-    display: block;
-  }
-
-  /* Styles for the categories (Domestic and International) */
   .category {
     display: flex;
     flex-direction: column;
@@ -177,9 +172,14 @@ const MenuBtn = styled.div`
 export default function Navbar() {
   const [navBg, setNavBg] = useState<boolean>(false);
   const [active, setIsActive] = useState<boolean>(false);
+  const [dropdownOpen, setDropdownOpen] = useState<boolean>(false); // For toggling dropdown
 
   const toggleMenu = () => {
     setIsActive((prev) => !prev);
+  };
+
+  const toggleDropdown = () => {
+    setDropdownOpen((prev) => !prev); // Toggle dropdown visibility
   };
 
   const changeNavBg = () => {
@@ -217,9 +217,9 @@ export default function Navbar() {
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li className="dropdown">
+        <li className="dropdown" onClick={toggleDropdown}> {/* Added click handler */}
           <Link to="/">Destinations</Link>
-          <Dropdown>
+          <Dropdown isOpen={dropdownOpen}> {/* Pass isOpen prop */}
             <ul>
               <li className="category">
                 <strong>Domestic</strong>
