@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 import { FaCheckCircle, FaTimes } from "react-icons/fa";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import emailjs from "@emailjs/browser";
 // Assets
 import logo1 from "../../assets/popup/Customers.png";
 import logo2 from "../../assets/popup/Awardwinners .png";
@@ -270,8 +270,6 @@ const PaxCounter = styled.div`
   }
 `;
 
-
-
 const Popup: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [startDate, setStartDate] = useState<Date | null>(null);
@@ -313,7 +311,7 @@ const Popup: React.FC = () => {
 
   const API_URL = "https://tripstarsholidays.com"; // ✅ Use domain instead of localhost
 
-const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!startDate) {
@@ -321,31 +319,29 @@ const handleSubmit = async (e: React.FormEvent) => {
         return;
     }
 
-    const formSubmission = {
+    const templateParams = {
         name: formData.name,
         contact: formData.contact,
         email: formData.email,
         destination: formData.destination,
         departureCity: formData.departureCity,
-        travelDate: startDate ? startDate.toISOString() : null,
+        travelDate: startDate ? startDate.toISOString().split("T")[0] : "",
         pax,
         child
     };
 
     try {
-        const response = await fetch(`${API_URL}/api/form`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formSubmission),
-        });
+        await emailjs.send(
+            "service_eamkhsr", // ✅ Your Service ID
+            "template_1nh5ps2", // ✅ Your Template ID
+            templateParams,
+            "gScHv791km1kt3vL1" // ✅ Your Public Key
+        );
 
-        if (!response.ok) throw new Error("Failed to submit form");
-
-        alert("🎉 Form submitted successfully!");
+        alert("🎉 Email sent successfully to Admin!");
         setIsVisible(false);
 
+        // Reset the form after successful submission
         setFormData({
             name: "",
             contact: "",
@@ -358,11 +354,10 @@ const handleSubmit = async (e: React.FormEvent) => {
         setChild(0);
         
     } catch (error) {
-        console.error("❌ Error submitting form:", error);
-        alert("Failed to submit form. Please try again.");
+        console.error("❌ Error sending email:", error);
+        alert("Failed to send email. Please try again.");
     }
 };
-
   return (
     <PopupContainer id="popup-container" isVisible={isVisible} onClick={handleOutsideClick}>
       <PopupContent>
