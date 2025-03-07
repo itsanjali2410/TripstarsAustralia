@@ -315,37 +315,55 @@ const Popup: React.FC = () => {
     e.preventDefault();
 
     if (!startDate) {
-      alert("Please select a travel date!");
-      return;
+        alert("Please select a travel date!");
+        return;
     }
 
+    // Prepare form data to match backend API
     const formSubmission = {
-      ...formData,
-      travelDate: startDate ? startDate.toISOString() : null, // Ensures it's always a valid value
-      pax,
-      child,
+        name: formData.name,
+        contact: formData.contact,
+        email: formData.email,
+        destination: formData.destination,
+        departureCity: formData.departureCity,
+        travelDate: startDate ? startDate.toISOString() : null, // Convert date to ISO format
+        pax,
+        child
     };
+
     try {
-      const API_URL = import.meta.env.VITE_API_URL || "https://tripstarsholidays.com";
+        const API_URL = "http://localhost:8000"; // Use your local backend
 
+        const response = await fetch(`${API_URL}/api/form`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formSubmission),
+        });
 
-      const response = await fetch(`${API_URL}/api/form`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formSubmission),
-      });
+        if (!response.ok) throw new Error("Failed to submit form");
 
-      if (!response.ok) throw new Error("Failed to submit form");
+        alert("🎉 Form submitted successfully!");
+        setIsVisible(false); // Close popup after successful submission
 
-      alert("Form submitted successfully!");
-      setIsVisible(false);
+        // Reset form fields after submission
+        setFormData({
+            name: "",
+            contact: "",
+            email: "",
+            destination: "",
+            departureCity: "",
+        });
+        setStartDate(null);
+        setPax(1);
+        setChild(0);
+        
     } catch (error) {
-      console.error("Error:", error);
-      alert("Failed to submit form. Check console for details.");
+        console.error("❌ Error submitting form:", error);
+        alert("Failed to submit form. Please try again.");
     }
-  };
+};
 
   return (
     <PopupContainer id="popup-container" isVisible={isVisible} onClick={handleOutsideClick}>
