@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar";
 import RatingBar from "./RatingBar";
 
 // Import local images
-import image2 from "../../../assets/banner/banner 5.jpg";
+import image2 from "../../../assets/banner/banner 5.png";
 import image2Mobile from "../../../assets/banner/Mobile banner.jpg"; // Mobile version of the image
 
 // Define types for styled component props
