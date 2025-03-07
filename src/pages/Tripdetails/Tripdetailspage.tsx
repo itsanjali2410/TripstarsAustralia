@@ -17,7 +17,7 @@ import ChooseTravelStyle from "./sections/ChooseTravelStyle";
 import TravelStyleCarousel from "./sections/TravelStyleCarousel";
 import ExploreDestinations from "../Home/sections/ExploreDestinations";
 import TrendingOffers2 from "../../components/TrendingOffers2";
-import { Bali, similar, Vietnam, Thailand, Europe, Dubai, Australia, Baku, Hongkong, Japan, Malaysia, Maldives, Mauritius, Singapore, southAfrica, Turkey } from "../../components/data";
+import { Bali,Kashmir,Kerala,Andaman1,similar, Vietnam, Thailand, Europe, Dubai, Australia, Baku, Hongkong, Japan, Malaysia, North_East, Maldives, Mauritius, Singapore, southAfrica, Turkey, Ladakh } from "../../components/data";
 import DestinationSlider from "./sections/DestinationSlider";
 import Choose_your from "./sections/Choose_your";
 import PopularDestinations from "../Home/sections/PopularDestinations";
@@ -28,87 +28,94 @@ import baliImg14 from "../../assets/Tripdetails/bali/ThingsToDoInBali/mobile-ban
 import TrustindexWidget from "../Home/sections/TrustindexWidget";
 import Popup from "../../components/common/Popup";
 
-
 type LocationKey = keyof typeof destinationsData;
+
 export default function Tripdetailspage() {
-  // const location = "Bali"; // Set to "Bali" for now
-  // const location = "dubai"; // Set to "Bali" for now
-  // const location = "singapore";
-  // const location = "thailand";
-    // ✅ Update isMobile state when window resizes
-    useEffect(() => {
-      const handleResize = () => setIsMobile(window.innerWidth <= 768);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
-  const { location } = useParams<{ location: string }>();
+  // Setup isMobile state for responsive design
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Get location from the URL params
+  const { location } = useParams<{ location: string }>();
+
   // Narrow the type of location to a valid key or undefined
   const validLocation = location as LocationKey;
-
   const locationData = destinationsData[validLocation];
-  // const locationData = destinationsData[location];
 
+  // If no location data is found, show a message
   if (!locationData) {
     return <p>No data available for this location.</p>;
   }
 
   const { thingsToDo, banner } = locationData;
- // ✅ Correctly set the banner image for Bali (desktop vs mobile)
- const bannerImage =
- location === "bali" ? (isMobile ? baliImg14 : baliImg13) : locationData.banner.image;
+
+  // Set the banner image dynamically based on the location
+  const bannerImage =
+    location === "bali" ? (isMobile ? baliImg14 : baliImg13) : locationData.banner.image;
+
+  // Define a mapping for trending offers by location
+  const trendingOffersMapping: Record<string, any[]> = {
+    turkey: Turkey,
+    southAfrica: southAfrica,
+    singapore: Singapore,
+    mauritius: Mauritius,
+    malaysia: Malaysia,
+    maldives: Maldives,
+    japan: Japan,
+    hongkong: Hongkong,
+    baku: Baku,
+    bali: Bali,
+    vietnam: Vietnam,
+    dubai: Dubai,
+    europe: Europe,
+    thailand: Thailand,
+    australia: Australia,
+    ladakh: Ladakh,
+    north: North_East,
+    kashmir: Kashmir,
+    kerala : Kerala,
+    andaman: Andaman1,
+  };
+
+  // Get the relevant trending offers based on the location
+  const trendingOffers = trendingOffersMapping[location as keyof typeof trendingOffersMapping];
+
   return (
     <>
-      <Ban2
-        image={banner?.image}
-        destination={banner?.title}
+      {/* Banner Section */}
+      <Ban2 image={banner?.image} destination={banner?.title} />
 
+      {/* Popular Destinations */}
+      <PopularDestinations2
+        title="Things to do in"
+        highlightWord={banner?.title}
+        thingsToDo={thingsToDo}
       />
 
-      <PopularDestinations2 title="Things to do in" highlightWord={banner?.title} 
-      thingsToDo={locationData.thingsToDo} />
-      {/* <PopularDestinations /> */}
-      {/* <DynamicSlider
-        title={`Things to do in `}
-        highlightedWord={banner?.title}
-        destinations={thingsToDo}
-      /> */}
-      {location == "turkey" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Turkey} /> : ""}
-      {location == "southAfrica" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={southAfrica} /> : ""}
-      {location == "singapore" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Singapore} /> : ""}
-      {location == "mauritius" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Mauritius} /> : ""}
-      {location == "malaysia" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Malaysia} /> : ""}
-      {location == "maldives" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Maldives} /> : ""}
-      {location == "japan" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Japan} /> : ""}
-      {location == "hongkong" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Hongkong} /> : ""}
-      {location == "baku" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Baku} /> : ""}
-      {location == "bali" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Bali} /> : ""}
-      {location == "vietnam" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Vietnam} /> : ""}
-      {location == "dubai" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Dubai} /> : ""}
-      {location == "europe" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Europe} /> : ""}
-      {location == "thailand" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Thailand} /> : ""}
-      {location == "australia" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Australia} /> : ""}
-      
-      {/* <TrendingOffers title={`Trending Offers in ${location}`} data={trendingOffers}/> */}
-      {/* <CherryBlossomsSection title={`Experience Best Selling Packages in ${location}`}images={cherryBlossoms}/> */}
+      {/* Dynamic Trending Offers */}
+      {trendingOffers && <TrendingOffers title={`Trending Offers in ${location}`} cards={trendingOffers} />}
+
+      {/* Video Testimonials */}
       <VideoTestimonials />
-      <VideoThumbnail/>
-      {/* <ImageSlider /> */}
-    {/* <NewComponent /> */}
+      <VideoThumbnail />
+
+      {/* Why Tripstars Section */}
       <WhyTripstars />
-      {/* <ChooseTravelStyle/> */}
-      {/* <TrendingOffers title={`Trending Offers in ${location}`} cards={Bali} /> */}
-      {/* <Loader /> */}
-      {/* <Loader /> */}
-      {/* <ExploreDestinations /> */}
-      {/* <DestinationSlider/>
-       */}
+
+      {/* Choose Your Section */}
       <Choose_your />
-      <Popup/>
-       
-       <TrustindexWidget />
-      {/* <TravelStyleCarousel /> */}
-      {/* <FAQ /> */}
+
+      {/* Popup */}
+      <Popup />
+
+      {/* Trustindex Widget */}
+      <TrustindexWidget />
+
+      {/* Similar Packages Section */}
       <TrendingOffers title="Similar packages" cards={similar} />
     </>
   );

@@ -17,8 +17,6 @@ const NavbarContainer = styled.nav`
   z-index: 9999;
   background: rgb(0, 0, 0);
   opacity: 0.9;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
   &.active {
     background-color: #000;
     padding: 1rem 2rem;
@@ -49,7 +47,6 @@ const NavLinksContainer = styled.div`
   justify-content: end;
   width: 50%;
   list-style: none;
-
   li {
     padding: 0 0.6rem;
     a {
@@ -68,8 +65,9 @@ const NavLinksContainer = styled.div`
     right: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center items */
-    align-items: center;
+    justify-content: flex-start; /* Center items */
+    align-items: flex-start;
+    padding-top:5rem;
     transform: translateX(100%); /* Completely hidden */
     transition: transform 0.4s ease-in-out;
     z-index: 1000;
@@ -105,12 +103,12 @@ const NavLinksContainer = styled.div`
   }
 `;
 
-const Dropdown = styled.div<DropdownProps>`  /* Use the prop type here */
+const Dropdown = styled.div<DropdownProps>`
   position: absolute;
   top: 100%;
   left: 0;
   background-color: #071A29;
-  display: ${({ isOpen }) => (isOpen ? "block" : "none")}; /* Toggle dropdown */
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   z-index: 1;
   width: 400px; /* Adjust width for both categories */
   border-radius: 8px;
@@ -121,8 +119,8 @@ const Dropdown = styled.div<DropdownProps>`  /* Use the prop type here */
     padding: 0;
     margin: 0;
     list-style: none;
-    display: flex;
-    justify-content: space-between; /* Aligns the categories side by side */
+
+    justify-content: space-between;
   }
 
   li {
@@ -146,18 +144,18 @@ const Dropdown = styled.div<DropdownProps>`  /* Use the prop type here */
   }
 
   @media (max-width: 768px) {
-    width: 100%; /* Take full width on mobile */
-    padding: 15px;
+    width: 200%; /* Increase width on mobile */
+    padding: 30px;
     ul {
       flex-direction: column; /* Stack the categories vertically */
       justify-content: flex-start; /* Align items at the top */
     }
     .category {
-      width: 100%; /* Full width for each category on mobile */
+      width: 100%;
       margin-bottom: 15px;
     }
     .category strong {
-      font-size: 1rem; /* Increase font size for better readability */
+      font-size: 1rem;
     }
   }
 `;
@@ -177,23 +175,34 @@ const MenuBtn = styled.div`
 export default function Navbar() {
   const [navBg, setNavBg] = useState<boolean>(false);
   const [active, setIsActive] = useState<boolean>(false);
-  const [dropdownOpen, setDropdownOpen] = useState<boolean>(false); // For toggling dropdown
+  const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false); // State to check for mobile screens
 
   const toggleMenu = () => {
     setIsActive((prev) => !prev);
-  };
-
-  const toggleDropdown = () => {
-    setDropdownOpen((prev) => !prev); // Toggle dropdown visibility
   };
 
   const changeNavBg = () => {
     window.scrollY >= 300 ? setNavBg(true) : setNavBg(false);
   };
 
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768); // Set mobile view based on screen width
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", changeNavBg);
+    window.addEventListener("resize", handleResize); // Listen to window resize event
+    handleResize(); // Check initial screen size
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
+  // Toggle dropdown for mobile
+  const toggleDropdown = () => {
+    setDropdownOpen((prev) => !prev);
+  };
 
   return (
     <NavbarContainer className={navBg ? "active" : ""}>
@@ -222,9 +231,14 @@ export default function Navbar() {
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li className="dropdown" onClick={toggleDropdown}> {/* Added click handler */}
+        <li
+          className="dropdown"
+          onClick={isMobile ? toggleDropdown : undefined} // Use click for mobile
+          onMouseEnter={isMobile ? undefined : () => setDropdownOpen(true)} // Hover event for desktop
+          onMouseLeave={isMobile ? undefined : () => setDropdownOpen(false)} // Hover event for desktop
+        >
           <Link to="/">Destinations</Link>
-          <Dropdown isOpen={dropdownOpen}> {/* Pass isOpen prop */}
+          <Dropdown isOpen={dropdownOpen}>
             <ul>
               <li className="category">
                 <strong>Domestic</strong>
@@ -232,7 +246,7 @@ export default function Navbar() {
                 <Link to="https://tripstarsholidays.com/kerala">Kerala</Link>
                 <Link to="https://tripstarsholidays.com/kashmir">Kashmir</Link>
                 <Link to="https://tripstarsholidays.com/andaman">Andaman</Link>
-                <Link to="https://tripstarsholidays.com/rajasthan">Rajasthan</Link>
+                <Link to="https://tripstarsholidays.com/goa">Goa</Link>
               </li>
               <li className="category">
                 <strong>International</strong>
@@ -252,6 +266,7 @@ export default function Navbar() {
             </ul>
           </Dropdown>
         </li>
+
         <li>
           <Link to="/">Holidays</Link>
         </li>

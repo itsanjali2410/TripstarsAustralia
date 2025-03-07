@@ -205,7 +205,53 @@ export const destinationsData = {
         { name: "Varkala Cliff", image: baliImg9 },
       ],
     },
+    nepal: {
+      banner: {
+        image: "https://www.nepaltrekkinginfo.com/images/slider/everest-base-camp.jpg",
+        title: "Nepal",
+        description: "Explore the breathtaking landscapes and cultural heritage of Nepal.",
+      },
+      thingsToDo: [
+        { name: "Everest Trekking", image: singaporeImg1 },
+        { name: "Kathmandu Valley", image: singaporeImg2 },
+        { name: "Jungle Safari", image: singaporeImg3 },
+        { name: "Lumbini Visit", image: singaporeImg4 },
+        { name: "Paragliding in Pokhara", image: singaporeImg5 },
+        { name: "River Rafting", image: singaporeImg1 },
+      ],
+    },
   
+    north_east: {
+      banner: {
+        image: "https://www.northeastguide.com/wp-content/uploads/2022/09/Dzuko-Valley-Trekking.jpg",
+        title: "North East India",
+        description: "Discover the hidden beauty and vibrant culture of North East India.",
+      },
+      thingsToDo: [
+        { name: "Forest Trekking", image: vietnamImg1 },
+        { name: "Tea Gardens", image: vietnamImg2 },
+        { name: "Wildlife Safari", image: vietnamImg3 },
+        { name: "Cultural Festivals", image: vietnamImg4 },
+        { name: "River Rafting", image: vietnamImg5 },
+        { name: "Traditional Villages", image: vietnamImg6 },
+      ],
+    },
+  
+    himachal_pradesh: {
+      banner: {
+        image: "https://www.holidify.com/images/bgImages/HIMACHAL-PRADESH.jpg",
+        title: "Himachal Pradesh",
+        description: "Experience the adventure, spirituality, and scenic beauty of Himachal Pradesh.",
+      },
+      thingsToDo: [
+        { name: "Mountain Trekking", image: australiaImg1 },
+        { name: "Paragliding Sports", image: australiaImg2 },
+        { name: "Temple Visits", image: australiaImg3 },
+        { name: "Hill Stations", image: australiaImg4 },
+        { name: "River Rafting", image: australiaImg5 },
+        { name: "Scenic Drives", image: australiaImg6 },
+      ],
+    },
     andaman: {
       banner: {
         image: "", 
