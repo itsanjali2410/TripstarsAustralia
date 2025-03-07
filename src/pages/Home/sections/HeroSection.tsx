@@ -86,7 +86,7 @@ const OfferBox = styled.div`
   justify-content: center;
 
   @media (max-width: 768px) {
-
+    display:none;
     width: 100%;
     gap: 20px; /* Reduce spacing for mobile */
     padding: 15px; /* Adjust padding */
