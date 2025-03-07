@@ -34,7 +34,7 @@ const TrustindexWidget: React.FC = () => {
     if (!document.getElementById("trustindex-script")) {
       const script = document.createElement("script");
       script.src =
-      "https://cdn.trustindex.io/loader.js?c31e44841710990a8b16dcd4ddb";
+      "https://cdn.trustindex.io/loader.js?660bbe64210158756b963b23487";
       script.async = true;
       script.defer = true;
       script.id = "trustindex-script";
