@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 import { FaCheckCircle } from "react-icons/fa";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import emailjs from "@emailjs/browser";
 import logo1 from "../../assets/popup/Customers.png";
 import logo2 from "../../assets/popup/Awardwinners .png";
 import logo3 from "../../assets/popup/Customerservice.png";
@@ -31,7 +31,7 @@ const StaticContainer = styled.div`
 const ContentWrapper = styled.div`
   background: white;
   border-radius: 15px;
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto;
   display: flex;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
@@ -177,15 +177,38 @@ const RightPanel = styled.div`
     transition: background 0.3s;
 
     &:hover {
-      background:rgb(255, 255, 255);
+      background:gold;
     }
   }
 `;
 
+const PaxCounterWrapper = styled.div`
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+`;
+
 const PaxCounter = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
+
+  label {
+    font-size: 14px;
+  }
+
+  .counter-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  span {
+    font-size: 16px;
+  }
 
   button {
     padding: 5px 10px;
@@ -193,21 +216,23 @@ const PaxCounter = styled.div`
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 14px;
 
     &:hover {
       background: #bbb;
     }
-  }
 
-  span {
-    font-size: 14px;
+    &:disabled {
+      background: #e0e0e0;
+      cursor: not-allowed;
+    }
   }
-
 `;
 
 const StaticForm: React.FC = () => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [pax, setPax] = useState(1);
+  const [child, setChild] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
     contact: "",
@@ -230,25 +255,66 @@ const StaticForm: React.FC = () => {
     setPax((prev) => (increment ? prev + 1 : prev - 1));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChildChange = (increment: boolean) => {
+    setChild((prev) => (increment ? prev + 1 : prev - 1));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData, startDate, pax);
+
+    if (!startDate) {
+      alert("Please select a travel date!");
+      return;
+    }
+
+    const templateParams = {
+      name: formData.name,
+      contact: formData.contact,
+      email: formData.email,
+      destination: formData.destination,
+      departureCity: formData.departureCity,
+      travelDate: startDate ? startDate.toISOString().split("T")[0] : "",
+      pax,
+      child,
+    };
+
+    try {
+      await emailjs.send(
+        "service_eamkhsr",
+        "template_1nh5ps2",
+        templateParams,
+        "gScHv791km1kt3vL1"
+      );
+
+      alert("🎉 Email sent successfully to Admin!");
+
+      setFormData({
+        name: "",
+        contact: "",
+        email: "",
+        destination: "",
+        departureCity: "",
+      });
+      setStartDate(null);
+      setPax(1);
+      setChild(0);
+    } catch (error) {
+      console.error("❌ Error sending email:", error);
+      alert("Failed to send email. Please try again.");
+    }
   };
 
   return (
     <StaticContainer>
       <ContentWrapper>
         <LeftPanel>
-          {/* Main Logo */}
           <div className="main-logo">
-          <img src={logoImg} alt="Main Logo" />
-
+            <img src={logoImg} alt="Main Logo" />
           </div>
-
           <div className="logo-container">
-            <img src={logo1} alt="15k Customers" style={{ width: "100px", height: "auto" }} />
-            <img src={logo2} alt="Award" style={{ width: "100px", height: "auto" }}/>
-            <img src={logo3} alt="Customer Service" style={{ width: "100px", height: "auto" }}/>
+            <img src={logo1} alt="15k Customers" />
+            <img src={logo2} alt="Award" />
+            <img src={logo3} alt="Customer Service" />
           </div>
           <ul>
             <li>
@@ -266,7 +332,6 @@ const StaticForm: React.FC = () => {
         <RightPanel>
           <h3>Plan Your Dream Vacation</h3>
           <form onSubmit={handleSubmit}>
-            <label>Name</label>
             <input
               type="text"
               name="name"
@@ -275,8 +340,6 @@ const StaticForm: React.FC = () => {
               placeholder="Your Name"
               required
             />
-
-            <label>Contact Number</label>
             <input
               type="tel"
               name="contact"
@@ -285,8 +348,6 @@ const StaticForm: React.FC = () => {
               placeholder="Your Contact Number"
               required
             />
-
-            <label>Email</label>
             <input
               type="email"
               name="email"
@@ -295,10 +356,8 @@ const StaticForm: React.FC = () => {
               placeholder="Your Email"
               required
             />
-
             <div className="row">
               <div>
-                <label>Destination</label>
                 <select
                   name="destination"
                   value={formData.destination}
@@ -310,10 +369,15 @@ const StaticForm: React.FC = () => {
                   <option value="bali">Bali</option>
                   <option value="dubai">Dubai</option>
                   <option value="thailand">Thailand</option>
+                  <option value="singapore">Singapore</option>
+                  <option value="malaysia">Malaysia</option>
+                  <option value="hongkong">Hong Kong</option>
+                  <option value="europe">Europe</option>
+                  <option value="vietnam">Vietnam</option>
+                  <option value="australia">Australia</option>
                 </select>
               </div>
               <div>
-                <label>Departure City</label>
                 <input
                   type="text"
                   name="departureCity"
@@ -324,32 +388,40 @@ const StaticForm: React.FC = () => {
                 />
               </div>
             </div>
-
-            <label>Travel Date</label>
             <DatePicker
               selected={startDate}
+              onChange={(date: Date | null) => setStartDate(date)}
               dateFormat="dd-MM-yyyy"
               placeholderText="Pick your travel date"
               isClearable
               className="custom-datepicker"
-              onChange={(date) => setStartDate(date)}
             />
-
-            <label>Number of Pax</label>
-            <PaxCounter>
-              <button
-                type="button"
-                onClick={() => handlePaxChange(false)}
-                disabled={pax <= 1}
-              >
-                -
-              </button>
-              <span>{pax}</span>
-              <button type="button" onClick={() => handlePaxChange(true)}>
-                +
-              </button>
-            </PaxCounter>
-
+            <PaxCounterWrapper>
+              <PaxCounter>
+                <label>Number of Adults</label>
+                <div className="counter-row">
+                  <button type="button" onClick={() => handlePaxChange(false)} disabled={pax <= 1}>
+                    -
+                  </button>
+                  <span>{pax}</span>
+                  <button type="button" onClick={() => handlePaxChange(true)}>
+                    +
+                  </button>
+                </div>
+              </PaxCounter>
+              <PaxCounter>
+                <label>Number of Children</label>
+                <div className="counter-row">
+                  <button type="button" onClick={() => handleChildChange(false)} disabled={child <= 0}>
+                    -
+                  </button>
+                  <span>{child}</span>
+                  <button type="button" onClick={() => handleChildChange(true)}>
+                    +
+                  </button>
+                </div>
+              </PaxCounter>
+            </PaxCounterWrapper>
             <button type="submit">Submit</button>
           </form>
         </RightPanel>
