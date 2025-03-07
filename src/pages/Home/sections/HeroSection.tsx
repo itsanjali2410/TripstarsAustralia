@@ -35,9 +35,7 @@ const Heading = styled.h2`
   color: #FF7F00;
  
   @media (max-width: 768px) {
-    font-size: 45px;
-    font-weight: bold;
-
+    font-size: 30px;
   }
 `;
 
@@ -88,9 +86,11 @@ const OfferBox = styled.div`
   justify-content: center;
 
   @media (max-width: 768px) {
+
     width: 100%;
-    
+    gap: 20px; /* Reduce spacing for mobile */
     padding: 15px; /* Adjust padding */
+    align-items: center; /* Center items */
     border-radius: 20px; /* Reduce border-radius */
   }
 `;
@@ -126,8 +126,7 @@ const OfferText = styled.div`
   font-size: 18px;
 
   @media (max-width: 768px) {
-    font-size: 13px;
-    widtyh:100%;
+    font-size: 16px;
   }
 `;
 
@@ -172,7 +171,7 @@ const EuropeGroupTourBanner: React.FC = () => {
           <Offer>
             <OfferNumber>3</OfferNumber>
             <OfferText>
-              <GreenText>100% Customised </GreenText>
+              <GreenText>100% Customised Trips</GreenText>
             </OfferText>
           </Offer>
         </OfferBox>
