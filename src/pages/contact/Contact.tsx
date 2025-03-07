@@ -17,6 +17,8 @@ const Banner = styled.div`
   text-align: center;
   overflow: hidden;
 
+
+  
   img {
     width: 100%;
     height: auto;
