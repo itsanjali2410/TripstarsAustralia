@@ -12,13 +12,14 @@ import payments from "./pages/Paymentpolicy/PaymentPolicies"
 // Components
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
-import Contact from "./pages/contact/contact";
+import contact from "./pages/Faq/Contact";
 // Styles
 // import GlobalStyles from "./GlobalStyles"; 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Contact } from "lucide-react";
 
 function App() {
   const location = useLocation();
@@ -41,7 +42,7 @@ function App() {
           <Route path="/payments" element={<PaymentPolicies />} />
           <Route path="/video" element={<VideoScroller />} />
           <Route path="/themes/" element={<Themes />} />
-          <Route path="/contact/" element={<Contact/>} />
+          <Route path="/contact/" element={<Contact />} />
         </Routes>
         {!isVideoPage && <Footer />}
       </div>
