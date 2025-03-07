@@ -96,26 +96,12 @@ const LeftPanel = styled.div`
     }
   }
 
+  /** Hide LeftPanel on screens smaller than 768px */
   @media (max-width: 768px) {
-    flex: none;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    .logo-container {
-      flex-direction: column;
-      align-items: center;
-    }
-    .main-logo img {
-      width: 120px;
-    }
-    ul {
-      font-size: 12px;
-    }
+    display: none;
   }
 `;
+
 
 const RightPanel = styled.div`
   padding: 20px;
@@ -126,7 +112,8 @@ const RightPanel = styled.div`
   @media (max-width: 768px) {
     flex: none;
     padding-left: 33px;
-    padding-top: 14%;
+    padding-top: 10%;
+    padding-bottom: 10%
     height: 80vh;
     width: 100%; /* Ensures form still takes full width on smaller devices */
   }
