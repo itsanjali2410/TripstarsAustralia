@@ -8,11 +8,11 @@ import NotFoundPage from "./pages/NotFoundPage";
 import Faq from "./pages/Faq/Faq";
 import PaymentPolicies from "./pages/Paymentpolicy/PaymentPolicies";
 import VideoScroller from "./pages/Video/VideoScroller";
-
+import payments from "./pages/Paymentpolicy/PaymentPolicies"
 // Components
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
-
+import Contact from "./pages/contact/contact";
 // Styles
 // import GlobalStyles from "./GlobalStyles"; 
 import "swiper/css";
@@ -36,11 +36,12 @@ function App() {
           <Route path="/tripdetails" element={<Thirdpage />} />
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/terms-conditions" element={<PrivacyPolicyPage title="Terms & Conditions" />} />
-          <Route path="https://tripstarsholidays.com/privacy-policy" element={<PrivacyPolicyPage title="Privacy Policy" />} />
-          <Route path="https://tripstarsholidays.com/cancellation-policy" element={<PrivacyPolicyPage title="Cancellation Policy" />} />
+          <Route path="privacy-policy" element={<PrivacyPolicyPage title="Privacy Policy" />} />
+          <Route path="/cancellation-policy" element={<PrivacyPolicyPage title="Cancellation Policy" />} />
           <Route path="/payments" element={<PaymentPolicies />} />
           <Route path="/video" element={<VideoScroller />} />
-          <Route path="https://tripstarsholidays.com/themes/" element={<Themes />} />
+          <Route path="/themes/" element={<Themes />} />
+          <Route path="/contact/" element={<Contact/>} />
         </Routes>
         {!isVideoPage && <Footer />}
       </div>
