@@ -1,183 +1,124 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { useSwipeable } from "react-swipeable";
+import SearchBar from "./SearchBar";
+import RatingBar from "./RatingBar";
 
-// Styled components
-const Banner = styled.div`
-  width: 100%;
-  height: 60vh;
-  background: url('https://static.wixstatic.com/media/ce4a22_791cf55edff1465b9addedcecb4b6023~mv2.jpg/v1/fill/w_1032,h_585,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Tripoly%20Website%20Banner%20.jpg') 
-    no-repeat right;
-  align-items: center;
-  padding-left: 5%;
-  color: black;
+// Import local images
+import image2 from "../../../assets/banner/banner 5.jpg";
+import image2Mobile from "../../../assets/banner/Mobile banner.jpg"; // Mobile version of the image
+
+// Define types for styled component props
+type SlideProps = {
+  bgImage: string;
+  active: boolean;
+};
+
+// Styled Components
+const SliderContainer = styled.section`
   position: relative;
-
-  @media (max-width: 768px) {
-    height: 400px;
-    padding-left: 20px;
-  }
-`;
-
-const BannerContent = styled.div`
-  max-width: 50%;
-  height:60vh;
-  @media (max-width: 768px) {
-    max-width: 100%;
-    text-align: center;
-    padding: 0 10px;
-  }
-`;
-
-const Heading = styled.h2`
-  font-size: 50px;
-  padding-top:50px;
-  font-family: 'Great Vibes', cursive;
-  color: #FF7F00;
- 
-  @media (max-width: 768px) {
-    font-size: 30px;
-  }
-`;
-
-const Subheading = styled.p`
-  font-size: 22px;
-  font-weight: bold;
-  color: black;
-  margin: 10px 0;
- 
-  @media (max-width: 768px) {
-    font-size: 18px;
-  }
-`;
-
-const Button = styled.a`
-  display: inline-block;
-  background: black;
-  color: white;
-  padding: 12px 25px;
-  font-size: 16px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-  border: 2px solid black;
-  transition: 0.3s ease-in-out;
-
-  &:hover {
-    background: white;
-    color: black;
-  }
-
-  @media (max-width: 768px) {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-`;
-
-const OfferBox = styled.div`
-  background: rgb(208, 219, 223);
-  padding: 20px;
-  display: flex;
   width: 100%;
-  margin-top: 20px;
-  gap: 50px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 50px;
-  justify-content: center;
-
+  height: 80vh;
   @media (max-width: 768px) {
-    display:none;
-    width: 100%;
-    gap: 20px; /* Reduce spacing for mobile */
-    padding: 15px; /* Adjust padding */
-    align-items: center; /* Center items */
-    border-radius: 20px; /* Reduce border-radius */
+    height: 50vh;
   }
 `;
 
-const Offer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const Slide = styled.div<SlideProps>`
+  width: 100%;
+  height: 100%;
+  background-image: url(${(props) => props.bgImage});
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.5s ease-in-out;
+  opacity: ${(props) => (props.active ? 1 : 0)};
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
+const SearchBarWrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
   text-align: center;
-  gap: 5px;
-`;
-
-const OfferNumber = styled.div`
-  background: black;
-  color: white;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  font-size: 18px;
-  font-weight: bold;
-
+  margin-top: 20px;
   @media (max-width: 768px) {
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
+    top: 60%;
+    width: 90%;
   }
 `;
 
-const OfferText = styled.div`
-  font-size: 18px;
-
+const HeroText = styled.h1`
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
   }
 `;
 
-const GreenText = styled.span`
-  color: red;
-  font-weight: bold;
-`;
+// HeroSection Component
+const HeroSection: React.FC = () => {
+  const images = [image2, image2Mobile]; // Add the mobile version of the image to the array
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
-const Divider = styled.div`
-  font-size: 18px;
-  font-weight: bold;
-  color: #888;
+  // Handle window resizing to set mobile state
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Check if the screen width is 768px or less
+    };
 
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
+    handleResize(); // Run on initial render
+    window.addEventListener("resize", handleResize); // Add event listener for window resize
 
-const EuropeGroupTourBanner: React.FC = () => {
+    return () => window.removeEventListener("resize", handleResize); // Clean up on component unmount
+  }, []);
+
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: goToNext,
+    onSwipedRight: goToPrevious,
+    preventScrollOnSwipe: true,
+    trackMouse: true,
+  });
+
   return (
-    <Banner>
-      <BannerContent>
-        <Heading>Europe Group Tour</Heading>
-        <Subheading>Limited-Time Deal</Subheading>
-        <Button href="#">PICK YOUR OFFER</Button>
-        <OfferBox>
-          <Offer>
-            <OfferNumber>1</OfferNumber>
-            <OfferText>
-              <span></span> <GreenText>4.9 Rated</GreenText>
-            </OfferText>
-          </Offer>
-          {/* <Divider>or</Divider> */}
-          <Offer>
-            <OfferNumber>2</OfferNumber>
-            <OfferText>
-              <GreenText>95% Visa Success Rate</GreenText>
-            </OfferText>
-          </Offer>
-          {/* <Divider>or</Divider> */}
-          <Offer>
-            <OfferNumber>3</OfferNumber>
-            <OfferText>
-              <GreenText>100% Customised Trips</GreenText>
-            </OfferText>
-          </Offer>
-        </OfferBox>
-      </BannerContent>
-    </Banner>
+    <SliderContainer {...swipeHandlers}>
+      {images.map((image, index) => (
+        <Slide
+          key={index}
+          bgImage={isMobile && index === 1 ? image2Mobile : image2} // Use mobile image for index 1 on small screens
+          active={index === currentIndex}
+        />
+      ))}
+
+      {/* Overlay text and SearchBar */}
+      <SearchBarWrapper>
+        {/* <HeroText>Find Your Dream Destination</HeroText> */}
+        {/* <SearchBar /> */}
+      </SearchBarWrapper>
+
+      {/* <RatingBar /> */}
+    </SliderContainer>
   );
 };
 
-export default EuropeGroupTourBanner;
+export default HeroSection;
