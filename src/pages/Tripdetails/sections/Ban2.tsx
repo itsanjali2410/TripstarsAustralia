@@ -77,7 +77,7 @@ const Ban2: React.FC<BanProps> = ({ image, destination }) => {
           <h1>Escape to</h1>
           
           <h2>{destination}</h2>
-          <SearchBar/>
+          {/* <SearchBar/> */}
         </div>
       </div>
     </Container>
