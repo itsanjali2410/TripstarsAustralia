@@ -36,9 +36,9 @@ function App() {
           <Route path="/tripdetails" element={<Thirdpage />} />
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/terms-conditions" element={<PrivacyPolicyPage title="Terms & Conditions" />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage title="Privacy Policy" />} />
-          <Route path="/cancellation-policy" element={<PrivacyPolicyPage title="Cancellation Policy" />} />
-          <Route path="/payment" element={<PaymentPolicies />} />
+          <Route path="https://tripstarsholidays.com/privacy-policy" element={<PrivacyPolicyPage title="Privacy Policy" />} />
+          <Route path="https://tripstarsholidays.com/cancellation-policy" element={<PrivacyPolicyPage title="Cancellation Policy" />} />
+          <Route path="https://tripstarsholidays.com/payment" element={<PaymentPolicies />} />
           <Route path="/video" element={<VideoScroller />} />
           <Route path="/themes" element={<Themes />} />
         </Routes>
