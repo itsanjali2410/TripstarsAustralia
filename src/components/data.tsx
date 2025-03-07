@@ -144,7 +144,32 @@ import { south } from "@cloudinary/url-gen/qualifiers/compass";
 
 //kashmir 
 import kashmir1 from "../assets/Tripdetails/domestic/Kashmir/Packages/Kashmir 1.jpg"
+import kashmir2 from "../assets/Tripdetails/domestic/Kashmir/Packages/Kashmir 2.jpg";
+import kashmir3 from "../assets/Tripdetails/domestic/Kashmir/Packages/Kashmir 3.jpg";
+import kashmir4 from "../assets/Tripdetails/domestic/Kashmir/Packages/Kashmir 4.jpg";
 
+//kerala
+import kerala1 from "../assets/Tripdetails/domestic/Kerala/Packages/Kerala 1.jpg"
+import kerala2 from "../assets/Tripdetails/domestic/Kerala/Packages/Kerala 2.jpg"
+import kerala3 from "../assets/Tripdetails/domestic/Kerala/Packages/Kerala 3.jpg"
+import kerala4 from "../assets/Tripdetails/domestic/Kerala/Packages/Kerala 4.jpg"
+
+//goa
+import goa1 from "../assets/Tripdetails/domestic/Goa/goa1.jpg"
+import goa2 from "../assets/Tripdetails/domestic/Goa/goa2.jpg"
+import goa3 from "../assets/Tripdetails/domestic/Goa/goa3.jpg"
+
+//ladakh
+import ladakh1 from "../assets/Tripdetails/domestic/Ladakh/Packages/Ladakh 1.jpg"
+import ladakh2 from "../assets/Tripdetails/domestic/Ladakh/Packages/Ladakh 2.jpg"
+import ladakh3 from "../assets/Tripdetails/domestic/Ladakh/Packages/Ladakh 3.jpg"
+import ladakh4 from "../assets/Tripdetails/domestic/Ladakh/Packages/Ladakh 4.jpg"
+
+//andaman
+import andaman1 from "../assets/Tripdetails/domestic/Andaman/Packages/Andaman 1.jpg"
+import andaman2 from "../assets/Tripdetails/domestic/Andaman/Packages/Andaman 2.jpg"
+import andaman3 from "../assets/Tripdetails/domestic/Andaman/Packages/Andaman 3.jpg"
+import andaman4 from "../assets/Tripdetails/domestic/Andaman/Packages/Andaman 4.jpg"
 
 // Card 1 - Bali Popular Destination
 export const Bali = [
@@ -403,7 +428,7 @@ export const Himachal = [
 export const Ladakh = [
   {
     title: "Splendor of Ladakh",
-    image: ladakh,
+    image: ladakh1,
     pricing: "₹73,099/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
@@ -413,7 +438,7 @@ export const Ladakh = [
 
   {
     title: "Quick Ladakh",
-    image: ladakh,
+    image: ladakh2,
     pricing: "₹76,199/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
@@ -461,7 +486,7 @@ export const North = [
   },
 ];
 
-//karnataka
+// karnataka
 // export const karnataka = [
 //   {
 //     title: "Bangalore to Ooty Express",
@@ -500,11 +525,11 @@ export const North = [
 //     ],
 //   },
 // ];
-//goa
+goa
 export const Goa = [
   {
     title: "Northern Goa",
-    image: goa,
+    image: goa1,
     pricing: "₹19,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
@@ -513,7 +538,7 @@ export const Goa = [
   },
   {
     title: "Southern Goa",
-    image: goa,
+    image: goa2,
     pricing: "₹20,899/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
@@ -522,7 +547,7 @@ export const Goa = [
   },
   {
     title: "Explore Goa",
-    image: goa,
+    image: goa3,
     pricing: "₹31,199/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
@@ -696,7 +721,7 @@ export const southAfrica = [
 export const Andaman = [
   {
     title: "Andaman-Super Saver",
-    image: south,
+    image: andaman1,
     pricing: "₹39,499/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
@@ -705,7 +730,7 @@ export const Andaman = [
   },
   {
     title: "Andaman Blue",
-    image: southafrica3,
+    image: andaman2,
     pricing: "₹42,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
@@ -714,7 +739,7 @@ export const Andaman = [
   },
   {
     title: "Andaman Fun filled",
-    image: southafrica4,
+    image: andaman3,
     pricing: "₹45,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
@@ -723,7 +748,7 @@ export const Andaman = [
   },
   {
     title: "Andaman Best Seller",
-    image: southafrica5,
+    image: andaman4,
     pricing: "₹43,499/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
@@ -807,15 +832,6 @@ export const Baku = [
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
-  // {
-  //   title: "Andaman",
-  //   image: baku3,
-  //   pricing: "₹42,999/- Onwards",
-  //   info: [
-  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-  //   ],
-  // },
   {
     title: "Himachal Pradesh",
     image: baku4,
@@ -855,7 +871,6 @@ export const Baku = [
   },
 
 ];
-
 
 export const  Hongkong = [
   {
@@ -946,7 +961,7 @@ export const Kashmir = [
   },
   {
     title: "Magical Kashmir",
-    image: kashmir,
+    image: kashmir2,
     pricing: "₹79,199/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
@@ -957,7 +972,7 @@ export const Kashmir = [
 
 export const Japan = [
   {
-    title: "Magical Kashmir",
+    title: "Visit Mt Fuji and Hakone ",
     image: japan1,
     pricing: "₹79,199/- Onwards",
     info: [
@@ -966,7 +981,7 @@ export const Japan = [
     ],
   },
   {
-    title: "Goa",
+    title: "Ride a go kart through the streets of Tokyo ",
     image:japan2,
     pricing: "₹19,999/- Onwards",
     info: [
@@ -975,7 +990,7 @@ export const Japan = [
     ],
   },
   {
-    title: "Himachal Pradesh",
+    title: "Take a food tour of the Tsukiji Fish Market ",
     image: japan4,
     pricing: "₹35,999/- Onwards",
     info: [
@@ -984,7 +999,7 @@ export const Japan = [
     ],
   },
   {
-    title: "Ladakh",
+    title: "Go bar hopping in Shinjuku ",
     image: japan5,
     pricing: "₹49,999/- Onwards",
     info: [
@@ -993,7 +1008,7 @@ export const Japan = [
     ],
   },
   {
-    title: "Ladakh",
+    title: "Sumo show with an authentic wrestlers’ dinner",
     image: japan6,
     pricing: "₹49,999/- Onwards",
     info: [
@@ -1002,7 +1017,7 @@ export const Japan = [
     ],
   },
   {
-    title: "Ladakh",
+    title: "Kimono Tea Ceremony",
     image: japan7,
     pricing: "₹49,999/- Onwards",
     info: [
@@ -1011,7 +1026,7 @@ export const Japan = [
     ],
   },
   {
-    title: "Ladakh",
+    title: "Take a sushi-making class",
     image: japan8,
     pricing: "₹49,999/- Onwards",
     info: [
@@ -1042,15 +1057,7 @@ export const Malaysia = [
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
-  // {
-  //   title: "Andaman",
-  //   image: malaysia3,
-  //   pricing: "₹42,999/- Onwards",
-  //   info: [
-  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-  //   ],
-  // },
+
   {
     title: "Jenting Hiland",
     image: malaysia4,
