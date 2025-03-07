@@ -12,7 +12,7 @@ import payments from "./pages/Paymentpolicy/PaymentPolicies"
 // Components
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
-import Contact from "./pages/contact/contact";
+// import Contact from "./pages/contact/contact";
 // Styles
 // import GlobalStyles from "./GlobalStyles"; 
 import "swiper/css";
@@ -41,7 +41,7 @@ function App() {
           <Route path="/payments" element={<PaymentPolicies />} />
           <Route path="/video" element={<VideoScroller />} />
           <Route path="/themes/" element={<Themes />} />
-          <Route path="/contact/" element={<Contact/>} />
+          {/* <Route path="/contact/" element={<Contact/>} /> */}
         </Routes>
         {!isVideoPage && <Footer />}
       </div>
