@@ -16,7 +16,6 @@ import baliImg11 from "../../assets/Tripdetails/bali/ThingsToDoInBali/ubud-marke
 import baliImg12 from "../../assets/Tripdetails/bali/ThingsToDoInBali/ulun-danu-temple.png";
 import baliImg13 from "../../assets/Tripdetails/bali/ThingsToDoInBali/bali_banner.png";
 
-
 //added new image
 import baliImg14 from "../../assets/Tripdetails/bali/ThingsToDoInBali/mobile-banner-bali.jpg";
 // Vietnam Images
@@ -189,102 +188,106 @@ export const destinationsData = {
       { name: "Putra Mosque", image: malaysiaImg9 },
     ],
   },
-  kerala: {
-    banner: {
-      image: "https://www.financialexpress.com/wp-content/uploads/2021/09/Kerala-Tourism.jpg?w=1024", // Add image URL here
-      title: "Kerala",
-      description: "Discover stunning locations and create unforgettable memories.",
+    kerala: {
+      banner: {
+        image: "https://www.financialexpress.com/wp-content/uploads/2021/09/Kerala-Tourism.jpg?w=1024",
+        title: "Kerala",
+        description: "Discover stunning locations and create unforgettable memories.",
+      },
+      thingsToDo: [
+        { name: "Backwater Cruise", image: baliImg2 },
+        { name: "Kathakali Performance", image: baliImg3 },
+        { name: "Munnar Tea Gardens", image: baliImg4 },
+        { name: "Wayanad Hills", image: baliImg5 },
+        { name: "Kovalam Beach", image: baliImg6 },
+        { name: "Periyar Wildlife Sanctuary", image: baliImg7 },
+        { name: "Athirappilly Waterfalls", image: baliImg8 },
+        { name: "Varkala Cliff", image: baliImg9 },
+      ],
     },
-    thingsToDo: [
-      { name: "Banova Water Sport", image: baliImg2 },
-      { name: "Kechak Dance", image: baliImg3 },
-      { name: "Kintamani Tour", image: baliImg4 },
-      { name: "Nusa Paneda", image: baliImg5 },
-      { name: "Tanah Lot Temple", image: baliImg6 },
-      { name: "Ulun Danu Temple", image: baliImg7 },
-      { name: "MTV Ride", image: baliImg8 },
-      { name: "Rice Terrace", image: baliImg9 },
-    ],
-  },
-  andaman: {
-    banner: {
-      image: "", // Add image URL here
-      title: "Andaman",
-      description: "Discover stunning locations and create unforgettable memories.",
+  
+    andaman: {
+      banner: {
+        image: "", 
+        title: "Andaman",
+        description: "Discover stunning locations and create unforgettable memories.",
+      },
+      thingsToDo: [
+        { name: "Scuba Diving", image: baliImg2 },
+        { name: "Snorkeling at Elephant Beach", image: baliImg3 },
+        { name: "Havelock Island", image: baliImg4 },
+        { name: "Neil Island Exploration", image: baliImg5 },
+        { name: "Cellular Jail Visit", image: baliImg6 },
+        { name: "Ross Island Tour", image: baliImg7 },
+        { name: "Glass Bottom Boat Ride", image: baliImg8 },
+        { name: "Limestone Caves", image: baliImg9 },
+      ],
     },
-    thingsToDo: [
-      { name: "Banova Water Sport", image: baliImg2 },
-      { name: "Kechak Dance", image: baliImg3 },
-      { name: "Kintamani Tour", image: baliImg4 },
-      { name: "Nusa Paneda", image: baliImg5 },
-      { name: "Tanah Lot Temple", image: baliImg6 },
-      { name: "Ulun Danu Temple", image: baliImg7 },
-      { name: "MTV Ride", image: baliImg8 },
-      { name: "Rice Terrace", image: baliImg9 },
-    ],
-  },
-  ladakh: {
-    banner: {
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRGucWRGhMAGcI9fnO5DJXFyjH5HM7_stE_g&s", // Add image URL here for Ladakh
-      title: "Ladakh",
-      description: "Experience the breathtaking beauty of the Himalayan desert.",
+  
+    ladakh: {
+      banner: {
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRGucWRGhMAGcI9fnO5DJXFyjH5HM7_stE_g&s",
+        title: "Ladakh",
+        description: "Experience the breathtaking beauty of the Himalayan desert.",
+      },
+      thingsToDo: [
+        { name: "Leh Palace", image: singaporeImg1 },
+        { name: "Pangong Lake", image: singaporeImg2 },
+        { name: "Nubra Valley", image: singaporeImg3 },
+        { name: "Khardung La Pass", image: singaporeImg4 },
+        { name: "Magnetic Hill", image: singaporeImg4 },
+        { name: "Hemis Monastery", image: singaporeImg1 },
+      ],
     },
-    thingsToDo: [
-      { name: "Leh Palace", image: singaporeImg1 },
-      { name: "Pangong Lake", image: singaporeImg2 },
-      { name: "Nubra Valley", image: singaporeImg3 },
-      { name: "Khardung La", image: singaporeImg4 },
-      { name: "Magnetic Hill", image: singaporeImg4 },
-      { name: "Hemis Monastery", image: singaporeImg1 },
-    ],
-  },
-  kashmir: {
-    banner: {
-      image: "https://www.ekashmirtourism.com/wp-content/uploads/2022/08/Shikara-boats-floating-on-Dal-Lake.jpg", // Add image URL here for Kashmir
-      title: "Kashmir",
-      description: "Explore the mesmerizing landscapes and serene beauty of Kashmir.",
+  
+    kashmir: {
+      banner: {
+        image: "https://www.ekashmirtourism.com/wp-content/uploads/2022/08/Shikara-boats-floating-on-Dal-Lake.jpg",
+        title: "Kashmir",
+        description: "Explore the mesmerizing landscapes and serene beauty of Kashmir.",
+      },
+      thingsToDo: [
+        { name: "Dal Lake", image: baliImg1 },
+        { name: "Gulmarg Skiing", image: baliImg11 },
+        { name: "Sonamarg Trekking", image: baliImg7 },
+        { name: "Shankaracharya Temple", image: baliImg4 },
+        { name: "Shikara Ride", image: baliImg8 },
+        { name: "Pahalgam Valley", image: baliImg3 },
+      ],
     },
-    thingsToDo: [
-      { name: "Dal Lake", image: baliImg1 },
-      { name: "Gulmarg", image: baliImg11 },
-      { name: "Sonamarg", image: baliImg7 },
-      { name: "Shankaracharya Temple", image: baliImg4 },
-      { name: "Shikara Ride", image: baliImg8 },
-      { name: "Pahalgam", image: baliImg3 },
-    ],
-  },
-  rajasthan: {
-    banner: {
-      image: "https://ranthamborenationalpark-india.com/wp-content/uploads/2024/05/1569232483_rajasthan_budget_tour.jpg", // Add image URL here for Rajasthan
-      title: "Rajasthan",
-      description: "Discover the royal heritage and grandeur of Rajasthan.",
+  
+    rajasthan: {
+      banner: {
+        image: "https://ranthamborenationalpark-india.com/wp-content/uploads/2024/05/1569232483_rajasthan_budget_tour.jpg",
+        title: "Rajasthan",
+        description: "Discover the royal heritage and grandeur of Rajasthan.",
+      },
+      thingsToDo: [
+        { name: "Jaipur - Pink City", image: australiaImg1 },
+        { name: "Udaipur Lakes", image: australiaImg2 },
+        { name: "Jaisalmer Desert Safari", image: australiaImg3 },
+        { name: "Jodhpur Forts", image: australiaImg4 },
+        { name: "Pushkar Camel Fair", image: australiaImg5 },
+        { name: "Mehrangarh Fort", image: australiaImg6 },
+      ],
     },
-    thingsToDo: [
-      { name: "Jaipur", image: australiaImg1 },
-      { name: "Udaipur", image: australiaImg2 },
-      { name: "Jaisalmer", image: australiaImg3 },
-      { name: "Jodhpur", image: australiaImg4 },
-      { name: "Pushkar", image: australiaImg5 },
-      { name: "Mehrangarh Fort", image: australiaImg6 },
-    ],
-  },
-  goa: {
-    banner: {
-      image: "https://static.businessworld.in/Untitled%20design%20-%202024-12-31T052430.892_20241231105033_original_image_31.webp", // Add image URL here for Goa
-      title: "Goa",
-      description: "Enjoy sun, sand, and sea in the tropical paradise of Goa.",
+  
+    goa: {
+      banner: {
+        image: "https://static.businessworld.in/Untitled%20design%20-%202024-12-31T052430.892_20241231105033_original_image_31.webp",
+        title: "Goa",
+        description: "Enjoy sun, sand, and sea in the tropical paradise of Goa.",
+      },
+      thingsToDo: [
+        { name: "Anjuna Beach", image: vietnamImg1 },
+        { name: "Baga Beach Nightlife", image: vietnamImg2 },
+        { name: "Dudhsagar Waterfalls", image: vietnamImg3 },
+        { name: "Fort Aguada", image: vietnamImg4 },
+        { name: "Basilica of Bom Jesus", image: vietnamImg5 },
+        { name: "Dona Paula Viewpoint", image: vietnamImg6 },
+      ],
     },
-    thingsToDo: [
-      { name: "Anjuna Beach", image: vietnamImg1 },
-      { name: "Baga Beach", image: vietnamImg2 },
-      { name: "Dudhsagar Waterfalls", image: vietnamImg3 },
-      { name: "Fort Aguada", image: vietnamImg4 },
-      { name: "Basilica of Bom Jesus", image: vietnamImg5 },
-      { name: "Dona Paula", image: vietnamImg6 },
-    ],
-  },
-
-
+  
   australia: {
     banner: {
       image:
