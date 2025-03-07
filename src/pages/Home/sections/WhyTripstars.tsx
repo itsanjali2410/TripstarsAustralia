@@ -10,7 +10,7 @@ import Img5 from "../../../assets/images/WhyTripstars/Google Rating.webp";
 const Container = styled.div`
   padding: 0 15rem;
   @media (max-width: 1340px) {
-    padding: -1rem 0 5rem;
+    padding: 0 5rem;
   }
   @media (max-width: 1080px) {
     padding: 0 3rem;

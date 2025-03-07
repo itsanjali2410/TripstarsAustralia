@@ -3,10 +3,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import bgImage from "../../../assets/images/backgrounds/Videotestimonials-bg.png";
 import Video1 from "../../../assets/Videos/Testimonial gif/2.gif";
+import Video5 from "../../../assets/Videos/Testimonial gif/6.gif";
 import Video2 from "../../../assets/Videos/Testimonial gif/3.gif";
 import Video3 from "../../../assets/Videos/Testimonial gif/4.gif";
 import Video4 from "../../../assets/Videos/Testimonial gif/5.gif";
-import Video5 from "../../../assets/Videos/Testimonial gif/6.gif";
+
 import Video6 from "../../../assets/Videos/Testimonial gif/1.gif";
 import Video7 from "../../../assets/Videos/Testimonial gif/7.gif";
 
@@ -124,12 +125,12 @@ const ImageWrapper = styled.div`
 
 const testimonials = [
   { videoUrl: Video1, title: "Roma's Bali Vacation" },
-  { videoUrl: Video2, title: "Malaika's Dubai Vacation" },
-  { videoUrl: Video3, title: "Vidyu Lekha's Vietnam Vacation" },
-  { videoUrl: Video4, title: "Binieka's Dubai Vacation" },
   { videoUrl: Video5, title: "Sandip's Dubai Vacation" },
   { videoUrl: Video6, title: "Mayur's Australia Vacation" },
+  { videoUrl: Video4, title: "Binieka's Dubai Vacation" },
+  { videoUrl: Video3, title: "Vidyu Lekha's Vietnam Vacation" },
   { videoUrl: Video7, title: "Testimonial 7" },
+  { videoUrl: Video2, title: "Malaika's Dubai Vacation" },
 ];
 
 export default function VideoTestimonials() {
