@@ -300,10 +300,10 @@ export default function Navbar() {
           <Link to="/">Themes</Link>
           <Dropdown isOpen={themeDropdownOpen}>
               <li className="category">
-                <Link to="https://tripstarsholidays.com/ladakh">Family</Link>
-                <Link to="https://tripstarsholidays.com/kerala">Honeymoon</Link>
-                <Link to="https://tripstarsholidays.com/kashmir">Couple</Link>
-                <Link to="https://tripstarsholidays.com/andaman">Beach</Link>
+                <Link to="">Family</Link>
+                <Link to="/theme">Honeymoon</Link>
+                <Link to="">Couple</Link>
+                <Link to="">Beach</Link>
               </li>
           </Dropdown>
         </li>
