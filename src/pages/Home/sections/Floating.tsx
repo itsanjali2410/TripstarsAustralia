@@ -37,7 +37,7 @@ const WhatsAppIcon = styled.img`
 
 const FloatingWhatsAppButton = () => {
   return (
-    <WhatsAppButton href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+    <WhatsAppButton href="https://wa.me/7710827169" target="_blank" rel="noopener noreferrer">
       <WhatsAppIcon src="https://img.icons8.com/color/96/whatsapp.png" alt="WhatsApp" />
     </WhatsAppButton>
   );
