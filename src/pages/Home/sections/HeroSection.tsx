@@ -19,6 +19,7 @@ const SliderContainer = styled.section`
   position: relative;
   width: 100%;
   height: 80vh;
+  
   @media (max-width: 768px) {
     height: 50vh;
   }
@@ -45,6 +46,7 @@ const SearchBarWrapper = styled.div`
   z-index: 3;
   text-align: center;
   margin-top: 20px;
+  
   @media (max-width: 768px) {
     top: 60%;
     width: 90%;
@@ -56,6 +58,7 @@ const HeroText = styled.h1`
   color: #fff;
   margin-bottom: 20px;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  
   @media (max-width: 768px) {
     font-size: 1.5rem;
     margin-bottom: 15px;
@@ -64,8 +67,8 @@ const HeroText = styled.h1`
 
 // HeroSection Component
 const HeroSection: React.FC = () => {
-  const images = [image2, image2Mobile]; // Add the mobile version of the image to the array
-
+  const images = [image2, image2Mobile]; // Array holding both desktop and mobile images
+  
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
@@ -102,10 +105,12 @@ const HeroSection: React.FC = () => {
 
   return (
     <SliderContainer {...swipeHandlers}>
+      {/* Conditionally render the image based on screen size */}
       {images.map((image, index) => (
+        // Only show mobile image on mobile screen (index 1 should be for mobile)
         <Slide
           key={index}
-          bgImage={isMobile && index === 1 ? image2Mobile : image2} // Use mobile image for index 1 on small screens
+          bgImage={isMobile ? image2Mobile : image2} // Show mobile image for mobile screens
           active={index === currentIndex}
         />
       ))}

@@ -19,6 +19,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   const location = useLocation();
@@ -29,6 +30,7 @@ function App() {
       {/* <GlobalStyles />  */}
       <div className="App">
         {!isVideoPage && <Navbar />}
+        <ScrollToTop/>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/faqs" element={<Faq />} />

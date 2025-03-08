@@ -128,9 +128,9 @@ const testimonials = [
   { videoUrl: Video5, title: "Sandip's Dubai Vacation" },
   { videoUrl: Video6, title: "Mayur's Australia Vacation" },
   { videoUrl: Video4, title: "Binieka's Dubai Vacation" },
-  { videoUrl: Video3, title: "Vidyu Lekha's Vietnam Vacation" },
-  { videoUrl: Video7, title: "Testimonial 7" },
-  { videoUrl: Video2, title: "Malaika's Dubai Vacation" },
+  { videoUrl: Video3, title: "Nidhi Mundra Bali Trip" },
+  { videoUrl: Video7, title: "Yash Sakpal" },
+  { videoUrl: Video2, title: "Mrs. Arjal Patel" },
 ];
 
 export default function VideoTestimonials() {

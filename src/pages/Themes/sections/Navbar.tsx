@@ -12,8 +12,8 @@ const NavbarContainer = styled.nav`
   z-index: 9999;
   background: #071A29;
   opacity: 0.9;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  // border-bottom-left-radius: 10px;
+  // border-bottom-right-radius: 10px;
   &.active {
     background-color: #000;
     padding: 1rem 2rem;
@@ -57,7 +57,7 @@ const NavLinksContainer = styled.div`
     position: absolute;
     background-color: #071A29;
     width: 80vw;
-    height: 100svh;
+    height: 100vh;
     top: 0;
     right: 0;
     display: block;

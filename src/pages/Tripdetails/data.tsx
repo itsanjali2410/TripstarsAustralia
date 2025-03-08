@@ -254,7 +254,7 @@ export const destinationsData = {
     },
     andaman: {
       banner: {
-        image: "", 
+        image: "https://miro.medium.com/v2/resize:fit:1200/1*8RHdk84-BLpXsymP1cYIaw.jpeg", 
         title: "Andaman",
         description: "Discover stunning locations and create unforgettable memories.",
       },
@@ -272,7 +272,7 @@ export const destinationsData = {
   
     ladakh: {
       banner: {
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRGucWRGhMAGcI9fnO5DJXFyjH5HM7_stE_g&s",
+        image: "https://www.lchangnang.com/blog/wp-content/uploads/2023/02/7-Valleys-In-Ladakh.jpg",
         title: "Ladakh",
         description: "Experience the breathtaking beauty of the Himalayan desert.",
       },
