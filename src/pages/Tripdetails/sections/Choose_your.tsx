@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 
 // Importing images
-import family from "../../../assets/travelstyle/family 1.webp";
+import family from "../../../assets/travelstyle/family 1.jpg";
 import couple from "../../../assets/travelstyle/couple.webp";
 import group from "../../../assets/travelstyle/group.webp";
 import honeymoon from "../../../assets/travelstyle/honeymoon.webp";
