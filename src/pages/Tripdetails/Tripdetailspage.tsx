@@ -33,12 +33,18 @@ type LocationKey = keyof typeof destinationsData;
 export default function Tripdetailspage() {
   // Setup isMobile state for responsive design
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsPopupOpen(true);
+    }, 5000); // Set delay for 5 seconds
+    return () => clearTimeout(timer);
+  }, []);
   // Get location from the URL params
   const { location } = useParams<{ location: string }>();
 

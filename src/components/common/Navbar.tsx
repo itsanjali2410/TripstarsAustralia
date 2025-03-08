@@ -10,13 +10,17 @@ interface DropdownProps {
 
 const NavbarContainer = styled.nav`
   position: sticky;
+  top: 0;
+  left: 0;
   width: 100%;
   display: flex;
+  height:86px;
   justify-content: space-between;
   padding: 1rem 2rem;
-  z-index: 9999;
-  background: rgb(0, 0, 0);
-  opacity: 0.9;
+  z-index: 999999;
+
+  background: rgba(0, 0, 0, 0.6);
+  transition: all 0.5s ease-in-out;
   &.active {
     background-color: #000;
     padding: 1rem 2rem;
@@ -27,12 +31,12 @@ const NavbarContainer = styled.nav`
     }
   }
   @media (max-width: 768px) {
-    height: 71px;
+  height: 71px;
   }
 `;
 
 const Logo = styled.div`
-  width: 25%;
+  width: 30%;
   @media (max-width: 768px) {
     width: 25%;
     img {
@@ -58,7 +62,8 @@ const NavLinksContainer = styled.div`
 
   @media (max-width: 768px) {
     position: fixed;
-    background-color: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease-in-out;
     width: 100vw; /* Full screen width */
     height: 100vh; /* Full screen height */
     top: 0;
@@ -107,7 +112,8 @@ const Dropdown = styled.div<DropdownProps>`
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #071A29;
+  background: rgba(0, 0, 0, 0.6);
+  transition: all 0.5s ease-in-out;
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   z-index: 1;
   width: 400px; /* Adjust width for both categories */
@@ -115,58 +121,71 @@ const Dropdown = styled.div<DropdownProps>`
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   padding: 10px;
 
+  /* Make sure categories are aligned properly */
   ul {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping if space is tight */
+    justify-content: space-between;
     padding: 0;
     margin: 0;
     list-style: none;
-
-    justify-content: space-between;
   }
 
-  li {
-    padding: 0.8rem;
-    a {
-      font-size: 0.9rem;
-      color: white;
-      text-decoration: none;
-    }
-  }
-
+  /* Category columns */
   .category {
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 48%; /* Adjust for equal spacing */
   }
+
   .category strong {
     margin-bottom: 10px;
     font-weight: bold;
     color: #fff;
+    font-size: 1.5rem;
   }
 
-  @media (max-width: 768px) {
-    width: 200%; /* Increase width on mobile */
-    padding: 30px;
-    ul {
-      flex-direction: column; /* Stack the categories vertically */
-      justify-content: flex-start; /* Align items at the top */
+  li {
+    padding: 0.5rem 0;
+  }
+
+  a {
+    font-size: 0.9rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #f0a500; /* Add hover effect */
     }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    width: 220px; /* Adjust dropdown width */
+    padding: 20px;
+    
+    ul {
+      flex-direction: column; /* Stack items vertically */
+      justify-content: flex-start;
+    }
+
     .category {
       width: 100%;
       margin-bottom: 15px;
     }
-    .category strong {
-      font-size: 1rem;
-    }
   }
 `;
 
+/* Menu Button */
 const MenuBtn = styled.div`
+  display: none;
+
   svg {
     width: 2rem;
     fill: #fff;
-    style: none;
   }
-  display: none;
+
   @media (max-width: 768px) {
     display: block;
   }
@@ -175,7 +194,8 @@ const MenuBtn = styled.div`
 export default function Navbar() {
   const [navBg, setNavBg] = useState<boolean>(false);
   const [active, setIsActive] = useState<boolean>(false);
-  const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
+  const [destinationDropdownOpen, setDestinationDropdownOpen] = useState<boolean>(false);
+  const [themeDropdownOpen, setThemeDropdownOpen] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false); // State to check for mobile screens
 
   const toggleMenu = () => {
@@ -200,8 +220,12 @@ export default function Navbar() {
   }, []);
 
   // Toggle dropdown for mobile
-  const toggleDropdown = () => {
-    setDropdownOpen((prev) => !prev);
+  const toggleDropdown = (dropdown: string) => {
+    if (dropdown === "destination") {
+      setDestinationDropdownOpen((prev) => !prev);
+    } else if (dropdown === "theme") {
+      setThemeDropdownOpen((prev) => !prev);
+    }
   };
 
   return (
@@ -233,12 +257,12 @@ export default function Navbar() {
         </li>
         <li
           className="dropdown"
-          onClick={isMobile ? toggleDropdown : undefined} // Use click for mobile
-          onMouseEnter={isMobile ? undefined : () => setDropdownOpen(true)} // Hover event for desktop
-          onMouseLeave={isMobile ? undefined : () => setDropdownOpen(false)} // Hover event for desktop
+          onClick={isMobile ? () => toggleDropdown("destination") : undefined} // Use click for mobile
+          onMouseEnter={isMobile ? undefined : () => setDestinationDropdownOpen(true)} // Hover event for desktop
+          onMouseLeave={isMobile ? undefined : () => setDestinationDropdownOpen(false)} // Hover event for desktop
         >
           <Link to="/">Destinations</Link>
-          <Dropdown isOpen={dropdownOpen}>
+          <Dropdown isOpen={destinationDropdownOpen}>
             <ul>
               <li className="category">
                 <strong>Domestic</strong>
@@ -267,15 +291,22 @@ export default function Navbar() {
           </Dropdown>
         </li>
 
-        {/* <li>
-          <Link to="/">Holidays</Link>
-        </li> */}
-        <li>
-          <Link to="/themes">Themes</Link>
+        <li
+          className="dropdown"
+          onClick={isMobile ? () => toggleDropdown("theme") : undefined} // Use click for mobile
+          onMouseEnter={isMobile ? undefined : () => setThemeDropdownOpen(true)} // Hover event for desktop
+          onMouseLeave={isMobile ? undefined : () => setThemeDropdownOpen(false)} // Hover event for desktop
+        >
+          <Link to="/">Themes</Link>
+          <Dropdown isOpen={themeDropdownOpen}>
+              <li className="category">
+                <Link to="https://tripstarsholidays.com/ladakh">Family</Link>
+                <Link to="https://tripstarsholidays.com/kerala">Honeymoon</Link>
+                <Link to="https://tripstarsholidays.com/kashmir">Couple</Link>
+                <Link to="https://tripstarsholidays.com/andaman">Beach</Link>
+              </li>
+          </Dropdown>
         </li>
-        {/* <li>
-          <Link to="/">Offers</Link>
-        </li> */}
         <li>
           <Link to="/contact">Contact</Link>
         </li>

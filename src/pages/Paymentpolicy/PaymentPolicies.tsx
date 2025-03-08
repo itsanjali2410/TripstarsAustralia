@@ -95,13 +95,13 @@ const PaymentPolicies: React.FC = () => {
           <FaUniversity /> Bank Transfer
         </SectionTitle>
         <p>
-          <b>A/C No:</b> 054833199001
+          <b>A/C No:</b> 036105003255
         </p>
         <p>
-          <b>A/C Name:</b> Wanderon Experiences Private Limited
+          <b>A/C Name:</b> ICICI Bank
         </p>
         <p>
-          <b>IFSC Code:</b> HSBC0110005
+          <b>IFSC Code:</b> ICIC0000361
         </p>
       </SubSection>
 
@@ -110,11 +110,11 @@ const PaymentPolicies: React.FC = () => {
           <FaQrcode /> UPI Payment
         </SectionTitle>
         <p>
-          <b>UPI ID (Google Pay/BHIM/PhonePe):</b> WanderOn@HSBC
+          <b>UPI ID (Google Pay/BHIM/PhonePe):</b> eazypay.0000055947@icici
         </p>
-        <p>
+        {/* <p>
           <b>UPI Name:</b> WanderOn/WanderOn Experiences Private Limited
-        </p>
+        </p> */}
         <p>
           <b>Scan & Pay:</b>
         </p>
@@ -124,7 +124,7 @@ const PaymentPolicies: React.FC = () => {
         />
       </SubSection>
 
-      <SubSection>
+      {/* <SubSection>
         <SectionTitle>Razorpay Link</SectionTitle>
         <p>
           <b>Payment via Razorpay:</b>{" "}
@@ -145,7 +145,7 @@ const PaymentPolicies: React.FC = () => {
           Note: A payment gateway charge of 3% will be levied when using the
           above payment link.
         </Note>
-      </SubSection>
+      </SubSection> */}
 
       {/* Payment Policy Section */}
       <SectionTitle>Payment Policy</SectionTitle>
