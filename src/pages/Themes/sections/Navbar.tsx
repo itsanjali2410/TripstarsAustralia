@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import logoImg from "../../assets/images/logo/logo.png";
 import { useEffect, useState } from "react";
 
+// Define prop types for the Dropdown component
+interface DropdownProps {
+  isOpen: boolean;
+}
+
 const NavbarContainer = styled.nav`
   position: fixed;
   width: 100%;
@@ -10,10 +15,8 @@ const NavbarContainer = styled.nav`
   justify-content: space-between;
   padding: 1rem 2rem;
   z-index: 9999;
-  background: #071A29;
+  background: rgb(0, 0, 0);
   opacity: 0.9;
-  // border-bottom-left-radius: 10px;
-  // border-bottom-right-radius: 10px;
   &.active {
     background-color: #000;
     padding: 1rem 2rem;
@@ -50,52 +53,62 @@ const NavLinksContainer = styled.div`
       color: #fff;
       text-decoration: none;
     }
-    position: relative; /* Added for dropdown positioning */
+    position: relative;
   }
 
   @media (max-width: 768px) {
-    position: absolute;
-    background-color: #071A29;
-    width: 80vw;
-    height: 100vh;
+    position: fixed;
+    background-color: rgb(0, 0, 0);
+    width: 100vw; /* Full screen width */
+    height: 100vh; /* Full screen height */
     top: 0;
     right: 0;
-    display: block;
-    transform: translateX(80vw);
-    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Center items */
+    align-items: flex-start;
+    padding-top:5rem;
+    transform: translateX(100%); /* Completely hidden */
+    transition: transform 0.4s ease-in-out;
+    z-index: 1000;
+    overflow: auto; /* Allow scrolling when the menu is open */
+
     &.active_menu {
-      transform: translateX(0px);
+      transform: translateX(0); /* Show the menu */
     }
+
     li {
-      padding: 1rem 1rem;
-      border-bottom: 1px solid #071A29;
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
       a {
-        font-size: 0.9rem;
+        font-size: 1.2rem; /* Better visibility */
       }
     }
+
     .close_icon {
-      display: flex;
-      justify-content: end;
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      
       svg {
         width: 2rem;
         path {
           fill: #fff;
         }
       }
-      display: none;
-      @media (max-width: 768px) {
-        display: flex;
-      }
     }
   }
 `;
 
-const Dropdown = styled.div`
+const Dropdown = styled.div<DropdownProps>`
   position: absolute;
   top: 100%;
   left: 0;
   background-color: #071A29;
-  display: none;
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   z-index: 1;
   width: 400px; /* Adjust width for both categories */
   border-radius: 8px;
@@ -106,8 +119,8 @@ const Dropdown = styled.div`
     padding: 0;
     margin: 0;
     list-style: none;
-    display: flex;
-    justify-content: space-between; /* Aligns the categories side by side */
+
+    justify-content: space-between;
   }
 
   li {
@@ -119,12 +132,6 @@ const Dropdown = styled.div`
     }
   }
 
-  /* Show the dropdown on hover */
-  ${NavLinksContainer} li:hover & {
-    display: block;
-  }
-
-  /* Styles for the categories (Domestic and International) */
   .category {
     display: flex;
     flex-direction: column;
@@ -137,18 +144,18 @@ const Dropdown = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 100%; /* Take full width on mobile */
-    padding: 15px;
+    width: 200%; /* Increase width on mobile */
+    padding: 30px;
     ul {
       flex-direction: column; /* Stack the categories vertically */
       justify-content: flex-start; /* Align items at the top */
     }
     .category {
-      width: 100%; /* Full width for each category on mobile */
+      width: 100%;
       margin-bottom: 15px;
     }
     .category strong {
-      font-size: 1rem; /* Increase font size for better readability */
+      font-size: 1rem;
     }
   }
 `;
@@ -168,6 +175,8 @@ const MenuBtn = styled.div`
 export default function Navbar() {
   const [navBg, setNavBg] = useState<boolean>(false);
   const [active, setIsActive] = useState<boolean>(false);
+  const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false); // State to check for mobile screens
 
   const toggleMenu = () => {
     setIsActive((prev) => !prev);
@@ -177,9 +186,23 @@ export default function Navbar() {
     window.scrollY >= 300 ? setNavBg(true) : setNavBg(false);
   };
 
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768); // Set mobile view based on screen width
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", changeNavBg);
+    window.addEventListener("resize", handleResize); // Listen to window resize event
+    handleResize(); // Check initial screen size
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
+  // Toggle dropdown for mobile
+  const toggleDropdown = () => {
+    setDropdownOpen((prev) => !prev);
+  };
 
   return (
     <NavbarContainer className={navBg ? "active" : ""}>
@@ -208,42 +231,51 @@ export default function Navbar() {
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li className="dropdown">
+        <li
+          className="dropdown"
+          onClick={isMobile ? toggleDropdown : undefined} // Use click for mobile
+          onMouseEnter={isMobile ? undefined : () => setDropdownOpen(true)} // Hover event for desktop
+          onMouseLeave={isMobile ? undefined : () => setDropdownOpen(false)} // Hover event for desktop
+        >
           <Link to="/">Destinations</Link>
-          <Dropdown>
+          <Dropdown isOpen={dropdownOpen}>
             <ul>
               <li className="category">
                 <strong>Domestic</strong>
-                <Link to="/destinations/ladakh">Ladakh Trending</Link>
-                <Link to="/destinations/kerala">Kerala</Link>
-                <Link to="/destinations/kashmir">Kashmir</Link>
-                <Link to="/destinations/andaman">Andaman</Link>
-                <Link to="/destinations/rajasthan">Rajasthan</Link>
+                <Link to="https://tripstarsholidays.com/ladakh">Ladakh</Link>
+                <Link to="https://tripstarsholidays.com/kerala">Kerala</Link>
+                <Link to="https://tripstarsholidays.com/kashmir">Kashmir</Link>
+                <Link to="https://tripstarsholidays.com/andaman">Andaman</Link>
+                <Link to="https://tripstarsholidays.com/goa">Goa</Link>
               </li>
               <li className="category">
                 <strong>International</strong>
-                <Link to="/destinations/europe">Europe</Link>
-                <Link to="/destinations/dubai">Dubai</Link>
-                <Link to="/destinations/bali">Bali</Link>
-                <Link to="/destinations/maldives">Maldives</Link>
-                <Link to="/destinations/vietnam">Vietnam</Link>
-                <Link to="/destinations/singapore">Singapore</Link>
-                <Link to="/destinations/malaysia">Malaysia</Link>
-                <Link to="/destinations/thailand">Thailand</Link>
-                <Link to="/destinations/mauritius">Mauritius</Link>
+                <Link to="https://tripstarsholidays.com/dubai">Dubai</Link>
+                <Link to="https://tripstarsholidays.com/thailand">Thailand</Link>
+                <Link to="https://tripstarsholidays.com/singapore">Singapore</Link>
+                <Link to="https://tripstarsholidays.com/malaysia">Malaysia</Link>
+                <Link to="https://tripstarsholidays.com/bali">Bali</Link>
+                <Link to="https://tripstarsholidays.com/hong-kong">Hong Kong</Link>
+                <Link to="https://tripstarsholidays.com/europe">Europe</Link>
+                <Link to="https://tripstarsholidays.com/vietnam">Vietnam</Link>
+                <Link to="https://tripstarsholidays.com/maldives">Maldives</Link>
+                <Link to="https://tripstarsholidays.com/australia">Australia</Link>
+                <Link to="https://tripstarsholidays.com/mauritius">Mauritius</Link>
+                <Link to="https://tripstarsholidays.com/japan">Japan</Link>
               </li>
             </ul>
           </Dropdown>
         </li>
-        <li>
+
+        {/* <li>
           <Link to="/">Holidays</Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/">Themes</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/">Offers</Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/">Contact</Link>
         </li>
