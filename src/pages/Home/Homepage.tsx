@@ -30,11 +30,12 @@ import Reviews from "./sections/reviews";
 import TrustindexWidget from "./sections/TrustindexWidget";
 import StaticForm from "../../components/common/StaticForm";
 import FloatingWhatsAppButton from "./sections/Floating";
+
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <PopularDestinations />
+      <PopularDestinations showPopup={false} />
       <SwipeableSlider />
       <TrendingOffers title="Trending Offers" />
       <ExploreDestinations />
