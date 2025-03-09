@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useRef } from "react";
+import { useRef, useState } from "react"; // Import useState
 import { useNavigate } from "react-router-dom";
 import { Navigation } from "swiper/modules";
-
+import Popup from "../../../components/common/Popup"; // Import Popup component
 // Import your images
 import Dubai from "../../../assets/PopularDestination/Dubai.webp";
 import Thailand from "../../../assets/PopularDestination/Thailand.webp";
@@ -104,12 +104,16 @@ const NavIcons = styled.div`
     }
   }
 `;
-
-// Type definition for destinations
 type Destination = {
   name: string;
   imgUrl: string;
 };
+
+// Type definition for destinations
+type PopularDestinationsProps = {
+  showPopup?: boolean; // Define the prop properly
+};
+
 
 // Destination data
 const popularDestinationsData: Destination[] = [
@@ -122,46 +126,31 @@ const popularDestinationsData: Destination[] = [
   { name: "Europe", imgUrl: Europe },
   { name: "Vietnam", imgUrl: Vietnam },
   { name: "Australia", imgUrl: Australia },
-];
+]
 
-export default function PopularDestinations() {
+export default function PopularDestinations({ showPopup = false }: PopularDestinationsProps) {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
   const navigate = useNavigate();
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedDestination, setSelectedDestination] = useState<string | null>(null);
 
-  const handleRedirect = (destination: string) => {
-    console.log(`Navigating to: /${destination.toLowerCase()}`);
-    navigate(`/${destination.toLowerCase()}`);
+  const handleClick = (destination: string) => {
+    if (showPopup) {
+      setSelectedDestination(destination);
+      setIsPopupOpen(true);
+    } else {
+      navigate(`/${destination.toLowerCase()}`);
+    }
   };
-  
 
   return (
     <Container>
       <SectionTitle>
         <TitileHeading>Popular Destinations</TitileHeading>
         <NavIcons>
-          <button ref={prevRef}>
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 320 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path>
-            </svg>
-          </button>
-          <button ref={nextRef}>
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 320 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
-            </svg>
-          </button>
+          <button ref={prevRef}>{"<"}</button>
+          <button ref={nextRef}>{">"}</button>
         </NavIcons>
       </SectionTitle>
       <CardsWrapper>
@@ -169,26 +158,10 @@ export default function PopularDestinations() {
           modules={[Navigation]}
           spaceBetween={20}
           slidesPerView={1.8}
-          breakpoints={{
-            1080: {
-              slidesPerView: 4.8,
-            },
-            768: {
-              slidesPerView: 4,
-            },
-            400: {
-              slidesPerView: 2,
-            },
-          }}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
+          breakpoints={{ 1080: { slidesPerView: 4.8 }, 768: { slidesPerView: 4 }, 400: { slidesPerView: 2 } }}
+          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
           onInit={(swiper) => {
-            if (
-              swiper.params.navigation &&
-              typeof swiper.params.navigation !== "boolean"
-            ) {
+            if (swiper.params.navigation && typeof swiper.params.navigation !== "boolean") {
               swiper.params.navigation.prevEl = prevRef.current;
               swiper.params.navigation.nextEl = nextRef.current;
             }
@@ -198,16 +171,24 @@ export default function PopularDestinations() {
         >
           {popularDestinationsData.map((item, index) => (
             <SwiperSlide key={index}>
-              <Card onClick={() => handleRedirect(item.name)}>
+              <Card onClick={() => handleClick(item.name)}>
                 <ImageWrapper>
-                <img src={item.imgUrl} alt={item.name} loading="lazy" />
-
+                  <img src={item.imgUrl} alt={item.name} loading="lazy" />
                 </ImageWrapper>
               </Card>
             </SwiperSlide>
           ))}
         </Swiper>
       </CardsWrapper>
+
+      {/* Popup */}
+      {isPopupOpen && (
+  <Popup onClose={() => setIsPopupOpen(false)}>
+  <h2>Enquiry Form for {selectedDestination}</h2>
+  {/* Add your form content here */}
+</Popup>
+
+)}
     </Container>
   );
 }

@@ -4,10 +4,13 @@ import { FaCheckCircle, FaTimes } from "react-icons/fa";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import emailjs from "@emailjs/browser";
-
 import axios from "axios";
+import logoImg from "../../assets/images/logo/logo.png";
+import logo1 from "../../assets/popup/Customers.png";
+import logo2 from "../../assets/popup/Awardwinners .png";
+import logo3 from "../../assets/popup/Customerservice.png";
 
-// Animation for popup fade-in
+// Popup Animation
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -19,7 +22,6 @@ const fadeIn = keyframes`
   }
 `;
 
-// Styled components
 const PopupContainer = styled.div<{ isVisible: boolean }>`
   position: fixed;
   top: 0;
@@ -253,9 +255,14 @@ const PaxCounter = styled.div`
     }
   }
 `;
+ interface PopupProps {
+    onClose: () => void;
+    children?: React.ReactNode;  // ✅ Add this to allow children inside Popup
+  }
+  
 
-const Popup: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
+
+const Popup: React.FC<PopupProps> = ({ onClose }) => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [pax, setPax] = useState(1);
   const [child, setChild] = useState(0);
@@ -267,98 +274,90 @@ const Popup: React.FC = () => {
     departureCity: "",
   });
 
-  // Open popup after 5 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 5000);
-    return () => clearTimeout(timer);
-  }, []);
+  const API_URL = "https://tripstarsholidays.com/"; // Your backend URL
 
-  const closePopup = () => setIsVisible(false);
-
-  const handleOutsideClick = (e: React.MouseEvent) => {
-    if ((e.target as HTMLElement).id === "popup-container") {
-      if (window.confirm("Are you sure you want to close the form? Your data will be lost.")) {
-        closePopup();
-      }
-    }
-  };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handlePaxChange = (increment: boolean) => setPax((prev) => (increment ? prev + 1 : prev - 1));
-  const handleChildChange = (increment: boolean) => setChild((prev) => (increment ? prev + 1 : prev - 1));
+  const handlePaxChange = (increment: boolean) =>
+    setPax((prev) => (increment ? prev + 1 : prev > 1 ? prev - 1 : prev));
 
-  const API_URL = "http://148.135.138.32:5000"; // ✅ Ensure the correct backend URL
+  const handleChildChange = (increment: boolean) =>
+    setChild((prev) => (increment ? prev + 1 : prev > 0 ? prev - 1 : prev));
 
   const handleSubmit = async (e: React.FormEvent) => {
-      e.preventDefault();
-  
-      if (!startDate) {
-          alert("Please select a travel date!");
-          return;
-      }
-  
-      // Prepare templateParams for EmailJS
-      const templateParams = {
-          name: formData.name,
-          contact: formData.contact,
-          email: formData.email,
-          destination: formData.destination,
-          departure_city: formData.departureCity, // ✅ Fixed field name
-          travel_date: startDate ? startDate.toISOString().split("T")[0] : "", // ✅ Fixed field name
-          pax,
-          child,
-      };
-  
-      try {
-          // 1. Send email using EmailJS
-          await emailjs.send(
-              "service_eamkhsr", // Your Service ID
-              "template_1nh5ps2", // Your Template ID
-              templateParams,
-              "gScHv791km1kt3vL1" // Your Public Key
-          );
-          alert("🎉 Email sent successfully to Admin!");
-  
-          // 2. Send form data to your backend
-          const response = await axios.post(`${API_URL}/submit-form`, templateParams);
-  
-          if (response.status === 200) {
-              alert("Data successfully saved to the database!");
-          } else {
-              alert("Failed to save data to the database.");
-          }
-  
-          // Reset the form after successful submission
-          setIsVisible(false);
-          setFormData({
-              name: "",
-              contact: "",
-              email: "",
-              destination: "",
-              departureCity: "",
-          });
-          setStartDate(null);
-          setPax(1);
-          setChild(0);
-  
-      } catch (error) {
-          console.error("❌ Error:", error);
-          alert("Failed to send email or save data. Please try again.");
-      }
-  };
-  
+    e.preventDefault();
 
+    if (!startDate) {
+      alert("Please select a travel date!");
+      return;
+    }
+
+    const templateParams = {
+      name: formData.name,
+      contact: formData.contact,
+      email: formData.email,
+      destination: formData.destination,
+      departure_city: formData.departureCity,
+      travel_date: startDate.toISOString().split("T")[0],
+      pax,
+      child,
+    };
+
+    try {
+      // Send Email
+      await emailjs.send(
+        "service_eamkhsr",
+        "template_1nh5ps2",
+        templateParams,
+        "gScHv791km1kt3vL1"
+      );
+      alert("🎯 Email Sent Successfully!");
+
+      // Send Form Data to Backend
+      const response = await axios.post(`${API_URL}/submit-form`, templateParams);
+
+      if (response.status === 200) {
+        alert("✅ Data Saved Successfully to Database!");
+      }
+
+      // Reset Form
+      setFormData({
+        name: "",
+        contact: "",
+        email: "",
+        destination: "",
+        departureCity: "",
+      });
+      setStartDate(null);
+      setPax(1);
+      setChild(0);
+      onClose(); // Close Popup
+    } catch (error) {
+      console.error("❌ Error:", error);
+      alert("Failed to Submit Data. Please Try Again!");
+    }
+  };
+
+  
   return (
-    <PopupContainer id="popup-container" isVisible={isVisible} onClick={handleOutsideClick}>
+    <PopupContainer isVisible={true} onClick={(e) => e.target === e.currentTarget && onClose()}>
       <PopupContent>
+        
+        <CloseButton onClick={onClose}>
+          <FaTimes />
+        </CloseButton>
         <LeftPanel>
-         
+          <div className="main-logo">
+            <img src={logoImg} alt="Main Logo" />
+          </div>
+          <div className="logo-container">
+            <img src={logo1} alt="15k Customers" />
+            <img src={logo2} alt="Award" />
+            <img src={logo3} alt="Customer Service" />
+          </div>
           <ul>
             <li>
               <FaCheckCircle size={14} /> 100% Customised Trips
@@ -371,73 +370,54 @@ const Popup: React.FC = () => {
             </li>
           </ul>
         </LeftPanel>
-
         <RightPanel>
-          <CloseButton onClick={closePopup}>
-            <FaTimes />
-          </CloseButton>
           <h3>Plan Your Dream Vacation</h3>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
               name="name"
+              placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Your Name"
               required
             />
             <input
               type="tel"
               name="contact"
+              placeholder="Your Contact Number"
               value={formData.contact}
               onChange={handleChange}
-              placeholder="Your Contact Number"
               required
             />
             <input
               type="email"
               name="email"
+              placeholder="Your Email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Your Email"
               required
             />
-            <div className="row">
-              <div>
-                <select name="destination" value={formData.destination} onChange={handleChange} required>
-                  <option value="">Select Destination</option>
-                  <option value="maldives">Maldives</option>
-                  <option value="bali">Bali</option>
-                  <option value="dubai">Dubai</option>
-                  <option value="thailand">Thailand</option>
-                  <option value="singapore">Singapore</option>
-                  <option value="malaysia">Malaysia</option>
-                  <option value="hongkong">Hong Kong</option>
-                  <option value="europe">Europe</option>
-                  <option value="vietnam">Vietnam</option>
-                  <option value="australia">Australia</option>
-                </select>
-              </div>
-              <div>
-                <input
-                  type="text"
-                  name="departureCity"
-                  value={formData.departureCity}
-                  onChange={handleChange}
-                  placeholder="Departure City"
-                  required
-                />
-              </div>
-            </div>
+            <select name="destination" value={formData.destination} onChange={handleChange} required>
+              <option value="">Select Destination</option>
+              <option value="maldives">Maldives</option>
+              <option value="bali">Bali</option>
+              <option value="dubai">Dubai</option>
+            </select>
+            <input
+              type="text"
+              name="departureCity"
+              placeholder="Departure City"
+              value={formData.departureCity}
+              onChange={handleChange}
+              required
+            />
             <DatePicker
               selected={startDate}
               onChange={(date: Date | null) => setStartDate(date)}
               dateFormat="dd-MM-yyyy"
-              placeholderText="Pick your travel date"
+              placeholderText="Travel Date"
               isClearable
-              className="custom-datepicker"
             />
-
             <PaxCounterWrapper>
               <PaxCounter>
                 <label>Number of Adults</label>
@@ -465,7 +445,6 @@ const Popup: React.FC = () => {
               </PaxCounter>
 
             </PaxCounterWrapper>
-
             <button type="submit">Submit</button>
           </form>
         </RightPanel>
