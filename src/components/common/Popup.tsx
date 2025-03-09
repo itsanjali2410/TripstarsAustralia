@@ -4,11 +4,8 @@ import { FaCheckCircle, FaTimes } from "react-icons/fa";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import emailjs from "@emailjs/browser";
-// Assets
-import logo1 from "../../assets/popup/Customers.png";
-import logo2 from "../../assets/popup/Awardwinners .png";
-import logo3 from "../../assets/popup/Customerservice.png";
-import logoImg from "../../assets/images/logo/logo.png";
+
+import axios from "axios";
 
 // Animation for popup fade-in
 const fadeIn = keyframes`
@@ -296,67 +293,72 @@ const Popup: React.FC = () => {
   const handlePaxChange = (increment: boolean) => setPax((prev) => (increment ? prev + 1 : prev - 1));
   const handleChildChange = (increment: boolean) => setChild((prev) => (increment ? prev + 1 : prev - 1));
 
-  const API_URL = "https://tripstarsholidays.com"; // ✅ Use domain instead of localhost
+  const API_URL = "http://148.135.138.32:5000"; // ✅ Ensure the correct backend URL
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+      e.preventDefault();
+  
+      if (!startDate) {
+          alert("Please select a travel date!");
+          return;
+      }
+  
+      // Prepare templateParams for EmailJS
+      const templateParams = {
+          name: formData.name,
+          contact: formData.contact,
+          email: formData.email,
+          destination: formData.destination,
+          departure_city: formData.departureCity, // ✅ Fixed field name
+          travel_date: startDate ? startDate.toISOString().split("T")[0] : "", // ✅ Fixed field name
+          pax,
+          child,
+      };
+  
+      try {
+          // 1. Send email using EmailJS
+          await emailjs.send(
+              "service_eamkhsr", // Your Service ID
+              "template_1nh5ps2", // Your Template ID
+              templateParams,
+              "gScHv791km1kt3vL1" // Your Public Key
+          );
+          alert("🎉 Email sent successfully to Admin!");
+  
+          // 2. Send form data to your backend
+          const response = await axios.post(`${API_URL}/submit-form`, templateParams);
+  
+          if (response.status === 200) {
+              alert("Data successfully saved to the database!");
+          } else {
+              alert("Failed to save data to the database.");
+          }
+  
+          // Reset the form after successful submission
+          setIsVisible(false);
+          setFormData({
+              name: "",
+              contact: "",
+              email: "",
+              destination: "",
+              departureCity: "",
+          });
+          setStartDate(null);
+          setPax(1);
+          setChild(0);
+  
+      } catch (error) {
+          console.error("❌ Error:", error);
+          alert("Failed to send email or save data. Please try again.");
+      }
+  };
+  
 
-    if (!startDate) {
-        alert("Please select a travel date!");
-        return;
-    }
-
-    const templateParams = {
-        name: formData.name,
-        contact: formData.contact,
-        email: formData.email,
-        destination: formData.destination,
-        departureCity: formData.departureCity,
-        travelDate: startDate ? startDate.toISOString().split("T")[0] : "",
-        pax,
-        child
-    };
-
-    try {
-        await emailjs.send(
-            "service_eamkhsr", // ✅ Your Service ID
-            "template_1nh5ps2", // ✅ Your Template ID
-            templateParams,
-            "gScHv791km1kt3vL1" // ✅ Your Public Key
-        );
-
-        alert("🎉 Email sent successfully to Admin!");
-        setIsVisible(false);
-
-        // Reset the form after successful submission
-        setFormData({
-            name: "",
-            contact: "",
-            email: "",
-            destination: "",
-            departureCity: "",
-        });
-        setStartDate(null);
-        setPax(1);
-        setChild(0);
-        
-    } catch (error) {
-        console.error("❌ Error sending email:", error);
-        alert("Failed to send email. Please try again.");
-    }
-};
   return (
     <PopupContainer id="popup-container" isVisible={isVisible} onClick={handleOutsideClick}>
       <PopupContent>
         <LeftPanel>
-          <div className="main-logo">
-            <img src={logoImg} alt="Main Logo" />
-          </div>
-          <div className="logo-container">
-            <img src={logo1} alt="15k Customers" />
-            <img src={logo2} alt="Award" />
-            <img src={logo3} alt="Customer Service" />
-          </div>
+         
           <ul>
             <li>
               <FaCheckCircle size={14} /> 100% Customised Trips
