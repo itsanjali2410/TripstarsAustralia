@@ -31,6 +31,7 @@ import Popup from "../../components/common/Popup";
 type LocationKey = keyof typeof destinationsData;
 
 export default function Tripdetailspage() {
+ const [showPopup, setShowPopup] = useState(false);
   // Setup isMobile state for responsive design
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -114,13 +115,10 @@ export default function Tripdetailspage() {
 
       {/* Choose Your Section */}
       <Choose_your />
-
-      {/* Popup */}
-      <Popup />
-
+      {/* Pass required props to Popup */}
       {/* Trustindex Widget */}
       <TrustindexWidget />
-
+      <Popup />
       {/* Similar Packages Section */}
       <TrendingOffers title="Similar packages" cards={similar} />
     </>
