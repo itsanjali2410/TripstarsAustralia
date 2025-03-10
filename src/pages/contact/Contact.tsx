@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-
+import contactbanner from "../../assets/contact/contactbanner.webp";
 const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -122,7 +122,8 @@ const Contact: React.FC = () => {
   return (
     <ContactContainer>
       <Banner>
-        <img src="https://www.eraindia.org/wp-content/uploads/2022/09/contact-banner.jpg" alt="Contact Us" />
+      <img src={`${contactbanner}?v=${new Date().getTime()}`} alt="Contact Us" />
+
       </Banner>
       <ContactSection>
         <ContactForm onSubmit={handleSubmit}>

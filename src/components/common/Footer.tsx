@@ -10,6 +10,7 @@ const FooterContainer = styled.footer`
   color: white;
   padding: 20px 40px;
   text-align: center;
+  
 `;
 
 const DesktopLinksContainer = styled.div`
@@ -135,10 +136,12 @@ const FooterSection = styled.div<{ isOpen: boolean }>`
   @media (max-width: 768px) {
     h3 {
       font-size: 16px; /* Reduce font size for mobile */
+      font-weight: bold;
     }
 
     ul li a {
       font-size: 12px; /* Reduce font size for links in mobile view */
+      font-weight: bold;
     }
   }
 `;

@@ -449,10 +449,11 @@ export const destinationsData = {
     },
     thingsToDo: [
       { name: "Garden by the Bay", image: singaporeImg1 },
-      { name: "Marina Bay Sands", image: singaporeImg2 },
+      { name: "Marina Bay Sand", image: singaporeImg2 },
       { name: "Night Safari", image: singaporeImg3 },
       { name: "Sentosa Island Tour", image: singaporeImg4 },
       { name: "Singapore City Tour", image: singaporeImg5 },
+      { name: "Sling cocktail", image: thailandImg4 },
     ],
   },
   thailand: {
@@ -469,13 +470,6 @@ export const destinationsData = {
       { name: "Phi Phi Islands", image: thailandImg3 },
       { name: "Floating Market", image: thailandImg4 },
       { name: "Elephant Sanctuary", image: thailandImg5 },
-      // Repeating some items as in the original snippet:
-      { name: "Phuket Beaches", image: thailandImg2 },
-      { name: "Phi Phi Islands", image: thailandImg3 },
-      { name: "Floating Market", image: thailandImg4 },
-      { name: "Phuket Beaches", image: thailandImg2 },
-      { name: "Phi Phi Islands", image: thailandImg3 },
-      { name: "Floating Market", image: thailandImg4 },
     ],
   },
   turkey: {
