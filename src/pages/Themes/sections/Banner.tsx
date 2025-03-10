@@ -150,7 +150,7 @@ const Banner: React.FC = () => {
             alt="Google"
           />
           <RatingStars>⭐ 4.9</RatingStars>
-          <ReviewCount>(12,300 reviews)</ReviewCount>
+          <ReviewCount>(Excellent reviews)</ReviewCount>
         </RatingCard>
         <RatingCard>
           <RatingIcon
@@ -158,7 +158,7 @@ const Banner: React.FC = () => {
             alt="TripAdvisor"
           />
           <RatingStars>⭐ 5.0</RatingStars>
-          <ReviewCount>(3,550 reviews)</ReviewCount>
+          {/* <ReviewCount>(3,550 reviews)</ReviewCount> */}
         </RatingCard>
         <RatingCard>
           <RatingIcon
@@ -166,7 +166,7 @@ const Banner: React.FC = () => {
             alt="Facebook"
           />
           <RatingStars>⭐ 4.9</RatingStars>
-          <ReviewCount>(1,031 reviews)</ReviewCount>
+          {/* <ReviewCount>(1,031 reviews)</ReviewCount> */}
         </RatingCard>
       </IconsContainer>
     </BannerWrapper>
