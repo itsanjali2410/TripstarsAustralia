@@ -291,55 +291,59 @@ const Popup: React.FC<PopupProps> = ({ onClose }) => {
     e.preventDefault();
 
     if (!startDate) {
-      alert("Please select a travel date!");
-      return;
+        alert("Please select a travel date!");
+        return;
     }
 
+    // Prepare templateParams for EmailJS
     const templateParams = {
-      name: formData.name,
-      contact: formData.contact,
-      email: formData.email,
-      destination: formData.destination,
-      departure_city: formData.departureCity,
-      travel_date: startDate.toISOString().split("T")[0],
-      pax,
-      child,
+        name: formData.name,
+        contact: formData.contact,
+        email: formData.email,
+        destination: formData.destination,
+        departure_city: formData.departureCity, // ✅ Fixed field name
+        travel_date: startDate ? startDate.toISOString().split("T")[0] : "", // ✅ Fixed field name
+        pax,
+        child,
     };
 
     try {
-      // Send Email
-      await emailjs.send(
-        "service_eamkhsr",
-        "template_1nh5ps2",
-        templateParams,
-        "gScHv791km1kt3vL1"
-      );
-      alert("🎯 Email Sent Successfully!");
+        // 1. Send email using EmailJS
+        await emailjs.send(
+            "service_eamkhsr", // Your Service ID
+            "template_1nh5ps2", // Your Template ID
+            templateParams,
+            "gScHv791km1kt3vL1" // Your Public Key
+        );
+        alert("🎉 Email sent successfully to Admin!");
 
-      // Send Form Data to Backend
-      const response = await axios.post(`${API_URL}/submit-form`, templateParams);
+        // 2. Send form data to your backend
+        const response = await axios.post(`${API_URL}/submit-form`, templateParams);
 
-      if (response.status === 200) {
-        alert("✅ Data Saved Successfully to Database!");
-      }
+        if (response.status === 200) {
+            alert("Data successfully saved to the database!");
+        } else {
+            alert("Failed to save data to the database.");
+        }
 
-      // Reset Form
-      setFormData({
-        name: "",
-        contact: "",
-        email: "",
-        destination: "",
-        departureCity: "",
-      });
-      setStartDate(null);
-      setPax(1);
-      setChild(0);
-      onClose(); // Close Popup
+        // Reset the form after successful submission
+        setIsVisible(false);
+        setFormData({
+            name: "",
+            contact: "",
+            email: "",
+            destination: "",
+            departureCity: "",
+        });
+        setStartDate(null);
+        setPax(1);
+        setChild(0);
+
     } catch (error) {
-      console.error("❌ Error:", error);
-      alert("Failed to Submit Data. Please Try Again!");
+        console.error("❌ Error:", error);
+        alert("Failed to send email or save data. Please try again.");
     }
-  };
+};
 
   
   return (
@@ -454,3 +458,7 @@ const Popup: React.FC<PopupProps> = ({ onClose }) => {
 };
 
 export default Popup;
+function setIsVisible(arg0: boolean) {
+  throw new Error("Function not implemented.");
+}
+
