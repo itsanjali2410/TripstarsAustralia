@@ -5,8 +5,13 @@ import SearchBar from "./SearchBar";
 import RatingBar from "./RatingBar";
 
 // Import local images
-import image2 from "../../../assets/banner/banner 5.png";
-import image2Mobile from "../../../assets/banner/Mobile banner.jpg"; // Mobile version of the image
+import image1 from "../../../assets/banner/1.webp";
+import image2 from "../../../assets/banner/2.webp";
+import image3 from "../../../assets/banner/3.webp";
+
+import image1Mobile from "../../../assets/banner/mobile web banner/1.webp";
+import image2Mobile from "../../../assets/banner/mobile web banner/2.webp";
+import image3Mobile from "../../../assets/banner/mobile web banner/3.webp";
 
 // Define types for styled component props
 type SlideProps = {
@@ -19,7 +24,8 @@ const SliderContainer = styled.section`
   position: relative;
   width: 100%;
   height: 80vh;
-  
+  overflow: hidden;
+
   @media (max-width: 768px) {
     height: 50vh;
   }
@@ -46,7 +52,7 @@ const SearchBarWrapper = styled.div`
   z-index: 3;
   text-align: center;
   margin-top: 20px;
-  
+
   @media (max-width: 768px) {
     top: 60%;
     width: 90%;
@@ -58,7 +64,7 @@ const HeroText = styled.h1`
   color: #fff;
   margin-bottom: 20px;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-  
+
   @media (max-width: 768px) {
     font-size: 1.5rem;
     margin-bottom: 15px;
@@ -67,61 +73,53 @@ const HeroText = styled.h1`
 
 // HeroSection Component
 const HeroSection: React.FC = () => {
-  const images = [image2, image2Mobile]; // Array holding both desktop and mobile images
-  
+  const desktopImages = [image1, image2, image3];
+  const mobileImages = [image1Mobile, image2Mobile, image3Mobile];
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 768);
+  const [images, setImages] = useState<string[]>(isMobile ? mobileImages : desktopImages);
 
-  // Handle window resizing to set mobile state
+  // Update images when resizing
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Check if the screen width is 768px or less
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+      setImages(mobile ? mobileImages : desktopImages);
+      console.log("Resized to:", mobile ? "Mobile" : "Desktop");
     };
 
-    handleResize(); // Run on initial render
-    window.addEventListener("resize", handleResize); // Add event listener for window resize
-
-    return () => window.removeEventListener("resize", handleResize); // Clean up on component unmount
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
   };
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
   };
 
   const swipeHandlers = useSwipeable({
     onSwipedLeft: goToNext,
     onSwipedRight: goToPrevious,
     preventScrollOnSwipe: true,
-    trackMouse: true,
+    trackMouse: true, // Support mouse swiping as well
+    delta: 10,       // Minimum distance to trigger swipe
   });
 
   return (
     <SliderContainer {...swipeHandlers}>
-      {/* Conditionally render the image based on screen size */}
       {images.map((image, index) => (
-        // Only show mobile image on mobile screen (index 1 should be for mobile)
-        <Slide
-          key={index}
-          bgImage={isMobile ? image2Mobile : image2} // Show mobile image for mobile screens
-          active={index === currentIndex}
-        />
+        <Slide key={index} bgImage={image} active={index === currentIndex} />
       ))}
 
       {/* Overlay text and SearchBar */}
       <SearchBarWrapper>
-        {/* <HeroText>Find Your Dream Destination</HeroText> */}
-        {/* <SearchBar /> */}
+        {/* <HeroText>Find Your Dream Destination</HeroText>
+        <SearchBar />
+        <RatingBar /> */}
       </SearchBarWrapper>
-
-      {/* <RatingBar /> */}
     </SliderContainer>
   );
 };

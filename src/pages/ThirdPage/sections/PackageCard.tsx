@@ -175,7 +175,7 @@ export default function PackageCard() {
         </IconContainer>
         <IconContainer>
           <img
-            src="https://www.easemytrip.com/holidays/Content/customize/img/meal-1.svg"
+            src="https://cdn-icons-png.flaticon.com/512/3313/3313509.png"
             alt="Meal"
           />
           <span>Meal</span>
