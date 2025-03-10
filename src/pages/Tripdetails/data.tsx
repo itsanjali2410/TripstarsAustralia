@@ -1,5 +1,14 @@
 // src/data.js
-
+import vietnambanner from "../../assets/Tripdetails/vietnam/view-world-monument-celebrate-world-heritage-day.jpg";
+import europebanner from "../../assets/Tripdetails/europe/beautiful-wide-shot-eiffel-tower-paris-surrounded-by-water-with-ships-colorful-sky.jpg";
+import dubaibanner from "../../assets/Tripdetails/dubai/portrait-woman-visiting-luxurious-city-dubai.jpg";
+import singaporebanner from "../../assets/Tripdetails/singapore/sculpture-city-long-exposure-complex-amazing.jpg"
+import thailandBanner from "../../assets/Tripdetails/new/thailand/landmark-pagoda-doi-inthanon-national-park-chiang-mai-thailand.jpg";
+import turkeybanner from "../../assets/Tripdetails/new/turkey/set-colored-balloons-flying-ground-cappadocia-turkey.jpg";
+import bakubanner from "../../assets/Tripdetails/new/baku/songdo-central-park-is-green-space-plan-inspired-by-nyc.jpg";
+import japanbanner from "../../assets/Tripdetails/new/japan/asian-woman-wearing-japanese-traditional-kimono-looking-cherry-blossoms-castle-himeji-japan.jpg";
+import maldivesbanner from "../../assets/Tripdetails/new/maldives/rest-sunshine-atoll-bungalow-holiday.jpg";
+import mauritiusbanner from "../../assets/Tripdetails/new/mauritius/breathtaking-high-angle-shot-chamarel-waterfall-mauritius.jpg";
 // Bali Images
 import baliImg1 from "../../assets/Tripdetails/bali/ThingsToDoInBali/atv-ride.png";
 import baliImg2 from "../../assets/Tripdetails/bali/ThingsToDoInBali/bali-swing.png";
@@ -172,7 +181,7 @@ export const destinationsData = {
   },
   malaysia: {
     banner: {
-      image: "https://media.easemytrip.com/media/ppc/destination/Common/CommontQP9xd.png",
+      image: "https://etimg.etb2bimg.com/photo/116423616.cms",
       title: "Malaysia",
       description: "Discover stunning locations and create unforgettable memories.",
     },
@@ -337,7 +346,7 @@ export const destinationsData = {
   australia: {
     banner: {
       image:
-        "https://media.easemytrip.com/media/ppc/destination/Common/CommontOpcx9.png",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYm_E60tcieEXm_sj0TfSrfRpfthaPguP0aw&s",
       title: "Australia",
       description:
         "Discover stunning locations and create unforgettable memories.",
@@ -357,7 +366,7 @@ export const destinationsData = {
   europe: {
     banner: {
       image:
-        "https://media.easemytrip.com/media/ppc/destination/Common/CommonbYARKN.png",
+       europebanner,
       title: "Europe",
       description:
         "Discover stunning locations and create unforgettable memories.",
@@ -377,7 +386,7 @@ export const destinationsData = {
   hongkong: {
     banner: {
       image:
-        "https://media.easemytrip.com/media/ppc/destination/Common/CommonT9MjUa.png",
+        "https://www.chinadiscovery.com/assets/images/hongkong/maps/hong-kong-asia-map.jpg",
       title: "Hong Kong",
       description:
         "Discover stunning locations and create unforgettable memories.",
@@ -395,7 +404,7 @@ export const destinationsData = {
   vietnam: {
     banner: {
       image:
-        "https://media.easemytrip.com/media/ppc/destination/Common/CommonXjSWKT.png",
+        vietnambanner,
       title: "Vietnam",
       description:
         "Discover stunning locations and create unforgettable memories.",
@@ -413,7 +422,7 @@ export const destinationsData = {
   dubai: {
     banner: {
       image:
-        "https://media.easemytrip.com/media/ppc/destination/Common/CommonmylK0q.png",
+        dubaibanner,
       title: "Dubai",
       description:
         "Discover stunning locations and create unforgettable memories.",
@@ -433,7 +442,7 @@ export const destinationsData = {
   singapore: {
     banner: {
       image:
-        "https://media.easemytrip.com/media/ppc/destination/Common/Common9dXeUj.png",
+        singaporebanner,
       title: "Singapore",
       description:
         "Experience the vibrant culture and iconic landmarks of Singapore.",
@@ -449,7 +458,7 @@ export const destinationsData = {
   thailand: {
     banner: {
       image:
-        "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
+        thailandBanner,
       title: "Thailand",
       description:
         "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
@@ -472,7 +481,7 @@ export const destinationsData = {
   turkey: {
     banner: {
       image:
-        "https://media.easemytrip.com/media/ppc/destination/Common/CommonV7NLfk.jpg",
+        turkeybanner,
       title: "Turkey",
       description:
         "Explore the stunning landmarks and rich history of Turkey.",
@@ -506,7 +515,7 @@ export const destinationsData = {
   mauritius: {
     banner: {
       image:
-        "https://media.easemytrip.com/media/ppc/destination/Common/Commonrwtp6z.png",
+        mauritiusbanner,
       title: "Mauritius",
       description:
         "Explore the pristine beaches and lush landscapes of Mauritius.",
@@ -526,7 +535,7 @@ export const destinationsData = {
   maldives: {
     banner: {
       image:
-        "https://media.easemytrip.com/media/ppc/destination/Common/Common3pQiNd.png",
+        maldivesbanner,
       title: "Maldives",
       description:
         "Experience the crystal-clear waters and luxury escapes in the Maldives.",
@@ -543,7 +552,7 @@ export const destinationsData = {
   japan: {
     banner: {
       image:
-        "https://media.easemytrip.com/media/ppc/destination/Common/Common2BVXeE.png",
+        japanbanner,
       title: "Japan",
       description:
         "Experience the rich culture and breathtaking scenery of Japan.",
@@ -580,7 +589,7 @@ export const destinationsData = {
   baku: {
     banner: {
       image:
-        "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
+        bakubanner,
       title: "Baku",
       description:
         "Discover the rich history and modern marvels of Baku.",

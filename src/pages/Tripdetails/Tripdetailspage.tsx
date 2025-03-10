@@ -17,6 +17,7 @@ import TravelStyleCarousel from "./sections/TravelStyleCarousel";
 import ExploreDestinations from "../Home/sections/ExploreDestinations";
 import TrendingOffers2 from "../../components/TrendingOffers2";
 import FloatingContactButton from "../Home/sections/Floating";
+
 import {
   Bali,
   Kashmir,
@@ -49,6 +50,7 @@ import baliImg13 from "../../assets/Tripdetails/bali/ThingsToDoInBali/bali_banne
 import baliImg14 from "../../assets/Tripdetails/bali/ThingsToDoInBali/mobile-banner-bali.jpg";
 import TrustindexWidget from "../Home/sections/TrustindexWidget";
 import Popup from "../../components/common/Popup";
+
 
 // Type for valid destination keys
 type LocationKey = keyof typeof destinationsData;

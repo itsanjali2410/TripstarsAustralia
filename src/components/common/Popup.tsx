@@ -274,7 +274,7 @@ const Popup: React.FC<PopupProps> = ({ onClose }) => {
     departureCity: "",
   });
 
-  const API_URL = "https://tripstarsholidays.com/"; // Your backend URL
+  const API_URL = "https://148.135.138.32:5000/"; // Your backend URL
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
