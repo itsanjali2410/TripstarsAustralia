@@ -8,7 +8,7 @@ import logo1 from "../../assets/popup/Customers.png";
 import logo2 from "../../assets/popup/Awardwinners .png";
 import logo3 from "../../assets/popup/Customerservice.png";
 import logoImg from "../../assets/images/logo/logo.png";
-
+import axios from "axios";
 // Optional fade-in animation (can be removed if not needed)
 const fadeIn = keyframes`
   from {
@@ -259,49 +259,68 @@ const StaticForm: React.FC = () => {
     setChild((prev) => (increment ? prev + 1 : prev - 1));
   };
 
+  const API_URL = "https://backend.tripstarsholidays.com"; // ✅ Correct API URL
+
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!startDate) {
-      alert("Please select a travel date!");
-      return;
-    }
-
-    const templateParams = {
-      name: formData.name,
-      contact: formData.contact,
-      email: formData.email,
-      destination: formData.destination,
-      departureCity: formData.departureCity,
-      travelDate: startDate ? startDate.toISOString().split("T")[0] : "",
-      pax,
-      child,
-    };
-
-    try {
-      await emailjs.send(
-        "service_eamkhsr",
-        "template_1nh5ps2",
-        templateParams,
-        "gScHv791km1kt3vL1"
-      );
-
-      alert("🎉 Email sent successfully to Admin!");
-
-      setFormData({
-        name: "",
-        contact: "",
-        email: "",
-        destination: "",
-        departureCity: "",
-      });
-      setStartDate(null);
-      setPax(1);
-      setChild(0);
-    } catch (error) {
-      console.error("❌ Error sending email:", error);
-      alert("Failed to send email. Please try again.");
-    }
+      e.preventDefault();
+  
+      if (!startDate) {
+          alert("Please select a travel date!");
+          return;
+      }
+  
+      // Prepare the form data
+      const formDataToSend = {
+          name: formData.name,
+          contact: formData.contact,
+          email: formData.email,
+          destination: formData.destination,
+          departure_city: formData.departureCity, // ✅ Fixed field name
+          travel_date: startDate.toISOString().split("T")[0], // ✅ Fixed format
+          pax,
+          child,
+      };
+  
+      try {
+          // ✅ Send form data to backend API
+          const response = await axios.post(`${API_URL}/submit-form`, formDataToSend);
+  
+          if (response.status === 200) {
+              alert("✅ Data successfully saved to the database!");
+          } else {
+              alert("❌ Failed to save data to the database.");
+          }
+  
+          // ✅ Send email using EmailJS (optional)
+          try {
+              await emailjs.send(
+                  "service_eamkhsr", // Your Service ID
+                  "template_1nh5ps2", // Your Template ID
+                  formDataToSend,
+                  "gScHv791km1kt3vL1" // Your Public Key
+              );
+              alert("📧 Email sent successfully to Admin!");
+          } catch (emailError) {
+              console.warn("⚠️ Failed to send email via EmailJS:", emailError);
+          }
+  
+          // ✅ Reset the form after successful submission
+          setIsVisible(false); // Close popup
+          setFormData({
+              name: "",
+              contact: "",
+              email: "",
+              destination: "",
+              departureCity: "",
+          });
+          setStartDate(null);
+          setPax(1);
+          setChild(0);
+  
+      } catch (error) {
+          console.error("❌ API Error:", error);
+          alert("❌ Failed to submit the form. Please try again.");
+      }
   };
 
   return (
@@ -431,3 +450,7 @@ const StaticForm: React.FC = () => {
 };
 
 export default StaticForm;
+function setIsVisible(arg0: boolean) {
+  throw new Error("Function not implemented.");
+}
+

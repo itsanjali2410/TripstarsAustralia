@@ -8,7 +8,7 @@ import RatingBar from "./RatingBar";
 import image1 from "../../../assets/banner/1.webp";
 import image2 from "../../../assets/banner/2.webp";
 import image3 from "../../../assets/banner/3.webp";
-
+import image4 from "../../../assets/banner/4.jpg";
 import image1Mobile from "../../../assets/banner/mobile web banner/1.webp";
 import image2Mobile from "../../../assets/banner/mobile web banner/2.webp";
 import image3Mobile from "../../../assets/banner/mobile web banner/3.webp";
@@ -73,7 +73,7 @@ const HeroText = styled.h1`
 
 // HeroSection Component
 const HeroSection: React.FC = () => {
-  const desktopImages = [image1, image2, image3];
+  const desktopImages = [image1, image2, image3, image4];
   const mobileImages = [image1Mobile, image2Mobile, image3Mobile];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 768);

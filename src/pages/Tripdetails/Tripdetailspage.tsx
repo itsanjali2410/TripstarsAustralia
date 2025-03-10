@@ -40,7 +40,10 @@ import {
   southAfrica,
   Turkey,
   Ladakh,
-  Himachal
+  Himachal,
+  Goa,
+  // Nepal,
+
 } from "../../components/data";
 import DestinationSlider from "./sections/DestinationSlider";
 import Choose_your from "./sections/Choose_your";
@@ -119,6 +122,8 @@ export default function Tripdetailspage() {
     kerala: Kerala,
     andaman: Andaman1,
     himachal: Himachal,
+    goa:Goa,
+    // nepal:Nepal,
   };
 
   const trendingOffers = trendingOffersMapping[location as keyof typeof trendingOffersMapping];

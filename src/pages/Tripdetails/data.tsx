@@ -162,8 +162,36 @@ import himachal1 from "../../assets/Tripdetails/domestic/Himachal/things-to-do/2
 import himachal2 from "../../assets/Tripdetails/domestic/Himachal/things-to-do/3.png";
 
 //things to do goa
-import goa1 from "../../assets/Tripdetails/domestic/Goa/thingstodo/AnjunaBeach.png";
-import goa2 from "../../assets/Tripdetails/domestic/Goa/thingstodo/AnjunaBeach.png";
+import goa1 from "../../assets/Tripdetails/domestic/Goa/thingstodo/AnjunaBeach.webp";
+import goa2 from "../../assets/Tripdetails/domestic/Goa/thingstodo/bagabeachNightlife.webp";
+import goa3 from "../../assets/Tripdetails/domestic/Goa/thingstodo/DudhsagarWaterfall.webp";
+import goa4 from "../../assets/Tripdetails/domestic/Goa/thingstodo/Fortaguada.webp";
+import goa5 from "../../assets/Tripdetails/domestic/Goa/thingstodo/BomJesus.webp";
+import goa6 from "../../assets/Tripdetails/domestic/Goa/thingstodo/DonaViewpoint.webp";
+
+//things to do kerala
+import kerala1 from "../../assets/Tripdetails/domestic/Kerala/things-to-do/backwater_cruise.webp";
+import kerala2 from "../../assets/Tripdetails/domestic/Kerala/things-to-do/kathakali_dance.webp";
+import kerala3 from "../../assets/Tripdetails/domestic/Kerala/things-to-do/Munnar_tea_garden.webp";
+import kerala4 from "../../assets/Tripdetails/domestic/Kerala/things-to-do/wayanad_hills.webp";
+import kerala5 from "../../assets/Tripdetails/domestic/Kerala/things-to-do/Kovalam_beach.webp";
+import kerala6 from "../../assets/Tripdetails/domestic/Kerala/things-to-do/Periyar_sanctuary.webp";
+
+//things to do nepal
+import nepal1 from "../../assets/Tripdetails/domestic/nepal/thingstodo/Everest.webp";
+import nepal2 from "../../assets/Tripdetails/domestic/nepal/thingstodo/kathmandu.webp";
+import nepal3 from "../../assets/Tripdetails/domestic/nepal/thingstodo/jungle_safari.webp";
+import nepal4 from "../../assets/Tripdetails/domestic/nepal/thingstodo/Lumbini.webp";
+import nepal5 from "../../assets/Tripdetails/domestic/nepal/thingstodo/paragliding.webp";
+import nepal6 from "../../assets/Tripdetails/domestic/nepal/thingstodo/rafting_in_nepal.webp";
+
+//things to do andaman
+import andaman1 from "../../assets/Tripdetails/domestic/Andaman/things to do/Scuba_in_andamanTrekking.webp";
+import andaman2 from "../../assets/Tripdetails/domestic/Andaman/things to do/Lumbini Visit.webp";
+import andaman3 from "../../assets/Tripdetails/domestic/Andaman/things to do/Paragliding in Pokhara.webp";
+import andaman4 from "../../assets/Tripdetails/domestic/Andaman/things to do/kathmandu_valeey.webp";
+import andaman5 from "../../assets/Tripdetails/domestic/Andaman/things to do/River Rafting.webp";
+import andaman6 from "../../assets/Tripdetails/domestic/Andaman/things to do/jungle_safari.webp";
 export const destinationsData = {
   bali: {
     banner: {
@@ -217,8 +245,7 @@ export const destinationsData = {
         { name: "Wayanad Hills", image: baliImg5 },
         { name: "Kovalam Beach", image: baliImg6 },
         { name: "Periyar Wildlife Sanctuary", image: baliImg7 },
-        { name: "Athirappilly Waterfalls", image: baliImg8 },
-        { name: "Varkala Cliff", image: baliImg9 },
+
       ],
     },
     nepal: {
@@ -228,12 +255,12 @@ export const destinationsData = {
         description: "Explore the breathtaking landscapes and cultural heritage of Nepal.",
       },
       thingsToDo: [
-        { name: "Everest Trekking", image: singaporeImg1 },
-        { name: "Kathmandu Valley", image: singaporeImg2 },
-        { name: "Jungle Safari", image: singaporeImg3 },
-        { name: "Lumbini Visit", image: singaporeImg4 },
-        { name: "Paragliding in Pokhara", image: singaporeImg5 },
-        { name: "River Rafting", image: singaporeImg1 },
+        { name: "Everest Trekking", image: nepal1 },
+        { name: "Kathmandu Valley", image: nepal2 },
+        { name: "Jungle Safari", image: nepal3 },
+        { name: "Lumbini Visit", image: nepal4 },
+        { name: "Paragliding in Pokhara", image: nepal5 },
+        { name: "River Rafting", image: nepal6 },
       ],
     },
   
@@ -342,11 +369,11 @@ export const destinationsData = {
       },
       thingsToDo: [
         { name: "Anjuna Beach", image: goa1 },
-        { name: "Baga Beach Nightlife", image: vietnamImg2 },
-        { name: "Dudhsagar Waterfalls", image: vietnamImg3 },
-        { name: "Fort Aguada", image: vietnamImg4 },
-        { name: "Basilica of Bom Jesus", image: vietnamImg5 },
-        { name: "Dona Paula Viewpoint", image: vietnamImg6 },
+        { name: "Baga Beach Nightlife", image: goa2 },
+        { name: "Dudhsagar Waterfalls", image: goa3 },
+        { name: "Fort Aguada", image: goa4 },
+        { name: "Basilica of Bom Jesus", image: goa5 },
+        { name: "Dona Paula Viewpoint", image: goa6 },
       ],
     },
   

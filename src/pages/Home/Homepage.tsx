@@ -50,7 +50,6 @@ export default function HomePage() {
       <BenefitsSection />
       <StaticForm />
       <TrustindexWidget/>
-
       <BendingCarosual />
       <FloatingWhatsAppButton/>
     </>
