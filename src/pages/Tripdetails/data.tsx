@@ -155,8 +155,15 @@ import southafricaImg3 from "../../assets/Tripdetails/new/south affrica/things-t
 import southafricaImg4 from "../../assets/Tripdetails/new/south affrica/things-to-do-south-africa/knysna-elephant-park.png";
 import southafricaImg5 from "../../assets/Tripdetails/new/south affrica/things-to-do-south-africa/kruger-national-park.png";
 import southafricaImg6 from "../../assets/Tripdetails/new/south affrica/things-to-do-south-africa/maclear_s-beacon.png";
-import { Andaman } from "../../components/data";
+import { Andaman, Himachal } from "../../components/data";
 
+// himachal hings to do 
+import himachal1 from "../../assets/Tripdetails/domestic/Himachal/things-to-do/2.png";
+import himachal2 from "../../assets/Tripdetails/domestic/Himachal/things-to-do/3.png";
+
+//things to do goa
+import goa1 from "../../assets/Tripdetails/domestic/Goa/thingstodo/AnjunaBeach.png";
+import goa2 from "../../assets/Tripdetails/domestic/Goa/thingstodo/AnjunaBeach.png";
 export const destinationsData = {
   bali: {
     banner: {
@@ -246,14 +253,14 @@ export const destinationsData = {
       ],
     },
   
-    himachal_pradesh: {
+    himachal: {
       banner: {
         image: "https://www.holidify.com/images/bgImages/HIMACHAL-PRADESH.jpg",
         title: "Himachal Pradesh",
         description: "Experience the adventure, spirituality, and scenic beauty of Himachal Pradesh.",
       },
       thingsToDo: [
-        { name: "Mountain Trekking", image: australiaImg1 },
+        { name: "Shikara ride", image: himachal1 },
         { name: "Paragliding Sports", image: australiaImg2 },
         { name: "Temple Visits", image: australiaImg3 },
         { name: "Hill Stations", image: australiaImg4 },
@@ -334,7 +341,7 @@ export const destinationsData = {
         description: "Enjoy sun, sand, and sea in the tropical paradise of Goa.",
       },
       thingsToDo: [
-        { name: "Anjuna Beach", image: vietnamImg1 },
+        { name: "Anjuna Beach", image: goa1 },
         { name: "Baga Beach Nightlife", image: vietnamImg2 },
         { name: "Dudhsagar Waterfalls", image: vietnamImg3 },
         { name: "Fort Aguada", image: vietnamImg4 },
@@ -455,7 +462,7 @@ export const destinationsData = {
       { name: "Singapore City Tour", image: singaporeImg5 },
       { name: "Sling cocktail", image: thailandImg4 },
     ],
-    
+
   },
   thailand: {
     banner: {
