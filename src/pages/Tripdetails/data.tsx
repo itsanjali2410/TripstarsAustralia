@@ -455,6 +455,7 @@ export const destinationsData = {
       { name: "Singapore City Tour", image: singaporeImg5 },
       { name: "Sling cocktail", image: thailandImg4 },
     ],
+    
   },
   thailand: {
     banner: {
