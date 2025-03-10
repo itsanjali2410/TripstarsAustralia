@@ -274,8 +274,6 @@ const Popup: React.FC<PopupProps> = ({ onClose }) => {
     departureCity: "",
   });
 
-  const API_URL = "https://148.135.138.32:5000/"; // Your backend URL
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -287,7 +285,9 @@ const Popup: React.FC<PopupProps> = ({ onClose }) => {
   const handleChildChange = (increment: boolean) =>
     setChild((prev) => (increment ? prev + 1 : prev > 0 ? prev - 1 : prev));
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const API_URL = "https://backend.tripstarsholidays.com"; // ✅ Correct API URL
+
+const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!startDate) {
@@ -295,39 +295,43 @@ const Popup: React.FC<PopupProps> = ({ onClose }) => {
         return;
     }
 
-    // Prepare templateParams for EmailJS
-    const templateParams = {
+    // Prepare the form data
+    const formDataToSend = {
         name: formData.name,
         contact: formData.contact,
         email: formData.email,
         destination: formData.destination,
         departure_city: formData.departureCity, // ✅ Fixed field name
-        travel_date: startDate ? startDate.toISOString().split("T")[0] : "", // ✅ Fixed field name
+        travel_date: startDate.toISOString().split("T")[0], // ✅ Fixed format
         pax,
         child,
     };
 
     try {
-        // 1. Send email using EmailJS
-        await emailjs.send(
-            "service_eamkhsr", // Your Service ID
-            "template_1nh5ps2", // Your Template ID
-            templateParams,
-            "gScHv791km1kt3vL1" // Your Public Key
-        );
-        alert("🎉 Email sent successfully to Admin!");
-
-        // 2. Send form data to your backend
-        const response = await axios.post(`${API_URL}/submit-form`, templateParams);
+        // ✅ Send form data to backend API
+        const response = await axios.post(`${API_URL}/submit-form`, formDataToSend);
 
         if (response.status === 200) {
-            alert("Data successfully saved to the database!");
+            alert("✅ Data successfully saved to the database!");
         } else {
-            alert("Failed to save data to the database.");
+            alert("❌ Failed to save data to the database.");
         }
 
-        // Reset the form after successful submission
-        setIsVisible(false);
+        // ✅ Send email using EmailJS (optional)
+        try {
+            await emailjs.send(
+                "service_eamkhsr", // Your Service ID
+                "template_1nh5ps2", // Your Template ID
+                formDataToSend,
+                "gScHv791km1kt3vL1" // Your Public Key
+            );
+            alert("📧 Email sent successfully to Admin!");
+        } catch (emailError) {
+            console.warn("⚠️ Failed to send email via EmailJS:", emailError);
+        }
+
+        // ✅ Reset the form after successful submission
+        setIsVisible(false); // Close popup
         setFormData({
             name: "",
             contact: "",
@@ -340,8 +344,8 @@ const Popup: React.FC<PopupProps> = ({ onClose }) => {
         setChild(0);
 
     } catch (error) {
-        console.error("❌ Error:", error);
-        alert("Failed to send email or save data. Please try again.");
+        console.error("❌ API Error:", error);
+        alert("❌ Failed to submit the form. Please try again.");
     }
 };
 

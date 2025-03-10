@@ -39,7 +39,8 @@ import {
   Singapore,
   southAfrica,
   Turkey,
-  Ladakh
+  Ladakh,
+  Himachal
 } from "../../components/data";
 import DestinationSlider from "./sections/DestinationSlider";
 import Choose_your from "./sections/Choose_your";
@@ -117,6 +118,7 @@ export default function Tripdetailspage() {
     kashmir: Kashmir,
     kerala: Kerala,
     andaman: Andaman1,
+    himachal: Himachal,
   };
 
   const trendingOffers = trendingOffersMapping[location as keyof typeof trendingOffersMapping];
