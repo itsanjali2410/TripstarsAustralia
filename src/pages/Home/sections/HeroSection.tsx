@@ -78,7 +78,10 @@ const HeroSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 768);
   const [images, setImages] = useState<string[]>(isMobile ? mobileImages : desktopImages);
-
+  useEffect(() => {
+    const interval = setInterval(goToNext, 3000); // Change slide every 1 second
+    return () => clearInterval(interval);
+  }, [images]);
   // Update images when resizing
   useEffect(() => {
     const handleResize = () => {

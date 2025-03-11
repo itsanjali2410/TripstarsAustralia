@@ -515,6 +515,7 @@ export const destinationsData = {
       { name: "Phi Phi Islands", image: thailandImg3 },
       { name: "Floating Market", image: thailandImg4 },
       { name: "Elephant Sanctuary", image: thailandImg5 },
+      { name: "Botanical Garden", image: thailandImg6 },
     ],
   },
   turkey: {
