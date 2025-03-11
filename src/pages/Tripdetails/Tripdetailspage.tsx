@@ -62,7 +62,7 @@ type LocationKey = keyof typeof destinationsData;
 export default function Tripdetailspage() {
   const { location } = useParams<{ location: string }>(); // Get location from URL params
   const navigate = useNavigate(); // Hook for navigation
-  const [showPopup, setShowPopup] = useState(false);
+  // const [showPopup, setShowPopup] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -86,11 +86,11 @@ export default function Tripdetailspage() {
   const locationData = destinationsData[validLocation];
 
   // Redirect if location is invalid
-  useEffect(() => {
-    if (!locationData) {
-      navigate("/not-found", { replace: true }); // Redirect to a Not Found page
-    }
-  }, [locationData, navigate]);
+  // useEffect(() => {
+  //   if (!locationData) {
+  //     navigate("/not-found", { replace: true }); // Redirect to a Not Found page
+  //   }
+  // }, [locationData, navigate]);
 
   // Extract relevant data
   const { thingsToDo, banner } = locationData || {};
@@ -155,7 +155,7 @@ export default function Tripdetailspage() {
       <TrustindexWidget />
 
       {/* Popup for enquiry */}
-      {isPopupOpen && <Popup onClose={() => setIsPopupOpen(false)} />}
+      <Popup  />
 
       {/* Similar Packages Section */}
       <TrendingOffers title="Similar packages" cards={similar} />

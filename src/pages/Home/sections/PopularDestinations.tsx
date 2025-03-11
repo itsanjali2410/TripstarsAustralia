@@ -182,13 +182,13 @@ export default function PopularDestinations({ showPopup = false }: PopularDestin
       </CardsWrapper>
 
       {/* Popup */}
-      {isPopupOpen && (
+      {/* {isPopupOpen && (
   <Popup onClose={() => setIsPopupOpen(false)}>
-  <h2>Enquiry Form for {selectedDestination}</h2>
+  <h2>Enquiry Form for {selectedDestination}</h2> */}
   {/* Add your form content here */}
-</Popup>
+{/* </Popup> */}
 
-)}
+{/* )} */}
     </Container>
   );
 }

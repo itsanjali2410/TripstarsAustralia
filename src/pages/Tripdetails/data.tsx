@@ -9,6 +9,7 @@ import bakubanner from "../../assets/Tripdetails/new/baku/songdo-central-park-is
 import japanbanner from "../../assets/Tripdetails/new/japan/asian-woman-wearing-japanese-traditional-kimono-looking-cherry-blossoms-castle-himeji-japan.jpg";
 import maldivesbanner from "../../assets/Tripdetails/new/maldives/rest-sunshine-atoll-bungalow-holiday.jpg";
 import mauritiusbanner from "../../assets/Tripdetails/new/mauritius/breathtaking-high-angle-shot-chamarel-waterfall-mauritius.jpg";
+import nepalbanner from "../../assets/Tripdetails/domestic/nepal/Nepalbanner.webp"
 // Bali Images
 import baliImg1 from "../../assets/Tripdetails/bali/ThingsToDoInBali/atv-ride.png";
 import baliImg2 from "../../assets/Tripdetails/bali/ThingsToDoInBali/bali-swing.png";
@@ -192,6 +193,15 @@ import andaman3 from "../../assets/Tripdetails/domestic/Andaman/things to do/Par
 import andaman4 from "../../assets/Tripdetails/domestic/Andaman/things to do/kathmandu_valeey.webp";
 import andaman5 from "../../assets/Tripdetails/domestic/Andaman/things to do/River Rafting.webp";
 import andaman6 from "../../assets/Tripdetails/domestic/Andaman/things to do/jungle_safari.webp";
+
+//ladakh thing to do images
+import ladakh1 from "../../assets/Tripdetails/domestic/Ladakh/things-to-do/Leh palace.webp";
+import ladakh2 from "../../assets/Tripdetails/domestic/Ladakh/things-to-do/Pangong Lake.webp";
+import ladakh3 from "../../assets/Tripdetails/domestic/Ladakh/things-to-do/Nubra valley.webp";
+import ladakh4 from "../../assets/Tripdetails/domestic/Ladakh/things-to-do/Khardung La Pass.webp";
+import ladakh5 from "../../assets/Tripdetails/domestic/Ladakh/things-to-do/Magnetic Hill.webp";
+import ladakh6 from "../../assets/Tripdetails/domestic/Ladakh/things-to-do/Khardung La Pass.webp";
+
 export const destinationsData = {
   bali: {
     banner: {
@@ -250,7 +260,7 @@ export const destinationsData = {
     },
     nepal: {
       banner: {
-        image: "https://www.nepaltrekkinginfo.com/images/slider/everest-base-camp.jpg",
+        image: nepalbanner,
         title: "Nepal",
         description: "Explore the breathtaking landscapes and cultural heritage of Nepal.",
       },
@@ -320,12 +330,12 @@ export const destinationsData = {
         description: "Experience the breathtaking beauty of the Himalayan desert.",
       },
       thingsToDo: [
-        { name: "Leh Palace", image: singaporeImg1 },
-        { name: "Pangong Lake", image: singaporeImg2 },
-        { name: "Nubra Valley", image: singaporeImg3 },
-        { name: "Khardung La Pass", image: singaporeImg4 },
-        { name: "Magnetic Hill", image: singaporeImg4 },
-        { name: "Hemis Monastery", image: singaporeImg1 },
+        { name: "Leh Palace", image: ladakh1 },
+        { name: "Pangong Lake", image: ladakh2 },
+        { name: "Nubra Valley", image: ladakh3 },
+        { name: "Khardung La Pass", image: ladakh4 },
+        { name: "Magnetic Hill", image: ladakh5 },
+        { name: "Hemis Monastery", image: ladakh6 },
       ],
     },
   

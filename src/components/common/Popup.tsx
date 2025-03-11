@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { FaCheckCircle, FaTimes } from "react-icons/fa";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import emailjs from "@emailjs/browser";
-import axios from "axios";
 import logoImg from "../../assets/images/logo/logo.png";
 import logo1 from "../../assets/popup/Customers.png";
 import logo2 from "../../assets/popup/Awardwinners .png";
 import logo3 from "../../assets/popup/Customerservice.png";
-
-// Popup Animation
+import axios from "axios";
+import ThankYou from "./thankyou";
+// Animation for popup fade-in
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -22,6 +23,7 @@ const fadeIn = keyframes`
   }
 `;
 
+// Styled components
 const PopupContainer = styled.div<{ isVisible: boolean }>`
   position: fixed;
   top: 0;
@@ -255,14 +257,9 @@ const PaxCounter = styled.div`
     }
   }
 `;
- interface PopupProps {
-    onClose: () => void;
-    children?: React.ReactNode;  // ✅ Add this to allow children inside Popup
-  }
-  
 
-
-const Popup: React.FC<PopupProps> = ({ onClose }) => {
+const Popup: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [pax, setPax] = useState(1);
   const [child, setChild] = useState(0);
@@ -274,25 +271,40 @@ const Popup: React.FC<PopupProps> = ({ onClose }) => {
     departureCity: "",
   });
 
+  // Open popup after 5 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const closePopup = () => setIsVisible(false);
+  const navigate = useNavigate();
+  const handleOutsideClick = (e: React.MouseEvent) => {
+    if ((e.target as HTMLElement).id === "popup-container") {
+      if (window.confirm("Are you sure you want to close the form? Your data will be lost.")) {
+        closePopup();
+      }
+    }
+  };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
-  const handlePaxChange = (increment: boolean) =>
-    setPax((prev) => (increment ? prev + 1 : prev > 1 ? prev - 1 : prev));
+  const handlePaxChange = (increment: boolean) => setPax((prev) => (increment ? prev + 1 : prev - 1));
+  const handleChildChange = (increment: boolean) => setChild((prev) => (increment ? prev + 1 : prev - 1));
 
-  const handleChildChange = (increment: boolean) =>
-    setChild((prev) => (increment ? prev + 1 : prev > 0 ? prev - 1 : prev));
+  const API_URL = "https://backend.tripstarsholidays.com"; // ✅ Ensure the correct backend URL
 
-  const API_URL = "https://backend.tripstarsholidays.com"; // ✅ Correct API URL
-
-const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!startDate) {
         alert("Please select a travel date!");
-        return;
+        return;  // ✅ Properly exiting the function
     }
 
     // Prepare the form data
@@ -301,8 +313,8 @@ const handleSubmit = async (e: React.FormEvent) => {
         contact: formData.contact,
         email: formData.email,
         destination: formData.destination,
-        departure_city: formData.departureCity, // ✅ Fixed field name
-        travel_date: startDate.toISOString().split("T")[0], // ✅ Fixed format
+        departure_city: formData.departureCity, // ✅ Correct field name
+        travel_date: startDate.toISOString().split("T")[0], // ✅ Ensuring correct date format
         pax,
         child,
     };
@@ -313,11 +325,12 @@ const handleSubmit = async (e: React.FormEvent) => {
 
         if (response.status === 200) {
             alert("✅ Data successfully saved to the database!");
+            navigate("/thankyou");
         } else {
             alert("❌ Failed to save data to the database.");
         }
 
-        // ✅ Send email using EmailJS (optional)
+        // ✅ Send email using EmailJS
         try {
             await emailjs.send(
                 "service_eamkhsr", // Your Service ID
@@ -330,8 +343,8 @@ const handleSubmit = async (e: React.FormEvent) => {
             console.warn("⚠️ Failed to send email via EmailJS:", emailError);
         }
 
-        // ✅ Reset the form after successful submission
-        setIsVisible(false); // Close popup
+        // ✅ Reset the form and close popup
+        closePopup(); // ✅ Using correct function
         setFormData({
             name: "",
             contact: "",
@@ -350,14 +363,11 @@ const handleSubmit = async (e: React.FormEvent) => {
 };
 
   
+
   return (
-    <PopupContainer isVisible={true} onClick={(e) => e.target === e.currentTarget && onClose()}>
+    <PopupContainer id="popup-container" isVisible={isVisible} onClick={handleOutsideClick}>
       <PopupContent>
-        
-        <CloseButton onClick={onClose}>
-          <FaTimes />
-        </CloseButton>
-        <LeftPanel>
+      <LeftPanel>
           <div className="main-logo">
             <img src={logoImg} alt="Main Logo" />
           </div>
@@ -378,54 +388,73 @@ const handleSubmit = async (e: React.FormEvent) => {
             </li>
           </ul>
         </LeftPanel>
+
         <RightPanel>
+          <CloseButton onClick={closePopup}>
+            <FaTimes />
+          </CloseButton>
           <h3>Plan Your Dream Vacation</h3>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
               name="name"
-              placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
+              placeholder="Your Name"
               required
             />
             <input
               type="tel"
               name="contact"
-              placeholder="Your Contact Number"
               value={formData.contact}
               onChange={handleChange}
+              placeholder="Your Contact Number"
               required
             />
             <input
               type="email"
               name="email"
-              placeholder="Your Email"
               value={formData.email}
               onChange={handleChange}
+              placeholder="Your Email"
               required
             />
-            <select name="destination" value={formData.destination} onChange={handleChange} required>
-              <option value="">Select Destination</option>
-              <option value="maldives">Maldives</option>
-              <option value="bali">Bali</option>
-              <option value="dubai">Dubai</option>
-            </select>
-            <input
-              type="text"
-              name="departureCity"
-              placeholder="Departure City"
-              value={formData.departureCity}
-              onChange={handleChange}
-              required
-            />
+            <div className="row">
+              <div>
+                <select name="destination" value={formData.destination} onChange={handleChange} required>
+                  <option value="">Select Destination</option>
+                  <option value="maldives">Maldives</option>
+                  <option value="bali">Bali</option>
+                  <option value="dubai">Dubai</option>
+                  <option value="thailand">Thailand</option>
+                  <option value="singapore">Singapore</option>
+                  <option value="malaysia">Malaysia</option>
+                  <option value="hongkong">Hong Kong</option>
+                  <option value="europe">Europe</option>
+                  <option value="vietnam">Vietnam</option>
+                  <option value="australia">Australia</option>
+                </select>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="departureCity"
+                  value={formData.departureCity}
+                  onChange={handleChange}
+                  placeholder="Departure City"
+                  required
+                />
+              </div>
+            </div>
             <DatePicker
               selected={startDate}
               onChange={(date: Date | null) => setStartDate(date)}
               dateFormat="dd-MM-yyyy"
-              placeholderText="Travel Date"
+              placeholderText="Pick your travel date"
               isClearable
+              className="custom-datepicker"
             />
+
             <PaxCounterWrapper>
               <PaxCounter>
                 <label>Number of Adults</label>
@@ -453,6 +482,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               </PaxCounter>
 
             </PaxCounterWrapper>
+
             <button type="submit">Submit</button>
           </form>
         </RightPanel>
@@ -462,7 +492,3 @@ const handleSubmit = async (e: React.FormEvent) => {
 };
 
 export default Popup;
-function setIsVisible(arg0: boolean) {
-  throw new Error("Function not implemented.");
-}
-

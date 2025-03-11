@@ -13,6 +13,7 @@ import payments from "./pages/Paymentpolicy/PaymentPolicies"
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import Contact from "./pages/Faq/Contact";
+import Thankyou from "./components/common/thankyou";
 // Styles
 // import GlobalStyles from "./GlobalStyles"; 
 import "swiper/css";
@@ -44,6 +45,7 @@ function App() {
           <Route path="/video" element={<VideoScroller />} />
           <Route path="/themes/" element={<Themes />} />
           <Route path="/contact/" element={<Contact />} />
+          <Route path="/thankyou/" element={<Thankyou />} />
         </Routes>
         {!isVideoPage && <Footer />}
       </div>

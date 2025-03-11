@@ -17,7 +17,7 @@ const NavbarContainer = styled.nav`
   height:86px;
   justify-content: space-between;
   padding: 1rem 2rem;
-  z-index: 999999;
+  z-index:9999;
 
   background: rgba(0, 0, 0, 0.6);
   transition: all 0.5s ease-in-out;
