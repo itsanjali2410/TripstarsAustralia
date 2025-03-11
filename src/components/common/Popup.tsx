@@ -273,7 +273,7 @@ const Popup: React.FC = () => {
 
   // Open popup after 5 seconds
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 5000);
+    const timer = setTimeout(() => setIsVisible(true), 4000);
     return () => clearTimeout(timer);
   }, []);
 
