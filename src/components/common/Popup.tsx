@@ -324,24 +324,24 @@ const Popup: React.FC = () => {
         const response = await axios.post(`${API_URL}/submit-form`, formDataToSend);
 
         if (response.status === 200) {
-            alert("✅ Data successfully saved to the database!");
-            navigate("/thankyou");
+            alert("🎉Email sent successfully to Admin!");
+            // navigate("/thankyou");
         } else {
             alert("❌ Failed to save data to the database.");
         }
 
         // ✅ Send email using EmailJS
-        try {
-            await emailjs.send(
-                "service_eamkhsr", // Your Service ID
-                "template_1nh5ps2", // Your Template ID
-                formDataToSend,
-                "gScHv791km1kt3vL1" // Your Public Key
-            );
-            alert("📧 Email sent successfully to Admin!");
-        } catch (emailError) {
-            console.warn("⚠️ Failed to send email via EmailJS:", emailError);
-        }
+        // try {
+        //     await emailjs.send(
+        //         "service_eamkhsr", // Your Service ID
+        //         "template_1nh5ps2", // Your Template ID
+        //         formDataToSend,
+        //         "gScHv791km1kt3vL1" // Your Public Key
+        //     );
+        //     alert("📧 Email sent successfully to Admin!");
+        // } catch (emailError) {
+        //     console.warn("⚠️ Failed to send email via EmailJS:", emailError);
+        // }
 
         // ✅ Reset the form and close popup
         closePopup(); // ✅ Using correct function
