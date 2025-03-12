@@ -5,13 +5,20 @@ import SearchBar from "./SearchBar";
 import RatingBar from "./RatingBar";
 
 // Import local images
-import image1 from "../../../assets/banner/1.webp";
-import image2 from "../../../assets/banner/2.webp";
-import image3 from "../../../assets/banner/3.webp";
-import image4 from "../../../assets/banner/4.jpg";
-import image1Mobile from "../../../assets/banner/mobile web banner/1.webp";
-import image2Mobile from "../../../assets/banner/mobile web banner/2.webp";
-import image3Mobile from "../../../assets/banner/mobile web banner/3.webp";
+import image1 from "../../../assets/banner/bali.webp";
+import image2 from "../../../assets/banner/vietnam.webp";
+import image3 from "../../../assets/banner/dubai.webp";
+import image4 from "../../../assets/banner/maldives.webp";
+import image5 from "../../../assets/banner/singapore.webp";
+import image6 from "../../../assets/banner/europe.webp";
+import image7 from "../../../assets/banner/thailand.webp";
+import image1Mobile from "../../../assets/banner/Mobile banner/bali.webp";
+import image2Mobile from "../../../assets/banner/Mobile banner/vietnam.webp";
+import image3Mobile from "../../../assets/banner/Mobile banner/vietnam.webp";
+import image4Mobile from "../../../assets/banner/Mobile banner/dubai.webp";
+import image5Mobile from "../../../assets/banner/Mobile banner/maldives.webp";
+import image6Mobile from "../../../assets/banner/Mobile banner/singapore.webp";
+import image7Mobile from "../../../assets/banner/Mobile banner/thailand.webp";
 
 // Define types for styled component props
 type SlideProps = {
@@ -73,8 +80,8 @@ const HeroText = styled.h1`
 
 // HeroSection Component
 const HeroSection: React.FC = () => {
-  const desktopImages = [image1, image2, image3, image4];
-  const mobileImages = [image1Mobile, image2Mobile, image3Mobile];
+  const desktopImages = [image1, image2, image3, image4, image5, image6,image7];
+  const mobileImages = [image1Mobile, image2Mobile, image3Mobile, image4Mobile,image5Mobile,image6Mobile,image7Mobile];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 768);
   const [images, setImages] = useState<string[]>(isMobile ? mobileImages : desktopImages);

@@ -4,6 +4,7 @@ import { FaPlay, FaPause } from "react-icons/fa";
 import { FaHeart, FaShare, FaBookmark } from "react-icons/fa";
 
 // Import videos
+// import Video8 from "../../assets/Videos/Testimonial/8.mp4";
 import Video1 from "../../assets/Videos/Testimonial/1.mp4";
 import Video2 from "../../assets/Videos/Testimonial/2.mp4";
 import Video3 from "../../assets/Videos/Testimonial/3.mp4";
@@ -15,48 +16,49 @@ import Video7 from "../../assets/Videos/Testimonial/7.mp4";
 // Video details with tags included
 const videoData = [
   {
-    title: "Aishwarya's Bali Vacation",
+    title: "Roma's Bali Vacation",
     description:
-      "Take an unforgettable trip with Pickyourtrail, just like Aishwarya Rajesh did. Enjoy stunning beaches and cultural vibes.",
-    tags: ["Bali", "Vacation", "Culture"],
+      "Roma's unforgettable Bali adventure was filled with serene beaches, vibrant culture, and breathtaking landscapes. An experience of a lifetime!",
+    tags: ["Bali", "Vacation", "Beaches", "Culture"],
   },
   {
-    title: "Dubai's Iconic Landmarks",
+    title: "Sandip's Dubai Vacation",
     description:
-      "Explore iconic landmarks and vibrant cultural moments in the city of gold.",
-    tags: ["Dubai", "Landmarks", "Culture"],
+      "Sandip's luxurious Dubai getaway showcased the city's iconic skyline, thrilling desert safaris, and unforgettable cultural experiences.",
+    tags: ["Dubai", "Vacation", "Luxury", "Culture"],
   },
   {
-    title: "Vidyu Lekha's Vietnam Vacation",
+    title: "Mayur's Australia Vacation",
     description:
-      "Vidyu Lekha's adventure in Vietnam was full of culture and breathtaking landscapes.",
-    tags: ["Vietnam", "Hanoi", "Ha Long Bay", "Culture", "Beaches"],
+      "Mayur's adventure down under was a blend of stunning coastlines, unique wildlife, and captivating cityscapes.",
+    tags: ["Australia", "Vacation", "Nature", "Wildlife"],
   },
   {
-    title: "Taste of Vietnam",
+    title: "Binieka's Dubai Vacation",
     description:
-      "Indulge in authentic Vietnamese cuisine while experiencing the rich history of Vietnam.",
-    tags: ["Cuisine", "Street Food", "Traditional Dishes"],
+      "Binieka's exploration of Dubai was nothing short of a dream, featuring luxurious hotels, grand malls, and vibrant souks.",
+    tags: ["Dubai", "Vacation", "Luxury", "Shopping"],
   },
   {
-    title: "Australia",
+    title: "Nidhi Mundra Bali Trip",
     description:
-      "Mayur",
-    tags: ["Beaches", "Temples", "Nature"],
+      "Nidhi's Bali escapade was filled with cultural insights, picturesque beaches, and a blend of adventure and relaxation.",
+    tags: ["Bali", "Trip", "Adventure", "Relaxation"],
   },
   {
-    title: "Dubai’s Ultimate Luxury",
+    title: "Yash Sakpal",
     description:
-      "Aishwarya Rajesh enjoyed luxurious stays and world-class dining in Dubai.",
-    tags: ["Luxury", "Hotels", "Fine Dining"],
+      "Yash's journey was filled with memorable experiences, stunning views, and heartwarming moments.",
+    tags: ["Travel", "Experiences", "Memories"],
   },
   {
-    title: "Scenic Wonders & Adventure",
+    title: "Mrs. Arjal Patel",
     description:
-      "From hidden gems to picture-perfect destinations, explore unique travel experiences.",
-    tags: ["Adventure", "Scenic Views", "Experiences"],
+      "Mrs. Arjal Patel had a rejuvenating trip with beautiful views, relaxing accommodations, and impeccable hospitality.",
+    tags: ["Relaxation", "Hospitality", "Travel"],
   },
 ];
+
 
 // Styled Components
 const Container = styled.div`
@@ -286,13 +288,14 @@ const VideoScroller: React.FC = () => {
   const [isMuted, setIsMuted] = useState(true); // Start muted
 
   const videoSources = [
+    // Video8,
     Video1,
-    Video2,
-    Video3,
-    Video4,
+    Video7,
     Video5,
     Video6,
-    Video7,
+    Video2,
+    Video4, 
+    Video3,
   ];
 
   useEffect(() => {
