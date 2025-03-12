@@ -9,6 +9,7 @@ import Faq from "./pages/Faq/Faq";
 import PaymentPolicies from "./pages/Paymentpolicy/PaymentPolicies";
 import VideoScroller from "./pages/Video/VideoScroller";
 import payments from "./pages/Paymentpolicy/PaymentPolicies"
+import Aboutus from "./pages/About/Aboutus";
 // Components
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
@@ -46,6 +47,8 @@ function App() {
           <Route path="/themes/" element={<Themes />} />
           <Route path="/contact/" element={<Contact />} />
           <Route path="/thankyou/" element={<Thankyou />} />
+          <Route path="/aboutus/" element={<Aboutus />} />
+
         </Routes>
         {!isVideoPage && <Footer />}
       </div>

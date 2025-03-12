@@ -261,6 +261,9 @@ export default function Navbar() {
         <li>
           <Link to="/">Home</Link>
         </li>
+        {/* <li>
+          <Link to="/aboutus">About Us</Link>
+        </li> */}
         <li
           className="dropdown"
           onClick={isMobile ? () => toggleDropdown("destination") : undefined} // Use click for mobile
