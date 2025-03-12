@@ -122,7 +122,7 @@ const Contact: React.FC = () => {
   return (
     <ContactContainer>
       <Banner>
-      <img src={`${contactbanner}?v=${new Date().getTime()}`} alt="Contact Us" />
+      <img src={`${contactbanner}`} alt="Contact Us" />
 
       </Banner>
       <ContactSection>

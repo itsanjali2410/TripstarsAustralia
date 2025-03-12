@@ -46,9 +46,9 @@ const videoData = [
     tags: ["Bali", "Trip", "Adventure", "Relaxation"],
   },
   {
-    title: "Yash Sakpal",
+    title: "Prathamesh Dubai Trip",
     description:
-      "Yash's journey was filled with memorable experiences, stunning views, and heartwarming moments.",
+      "Prathamesh's journey was filled with memorable experiences, stunning views, and heartwarming moments.",
     tags: ["Travel", "Experiences", "Memories"],
   },
   {
