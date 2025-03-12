@@ -7,14 +7,19 @@ const ThankYouContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #f4f4f4;
+  background-image: url(""); /* Example travel image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   text-align: center;
   padding: 20px;
+  color: white;
 `;
+
 
 const Title = styled.h1`
   font-size: 36px;
-  color: #0a0a52;
+  color: gold;
   margin-bottom: 10px;
 `;
 
@@ -26,7 +31,7 @@ const Message = styled.p`
 
 const HomeButton = styled.a`
   padding: 10px 20px;
-  background: #0a0a52;
+  background:rgb(9, 9, 17);
   color: white;
   text-decoration: none;
   font-size: 16px;
@@ -42,7 +47,7 @@ const ThankYou: React.FC = () => {
   return (
     <ThankYouContainer>
       <Title>🎉 Thank You!</Title>
-      <Message>Your submission was successful. We will get back to you shortly.</Message>
+      <Message>Email sent successfully to Admin!</Message>
       <HomeButton href="/">Go Back to Home</HomeButton>
     </ThankYouContainer>
   );

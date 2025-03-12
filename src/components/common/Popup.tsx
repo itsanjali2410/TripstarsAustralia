@@ -11,7 +11,6 @@ import logo2 from "../../assets/popup/Awardwinners .png";
 import logo3 from "../../assets/popup/Customerservice.png";
 import axios from "axios";
 import ThankYou from "./thankyou";
-import Swal from 'sweetalert2';
 // Animation for popup fade-in
 const fadeIn = keyframes`
   from {
@@ -147,7 +146,7 @@ const RightPanel = styled.div`
   input,
   select {
     width: 100%;
-    padding: 12px;
+    padding: 13px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 14px;
@@ -159,7 +158,7 @@ const RightPanel = styled.div`
     }
 
     @media (max-width: 768px) {
-      padding: 11px;
+      padding: 13px;
     }
   }
 
@@ -325,12 +324,8 @@ const Popup: React.FC = () => {
         const response = await axios.post(`${API_URL}/submit-form`, formDataToSend);
 
         if (response.status === 200) {
-          Swal.fire({
-              icon: 'success',
-              title: '🎉 Email sent successfully to Admin!',
-              confirmButtonText: 'Close',
-          });
-            // navigate("/thankyou");
+
+            navigate("/thankyou");
         } else {
             alert("❌ Failed to save data to the database.");
         }
