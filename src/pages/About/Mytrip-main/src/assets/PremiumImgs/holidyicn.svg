@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36.247" height="36.246" viewBox="0 0 36.247 36.246">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="mountains" d="M30.206,12.082a6.041,6.041,0,1,1,6.041-6.041A6.041,6.041,0,0,1,30.206,12.082ZM16.613,36.246V34.405l6.459-14.11a3.718,3.718,0,0,1,6.715,0l6.459,14.044V36.18ZM18.5,9.879a4.02,4.02,0,0,0-7.264,0L0,34.405v1.841H13.593V33.226l6.736-14.2A6.777,6.777,0,0,1,21.777,17Z" transform="translate(0 0)" fill="#3f8cf4"/>
+    </clipPath>
+  </defs>
+  <g id="Group_74840" data-name="Group 74840" transform="translate(-15.099 -13.76)">
+    <g id="Mask_Group_72628" data-name="Mask Group 72628" transform="translate(15.099 13.76)" clip-path="url(#clip-path)">
+      <path id="mountains-2" data-name="mountains" d="M30.206,12.082a6.041,6.041,0,1,1,6.041-6.041A6.041,6.041,0,0,1,30.206,12.082ZM16.613,36.246V34.405l6.459-14.11a3.718,3.718,0,0,1,6.715,0l6.459,14.044V36.18ZM18.5,9.879a4.02,4.02,0,0,0-7.264,0L0,34.405v1.841H13.593V33.226l6.736-14.2A6.777,6.777,0,0,1,21.777,17Z" transform="translate(0 0)" fill="#3f8cf4"/>
+      <path id="Path_243914" data-name="Path 243914" d="M-3857.963,7004.61l-5.166,6.03-5.217,11.984V7027h22.7v-5.64Z" transform="translate(3884.264 -6989.918)" fill="#64baff"/>
+    </g>
+  </g>
+</svg>
