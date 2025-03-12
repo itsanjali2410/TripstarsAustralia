@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import logoImg from "../../assets/images/logo/logo.png";
 import { useEffect, useState } from "react";
+import navbarbanner from "../../assets/banner/navbar2.jpg";
 
 // Define prop types for the Dropdown component
 interface DropdownProps {
@@ -60,52 +61,57 @@ const NavLinksContainer = styled.div`
     position: relative;
   }
 
-  @media (max-width: 768px) {
-    position: fixed;
-    background: rgba(0, 0, 0, 0.5);
-    transition: all 0.5s ease-in-out;
-    width: 100vw; /* Full screen width */
-    height: 100vh; /* Full screen height */
-    top: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Center items */
-    align-items: flex-start;
-    padding-top:5rem;
-    transform: translateX(100%); /* Completely hidden */
-    transition: transform 0.4s ease-in-out;
-    z-index: 1000;
-    overflow: auto; /* Allow scrolling when the menu is open */
+@media (max-width: 768px) {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  background-image: url(${navbarbanner});
 
-    &.active_menu {
-      transform: translateX(0); /* Show the menu */
+  background-position: top-center; /* Center the image */
+
+  width: 100vw; /* Full screen width */
+  height: 100vh; /* Full screen height */
+  
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  // align-items: flex-start;
+  padding-top: 10rem;
+  transform: translateX(100%); /* Completely hidden */
+  transition: transform 0.4s ease-in-out;
+  z-index: 1000;
+  overflow: auto; /* Allow scrolling when the menu is open */
+  &.active_menu {
+    transform: translateX(0); /* Show the menu */
+  }
+
+  li {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    a {
+      font-size: 1.5rem; /* Better visibility */
+      color: white; /* Make text visible */
     }
+  }
 
-    li {
-      padding: 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  .close_icon {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
 
-      a {
-        font-size: 1.2rem; /* Better visibility */
-      }
-    }
+    svg {
+      width: 2rem;
 
-    .close_icon {
-      display: block;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      cursor: pointer;
-      
-      svg {
-        width: 2rem;
-        path {
-          fill: #fff;
-        }
+      path {
+        fill: #fff;
       }
     }
   }
+}
 `;
 
 const Dropdown = styled.div<DropdownProps>`
@@ -162,7 +168,7 @@ const Dropdown = styled.div<DropdownProps>`
 
   /* Responsive Design */
   @media (max-width: 768px) {
-    width: 220px; /* Adjust dropdown width */
+
     padding: 20px;
     
     ul {

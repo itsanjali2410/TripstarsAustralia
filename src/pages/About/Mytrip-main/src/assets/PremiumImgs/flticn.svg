@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="42.139" height="42.126" viewBox="0 0 42.139 42.126">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3f8cf4"/>
+      <stop offset="1" stop-color="#2c72ec"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <path id="plane" d="M42.132,23.7a4.388,4.388,0,0,1-4.388,4.388H30.659L23.242,39.471a5.218,5.218,0,0,1-4.573,2.656,4.615,4.615,0,0,1-4.322-6.236l3.244-7.806H10.537a7.021,7.021,0,0,1-6.1-3.537L.356,17.833a2.533,2.533,0,0,1,.922-3.511,2.478,2.478,0,0,1,2.9.439l2.487,2.489a7.021,7.021,0,0,0,4.964,2.057H37.744A4.388,4.388,0,0,1,42.132,23.7Zm-11-7.9-7.9-13.142A5.217,5.217,0,0,0,18.662,0a4.616,4.616,0,0,0-4.322,6.236L18.058,15.8Z" transform="translate(0.007 0)" fill="url(#linear-gradient)"/>
+    </clipPath>
+  </defs>
+  <g id="Group_74834" data-name="Group 74834" transform="translate(-11.976 -11.33)">
+    <g id="Mask_Group_1" data-name="Mask Group 1" transform="translate(11.976 11.33)" clip-path="url(#clip-path)">
+      <path id="plane-2" data-name="plane" d="M42.132,23.7a4.388,4.388,0,0,1-4.388,4.388H30.659L23.242,39.471a5.218,5.218,0,0,1-4.573,2.656,4.615,4.615,0,0,1-4.322-6.236l3.244-7.806H10.537a7.021,7.021,0,0,1-6.1-3.537L.356,17.833a2.533,2.533,0,0,1,.922-3.511,2.478,2.478,0,0,1,2.9.439l2.487,2.489a7.021,7.021,0,0,0,4.964,2.057H37.744A4.388,4.388,0,0,1,42.132,23.7Zm-11-7.9-7.9-13.142A5.217,5.217,0,0,0,18.662,0a4.616,4.616,0,0,0-4.322,6.236L18.058,15.8Z" transform="translate(0.007 0)" fill="url(#linear-gradient)"/>
+      <rect id="Rectangle_2213" data-name="Rectangle 2213" width="23.896" height="30.534" transform="translate(12.147 -14.107)" fill="#64baff"/>
+    </g>
+  </g>
+</svg>
