@@ -75,20 +75,21 @@ function ImpressiveFigure() {
       </Title>
       <Row>
         <Col>
-          <Figures>99%</Figures>
-          <Text>Booking Success Rate</Text>
+          <Figures>20+</Figures>
+          <Text>Years of Experience</Text>
         </Col>
         <Col>
-          <Figures>3.44%</Figures>
-          <Text>Look-To-Book Ratio</Text>
+          <Figures>24/7</Figures>
+          <Text>Personal Concierge</Text>
         </Col>
         <Col>
-          <Figures>25 Million +</Figures>
-          <Text>Registered Users</Text>
+          <Figures>15000+</Figures>
+          <Text>Customers
+          Service par excellence</Text>
         </Col>
         <Col>
-          <Figures>5 M+</Figures>
-          <Text>Android App Downloads</Text>
+          <Figures>100%</Figures>
+          <Text>On Ground Support</Text>
         </Col>
       </Row>
     </Container>
