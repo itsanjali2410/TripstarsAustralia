@@ -131,7 +131,7 @@ const RightPanel = styled.div`
   input,
   select {
     width: 100%;
-    padding: 5px;
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 12px;
@@ -150,7 +150,7 @@ const RightPanel = styled.div`
   .custom-datepicker {
     width: 100%;
     border: 1px solid #ddd;
-    padding: 5px;
+    padding: 12px;
     font-size: 12px;
     border-radius: 5px;
     cursor: pointer;
@@ -166,7 +166,7 @@ const RightPanel = styled.div`
   }
 
   button {
-    padding: 8px;
+    padding: 10px;
     background: rgb(9, 9, 9);
     color: white;
     border: none;

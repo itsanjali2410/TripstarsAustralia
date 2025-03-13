@@ -1,4 +1,13 @@
 import React from "react";
+import pre from "../../../assets/aboutus/premium/actvicn.svg";
+import pre2 from "../../../assets/aboutus/premium/busicn.svg";
+import pre3 from "../../../assets/aboutus/premium/busicn.svg";
+import pre4 from "../../../assets/aboutus/premium/busicn.svg";
+import pre5 from "../../../assets/aboutus/premium/busicn.svg";
+import pre6 from "../../../assets/aboutus/premium/busicn.svg";
+import pre7 from "../../../assets/aboutus/premium/busicn.svg";
+import pre8 from "../../../assets/aboutus/premium/busicn.svg";
+import pre9 from "../../../assets/aboutus/premium/busicn.svg";
 
 function Premium() {
   return (
@@ -20,7 +29,7 @@ function Premium() {
               {/* First Row */}
               <div className="row">
                 <div className="col-2 premiumImg">
-                  <img src="src/assets/PremiumImgs/flticn.svg" alt="flight" />
+                  <img src={pre} alt="flight" />
                 </div>
                 <div className="col-2 premiumImg">
                   <img src="src/assets/PremiumImgs/htlicn.svg" alt="hotel" />
