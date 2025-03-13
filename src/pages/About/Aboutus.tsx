@@ -7,6 +7,7 @@ import Awards from "../About/Sections/Awards";
 import Premium from "../About/Sections/Premium";
 import Strength from "../About/Sections/Strengths";
 import ImpressiveFigure from "../About/Sections/ImpressiveFigure";
+import JourneySoFar from "./Sections/JourneySoFar";
 
 function AboutPage() {
     return(
@@ -14,6 +15,7 @@ function AboutPage() {
         {/* <Navbar />
         <Hero /> */}
         <AboutHistory />
+        <JourneySoFar/>
         <TechAchievment />
         <Awards />
         <Premium />
