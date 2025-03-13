@@ -71,7 +71,7 @@ function Awards() {
     <Container>
       <Row>
         <Column>
-          <Image src={team} alt="Awards" />
+          {/* <Image src={team} alt="Awards" /> */}
         </Column>
         <Column>
           <Title>

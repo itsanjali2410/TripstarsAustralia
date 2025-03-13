@@ -76,7 +76,7 @@ function TechAchievment() {
           </Paragraph>
         </Column>
         <Column>
-          <Image src={team} alt="Tech Achievement" />
+          <Image src="{team}" alt="Tech Achievement" />
         </Column>
       </Row>
     </Container>
