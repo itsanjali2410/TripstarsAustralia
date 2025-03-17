@@ -390,7 +390,7 @@ export const destinationsData = {
   australia: {
     banner: {
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYm_E60tcieEXm_sj0TfSrfRpfthaPguP0aw&s",
+        "https://c4.wallpaperflare.com/wallpaper/136/875/670/5bd32ca961722-wallpaper-preview.jpg",
       title: "Australia",
       description:
         "Discover stunning locations and create unforgettable memories.",

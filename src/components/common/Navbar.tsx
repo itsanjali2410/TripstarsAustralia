@@ -118,7 +118,7 @@ const Dropdown = styled.div<DropdownProps>`
   position: absolute;
   top: 100%;
   left: 0;
-  background: rgba(255, 247, 247);
+  background: rgba(255, 255, 255);
   color:#000 !important; 
   transition: all 0.5s ease-in-out;
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
