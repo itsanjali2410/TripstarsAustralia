@@ -12,7 +12,7 @@ const Title = styled.h1`
   margin-bottom: 2rem;
 
   span {
-    color: #007bff;
+    color: #D4AF37;
   }
 
   @media (max-width: 768px) {

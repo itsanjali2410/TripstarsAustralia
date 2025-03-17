@@ -1,4 +1,5 @@
-import { useParams, useNavigate } from "react-router-dom";
+// src/components/Tripdetailspage.js
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import DynamicSlider from "./sections/DynamicSlider";
 import TrendingOffers from "./sections/TrendingOffers";
@@ -16,35 +17,7 @@ import ChooseTravelStyle from "./sections/ChooseTravelStyle";
 import TravelStyleCarousel from "./sections/TravelStyleCarousel";
 import ExploreDestinations from "../Home/sections/ExploreDestinations";
 import TrendingOffers2 from "../../components/TrendingOffers2";
-import FloatingContactButton from "../Home/sections/Floating";
-
-import {
-  Bali,
-  Kashmir,
-  Kerala,
-  Andaman1,
-  similar,
-  Vietnam,
-  Thailand,
-  Europe,
-  Dubai,
-  Australia,
-  Baku,
-  Hongkong,
-  Japan,
-  Malaysia,
-  North_East,
-  Maldives,
-  Mauritius,
-  Singapore,
-  southAfrica,
-  Turkey,
-  Ladakh,
-  Himachal,
-  Goa,
-  // Nepal,
-
-} from "../../components/data";
+import { Bali,Kashmir,Kerala,Andaman1,similar, Vietnam, Thailand, Europe, Dubai, Australia, Baku, Hongkong, Japan, Malaysia, North_East, Maldives, Mauritius, Singapore, southAfrica, Turkey, Ladakh } from "../../components/data";
 import DestinationSlider from "./sections/DestinationSlider";
 import Choose_your from "./sections/Choose_your";
 import PopularDestinations from "../Home/sections/PopularDestinations";
@@ -55,51 +28,42 @@ import baliImg14 from "../../assets/Tripdetails/bali/ThingsToDoInBali/mobile-ban
 import TrustindexWidget from "../Home/sections/TrustindexWidget";
 import Popup from "../../components/common/Popup";
 
-
-// Type for valid destination keys
 type LocationKey = keyof typeof destinationsData;
 
 export default function Tripdetailspage() {
-  const { location } = useParams<{ location: string }>(); // Get location from URL params
-  const navigate = useNavigate(); // Hook for navigation
-  // const [showPopup, setShowPopup] = useState(false);
+  // Setup isMobile state for responsive design
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-  // Handle screen resize for responsive design
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  // Show popup after 2 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsPopupOpen(true);
-    }, 2000);
+    }, 5000); // Set delay for 5 seconds
     return () => clearTimeout(timer);
   }, []);
+  // Get location from the URL params
+  const { location } = useParams<{ location: string }>();
 
-  // Convert location to a valid key
+  // Narrow the type of location to a valid key or undefined
   const validLocation = location as LocationKey;
   const locationData = destinationsData[validLocation];
 
-  // Redirect if location is invalid
-  // useEffect(() => {
-  //   if (!locationData) {
-  //     navigate("/not-found", { replace: true }); // Redirect to a Not Found page
-  //   }
-  // }, [locationData, navigate]);
+  // If no location data is found, show a message
+  if (!locationData) {
+    return <p>No data available for this location.</p>;
+  }
 
-  // Extract relevant data
-  const { thingsToDo, banner } = locationData || {};
+  const { thingsToDo, banner } = locationData;
 
-  // Set banner image dynamically
+  // Set the banner image dynamically based on the location
   const bannerImage =
-    location === "bali" ? (isMobile ? baliImg14 : baliImg13) : banner?.image;
+    location === "bali" ? (isMobile ? baliImg14 : baliImg13) : locationData.banner.image;
 
-  // Define trending offers by location
+  // Define a mapping for trending offers by location
   const trendingOffersMapping: Record<string, any[]> = {
     turkey: Turkey,
     southAfrica: southAfrica,
@@ -119,24 +83,24 @@ export default function Tripdetailspage() {
     ladakh: Ladakh,
     north: North_East,
     kashmir: Kashmir,
-    kerala: Kerala,
+    kerala : Kerala,
     andaman: Andaman1,
-    himachal: Himachal,
-    goa:Goa,
-    // nepal:Nepal,
   };
 
+  // Get the relevant trending offers based on the location
   const trendingOffers = trendingOffersMapping[location as keyof typeof trendingOffersMapping];
 
   return (
     <>
       {/* Banner Section */}
-      {banner && <Ban2 image={banner.image} destination={banner.title} />}
+      <Ban2 image={banner?.image} destination={banner?.title} />
 
       {/* Popular Destinations */}
-      {thingsToDo && (
-        <PopularDestinations2 title="Things to do in" highlightWord={banner?.title} thingsToDo={thingsToDo} />
-      )}
+      <PopularDestinations2
+        title="Things to do in"
+        highlightWord={banner?.title}
+        thingsToDo={thingsToDo}
+      />
 
       {/* Dynamic Trending Offers */}
       {trendingOffers && <TrendingOffers title={`Trending Offers in ${location}`} cards={trendingOffers} />}
@@ -151,15 +115,14 @@ export default function Tripdetailspage() {
       {/* Choose Your Section */}
       <Choose_your />
 
+      {/* Popup */}
+      <Popup />
+
       {/* Trustindex Widget */}
       <TrustindexWidget />
 
-      {/* Popup for enquiry */}
-      <Popup  />
-
       {/* Similar Packages Section */}
       <TrendingOffers title="Similar packages" cards={similar} />
-      <FloatingContactButton/>
     </>
   );
 }

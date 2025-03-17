@@ -254,7 +254,7 @@ const handleCardClick = (title: string) => {
             {/* Your SVG code for the left arrow */}
           {/* </button> */}
           {/* <button ref={nextRef}> */}
-            {/* Your SVG code for the right arrow           */}
+            {/* Your SVG code for the right arrow*/}
             {/* </button> */}
         {/* </NavIcons> */}
       </SectionTitle>
@@ -302,7 +302,7 @@ const handleCardClick = (title: string) => {
                             lineHeight: "1.1",
                           }}
                         >
-                          <span style={{ fontSize: "0.8rem" }}>with</span>
+                          <span style={{ fontSize: "0.8rem" }}>With</span>
                           <span
                             style={{
                               fontSize: "0.8rem",

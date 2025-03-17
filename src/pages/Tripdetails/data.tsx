@@ -373,7 +373,7 @@ export const destinationsData = {
   
     goa: {
       banner: {
-        image: "https://static.businessworld.in/Untitled%20design%20-%202024-12-31T052430.892_20241231105033_original_image_31.webp",
+        image: "https://feeds.abplive.com/onecms/images/uploaded-images/2024/12/07/0c7f9296d06709d0b955bc7c2706c98117335681173521090_original.png",
         title: "Goa",
         description: "Enjoy sun, sand, and sea in the tropical paradise of Goa.",
       },

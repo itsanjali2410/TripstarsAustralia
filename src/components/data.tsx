@@ -170,6 +170,16 @@ import andaman2 from "../assets/Tripdetails/domestic/Andaman/Packages/Andaman 2.
 import andaman3 from "../assets/Tripdetails/domestic/Andaman/Packages/Andaman 3.jpg"
 import andaman4 from "../assets/Tripdetails/domestic/Andaman/Packages/Andaman 4.jpg"
 
+//similar2
+import VietnamImage from '../../src/assets/tranding-offers/Vietnam.webp';
+import TurkeyImage from '../../src/assets/tranding-offers/Turkey.jpg';
+import ThailandImage from '../../src/assets/tranding-offers/Thailand.jpeg';
+import MauritiusImage from '../../src/assets/tranding-offers/Mauritius.png';
+import MaldivesImage from '../../src/assets/tranding-offers/Maldives.jpg';
+import EuropeImage from '../../src/assets/tranding-offers/Europe 1.jpg';
+import DubaiImage from '../../src/assets/tranding-offers/Dubai.jpg';
+import BaliImage from '../../src/assets/tranding-offers/Bali.jpg';
+
 // Card 1 - Bali Popular Destination
 export const Bali = [
   {
@@ -600,12 +610,88 @@ export const Kerala = [
 //     ],
 //   },
 // ];
-goa
-export const Goa = [
+export const similar2 = [
+  {
+    title: "Vietnam",
+    image: VietnamImage,
+    pricing: "₹99,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Bali",
+    image:BaliImage,
+    pricing: "₹74,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Thailand",
+    image:ThailandImage,
+    pricing: "₹38,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Turkey",
+    image: TurkeyImage,
+    pricing: "₹1,39,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+
+  {
+    title: "Mauritius",
+    image: MauritiusImage,
+    pricing: "₹89,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Maldives",
+    image: MaldivesImage,
+    pricing: "₹99,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Europ",
+    image:EuropeImage,
+    pricing: "₹2,75,000/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
   {
     title: "Northern Goa",
-    image: goa1,
+    image: DubaiImage,
     pricing: "₹19,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+
+
+];
+export const Goa = [
+  {
+    title: "Dubai",
+    image: goa1,
+    pricing: "₹87,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
