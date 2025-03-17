@@ -26,7 +26,7 @@ import StaticReviews from "./sections/StaticReviews";
 import baliImg13 from "../../assets/Tripdetails/bali/ThingsToDoInBali/bali_banner.png";
 import baliImg14 from "../../assets/Tripdetails/bali/ThingsToDoInBali/mobile-banner-bali.jpg";
 import TrustindexWidget from "../Home/sections/TrustindexWidget";
-import Popup from "../../components/common/Popup";
+// import Popup from "../../components/common/Popup";
 
 type LocationKey = keyof typeof destinationsData;
 
@@ -116,7 +116,7 @@ export default function Tripdetailspage() {
       <Choose_your />
 
       {/* Popup */}
-      <Popup />
+      {/* <Popup /> */}
 
       {/* Trustindex Widget */}
       <TrustindexWidget />
