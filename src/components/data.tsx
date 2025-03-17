@@ -667,7 +667,7 @@ export const similar2 = [
     ],
   },
   {
-    title: "Europ",
+    title: "Europe",
     image:EuropeImage,
     pricing: "₹2,75,000/- Onwards",
     info: [
@@ -676,7 +676,7 @@ export const similar2 = [
     ],
   },
   {
-    title: "Northern Goa",
+    title: "Dubai",
     image: DubaiImage,
     pricing: "₹19,999/- Onwards",
     info: [
