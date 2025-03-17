@@ -9,7 +9,7 @@ import PopularDestinations from "./sections/PopularDestinations";
 import TrendingOffers from "./sections/TrendingOffers";
 import TrendingOffers22 from  "../../pages/Tripdetails/sections/TrendingOffers";
 import VideoTestimonials from "./sections/VideoTestimonials";
-import {similar} from "../../components/data";
+import {similar, similar2} from "../../components/data";
 import WhyTripstars from "./sections/WhyTripstars";
 import NewComponent from "./sections/NewComponent";
 import Popup from "../../components/common/StaticForm";
@@ -37,7 +37,8 @@ export default function HomePage() {
       <HeroSection />
       <PopularDestinations showPopup={false} />
       <SwipeableSlider />
-      <TrendingOffers title="Trending Offers" />
+
+      <TrendingOffers22 title="Trending Offers" cards={similar2} />
       <ExploreDestinations />
       <VideoTestimonials/>
       <VideoThumbnail />
@@ -46,8 +47,8 @@ export default function HomePage() {
       <TrendingOffers22 title="Explore India" cards={similar} />
       {/* <Reviews/> */}
       <PartnersSection />
-      <BudgetSection />
-      <BenefitsSection />
+      {/* <BudgetSection />
+      <BenefitsSection /> */}
       <StaticForm />
       <TrustindexWidget/>
       <BendingCarosual />

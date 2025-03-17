@@ -24,9 +24,19 @@ const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
   margin: 0 15rem;
-  @media (max-width: 1340px) { margin: 0 5rem; }
-  @media (max-width: 1080px) { margin: 0 3rem; }
-  @media (max-width: 768px) { margin: 0 1rem; }
+  margin-bottom:20px;
+  @media (max-width: 1340px) {
+    margin: 0 5rem;
+    margin-bottom:20px;
+  }
+  @media (max-width: 1080px) {
+    margin: 0 3rem;
+    margin-bottom:20px;
+  }
+  @media (max-width: 768px) {
+    margin: 0 1rem;
+    margin-bottom:20px;
+  }
 `;
 
 const Card = styled.div`
@@ -38,8 +48,8 @@ const Card = styled.div`
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   position: relative;
-  @media (max-width: 768px) {
-    height:320px;
+  @media (max-width: 768px) { 
+    height: 320px; /* Adjust height for mobile devices */
   }
 `;
 
@@ -93,7 +103,7 @@ const NavIcons = styled.div`
 `;
 
 const SectionTitle = styled.div`
-
+  padding-top: 4rem;
   padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
@@ -101,7 +111,7 @@ const SectionTitle = styled.div`
 
 
   @media (max-width: 1340px) {
-    // padding-top: 4rem;
+    padding-top: 4rem;
     padding-bottom: 1rem;
   }
   @media (max-width: 1080px) {
@@ -150,26 +160,22 @@ const Title = styled.div`
   }
 `;
 
-const Info = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content:space-between;
-  margin-top: 10px;
-  flex-wrap:wrap;
-`;
-
 const InfoItem = styled.div`
   display: flex;
   align-items: center;
   font-size: 0.8rem;
+  margin-right: 10px;
+  white-space: nowrap;
+
   @media (max-width: 768px) {
     font-size: 0.7rem;
+    margin-right: 5px;
   }
 `;
 
 const Icon = styled.span<{ backgroundImage: string }>`
-  height: 25px;
-  width: 25px;
+  height: 18px;
+  width: 18px;
   display: inline-block;
   background-size: contain;
   background-repeat: no-repeat;
@@ -177,11 +183,29 @@ const Icon = styled.span<{ backgroundImage: string }>`
   background-image: url(${({ backgroundImage }) => backgroundImage});
   filter: brightness(0) invert(1); /* Converts icons to white */
 
-  /* Rotate only the airplane icon */
+  @media (max-width: 768px) {
+    height: 14px;
+    width: 14px;
+    margin-right: 3px;
+  }
+
   ${({ backgroundImage }) =>
     backgroundImage.includes("airplane-mode-on.png") && "transform: rotate(-90deg);"}
 `;
 
+const Info = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin-top: 10px;
+  justify-content: space-between;
+  gap: 50px /* Add spacing between items */
+
+  @media (max-width: 768px) {
+    gap: 25px; /* Reduce spacing for mobile */
+  }
+`;
 
 const cards = [
   {
@@ -190,7 +214,7 @@ const cards = [
     pricing: "₹99,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "with Flight" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "With Flight" },
     ],
   },
   {
@@ -199,7 +223,7 @@ const cards = [
     pricing: "₹74,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "with Flight" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "With Flight" },
     ],
   },
   {
@@ -208,7 +232,7 @@ const cards = [
     pricing: "₹38,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "with Flight" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "With Flight" },
     ],
   },
   {
@@ -217,7 +241,7 @@ const cards = [
     pricing: "₹1,39,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "with Flight" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "With Flight" },
     ],
   },
   {
@@ -226,7 +250,7 @@ const cards = [
     pricing: "₹89,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "with Flight" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "With Flight" },
     ],
   },
   {
@@ -235,7 +259,7 @@ const cards = [
     pricing: "₹99,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "with Flight" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "With Flight" },
     ],
   },
   {
@@ -244,7 +268,7 @@ const cards = [
     pricing: "₹2,75,000/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "9N/10D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "with Flight" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "With Flight" },
     ],
   },
   {
@@ -253,7 +277,7 @@ const cards = [
     pricing: "₹87,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "with Flight" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "With Flight" },
     ],
   },
 ];
@@ -261,6 +285,7 @@ const cards = [
 
 interface TrendingOffersProps {
   title: string;
+  
 }
 
 const TrendingOffers: React.FC<TrendingOffersProps> = ({ title }) => {
@@ -339,28 +364,42 @@ const TrendingOffers: React.FC<TrendingOffersProps> = ({ title }) => {
       >
         {cards.map((card, index) => (
           <SwiperSlide key={index}>
-       <Card
-  onClick={(event) => {
-    event.stopPropagation(); // Prevent Swiper from blocking clicks
-    navigate(`/${card.title.toLowerCase().replace(/\s+/g, "-")}`);
-  }}
->
-
-
-              <PricingTag>{card.pricing}</PricingTag>
-              <CardImage src={card.image} alt={card.title} />
-              <CardOverlay>
-                <Title>{card.title}</Title>
-                <Info>
-                  {card.info.map((item, idx) => (
-                    <InfoItem key={idx}>
-                      <Icon backgroundImage={item.icon} />
-                      {item.text}
-                    </InfoItem>
-                  ))}
-                </Info>
-              </CardOverlay>
-            </Card>
+            {/* <Card onClick={() => handleCardClick(card.title)}> */}
+            <PricingTag>{card.pricing}</PricingTag>
+            <CardImage src={card.image} alt={card.title} />
+            <CardOverlay>
+              <Title>{card.title}</Title>
+              <Info>
+                {card.info.map((item, idx) => (
+                  <InfoItem key={idx}>
+                    <Icon backgroundImage={item.icon} />
+                    {item.text === "Flight" ? (
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "flex-start",
+                          lineHeight: "1.1",
+                        }}
+                      >
+                        <span style={{ fontSize: "0.8rem" }}>With</span>
+                        <span
+                          style={{
+                            fontSize: "0.8rem",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          Flight
+                        </span>
+                      </div>
+                    ) : (
+                      <span style={{ fontSize: "0.8rem" }}>{item.text}</span>
+                    )}
+                  </InfoItem>
+                ))}
+              </Info>
+            </CardOverlay>
+            {/* </Card> */}
           </SwiperSlide>
         ))}
       </Swiper>

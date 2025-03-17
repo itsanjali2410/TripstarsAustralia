@@ -4,39 +4,37 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import img1 from "../assets/images/1.png";
+import img2 from "../assets/images/2.png";
+import img3 from "../assets/images/3.png";
+import img4 from "../assets/images/4.png";
+import img5 from "../assets/images/5.png";
+import img6 from "../assets/images/6.png";
+
 // Styled Components
 const SliderContainer = styled.div`
   position: relative;
-  overflow: hidden;
-  margin: 0 15rem;
-
-  @media (max-width: 1340px) {
-    margin: 0 5rem;
-  }
-  @media (max-width: 1080px) {
-    margin: 0 3rem;
-  }
-  @media (max-width: 768px) {
-    margin: 0 1rem;
-  }
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  padding: 40px 20px;
 `;
 
 const Section = styled.div`
   background: #e7f8f4;
-  padding: 40px 20px;
-  border-radius: 12px;
+  padding: 30px 20px;
+  border-radius: 20px;
   text-align: center;
   margin: auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 `;
 
 const Title = styled.h2`
-  font-size: 24px;
-  font-weight: normal;
-  color: #555;
-
-  @media (min-width: 2000px) {
-    font-size: 36px;
-  }
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
 `;
 
 const Highlight = styled.span`
@@ -45,67 +43,55 @@ const Highlight = styled.span`
   font-weight: bold;
 `;
 
-// Desktop layout (unchanged)
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-
-  @media (max-width: 768px) {
-    display: none; // Hide normal grid on mobile
-  }
+const SlideWrapper = styled.div`
+  padding: 10px;
 `;
 
-const Item = styled.div`
-  width: 120px;
-  height: 120px;
-
-  @media (min-width: 2000px) {
-    width: 180px;
-    height: 180px;
-  }
-    
-  @media (max-width: 768px) {
-    height:auto;
-  }
-`;
-
-const Image = styled.img`
+const SlideImage = styled.img`
   width: 100%;
-  // height: 150px;
-`;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 
-// Mobile Slider Wrapper (only for mobile)
-const MobileSliderWrapper = styled.div`
-  display: none;
-
-  @media (max-width: 768px) {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
+  &:hover {
+    transform: scale(1.05);
   }
 `;
 
 const budgetImages = [
-  { src: "https://www.tripzygo.in/images/budget/1.png", alt: "₹15,000" },
-  { src: "https://www.tripzygo.in/images/budget/2.png", alt: "₹30,000" },
-  { src: "https://www.tripzygo.in/images/budget/3.png", alt: "₹50,000" },
-  { src: "https://www.tripzygo.in/images/budget/4.png", alt: "₹75,000" },
-  { src: "https://www.tripzygo.in/images/budget/5.png", alt: "₹1,00,000" },
-  { src: "https://www.tripzygo.in/images/budget/6.png", alt: "₹4,00,000" },
+  { src: img1, alt: "₹15,000" },
+  { src: img2, alt: "₹30,000" },
+  { src: img3, alt: "₹50,000" },
+  { src: img4, alt: "₹75,000" },
+  { src: img5, alt: "₹1,00,000" },
+  { src: img6, alt: "₹4,00,000" },
 ];
+
 
 const BudgetSection: React.FC = () => {
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 500,
-    slidesToShow: 2, // Show 2 images at a time on mobile
+    speed: 600,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2500,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
 
   return (
@@ -114,27 +100,13 @@ const BudgetSection: React.FC = () => {
         <Title>
           Holidays For Every <Highlight>Budget</Highlight>
         </Title>
-
-        {/* Desktop Layout (UNCHANGED) */}
-        <Container>
+        <Slider {...sliderSettings}>
           {budgetImages.map((item, index) => (
-            <Item key={index}>
-              <Image src={item.src} alt={item.alt} />
-            </Item>
+            <SlideWrapper key={index}>
+              <SlideImage src={item.src} alt={item.alt} />
+            </SlideWrapper>
           ))}
-        </Container>
-
-        {/* Mobile Slider (Only on screens ≤ 768px) */}
-        <MobileSliderWrapper>
-          <Slider {...sliderSettings}>
-            {budgetImages.map((item, index) => (
-              <Item key={index}>
-                <Image src={item.src} alt={item.alt} />
-              </Item>
-            ))}
-          </Slider>
-        </MobileSliderWrapper>
-
+        </Slider>
       </Section>
     </SliderContainer>
   );
