@@ -257,8 +257,12 @@ const PaxCounter = styled.div`
     }
   }
 `;
+interface PopupProps {
+  item: any;
+  onClose: () => void;
+}
 
-const Popup: React.FC = () => {
+const Popup: React.FC<PopupProps> = ({ item, onClose }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [pax, setPax] = useState(1);
@@ -271,9 +275,9 @@ const Popup: React.FC = () => {
     departureCity: "",
   });
 
-  // Open popup after 5 seconds
+  // Open popup after 1 seconds
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 4000);
+    const timer = setTimeout(() => setIsVisible(true), 1000);
     return () => clearTimeout(timer);
   }, []);
 
