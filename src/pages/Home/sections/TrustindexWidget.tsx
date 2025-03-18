@@ -28,7 +28,6 @@ const TrustindexWidget: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Set the page title
     document.title = "Tripstars - Best Travel Experience";
   
     if (!document.getElementById("trustindex-script")) {
@@ -45,16 +44,13 @@ const TrustindexWidget: React.FC = () => {
         }
       };
   
-      // Append to head instead of component
       document.head.appendChild(script);
     } else {
-      if (window.Trustindex) {
-        window.Trustindex.load();
-      }
+      console.log("Trustindex script already exists, reloading widget...");
+      window.Trustindex?.load();
     }
   }, []);
   
-
   return (
     <Container>
       {/* Page Heading */}
