@@ -28,29 +28,32 @@ const TrustindexWidget: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Set the page title
     document.title = "Tripstars - Best Travel Experience";
-  
+
     if (!document.getElementById("trustindex-script")) {
       const script = document.createElement("script");
-      script.src = "https://cdn.trustindex.io/loader.js?660bbe64210158756b963b23487";
+      script.src =
+      "https://cdn.trustindex.io/loader.js?660bbe64210158756b963b23487";
       script.async = true;
       script.defer = true;
       script.id = "trustindex-script";
-  
+
       script.onload = () => {
         console.log("Trustindex script loaded");
         if (window.Trustindex) {
           window.Trustindex.load();
         }
       };
-  
-      document.head.appendChild(script);
+
+      containerRef.current?.appendChild(script);
     } else {
-      console.log("Trustindex script already exists, reloading widget...");
-      window.Trustindex?.load();
+      if (window.Trustindex) {
+        window.Trustindex.load();
+      }
     }
   }, []);
-  
+
   return (
     <Container>
       {/* Page Heading */}
