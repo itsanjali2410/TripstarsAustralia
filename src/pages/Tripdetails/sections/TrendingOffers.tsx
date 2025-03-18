@@ -320,6 +320,7 @@ const handleCardClick = (title: string) => {
                 </Info>
               </CardOverlay>
             </Card>
+            
           </SwiperSlide>
         ))}
       </Swiper>
