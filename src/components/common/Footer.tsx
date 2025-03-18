@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 import styled from "styled-components";
 import DesktopFooter from "./DesktopFooter";
 import { FaWhatsapp, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-
+import footerimage from "../../assets/footer/footer-desktop(2).png";
 
 // Styled Components
 const FooterContainer = styled.footer`
@@ -466,10 +466,10 @@ const Footer: React.FC = () => {
       </SocialContainer>
       <FooterBottom>
         {isMobile ? <FooterImage
-          src="https://images.wanderon.in/footer-mobile?updatedAt=1734433384777"
+          src={footerimage}
           alt="Mobile Footer"
         /> : <FooterImage
-          src="https://images.wanderon.in/footer-desktop?updatedAt=1734433384777"
+          src={footerimage}
           alt="Desktop Footer"
         />}
         <p>© 2025 TripStars – Holidays PVT LTD, All rights reserved</p>
