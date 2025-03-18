@@ -29,7 +29,7 @@ const TrustindexWidget: React.FC = () => {
 
   useEffect(() => {
     // Set the page title
-    document.title = "Customer Reviews | Trustindex";
+    document.title = "Tripstars - Best Travel Experience";
 
     if (!document.getElementById("trustindex-script")) {
       const script = document.createElement("script");
