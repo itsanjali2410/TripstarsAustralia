@@ -202,6 +202,14 @@ import ladakh4 from "../../assets/Tripdetails/domestic/Ladakh/things-to-do/Khard
 import ladakh5 from "../../assets/Tripdetails/domestic/Ladakh/things-to-do/Magnetic Hill.webp";
 import ladakh6 from "../../assets/Tripdetails/domestic/Ladakh/things-to-do/Khardung La Pass.webp";
 
+//kashmir things to do 
+import kashmir1 from "../../assets/Tripdetails/domestic/Kashmir/dal_lake_kashmir.jpg";
+import kashmir2 from "../../assets/Tripdetails/domestic/Kashmir/gulmarg_skiing.jpg";
+import kashmir3 from "../../assets/Tripdetails/domestic/Kashmir/sonamarg_trek.jpg";
+import kashmir4 from "../../assets/Tripdetails/domestic/Kashmir/shankaracharya_temple.png";
+import kashmir5 from "../../assets/Tripdetails/domestic/Kashmir/Kashmir (8).jpg";
+import kashmir6 from "../../assets/Tripdetails/domestic/Kashmir/Kashmir (7).jpg";
+
 export const destinationsData = {
   bali: {
     banner: {

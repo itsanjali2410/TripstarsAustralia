@@ -273,7 +273,7 @@ const socialMediaLinks = [
   { href: "https://www.instagram.com/tripstars.in?igsh=MWlpNHVhMHp6aXA2bA==", src: "https://images.wanderon.in/icons/instagram", alt: "Instagram" },
   { href: "https://www.linkedin.com/company/tripstarsholidays/", src: "https://images.wanderon.in/icons/linkedin", alt: "LinkedIn" },
   { href: "https://www.youtube.com/@tripstarsholidays108", src: "https://images.wanderon.in/icons/youtube", alt: "YouTube" },
-  { href: "tel:+919875097169", src: "https://cdn-icons-png.flaticon.com/512/724/724664.png", alt: "Call" },
+  { href: "tel:+919875097169", src: "https://cdn-icons-png.flaticon.com/512/724/724664.png", alt: "Call"  },
   { href: "https://wa.me/919875097159", src: "https://img.icons8.com/color/96/whatsapp.png", alt: "WhatsApp" },
 ];
 
@@ -447,7 +447,7 @@ const Footer: React.FC = () => {
             <a href="mailto:Info@tripstars.in">Info@tripstars.in</a>
           </p>
           <p>
-            <a href="tel:+919875097159">+91 9875097159</a>
+            <a href="tel:+919875097159">+91 9875097169</a>
           </p>
           <p>
             <a href="http://tripstars.in/">https://tripstars.in</a>
