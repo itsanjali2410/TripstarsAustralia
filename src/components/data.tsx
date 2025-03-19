@@ -309,6 +309,15 @@ export const Dubai = [
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
+  {
+    title: "Dubai Delights",
+    image: dubai4,
+    pricing: "₹78,373/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
 ];
 
 
@@ -610,6 +619,35 @@ export const Kerala = [
 //     ],
 //   },
 // ];
+// export const Goa =[
+//   {
+//     title : "Northen Goa",
+//     image : goa1,
+//     pricing : "19,699",
+//     info: [
+//       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
+//       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+//     ],
+//   },
+//   {
+//     title : "Northen Goa",
+//     image : goa1,
+//     pricing : "19,699",
+//     info: [
+//       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
+//       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+//     ],
+//   },
+//   {
+//     title : "Northen Goa",
+//     image : goa1,
+//     pricing : "19,699",
+//     info: [
+//       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
+//       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+//     ],
+//   },
+// ]
 export const similar2 = [
   {
     title: "Vietnam",
@@ -689,9 +727,9 @@ export const similar2 = [
 ];
 export const Goa = [
   {
-    title: "Dubai",
+    title: "Northern Goa",
     image: goa1,
-    pricing: "₹87,999/- Onwards",
+    pricing: "₹19,699/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -957,6 +995,15 @@ export const Singapore = [
     ],
   },
   {
+    title: "Singapore Malaysia Delight",
+    image: singapore4,
+    pricing: "₹95,199/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+ {
     title: "Singapore & Malaysia",
     image: singapore3,
     pricing: "₹97,999/- Onwards",
@@ -969,7 +1016,7 @@ export const Singapore = [
 ];
 
 
-export const Mauritius = [
+export  const Mauritius = [
   {
     title: "Magical Mauritius",
     image: mauritius1,

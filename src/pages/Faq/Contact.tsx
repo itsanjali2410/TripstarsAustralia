@@ -1,8 +1,10 @@
 import React, { useState, useCallback } from "react";
 import styled from "styled-components";
+import { Navigate, useNavigate } from "react-router-dom";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import contactbanner from "../../assets/contact/contactbanner.png";
-
+import ThankYou from "../../components/common/thankyou";
+import axios from "axios";
 const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -113,20 +115,46 @@ const contactDetails = [
   { icon: <FaPhone />, label: "8655351948" },
   { icon: <FaEnvelope />, label: "Info@tripstars.in" },
   { icon: <FaMapMarkerAlt />, label: "1817/1818-B, Navratna Corporate Park, Iscon-Ambli Road, Ahmedabad - 380058" },
-  { icon: <FaMapMarkerAlt />, label: "105 & 305, Sai Arcade, Mulund W, Mumbai 400080" }
+  { icon: <FaMapMarkerAlt />, label: "105 & 315, Sai Arcade, Mulund W, Mumbai 400080" }
 ];
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const navigate = useNavigate();
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
   }, []);
 
-  const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
+  const API_URL = "https://backend.tripstarsholidays.com"; // ✅ Ensure the correct backend URL
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-  }, [formData]);
+
+    // Prepare the form data
+    const formDataToSend = {
+        name: formData.name,
+        
+        email: formData.email,
+        
+    };
+
+    try {
+        // ✅ Send form data to backend API
+        const response = await axios.post(`${API_URL}/submit-form`, formDataToSend);
+
+        if (response.status === 200) {
+
+            navigate("/thankyou");
+        } else {
+            alert("❌ Failed to save data to the database.");
+        }
+
+    } catch (error) {
+        console.error("❌ API Error:", error);
+        alert("❌ Failed to submit the form. Please try again.");
+    }
+};
 
   return (
     <ContactContainer>

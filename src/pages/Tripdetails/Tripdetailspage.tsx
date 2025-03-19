@@ -17,7 +17,7 @@ import ChooseTravelStyle from "./sections/ChooseTravelStyle";
 import TravelStyleCarousel from "./sections/TravelStyleCarousel";
 import ExploreDestinations from "../Home/sections/ExploreDestinations";
 import TrendingOffers2 from "../../components/TrendingOffers2";
-import { Bali,Kashmir,Kerala,Andaman1,similar, Vietnam, Thailand, Europe, Dubai, Australia, Baku, Hongkong, Japan, Malaysia, North_East, Maldives, Mauritius, Singapore, southAfrica, Turkey, Ladakh } from "../../components/data";
+import { Bali,Kashmir,Kerala,Andaman1,similar, Vietnam, Thailand, Europe, Dubai, Australia, Baku, Hongkong, Japan, Malaysia, North_East, Maldives, Mauritius, Singapore, southAfrica, Turkey, Ladakh, Goa} from "../../components/data";
 import DestinationSlider from "./sections/DestinationSlider";
 import Choose_your from "./sections/Choose_your";
 import PopularDestinations from "../Home/sections/PopularDestinations";
@@ -85,6 +85,7 @@ export default function Tripdetailspage() {
     kashmir: Kashmir,
     kerala : Kerala,
     andaman: Andaman1,
+    goa: Goa
   };
 
   // Get the relevant trending offers based on the location
