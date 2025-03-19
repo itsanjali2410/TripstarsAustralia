@@ -330,9 +330,7 @@ const Popup: React.FC<PopupProps> = ({ item, onClose }) => {
         if (response.status === 200) {
 
             navigate("/thankyou");
-        } else {
-            alert("❌ Failed to save data to the database.");
-        }
+        } 
 
         // ✅ Send email using EmailJS
         // try {

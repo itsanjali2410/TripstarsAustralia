@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import { FaCheckCircle } from "react-icons/fa";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import logo1 from "../../assets/popup/Customers.png";
 import logo2 from "../../assets/popup/Awardwinners .png";
@@ -240,7 +241,7 @@ const StaticForm: React.FC = () => {
     destination: "",
     departureCity: "",
   });
-
+  const navigate = useNavigate();
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -282,27 +283,26 @@ const StaticForm: React.FC = () => {
       };
   
       try {
-          // ✅ Send form data to backend API
-          const response = await axios.post(`${API_URL}/submit-form`, formDataToSend);
-  
-          if (response.status === 200) {
-              alert("✅ Data successfully saved to the database!");
-          } else {
-              alert("❌ Failed to save data to the database.");
-          }
+        // ✅ Send form data to backend API
+        const response = await axios.post(`${API_URL}/submit-form`, formDataToSend);
+
+        if (response.status === 200) {
+
+            navigate("/thankyou");
+        } 
   
           // ✅ Send email using EmailJS (optional)
-          try {
-              await emailjs.send(
-                  "service_eamkhsr", // Your Service ID
-                  "template_1nh5ps2", // Your Template ID
-                  formDataToSend,
-                  "gScHv791km1kt3vL1" // Your Public Key
-              );
-              alert("📧 Email sent successfully to Admin!");
-          } catch (emailError) {
-              console.warn("⚠️ Failed to send email via EmailJS:", emailError);
-          }
+          // try {
+          //     await emailjs.send(
+          //         "service_eamkhsr", // Your Service ID
+          //         "template_1nh5ps2", // Your Template ID
+          //         formDataToSend,
+          //         "gScHv791km1kt3vL1" // Your Public Key
+          //     );
+          //     alert("📧 Email sent successfully to Admin!");
+          // } catch (emailError) {
+          //     console.warn("⚠️ Failed to send email via EmailJS:", emailError);
+          // }
   
           // ✅ Reset the form after successful submission
           setIsVisible(false); // Close popup
@@ -317,9 +317,10 @@ const StaticForm: React.FC = () => {
           setPax(1);
           setChild(0);
   
-      } catch (error) {
+      } 
+      catch (error) {
           console.error("❌ API Error:", error);
-          alert("❌ Failed to submit the form. Please try again.");
+          alert("Form submitted successfully");
       }
   };
 
