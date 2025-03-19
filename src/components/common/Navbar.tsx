@@ -118,15 +118,14 @@ const Dropdown = styled.div<DropdownProps>`
   position: absolute;
   top: 100%;
   left: 0;
-  background: rgba(255, 255, 255);
-  color:#000 !important; 
+  background: rgba(0, 0, 0, 0.6);
   transition: all 0.5s ease-in-out;
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   z-index: 1;
   width: 400px; /* Adjust width for both categories */
   border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  padding: 1px;
+  padding: 10px;
 
   /* Make sure categories are aligned properly */
   ul {
@@ -148,25 +147,19 @@ const Dropdown = styled.div<DropdownProps>`
   .category strong {
     margin-bottom: 10px;
     font-weight: bold;
-    color: #000;
+    color: #fff;
     font-size: 1.5rem;
   }
 
   li {
-    padding: 0 0.6rem;
-    a {
-      color: #000;
-      text-decoration: none;
-      font-size: 1rem;
-    }
-    position: relative;
+    padding: 0.5rem 0;
   }
-
 
   a {
     font-size: 0.9rem;
-    color: #000;
+    color: white;
     text-decoration: none;
+    transition: color 0.3s;
 
     &:hover {
       color: #f0a500; /* Add hover effect */
@@ -324,7 +317,7 @@ export default function Navbar() {
           </Dropdown>
         </li>
         <li>
-          <Link to="/Contact">Contact</Link>
+          <Link to="/contact">Contact</Link>
         </li>
       </NavLinksContainer>
 
