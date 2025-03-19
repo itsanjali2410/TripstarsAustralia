@@ -203,12 +203,13 @@ import ladakh5 from "../../assets/Tripdetails/domestic/Ladakh/things-to-do/Magne
 import ladakh6 from "../../assets/Tripdetails/domestic/Ladakh/things-to-do/Khardung La Pass.webp";
 
 //kashmir things to do 
-import kashmir1 from "../../assets/Tripdetails/domestic/Kashmir/dal_lake_kashmir.jpg";
-import kashmir2 from "../../assets/Tripdetails/domestic/Kashmir/gulmarg_skiing.jpg";
-import kashmir3 from "../../assets/Tripdetails/domestic/Kashmir/sonamarg_trek.jpg";
+import kashmir1 from "../../assets/Tripdetails/domestic/Kashmir/1.png";
+import kashmir2 from "../../assets/Tripdetails/domestic/Kashmir/2.png";
+import kashmir3 from "../../assets/Tripdetails/domestic/Kashmir/3.png";
 import kashmir4 from "../../assets/Tripdetails/domestic/Kashmir/shankaracharya_temple.png";
-import kashmir5 from "../../assets/Tripdetails/domestic/Kashmir/Kashmir (8).jpg";
-import kashmir6 from "../../assets/Tripdetails/domestic/Kashmir/Kashmir (7).jpg";
+import kashmir5 from "../../assets/Tripdetails/domestic/Kashmir/amarnath.png";
+import kashmir6 from "../../assets/Tripdetails/domestic/Kashmir/vaishno_devi.png";
+import kashmir7 from "../../assets/Tripdetails/domestic/Kashmir/mughal_garden.png"
 
 export const destinationsData = {
   bali: {
@@ -354,12 +355,13 @@ export const destinationsData = {
         description: "Explore the mesmerizing landscapes and serene beauty of Kashmir.",
       },
       thingsToDo: [
-        { name: "Dal Lake", image: baliImg1 },
-        { name: "Gulmarg Skiing", image: baliImg11 },
-        { name: "Sonamarg Trekking", image: baliImg7 },
-        { name: "Shankaracharya Temple", image: baliImg4 },
-        { name: "Shikara Ride", image: baliImg8 },
-        { name: "Pahalgam Valley", image: baliImg3 },
+        { name: "Dal Lake", image: kashmir1 },
+        { name: "Gulmarg Skiing", image: kashmir2 },
+        { name: "Sonamarg Trekking", image: kashmir3 },
+        { name: "Shankaracharya Temple", image: kashmir4 },
+        { name: "Vaishno Devi Temple", image: kashmir6 },
+        { name: "Amarnath", image: kashmir5 },
+        { name: "Mughal Garden", image: kashmir7 },
       ],
     },
   

@@ -148,10 +148,10 @@ export default function PopularDestinations({ showPopup = false }: PopularDestin
     <Container>
       <SectionTitle>
         <TitileHeading>Popular Destinations</TitileHeading>
-        <NavIcons>
+        {/* <NavIcons>
           <button ref={prevRef}>{"<"}</button>
           <button ref={nextRef}>{">"}</button>
-        </NavIcons>
+        </NavIcons> */}
       </SectionTitle>
       <CardsWrapper>
         <Swiper

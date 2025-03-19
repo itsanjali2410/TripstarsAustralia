@@ -1,9 +1,11 @@
 import React, { useState,useEffect } from "react";
 import styled from "styled-components";
 import DesktopFooter from "./DesktopFooter";
-import { FaWhatsapp, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-
-
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { AiFillPhone } from "react-icons/ai";
+import { BsWhatsapp } from "react-icons/bs";
+import footerimage from "../../assets/footer/footer-desktop(2).png";
+import footermobike from "../../assets/footer/footer-mobile.png";
 // Styled Components
 const FooterContainer = styled.footer`
   background-color: #101820;
@@ -193,23 +195,54 @@ const SocialContainer = styled.div`
 `;
 
 const SocialLinks = styled.div`
-  background-color: #1a1a1a;
-  padding: 10px 30px;
-  border-radius: 50px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 
   a {
     margin: 0 10px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 10px;
+    color: white;
+    width: 35px;
+    height: 35px;
 
-    img {
+    &.facebook {
+      background-color: #1877f2;
+    }
+
+    &.instagram {
+      background: radial-gradient(circle at 30% 30%, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    }
+
+    &.linkedin {
+      background-color: #0a66c2;
+    }
+
+    &.youtube {
+      background-color: #ff0000;
+    }
+
+    &.phone {
+      background-color: #34b7f1;
+    }
+
+    &.whatsapp {
+      background-color: #25d366;
+    }
+
+    svg {
       width: 30px;
       height: 30px;
     }
   }
 `;
+
+
 
 const FooterBottom = styled.div`
   border-top: 1px solid #333;
@@ -269,12 +302,12 @@ const ContactLink = styled.a`
 
 // Social media icons
 const socialMediaLinks = [
-  { href: "https://www.facebook.com/tripstarsholidays?rdid=dSUD1oQcaaH2mjCk&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19qbFGvRJw%2F#", src: "https://images.wanderon.in/icons/facebook", alt: "Facebook" },
-  { href: "https://www.instagram.com/tripstars.in?igsh=MWlpNHVhMHp6aXA2bA==", src: "https://images.wanderon.in/icons/instagram", alt: "Instagram" },
-  { href: "https://www.linkedin.com/company/tripstarsholidays/", src: "https://images.wanderon.in/icons/linkedin", alt: "LinkedIn" },
-  { href: "https://www.youtube.com/@tripstarsholidays108", src: "https://images.wanderon.in/icons/youtube", alt: "YouTube" },
-  { href: "tel:+919875097169", src: "https://cdn-icons-png.flaticon.com/512/724/724664.png", alt: "Call" },
-  { href: "https://wa.me/919875097159", src: "https://img.icons8.com/color/96/whatsapp.png", alt: "WhatsApp" },
+  { href: "https://www.facebook.com/tripstarsholidays?rdid=dSUD1oQcaaH2mjCk&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19qbFGvRJw%2F#", icon: <FaFacebook />, alt: "Facebook", className: "facebook" },
+  { href: "https://www.instagram.com/tripstars.in?igsh=MWlpNHVhMHp6aXA2bA==", icon: <FaInstagram />, alt: "Instagram", className: "instagram" },
+  { href: "https://www.linkedin.com/company/tripstarsholidays/", icon: <FaLinkedin />, alt: "LinkedIn", className: "linkedin" },
+  { href: "https://www.youtube.com/@tripstarsholidays108", icon: <FaYoutube />, alt: "YouTube", className: "youtube" },
+  { href: "tel:+919875097169", icon: <AiFillPhone />, alt: "Call", className: "phone" },
+  { href: "https://wa.me/919875097169", icon: <BsWhatsapp />, alt: "WhatsApp", className: "whatsapp" },
 ];
 
 // Dropdown content
@@ -289,10 +322,10 @@ const footerSections: { title: string; links: FooterLink[] }[] = [
   {
     title: "Talk to us",
     links: [
-      { label: "+91-9875097169", href: "+919875097169", icon: <FaWhatsapp /> },
-      { label: "+91-8655351948", href: "tel:+918655351948", icon: <FaPhoneAlt /> },
-      { label: "+91 7969790000", href: "tel:+917969790000", icon: <FaPhoneAlt /> },
-      { label: "Info@tripstars.in", href: "mailto:info@travellandindia.com", icon: <FaEnvelope /> },
+      { label: "+91-9875097169", href: "+919875097169" },
+      { label: "+91-8655351948", href: "tel:+918655351948" },
+      { label: "+91 7969790000", href: "tel:+917969790000" },
+      { label: "Info@tripstars.in", href: "mailto:info@travellandindia.com" },
     ],
   },
   {
@@ -415,11 +448,11 @@ const Footer: React.FC = () => {
                       {link.contacts && (
                         <BranchContacts>
                           <ContactLink href={`tel:${link.contacts[0].phone}`}>
-                            <FaPhoneAlt /> {link.contacts[0].phone}
+                            <AiFillPhone /> {link.contacts[0].phone}
                           </ContactLink>
                           {/* <ContactLink href={`https://wa.me/${link.contacts[0].whatsapp.replace(/[^0-9]/g, "")}`}> */}
                           <ContactLink href="#">
-                            <FaWhatsapp /> {link.contacts[0].whatsapp}
+                            <BsWhatsapp /> {link.contacts[0].whatsapp}
                           </ContactLink>
                         </BranchContacts>
                       )}
@@ -456,20 +489,28 @@ const Footer: React.FC = () => {
       </FooterContact>
 
       <SocialContainer>
-        <SocialLinks>
-          {socialMediaLinks.map((link) => (
-            <a href={link.href} key={link.alt} target="_blank" rel="noopener noreferrer">
-              <img src={link.src} alt={link.alt} />
-            </a>
-          ))}
-        </SocialLinks>
+      <SocialLinks>
+  {socialMediaLinks.map((link, index) => (
+    <a
+      key={index}
+      href={link.href}
+      className={link.className}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={link.alt}
+    >
+      {link.icon}
+    </a>
+  ))}
+</SocialLinks>
+
       </SocialContainer>
       <FooterBottom>
         {isMobile ? <FooterImage
-          src="https://images.wanderon.in/footer-mobile?updatedAt=1734433384777"
+          src={footermobike}
           alt="Mobile Footer"
         /> : <FooterImage
-          src="https://images.wanderon.in/footer-desktop?updatedAt=1734433384777"
+          src={footerimage}
           alt="Desktop Footer"
         />}
         <p>© 2025 TripStars – Holidays PVT LTD, All rights reserved</p>
