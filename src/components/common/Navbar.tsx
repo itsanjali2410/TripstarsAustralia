@@ -324,7 +324,7 @@ export default function Navbar() {
           </Dropdown>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/Contact">Contact</Link>
         </li>
       </NavLinksContainer>
 

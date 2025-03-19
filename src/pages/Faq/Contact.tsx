@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-
+import contactbanner from "../../assets/contact/contactbanner.webp";
 const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 20px;
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  background: linear-gradient(135deg, #f5f7fa,rgb(255, 255, 255));
   min-height: 100vh;
 `;
 
@@ -17,12 +16,12 @@ const Banner = styled.div`
   text-align: center;
   overflow: hidden;
 
+
+  
   img {
     width: 100%;
     height: auto;
     max-height: 400px;
-    object-fit: cover;
-    display: block;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   }
@@ -120,7 +119,8 @@ const Contact: React.FC = () => {
   return (
     <ContactContainer>
       <Banner>
-        <img src="https://www.eraindia.org/wp-content/uploads/2022/09/contact-banner.jpg" alt="Contact Us" />
+      <img src={`${contactbanner}`} alt="Contact Us" />
+
       </Banner>
       <ContactSection>
         <ContactForm onSubmit={handleSubmit}>
@@ -132,9 +132,9 @@ const Contact: React.FC = () => {
         </ContactForm>
         <ContactInfo>
           <h3>Contact Information</h3>
-          <div><FaPhone /> +1 234 567 890</div>
-          <div><FaEnvelope /> contact@example.com</div>
-          <div><FaMapMarkerAlt /> 123 Main Street, City, Country</div>
+          <div><FaPhone /> 8655351948</div>
+          <div><FaEnvelope /> Info@tripstars.in</div>
+          <div><FaMapMarkerAlt /> 1817/1818, Navratna Corporate Park - B, Iscon - Ambli Road, Ahmedabad - 380058</div>
         </ContactInfo>
       </ContactSection>
     </ContactContainer>
