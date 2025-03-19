@@ -143,7 +143,7 @@ import { south } from "@cloudinary/url-gen/qualifiers/compass";
 
 // kashmir 
 import kashmir1 from "../assets/Tripdetails/domestic/Kashmir/Packages/Kashmir 1.jpg"
-import kashmir2 from "../assets/Tripdetails/domestic/Kashmir/Packages/Kashmir 2.jpg";
+import kashmir2 from "../assets/Tripdetails/domestic/Kashmir/Packages/Kashmir 5.jpg";
 import kashmir3 from "../assets/Tripdetails/domestic/Kashmir/Packages/Kashmir 3.jpg";
 import kashmir4 from "../assets/Tripdetails/domestic/Kashmir/Packages/Kashmir 4.jpg";
 
@@ -1126,6 +1126,24 @@ export const Kashmir = [
     pricing: "₹79,199/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Kashmir's Golden Triangle",
+    image: kashmir3,
+    pricing: "₹55,299/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Kashmir Delight",
+    image: kashmir4,
+    pricing: "₹70,299/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
