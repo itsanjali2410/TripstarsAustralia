@@ -7,6 +7,7 @@ const ContactContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+
   background: linear-gradient(135deg, #f5f7fa,rgb(255, 255, 255));
   min-height: 100vh;
 `;
@@ -22,7 +23,9 @@ const Banner = styled.div`
     width: 100%;
     height: auto;
     max-height: 400px;
-    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   }
 `;
