@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 import styled from "styled-components";
 import DesktopFooter from "./DesktopFooter";
 import { FaWhatsapp, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import footerimage from "../../assets/footer/footer-desktop(2).png";
+
 
 // Styled Components
 const FooterContainer = styled.footer`
@@ -273,7 +273,7 @@ const socialMediaLinks = [
   { href: "https://www.instagram.com/tripstars.in?igsh=MWlpNHVhMHp6aXA2bA==", src: "https://images.wanderon.in/icons/instagram", alt: "Instagram" },
   { href: "https://www.linkedin.com/company/tripstarsholidays/", src: "https://images.wanderon.in/icons/linkedin", alt: "LinkedIn" },
   { href: "https://www.youtube.com/@tripstarsholidays108", src: "https://images.wanderon.in/icons/youtube", alt: "YouTube" },
-  { href: "tel:+919875097169", src: "https://cdn-icons-png.flaticon.com/512/724/724664.png", alt: "Call"  },
+  { href: "tel:+919875097169", src: "https://cdn-icons-png.flaticon.com/512/724/724664.png", alt: "Call" },
   { href: "https://wa.me/919875097159", src: "https://img.icons8.com/color/96/whatsapp.png", alt: "WhatsApp" },
 ];
 
@@ -447,7 +447,7 @@ const Footer: React.FC = () => {
             <a href="mailto:Info@tripstars.in">Info@tripstars.in</a>
           </p>
           <p>
-            <a href="tel:+919875097159">+91 9875097169</a>
+            <a href="tel:+919875097159">+91 9875097159</a>
           </p>
           <p>
             <a href="http://tripstars.in/">https://tripstars.in</a>
@@ -466,10 +466,10 @@ const Footer: React.FC = () => {
       </SocialContainer>
       <FooterBottom>
         {isMobile ? <FooterImage
-          src={footerimage}
+          src="https://images.wanderon.in/footer-mobile?updatedAt=1734433384777"
           alt="Mobile Footer"
         /> : <FooterImage
-          src={footerimage}
+          src="https://images.wanderon.in/footer-desktop?updatedAt=1734433384777"
           alt="Desktop Footer"
         />}
         <p>© 2025 TripStars – Holidays PVT LTD, All rights reserved</p>

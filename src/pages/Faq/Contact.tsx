@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import contactbanner from "../../assets/contact/contactbanner.webp";
+import contactbanner from "../../assets/contact/contactbanner.png";
+
 const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-
-  background: linear-gradient(135deg, #f5f7fa,rgb(255, 255, 255));
+  background: linear-gradient(135deg, #f5f7fa, rgb(255, 255, 255));
   min-height: 100vh;
 `;
 
@@ -16,8 +16,6 @@ const Banner = styled.div`
   width: 100%;
   text-align: center;
   overflow: hidden;
-
-
   
   img {
     width: 100%;
@@ -39,6 +37,16 @@ const ContactSection = styled.div`
   margin-top: 40px;
 `;
 
+const formBoxShadow = "0px 6px 15px rgba(0, 0, 0, 0.15)";
+const inputStyles = `
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+`;
+
 const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -47,25 +55,20 @@ const ContactForm = styled.form`
   background: white;
   padding: 25px;
   border-radius: 10px;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: ${formBoxShadow};
   text-align: center;
 
   h2 {
-    color:rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
     margin-bottom: 35px;
   }
 
   input, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
+    ${inputStyles}
   }
 
   button {
-    background:rgb(0, 0, 0);
+    background: rgb(0, 0, 0);
     color: white;
     padding: 12px;
     border: none;
@@ -76,7 +79,7 @@ const ContactForm = styled.form`
   }
 
   button:hover {
-    background:rgb(0, 0, 0);
+    background: rgb(0, 0, 0);
   }
 `;
 
@@ -87,12 +90,12 @@ const ContactInfo = styled.div`
   background: white;
   padding: 25px;
   border-radius: 10px;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: ${formBoxShadow};
   max-width: 350px;
   text-align: center;
 
   h3 {
-    color:rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
   }
 
   div {
@@ -106,37 +109,66 @@ const ContactInfo = styled.div`
   }
 `;
 
+const contactDetails = [
+  { icon: <FaPhone />, label: "8655351948" },
+  { icon: <FaEnvelope />, label: "Info@tripstars.in" },
+  { icon: <FaMapMarkerAlt />, label: "1817/1818-B, Navratna Corporate Park, Iscon-Ambli Road, Ahmedabad - 380058" },
+  { icon: <FaMapMarkerAlt />, label: "105 & 305, Sai Arcade, Mulund W, Mumbai 400080" }
+];
+
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prevData) => ({ ...prevData, [e.target.name]: e.target.value }));
+  }, []);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-  };
+  }, [formData]);
 
   return (
     <ContactContainer>
       <Banner>
-      <img src={`${contactbanner}`} alt="Contact Us" />
-
+        <img src={contactbanner} alt="Contact Us" />
       </Banner>
       <ContactSection>
         <ContactForm onSubmit={handleSubmit}>
           <h2>Contact Us</h2>
-          <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
-          <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
-          <textarea name="message" placeholder="Your Message" rows={4} value={formData.message} onChange={handleChange} required />
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows={4}
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
           <button type="submit">Send Message</button>
         </ContactForm>
         <ContactInfo>
           <h3>Contact Information</h3>
-          <div><FaPhone /> 8655351948</div>
-          <div><FaEnvelope /> Info@tripstars.in</div>
-          <div><FaMapMarkerAlt /> 1817/1818, Navratna Corporate Park - B, Iscon - Ambli Road, Ahmedabad - 380058</div>
+          {contactDetails.map((detail, index) => (
+            <div key={index}>
+              {detail.icon} {detail.label}
+            </div>
+          ))}
         </ContactInfo>
       </ContactSection>
     </ContactContainer>
