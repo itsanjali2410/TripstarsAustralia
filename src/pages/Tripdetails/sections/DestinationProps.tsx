@@ -129,8 +129,14 @@ export default function PopularDestinations({ title, highlightWord, thingsToDo }
   };
 
   const handleThingClick = (thing: { name: string; image: string }) => {
-    setSelectedThing(thing);
+    setSelectedThing(null); // Reset the state first
+  
+    // Use a short delay to allow state reset and force re-render
+    setTimeout(() => {
+      setSelectedThing(thing);
+    }, 0);
   };
+  
 
   const handleClosePopup = () => {
     setSelectedThing(null);
