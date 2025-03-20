@@ -265,6 +265,8 @@ export default function Navbar() {
             ></path>
           </svg>
         </li>
+
+
         <li>
           <Link to="https://tripstars.in/" onClick={isMobile ? toggleMenu : undefined}>Home</Link>
         </li>
