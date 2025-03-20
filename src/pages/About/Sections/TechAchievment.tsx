@@ -64,14 +64,14 @@ function TechAchievment() {
   return (
     <Container>
       <Row>
-      <Column>
-          <Image src={team} alt="Tech Achievement" />
-        </Column>
+      
         <Column>
-          <Title>Technological Advancement</Title>
-          <Paragraph>
-            Today, the company has a dedicated in-house technology and a customer support team that is focused on developing a secure, advanced, and scalable technology infrastructure and software to enable a quick response time and ensure efficient services.
-          </Paragraph>
+        <h1>A Little About Us</h1>
+        <h4>LEADING TRAVEL WEBSITE</h4>
+        <p>
+          Welcome to Tripstars! We are a leading travel website dedicated to helping you plan the perfect vacation.
+          Our team is passionate about travel and is here to help you every step of the way.
+        </p>
           {/* <Title>Unicorn Status and Beyond</Title>
           <Paragraph>
             EaseMyTrip also joined the elite club of India’s first-ever 100 unicorns and remained India’s only company delivering consistent profits among all listed new-age tech businesses. Now, EaseMyTrip is strategically expanding its international presence and diversifying its offerings beyond air travel to include hotels and holidays. Additionally, we are banking on a franchise model to improve service accessibility for offline customers. Currently, overseeing a network of 13 franchise stores nationwide.
@@ -79,7 +79,9 @@ function TechAchievment() {
             *In terms of air ticket bookings, based on the Crisil Report-Assessment of the OTA Industry in India, February 2021.
           </Paragraph> */}
         </Column>
-        
+        <Column>
+          <Image src={team} alt="Tech Achievement" />
+        </Column>
       </Row>
     </Container>
   );

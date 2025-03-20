@@ -144,7 +144,7 @@ const RightPanel = styled.div`
     }
 
     @media (max-width: 768px) {
-      padding: 11px;
+      padding: 15px;
     }
   }
 
@@ -182,7 +182,6 @@ const RightPanel = styled.div`
     }
   }
 `;
-
 const PaxCounterWrapper = styled.div`
   display: flex;
   gap: 20px;
@@ -213,22 +212,39 @@ const PaxCounter = styled.div`
 
   button {
     padding: 5px 10px;
-    background: #ddd;
+    background: #000;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
 
     &:hover {
-      background: #bbb;
+      background: #333;
     }
 
     &:disabled {
-      background: #e0e0e0;
+      background: #666;
       cursor: not-allowed;
     }
   }
+
+  @media (max-width: 768px) {
+    .counter-row {
+      flex-direction: row;
+      gap: 5px; /* Reduce gap on small screens */
+      justify-content: center; /* Center align */
+    }
+
+    button {
+      flex: 1;
+      min-width: 25px;
+      text-align: center;
+    }
+  }
 `;
+
+
 
 const StaticForm: React.FC = () => {
   const [startDate, setStartDate] = useState<Date | null>(null);

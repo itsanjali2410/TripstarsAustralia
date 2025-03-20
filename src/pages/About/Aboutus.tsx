@@ -15,7 +15,7 @@ function AboutPage() {
         <>
         {/* <Navbar />
         <Hero /> */}
-        <AboutHistory />
+        {/* <AboutHistory /> */}
         {/* <JourneySoFar/> */}
         <TechAchievment />
         <Awards />
