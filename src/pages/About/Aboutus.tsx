@@ -9,13 +9,14 @@ import Strength from "../About/Sections/Strengths";
 import ImpressiveFigure from "../About/Sections/ImpressiveFigure";
 import JourneySoFar from "./Sections/JourneySoFar";
 
+
 function AboutPage() {
     return(
         <>
         {/* <Navbar />
         <Hero /> */}
         <AboutHistory />
-        <JourneySoFar/>
+        {/* <JourneySoFar/> */}
         <TechAchievment />
         <Awards />
         <Premium />
