@@ -2,7 +2,7 @@ import React from "react";
 // import Navbar from "../../Navbar";
 // import Hero from "./Hero";
 import AboutHistory from "../About/Sections/AboutHistory";
-import TechAchievment from "../About/Sections/TechAchievment";
+import TechAchievement from "../About/Sections/TechAchievment";
 import Awards from "../About/Sections/Awards";
 import Premium from "../About/Sections/Premium";
 import Strength from "../About/Sections/Strengths";
@@ -17,7 +17,7 @@ function AboutPage() {
         <Hero /> */}
         {/* <AboutHistory /> */}
         {/* <JourneySoFar/> */}
-        <TechAchievment />
+        <TechAchievement />
         <Awards />
         <Premium />
         <Strength />
