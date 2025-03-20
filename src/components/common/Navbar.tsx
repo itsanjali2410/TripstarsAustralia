@@ -266,7 +266,7 @@ export default function Navbar() {
           </svg>
         </li>
         <li>
-          <Link to="/Home" onClick={isMobile ? toggleMenu : undefined}>Home</Link>
+          <Link to="https://tripstars.in/" onClick={isMobile ? toggleMenu : undefined}>Home</Link>
         </li>
         <li>
           <Link to="/aboutus" onClick={isMobile ? toggleMenu : undefined}>About Us</Link>
