@@ -30,7 +30,7 @@ import Reviews from "./sections/reviews";
 import TrustindexWidget from "./sections/TrustindexWidget";
 import StaticForm from "../../components/common/StaticForm";
 import FloatingWhatsAppButton from "./sections/Floating";
-import TrendinOffersHome from "./sections/trendingoffershome";
+import TrendingOffersHome2 from "./sections/TrendingOffersHome2"
 
 export default function HomePage() {
   return (
@@ -38,13 +38,14 @@ export default function HomePage() {
       <HeroSection />
       <PopularDestinations showPopup={false} />
       <SwipeableSlider />
-      <TrendinOffersHome title="Trending Offers" cards={similar2} />
+
+      <TrendingOffersHome2 title="Trending Offers" cards={similar2} />
       <ExploreDestinations />
       <VideoTestimonials/>
       <VideoThumbnail />
       <WhyTripstars />
       <ExploreEurope />
-      <TrendinOffersHome title="Explore India" cards={similar} />
+      <TrendingOffersHome2 title="Explore India" cards={similar} />
       {/* <Reviews/> */}
       <PartnersSection />
       {/* <BudgetSection />
