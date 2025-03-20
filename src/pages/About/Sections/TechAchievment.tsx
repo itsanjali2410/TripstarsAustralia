@@ -1,99 +1,50 @@
 import React from "react";
-import styled from "styled-components";
-import team from "../../../assets/aboutus/Team.png";
-import achievement from "../../../assets/aboutus/Tripstarsahemdabad.jpg";
+import abouthistory from "../../../assets/aboutus/Tripstarsahemdabad.jpg";
 
-// Styled Components
-const Container = styled.div`
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-`;
-
-const Row = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-`;
-
-const Column = styled.div`
-  flex: 1;
-  min-width: 300px;
-  padding: 1rem;
-
-  @media (max-width: 768px) {
-    text-align: center;
-  }
-`;
-
-const Title = styled.h1`
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #000;
-  font-weight: bold;
-
-  span {
-    color: #C8A466;
-  }
-`;
-
-const Subtitle = styled.h4`
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #555;
-`;
-
-const Paragraph = styled.p`
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-  color: #555;
-`;
-
-const List = styled.ul`
-  list-style-type: none;
-  padding: 0;
-  margin: 1rem 0;
-  color: #333;
-  font-size: 1rem;
-`;
-
-const Image = styled.img`
-  width: 90%;
-  max-width: 400px;
-  margin: 0 auto;
-  display: block;
-  transition: transform 0.3s ease-in-out;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-`;
-
-function TechAchievement() {
+function AboutHistory() {
   return (
-    <Container>
-      <Row>
-        <Column>
-          <Title>A Little About Us</Title>
-          <Subtitle>LEADING TRAVEL WEBSITE</Subtitle>
-          <Paragraph>
-            Welcome to TripStars! We are a leading travel website dedicated to helping you plan the perfect vacation.
-            Our team is passionate about travel and is here to help you every step of the way.
-          </Paragraph>
-        </Column>
-        <Column>
-          <Image src={achievement} alt="Tech Achievement" />
-        </Column>
-      </Row>
-    </Container>
+    <>
+      <div className="container mt-5">
+        <div className="row align-items-center">
+          {/* Image Section */}
+          <div className="col-md-6 col-12 p-3">
+            <img
+              src={abouthistory}
+              alt="About History"
+              className="img-fluid"
+              style={{ width: "100%", maxWidth: "500px" }}
+            />
+          </div>
+
+          {/* Text Section */}
+          <div className="col-md-6 col-12 mt-3 text-center text-md-start">
+            <h1 className="fs-2 mb-3">
+              A Little About <span></span>
+            </h1>
+            <div className="grytxtht mb-2">
+              Welcome to Tripstars! We are a leading travel website dedicated to helping you plan the perfect vacation.
+              Our team is passionate about travel and is here to help you every step of the way.
+            </div>
+            <div className="blutxtht mb-2">
+              With a wide variety of destinations to choose from and top-notch customer service, we make it easy for you
+              to book your dream trip.
+            </div>
+            <div className="grytxtht mb-2">
+              Whether you’re looking for a beach getaway, a cultural adventure, or a romantic escape,
+              we have something that will fit the bill.
+            </div>
+            <div className="blutxtht mb-2">
+              At Tripstars, we are committed to providing the best possible travel experience for our customers.
+            </div>
+            <div className="grytxtht mb-2">
+              From the moment you start planning your trip to the moment you return home, we are here to assist you
+              and make sure everything goes smoothly.
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
-export default TechAchievement ;
-
+export default AboutHistory;
