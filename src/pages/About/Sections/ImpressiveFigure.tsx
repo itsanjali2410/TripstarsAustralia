@@ -75,7 +75,7 @@ function ImpressiveFigure() {
       </Title>
       <Row>
         <Col>
-          <Figures>20+</Figures>
+          <Figures>16+</Figures>
           <Text>Years of Experience</Text>
         </Col>
         <Col>
@@ -83,7 +83,7 @@ function ImpressiveFigure() {
           <Text>Personal Concierge</Text>
         </Col>
         <Col>
-          <Figures>15000+</Figures>
+          <Figures>20000+</Figures>
           <Text>Customers
           Service par excellence</Text>
         </Col>
