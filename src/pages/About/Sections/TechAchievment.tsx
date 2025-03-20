@@ -95,5 +95,5 @@ function TechAchievement() {
   );
 }
 
-export { TechAchievement };
+export default TechAchievement ;
 

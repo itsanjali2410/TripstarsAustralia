@@ -98,4 +98,4 @@ function Awards() {
     </Container>
   );
 }
-export { Awards};
+export default Awards;
