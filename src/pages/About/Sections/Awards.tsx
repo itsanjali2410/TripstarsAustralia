@@ -4,7 +4,7 @@ import team from "../../../assets/aboutus/Team.png";
 
 // Styled Components
 const Container = styled.div`
-  padding: 2rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,7 +54,7 @@ const List = styled.ul`
   padding: 0;
   margin: 1rem 0;
   color: #333;
-  font-size: 1.1rem;
+  font-size: 1rem;
 
 `;
 
@@ -77,15 +77,15 @@ function Awards() {
         </Column>
         <Column>
           <Title>
-            Awards and <span>Achievements</span>
+          Why Choose <span>TripStars Holidays</span>
           </Title>
-          <p>Some of the recent awards and achievements are:</p>
           <List>
-            <li>Best Online Travel Agency – Veta 2024</li>
-            <li>Online Travel Agent of the Year - SATTE Awards 2024</li>
-            <li>Game changer award – India Travel Awards, North, 2023</li>
-            <li>Bootstrapped Entrepreneur of the Year – HURUN India 2022</li>
-            <li>Best Travel Portal of the Year – Entrepreneur India 2022</li>
+          <li>Leading Travel Company in India known for delivering personalized and exceptional travel experiences.</li>
+<li>Expertly curated domestic and international tour packages with transparent pricing and no hidden costs.</li>
+<li>Driven by innovation, leveraging cutting-edge technology to enhance customer satisfaction.</li>
+<li>Renowned for 24/7 customer support and a commitment to quality at every touchpoint.</li>
+<li>A trusted partner for unforgettable journeys, with a passion for creating lifelong memories.</li>
+
           </List>
 
         </Column>

@@ -16,33 +16,25 @@ function Strength() {
                     </div>
                     <div className="col-md-6 col-12 mt-3 text-center text-md-start">
                         <h1 className="fs-2 mb-3">
-                            Our Unrivalled <span>Strengths</span>
+                            About <span>TripStars Holidays LLP</span>
                         </h1>
                         <div className="grytxtht mb-2">
-                            We're one of the leading travel companies in India with a customer-centric approach.
+                            TripStars Holidays LLP is a leading travel company in India, known for delivering exceptional travel experiences.
                         </div>
                         <div className="blutxtht mb-2">
-                            Pioneered the models of No Convenience Fee* and Zero Hidden Cost.
+                            Offering customized tour packages with a focus on quality and customer satisfaction.
                         </div>
                         <div className="grytxtht mb-2">
-                            Offering "end-to-end" travel solution
+                            Expertly curated travel plans for both domestic and international destinations.
                         </div>
                         <div className="blutxtht mb-2">
-                            Using robust technologies for identifying customer touchpoints
+                            Committed to transparent pricing with no hidden costs and excellent customer support.
                         </div>
                         <div className="grytxtht mb-2">
-                            Providing high-quality and 24/7 customer support.
-                        </div>
-                        <div className="blutxtht mb-2">
-                            Consistent track record of financial and operational performance.
-                        </div>
-                        <div className="grytxtht mb-2">
-                            Wide distribution network supported by a hybrid platform.
-                        </div>
-                        <div className="blutxtht mb-2">
-                            Experienced management team with an established track record.
+                            Driven by innovation and guided by a passion for travel.
                         </div>
                     </div>
+
                 </div>
             </div>
         </>
