@@ -244,7 +244,7 @@ export default function Navbar() {
   return (
     <NavbarContainer className={navBg ? "active" : ""}>
       <Logo>
-        <a href="https://tripstarsholidays.com/" target="_blank" rel="noopener noreferrer">
+        <a href="https://tripstars.in/" target="_blank" rel="noopener noreferrer">
           <img src={logoImg} alt="TripStars Holidays" />
         </a>
       </Logo>
@@ -282,26 +282,26 @@ export default function Navbar() {
             <ul>
               <li className="category">
                 <strong>Domestic</strong>
-                <Link to="https://tripstarsholidays.com/ladakh">Ladakh</Link>
-                <Link to="https://tripstarsholidays.com/kerala">Kerala</Link>
-                <Link to="https://tripstarsholidays.com/kashmir">Kashmir</Link>
-                <Link to="https://tripstarsholidays.com/andaman">Andaman</Link>
-                <Link to="https://tripstarsholidays.com/goa">Goa</Link>
+                <Link to="https://tripstar.in/ladakh">Ladakh</Link>
+                <Link to="https://tripstars.in/kerala">Kerala</Link>
+                <Link to="https://tripstars.in/kashmir">Kashmir</Link>
+                <Link to="https://tripstars.in/andaman">Andaman</Link>
+                <Link to="https://tripstars.in/goa">Goa</Link>
               </li>
               <li className="category">
                 <strong>International</strong>
-                <Link to="https://tripstarsholidays.com/dubai">Dubai</Link>
-                <Link to="https://tripstarsholidays.com/thailand">Thailand</Link>
-                <Link to="https://tripstarsholidays.com/singapore">Singapore</Link>
-                <Link to="https://tripstarsholidays.com/malaysia">Malaysia</Link>
-                <Link to="https://tripstarsholidays.com/bali">Bali</Link>
-                <Link to="https://tripstarsholidays.com/hongkong">Hong Kong</Link>
-                <Link to="https://tripstarsholidays.com/europe">Europe</Link>
-                <Link to="https://tripstarsholidays.com/vietnam">Vietnam</Link>
-                <Link to="https://tripstarsholidays.com/maldives">Maldives</Link>
-                <Link to="https://tripstarsholidays.com/australia">Australia</Link>
-                <Link to="https://tripstarsholidays.com/mauritius">Mauritius</Link>
-                <Link to="https://tripstarsholidays.com/japan">Japan</Link>
+                <Link to="https://tripstars.in/dubai">Dubai</Link>
+                <Link to="https://tripstars.in/thailand">Thailand</Link>
+                <Link to="https://tripstars.in/singapore">Singapore</Link>
+                <Link to="https://tripstars.in/malaysia">Malaysia</Link>
+                <Link to="https://tripstars.in/bali">Bali</Link>
+                <Link to="https://tripstars.in/hongkong">Hong Kong</Link>
+                <Link to="https://tripstars.in/europe">Europe</Link>
+                <Link to="https://tripstars.in/vietnam">Vietnam</Link>
+                <Link to="https://tripstars.in/maldives">Maldives</Link>
+                <Link to="https://tripstars.in/australia">Australia</Link>
+                <Link to="https://tripstars.in/mauritius">Mauritius</Link>
+                <Link to="https://tripstars.in/japan">Japan</Link>
               </li>
             </ul>
           </Dropdown>
