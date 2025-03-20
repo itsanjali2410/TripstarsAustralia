@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navigation } from "swiper/modules";
+import { useState } from "react";
 
 // Importing images
 import family from "../../../assets/travelstyle/family 1.jpg";
@@ -19,6 +20,7 @@ import honeymoonIcon from "../../../assets/icons/honeymoon.svg";
 import adventureIcon from "../../../assets/icons/adventure.svg";
 import beachIcon from "../../../assets/icons/beach.svg";
 
+import Popup from "../../../components/common/Popup";
 // Styled components
 const Container = styled.div`
   padding: 0 15rem;
@@ -129,22 +131,28 @@ const popularDestinationsData: Destination[] = [
 ];
 
 export default function ChooseYour() {
+  const [selectedDestination, setSelectedDestination] = useState<string | null>(null);
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
   const navigate = useNavigate();
+  // Handle card click
+const handleCardClick = (destination: string) => {
+  setSelectedDestination(null); // Reset first to force a state change
+  setTimeout(() => setSelectedDestination(destination), 0); // Set the destination after a tiny delay
+};
 
-  const handleRedirect = (destination: string) => {
-    navigate(`/${destination.toLowerCase()}`);
+  
+  // Close popup
+  const closePopup = () => {
+    setSelectedDestination(null); // Close the popup
   };
 
   return (
     <Container>
-      {/* Title Section */}
       <Title>
         Choose Your <TravelStyleText>Travel Style</TravelStyleText>
       </Title>
 
-      {/* Travel Cards */}
       <CardsWrapper>
         <Swiper
           modules={[Navigation]}
@@ -167,7 +175,7 @@ export default function ChooseYour() {
         >
           {popularDestinationsData.map((item, index) => (
             <SwiperSlide key={index}>
-              <Card onClick={() => handleRedirect(item.name)}>
+              <Card onClick={() => handleCardClick(item.name)}>
                 <ImageWrapper>
                   <img src={item.imgUrl} alt={item.name} />
                   <Overlay>
@@ -180,6 +188,19 @@ export default function ChooseYour() {
           ))}
         </Swiper>
       </CardsWrapper>
+
+      {/* Render the popup if a destination is selected */}
+{/* Render the popup if a destination is selected */}
+{selectedDestination && (
+  <Popup
+    title={selectedDestination}
+    image={popularDestinationsData.find((item) => item.name === selectedDestination)?.imgUrl}
+    pricing="Starting from $499"  // Example placeholder pricing
+
+    onClose={closePopup}
+  />
+)}
+
     </Container>
   );
 }

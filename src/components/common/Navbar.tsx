@@ -283,7 +283,7 @@ export default function Navbar() {
             <ul>
               <li className="category">
                 <strong>Domestic</strong>
-                <Link to="https://tripstar.in/ladakh" onClick={isMobile ? toggleMenu : undefined}>Ladakh</Link>
+                <Link to="https://tripstars.in/ladakh" onClick={isMobile ? toggleMenu : undefined}>Ladakh</Link>
                 <Link to="https://tripstars.in/kerala" onClick={isMobile ? toggleMenu : undefined}>Kerala</Link>
                 <Link to="https://tripstars.in/kashmir" onClick={isMobile ? toggleMenu : undefined}>Kashmir</Link>
                 <Link to="https://tripstars.in/andaman" onClick={isMobile ? toggleMenu : undefined}>Andaman</Link>

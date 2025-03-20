@@ -259,13 +259,13 @@ const PaxCounter = styled.div`
   }
 `;
 interface PopupProps {
-  title: string;
-  image: string;
-  pricing: string;
-  info: { icon: string; text: string }[];
+  title?: string;
+  image?: string;
+  pricing?: string;
+  info?: { icon: string; text: string }[];
   onClose: () => void;
-
 }
+
 
 
 const Popup: React.FC<PopupProps> = ({ title, image, pricing, info, onClose}) => {

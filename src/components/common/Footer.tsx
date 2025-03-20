@@ -393,11 +393,11 @@ const footerSections: { title: string; links: FooterLink[] }[] = [
   {
     title: "Quick Links",
     links: [
-      { label: "Payments", href: "/payment" },
+      { label: "Payments", href: "/payments" },
       { label: "Travel Guides & Tips", href: "/travel-guides-tips" },
       { label: "FAQs", href: "/faqs" },
       { label: "Support / Help Center", href: "/support-help-center" },
-      { label: "About Us", href: "/about-us" },
+      { label: "About Us", href: "/aboutus" },
       { label: "Destinations", href: "/destinations" },
       { label: "Terms & Conditions", href: "/terms-conditions" },
       { label: "Privacy Policy", href: "/privacy-policy" },
