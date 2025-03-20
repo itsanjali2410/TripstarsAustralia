@@ -264,10 +264,11 @@ interface PopupProps {
   pricing: string;
   info: { icon: string; text: string }[];
   onClose: () => void;
+
 }
 
 
-const Popup: React.FC<PopupProps> = ({ title, onClose }) => {
+const Popup: React.FC<PopupProps> = ({ title, image, pricing, info, onClose}) => {
   const [isVisible, setIsVisible] = useState(false);
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [pax, setPax] = useState(1);
