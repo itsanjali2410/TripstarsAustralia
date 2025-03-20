@@ -266,11 +266,12 @@ export default function Navbar() {
           </svg>
         </li>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/Home" onClick={isMobile ? toggleMenu : undefined}>Home</Link>
         </li>
         <li>
-          <Link to="/aboutus">About Us</Link>
+          <Link to="/aboutus" onClick={isMobile ? toggleMenu : undefined}>About Us</Link>
         </li>
+
         <li
           className="dropdown"
           onClick={isMobile ? () => toggleDropdown("destination") : undefined} // Use click for mobile
@@ -282,26 +283,26 @@ export default function Navbar() {
             <ul>
               <li className="category">
                 <strong>Domestic</strong>
-                <Link to="https://tripstar.in/ladakh">Ladakh</Link>
-                <Link to="https://tripstars.in/kerala">Kerala</Link>
-                <Link to="https://tripstars.in/kashmir">Kashmir</Link>
-                <Link to="https://tripstars.in/andaman">Andaman</Link>
-                <Link to="https://tripstars.in/goa">Goa</Link>
+                <Link to="https://tripstar.in/ladakh" onClick={isMobile ? toggleMenu : undefined}>Ladakh</Link>
+                <Link to="https://tripstars.in/kerala" onClick={isMobile ? toggleMenu : undefined}>Kerala</Link>
+                <Link to="https://tripstars.in/kashmir" onClick={isMobile ? toggleMenu : undefined}>Kashmir</Link>
+                <Link to="https://tripstars.in/andaman" onClick={isMobile ? toggleMenu : undefined}>Andaman</Link>
+                <Link to="https://tripstars.in/goa" onClick={isMobile ? toggleMenu : undefined}>Goa</Link>
               </li>
               <li className="category">
                 <strong>International</strong>
-                <Link to="https://tripstars.in/dubai">Dubai</Link>
-                <Link to="https://tripstars.in/thailand">Thailand</Link>
-                <Link to="https://tripstars.in/singapore">Singapore</Link>
-                <Link to="https://tripstars.in/malaysia">Malaysia</Link>
-                <Link to="https://tripstars.in/bali">Bali</Link>
-                <Link to="https://tripstars.in/hongkong">Hong Kong</Link>
-                <Link to="https://tripstars.in/europe">Europe</Link>
-                <Link to="https://tripstars.in/vietnam">Vietnam</Link>
-                <Link to="https://tripstars.in/maldives">Maldives</Link>
-                <Link to="https://tripstars.in/australia">Australia</Link>
-                <Link to="https://tripstars.in/mauritius">Mauritius</Link>
-                <Link to="https://tripstars.in/japan">Japan</Link>
+                <Link to="https://tripstars.in/dubai" onClick={isMobile ? toggleMenu : undefined}>Dubai</Link>
+                <Link to="https://tripstars.in/thailand" onClick={isMobile ? toggleMenu : undefined}>Thailand</Link>
+                <Link to="https://tripstars.in/singapore" onClick={isMobile ? toggleMenu : undefined}>Singapore</Link>
+                <Link to="https://tripstars.in/malaysia" onClick={isMobile ? toggleMenu : undefined}>Malaysia</Link>
+                <Link to="https://tripstars.in/bali" onClick={isMobile ? toggleMenu : undefined}>Bali</Link>
+                <Link to="https://tripstars.in/hongkong" onClick={isMobile ? toggleMenu : undefined}>Hong Kong</Link>
+                <Link to="https://tripstars.in/europe" onClick={isMobile ? toggleMenu : undefined}>Europe</Link>
+                <Link to="https://tripstars.in/vietnam" onClick={isMobile ? toggleMenu : undefined}>Vietnam</Link>
+                <Link to="https://tripstars.in/maldives" onClick={isMobile ? toggleMenu : undefined}>Maldives</Link>
+                <Link to="https://tripstars.in/australia" onClick={isMobile ? toggleMenu : undefined}>Australia</Link>
+                <Link to="https://tripstars.in/mauritius" onClick={isMobile ? toggleMenu : undefined}>Mauritius</Link>
+                <Link to="https://tripstars.in/japan" onClick={isMobile ? toggleMenu : undefined}>Japan</Link>
               </li>
             </ul>
           </Dropdown>
@@ -315,16 +316,16 @@ export default function Navbar() {
         >
           <Link to="/">Themes</Link>
           <Dropdown isOpen={themeDropdownOpen}>
-              <li className="category">
-                <Link to="">Family</Link>
-                <Link to="/theme">Honeymoon</Link>
-                <Link to="">Adventure</Link>
-                <Link to="">Beach</Link>
-              </li>
+            <li className="category">
+              <Link to="">Family</Link>
+              <Link to="/theme" onClick={isMobile ? toggleMenu : undefined}>Honeymoon</Link>
+              <Link to="">Adventure</Link>
+              <Link to="">Beach</Link>
+            </li>
           </Dropdown>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact" onClick={isMobile ? toggleMenu : undefined}>Contact</Link>
         </li>
       </NavLinksContainer>
 
