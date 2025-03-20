@@ -64,6 +64,9 @@ function TechAchievment() {
   return (
     <Container>
       <Row>
+      <Column>
+          <Image src={team} alt="Tech Achievement" />
+        </Column>
         <Column>
           <Title>Technological Advancement</Title>
           <Paragraph>
@@ -76,9 +79,7 @@ function TechAchievment() {
             *In terms of air ticket bookings, based on the Crisil Report-Assessment of the OTA Industry in India, February 2021.
           </Paragraph> */}
         </Column>
-        <Column>
-          <Image src={team} alt="Tech Achievement" />
-        </Column>
+        
       </Row>
     </Container>
   );
