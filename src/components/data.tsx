@@ -180,6 +180,11 @@ import EuropeImage from '../../src/assets/tranding-offers/Europe 1.jpg';
 import DubaiImage from '../../src/assets/tranding-offers/Dubai.jpg';
 import BaliImage from '../../src/assets/tranding-offers/Bali.jpg';
 
+//himachal
+import himachal1 from "../../src/assets/Tripdetails/domestic/Himachal/Himachal (1).jpeg";
+import himachal2 from "../../src/assets/Tripdetails/domestic/Himachal/Himachal (10).jpg";
+import himachal3 from "../../src/assets/Tripdetails/domestic/Himachal/Himachal (12).jpg";
+import himachal4 from "../../src/assets/Tripdetails/domestic/Himachal/Himachal (14).jpg";
 // Card 1 - Bali Popular Destination
 export const Bali = [
   {
@@ -406,7 +411,7 @@ export const Europe = [
 export const Himachal = [
   {
     title: "Shimla & Manali Delight",
-    image: himachal,
+    image: himachal1,
     pricing: "₹39,299/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
@@ -415,7 +420,7 @@ export const Himachal = [
   },
   {
     title: "Shimla-Manali Magic",
-    image: himachal,
+    image: himachal2,
     pricing: "₹45,899/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
@@ -424,7 +429,7 @@ export const Himachal = [
   },
   {
     title: "Majestic Himachal",
-    image: himachal,
+    image: himachal3,
     pricing: "₹62,499/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "9N/10D" },
@@ -433,7 +438,7 @@ export const Himachal = [
   },
   {
     title: "Himalayan Blessings",
-    image: himachal,
+    image: himachal4,
     pricing: "₹68,599/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "10N/11D" },
