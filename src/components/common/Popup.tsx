@@ -11,6 +11,7 @@ import logo2 from "../../assets/popup/Awardwinners .png";
 import logo3 from "../../assets/popup/Customerservice.png";
 import axios from "axios";
 import ThankYou from "./thankyou";
+
 // Animation for popup fade-in
 const fadeIn = keyframes`
   from {
@@ -258,11 +259,15 @@ const PaxCounter = styled.div`
   }
 `;
 interface PopupProps {
-  item: any;
+  title: string;
+  image: string;
+  pricing: string;
+  info: { icon: string; text: string }[];
   onClose: () => void;
 }
 
-const Popup: React.FC<PopupProps> = ({ item, onClose }) => {
+
+const Popup: React.FC<PopupProps> = ({ title, onClose }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [pax, setPax] = useState(1);

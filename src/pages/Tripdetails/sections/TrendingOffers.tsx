@@ -14,6 +14,7 @@ import MaldivesImage from '../../../assets/tranding-offers/Maldives.jpg';
 import EuropeImage from '../../../assets/tranding-offers/Europe 1.jpg';
 import DubaiImage from '../../../assets/tranding-offers/Dubai.jpg';
 import BaliImage from '../../../assets/tranding-offers/Bali.jpg';
+import Popup from "../../../components/common/Popup";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -221,6 +222,22 @@ const TrendingOffers: React.FC<TrendingOffersProps> = ({ title, cards }) => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
+  const [selectedCard, setSelectedCard] = React.useState<TrendingOffersProps["cards"][0] | null>(null);
+
+  const handleCardClick = (card: TrendingOffersProps["cards"][0]) => {
+    // Close any existing popup first to ensure re-render
+    setSelectedCard(null); 
+  
+    // Use a short delay to allow state reset and force re-render
+    setTimeout(() => {
+      setSelectedCard(card);
+    }, 0);
+  };
+
+  const handleClosePopup = () => {
+    setSelectedCard(null); // Reset the selected card state when closing the popup
+  };
+
   useEffect(() => {
     const swiperElement = document.querySelector(
       ".swiper.trending-offers-slider"
@@ -237,26 +254,10 @@ const TrendingOffers: React.FC<TrendingOffersProps> = ({ title, cards }) => {
     }
   }, []);
 
-  // Add a function to handle card click navigation
-  // Add a function to handle card click navigation
-const handleCardClick = (title: string) => {
-  // Mapping card title to a dynamic path
-  const destination = title.toLowerCase(); // Convert title to lowercase for matching path (e.g., "andaman" or "ladakh")
-  navigate(`/${destination}`);
-};
-
   return (
     <SliderContainer>
       <SectionTitle>
         <TitileHeading>{title}</TitileHeading>
-        {/* <NavIcons> */}
-          {/* <button ref={prevRef}> */}
-            {/* Your SVG code for the left arrow */}
-          {/* </button> */}
-          {/* <button ref={nextRef}> */}
-            {/* Your SVG code for the right arrow*/}
-            {/* </button> */}
-        {/* </NavIcons> */}
       </SectionTitle>
       <Swiper
         className="trending-offers-slider"
@@ -284,7 +285,7 @@ const handleCardClick = (title: string) => {
       >
         {cards.map((card, index) => (
           <SwiperSlide key={index}>
-            <Card onClick={() => handleCardClick(card.title)}>
+            <Card onClick={() => handleCardClick(card)}>
               <PricingTag>{card.pricing}</PricingTag>
               <CardImage src={card.image} alt={card.title} />
               <CardOverlay>
@@ -320,12 +321,22 @@ const handleCardClick = (title: string) => {
                 </Info>
               </CardOverlay>
             </Card>
-            
           </SwiperSlide>
         ))}
       </Swiper>
+      {selectedCard && (
+  <Popup
+    title={selectedCard.title}
+    image={selectedCard.image}
+    pricing={selectedCard.pricing}
+    info={selectedCard.info}
+    onClose={handleClosePopup}
+  />
+)}
+
     </SliderContainer>
   );
 };
+
 
 export default TrendingOffers;
