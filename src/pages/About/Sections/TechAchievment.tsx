@@ -1,51 +1,66 @@
 import React from "react";
 import styled from "styled-components";
-import team from "../../../assets/aboutus/Tripstarsahemdabad.jpg";
+import team from "../../../assets/aboutus/Team.png";
+import achievement from "../../../assets/aboutus/Tripstarsahemdabad.jpg";
+
 // Styled Components
 const Container = styled.div`
-  padding: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 `;
 
 const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: space-between;
   align-items: center;
-  padding: 2.5rem;
-
-  @media (max-width: 768px) {
-    padding: 1rem;
-  }
+  gap: 2rem;
 `;
 
 const Column = styled.div`
   flex: 1;
   min-width: 300px;
+  padding: 1rem;
 
   @media (max-width: 768px) {
     text-align: center;
-    padding: 1rem;
   }
 `;
 
 const Title = styled.h1`
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #000;
+  font-weight: bold;
 
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
+  span {
+    color: #C8A466;
   }
+`;
+
+const Subtitle = styled.h4`
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #555;
 `;
 
 const Paragraph = styled.p`
   margin-bottom: 1.5rem;
   line-height: 1.6;
   color: #555;
+`;
 
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
+const List = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0;
+  color: #333;
+  font-size: 1rem;
 `;
 
 const Image = styled.img`
@@ -60,31 +75,25 @@ const Image = styled.img`
   }
 `;
 
-function TechAchievment() {
+function TechAchievement() {
   return (
     <Container>
       <Row>
-      
         <Column>
-        <h1>A Little About Us</h1>
-        <h4>LEADING TRAVEL WEBSITE</h4>
-        <p>
-          Welcome to Tripstars! We are a leading travel website dedicated to helping you plan the perfect vacation.
-          Our team is passionate about travel and is here to help you every step of the way.
-        </p>
-          {/* <Title>Unicorn Status and Beyond</Title>
+          <Title>A Little About Us</Title>
+          <Subtitle>LEADING TRAVEL WEBSITE</Subtitle>
           <Paragraph>
-            EaseMyTrip also joined the elite club of India’s first-ever 100 unicorns and remained India’s only company delivering consistent profits among all listed new-age tech businesses. Now, EaseMyTrip is strategically expanding its international presence and diversifying its offerings beyond air travel to include hotels and holidays. Additionally, we are banking on a franchise model to improve service accessibility for offline customers. Currently, overseeing a network of 13 franchise stores nationwide.
-            <br />
-            *In terms of air ticket bookings, based on the Crisil Report-Assessment of the OTA Industry in India, February 2021.
-          </Paragraph> */}
+            Welcome to TripStars! We are a leading travel website dedicated to helping you plan the perfect vacation.
+            Our team is passionate about travel and is here to help you every step of the way.
+          </Paragraph>
         </Column>
         <Column>
-          <Image src={team} alt="Tech Achievement" />
+          <Image src={achievement} alt="Tech Achievement" />
         </Column>
       </Row>
     </Container>
   );
 }
 
-export default TechAchievment;
+export { TechAchievement };
+
