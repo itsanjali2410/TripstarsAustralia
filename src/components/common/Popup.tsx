@@ -147,10 +147,10 @@ const RightPanel = styled.div`
   input,
   select {
     width: 100%;
-    padding: 13px;
+    padding: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 12px; /* Increased font size */
     outline: none;
     transition: border-color 0.3s;
 
@@ -159,8 +159,12 @@ const RightPanel = styled.div`
     }
 
     @media (max-width: 768px) {
-      padding: 13px;
+      padding: 15px;
+      font-size: 14px; /* Adjust font size for smaller screens */
     }
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 
   .custom-datepicker {
@@ -242,7 +246,7 @@ const PaxCounter = styled.div`
 
   button {
     padding: 5px 10px;
-    background: #ddd;
+    background: #000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -253,7 +257,7 @@ const PaxCounter = styled.div`
     }
 
     &:disabled {
-      background: #e0e0e0;
+      background: #000;
       cursor: not-allowed;
     }
   }
