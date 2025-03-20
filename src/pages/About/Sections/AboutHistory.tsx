@@ -8,7 +8,6 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   padding: 2rem 2rem;
-  min-height: 100vh;
 
   @media (min-width: 768px) {
     flex-direction: row;
