@@ -277,6 +277,23 @@ const ViewButton = styled.button`
     background: #ffd700;
   }
 `;
+const ScrollUpButton = styled.button`
+  position: fixed;
+  right: 10px;
+  bottom: 5%;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #d62828;
+  }
+`;
 
 const VideoScroller: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -297,6 +314,11 @@ const VideoScroller: React.FC = () => {
     Video4, 
     Video3,
   ];
+  const scrollToTop = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     videoRefs.current.forEach((video, index) => {
@@ -417,7 +439,9 @@ const VideoScroller: React.FC = () => {
           </VideoWrapper>
         ))}
       </VideoContainer>
-
+      <ScrollUpButton onClick={scrollToTop}>
+        ↑
+      </ScrollUpButton>
       {/* Desktop Description Container */}
       <DescriptionContainer>
         <Title>{videoData[activeIndex].title}</Title>
