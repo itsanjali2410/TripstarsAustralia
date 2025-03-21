@@ -272,7 +272,7 @@ interface PopupProps {
 
 
 
-const Popup: React.FC<PopupProps> = ({ title, image, pricing, info, onClose}) => {
+const Popup: React.FC<PopupProps> = ({ title, image, pricing, info, onClose }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [pax, setPax] = useState(1);
@@ -317,69 +317,69 @@ const Popup: React.FC<PopupProps> = ({ title, image, pricing, info, onClose}) =>
     e.preventDefault();
 
     if (!startDate) {
-        alert("Please select a travel date!");
-        return;  // ✅ Properly exiting the function
+      alert("Please select a travel date!");
+      return;  // ✅ Properly exiting the function
     }
 
     // Prepare the form data
     const formDataToSend = {
-        name: formData.name,
-        contact: formData.contact,
-        email: formData.email,
-        destination: formData.destination,
-        departure_city: formData.departureCity, // ✅ Correct field name
-        travel_date: startDate.toISOString().split("T")[0], // ✅ Ensuring correct date format
-        pax,
-        child,
+      name: formData.name,
+      contact: formData.contact,
+      email: formData.email,
+      destination: formData.destination,
+      departure_city: formData.departureCity, // ✅ Correct field name
+      travel_date: startDate.toISOString().split("T")[0], // ✅ Ensuring correct date format
+      pax,
+      child,
     };
 
     try {
-        // ✅ Send form data to backend API
-        const response = await axios.post(`${API_URL}/submit-form`, formDataToSend);
+      // ✅ Send form data to backend API
+      const response = await axios.post(`${API_URL}/submit-form`, formDataToSend);
 
-        if (response.status === 200) {
+      if (response.status === 200) {
 
-            navigate("/thankyou");
-        } 
+        navigate("/thankyou");
+      }
 
-        // ✅ Send email using EmailJS
-        // try {
-        //     await emailjs.send(
-        //         "service_eamkhsr", // Your Service ID
-        //         "template_1nh5ps2", // Your Template ID
-        //         formDataToSend,
-        //         "gScHv791km1kt3vL1" // Your Public Key
-        //     );
-        //     alert("📧 Email sent successfully to Admin!");
-        // } catch (emailError) {
-        //     console.warn("⚠️ Failed to send email via EmailJS:", emailError);
-        // }
+      // ✅ Send email using EmailJS
+      // try {
+      //     await emailjs.send(
+      //         "service_eamkhsr", // Your Service ID
+      //         "template_1nh5ps2", // Your Template ID
+      //         formDataToSend,
+      //         "gScHv791km1kt3vL1" // Your Public Key
+      //     );
+      //     alert("📧 Email sent successfully to Admin!");
+      // } catch (emailError) {
+      //     console.warn("⚠️ Failed to send email via EmailJS:", emailError);
+      // }
 
-        // ✅ Reset the form and close popup
-        closePopup(); // ✅ Using correct function
-        setFormData({
-            name: "",
-            contact: "",
-            email: "",
-            destination: "",
-            departureCity: "",
-        });
-        setStartDate(null);
-        setPax(1);
-        setChild(0);
+      // ✅ Reset the form and close popup
+      closePopup(); // ✅ Using correct function
+      setFormData({
+        name: "",
+        contact: "",
+        email: "",
+        destination: "",
+        departureCity: "",
+      });
+      setStartDate(null);
+      setPax(1);
+      setChild(0);
 
     } catch (error) {
-        console.error("❌ API Error:", error);
-        alert("❌ Failed to submit the form. Please try again.");
+      console.error("❌ API Error:", error);
+      alert("❌ Failed to submit the form. Please try again.");
     }
-};
+  };
 
-  
+
 
   return (
     <PopupContainer id="popup-container" isVisible={isVisible} onClick={handleOutsideClick}>
       <PopupContent>
-      <LeftPanel>
+        <LeftPanel>
           <div className="main-logo">
             <img src={logoImg} alt="Main Logo" />
           </div>
@@ -445,7 +445,21 @@ const Popup: React.FC<PopupProps> = ({ title, image, pricing, info, onClose}) =>
                   <option value="europe">Europe</option>
                   <option value="vietnam">Vietnam</option>
                   <option value="australia">Australia</option>
+                  <option value="ladakh">Ladakh</option>
+                  <option value="srilanka">Sri Lanka</option>
+                  <option value="nepal">Nepal</option>
+                  <option value="kashmir">Kashmir</option>
+                  <option value="goa">Goa</option>
+                  <option value="mauritius">Mauritius</option>
+                  <option value="bhutan">Bhutan</option>
+                  <option value="himachal">Himachal</option>
+                  <option value="kerala">Kerala</option>
+                  <option value="bangkok">Bangkok</option>
+                  <option value="baku">Baku</option>
+                  <option value="turkey">Turkey</option>
+                  <option value="Other">Any other place ?</option>
                 </select>
+
               </div>
               <div>
                 <input
