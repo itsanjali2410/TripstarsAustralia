@@ -57,8 +57,8 @@ const TrustindexWidget: React.FC = () => {
   return (
     <Container>
       {/* Page Heading */}
-      <h3 style={{ marginTop: "6%", marginBottom: "1%", textAlign: "center" }}>Google Reviews</h3>
-      <h6 style={{ marginTop: "1%", marginBottom: "4%", textAlign: "center" }}><center>Their love keep us growing</center></h6>
+      <h3 style={{ marginTop: "6%", marginBottom: "1%", textAlign: "left" }}>Google Reviews</h3>
+      <h6 style={{ marginTop: "1%", marginBottom: "4%", textAlign: "left" }}>Their love keep us growing</h6>
 
       <div ref={containerRef}>
         <div className="trustindex-widget">

@@ -24,7 +24,7 @@ import Popup from "../../../components/common/Popup";
 // Styled components
 const Container = styled.div`
   padding: 0 15rem;
-  text-align: center;
+  text-align: left;
 
   @media (max-width: 1340px) {
     padding: 0 5rem;
@@ -43,12 +43,13 @@ const Title = styled.h2`
   font-weight: bold;
   margin-bottom: 1.5rem;
   margin-top: 5%;
+  text-align : center;
 `;
 
 // Styled "Travel Style" with gold linear gradient and cursive font
 const TravelStyleText = styled.span`
-  font-family: "Dancing Script", cursive; /* Ensure this font is available */
-  background: linear-gradient(to right, #FFD700, #FFA500); /* Gold gradient */
+  font-family:  cursive; /* Ensure this font is available */
+  background: linear-gradient(to right,rgba(253, 215, 0, 0.82),rgb(255, 166, 0)); /* Gold gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 1.5rem;
@@ -149,7 +150,7 @@ const handleCardClick = (destination: string) => {
 
   return (
     <Container>
-      <Title>
+      <Title style={{ textAlign: "left" }}>
         Choose Your <TravelStyleText>Travel Style</TravelStyleText>
       </Title>
 
