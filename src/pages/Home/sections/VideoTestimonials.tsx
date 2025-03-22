@@ -170,7 +170,7 @@ export default function VideoTestimonials() {
             {testimonials.map((item, index) => (
               <SwiperSlide key={index}>
                 <Card>
-                  <a href="/video?index=">
+                <a href={`/video?index=${index}`}>
                     <ImageWrapper>
                       <img src={item.videoUrl} alt={item.title} />
                     </ImageWrapper>
