@@ -276,7 +276,7 @@ const StaticForm: React.FC = () => {
     setChild((prev) => (increment ? prev + 1 : prev - 1));
   };
 
-  const API_URL = "https://backend.tripstarsholidays.com"; // ✅ Correct API URL
+  const API_URL = "https://stagingbackend.tripstars.in"; // ✅ Correct API URL
 
   const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
