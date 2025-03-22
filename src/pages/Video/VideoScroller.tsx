@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 import { FaPlay, FaPause } from "react-icons/fa";
 import { FaHeart, FaShare, FaBookmark } from "react-icons/fa";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 // Import videos
 import Video8 from "../../assets/Videos/Testimonial/8.mp4";
 import Video1 from "../../assets/Videos/Testimonial/1.mp4";
@@ -232,214 +232,213 @@ font-size: 1rem;
 `;
 // Video details with tags included
 const videoData = [
-{
+  {
     title: "Bonani Chatterjee",
     description:
-     "An organized and well managed trip A special thanks to Alex for so efficiently planning everything. Also to our guides Lien in Hanoi, key in Da Nang and Leon in Saigon a big thank you for a wonderful job done. Also all the drivers were excellent and the cars were in excellent condition.",
+      "An organized and well managed trip A special thanks to Alex for so efficiently planning everything. Also to our guides Lien in Hanoi, key in Da Nang and Leon in Saigon a big thank you for a wonderful job done. Also all the drivers were excellent and the cars were in excellent condition.",
     video: Video1,
     tags: ["Bali", "Vacation", "Beaches", "Culture"],
-},
-{
+  },
+  {
     title: "Roma's Bali Vacation",
     description:
-     "Roma's unforgettable Bali adventure was filled with serene beaches, vibrant culture, and breathtaking landscapes. An experience of a lifetime!",
+      "Roma's unforgettable Bali adventure was filled with serene beaches, vibrant culture, and breathtaking landscapes. An experience of a lifetime!",
     video: Video2,
     tags: ["Bali", "Vacation", "Beaches", "Culture"],
-},
-{
+  },
+  {
     title: "Sandip's Dubai Vacation",
     description:
-     "Sandip's luxurious Dubai getaway showcased the city's iconic skyline, thrilling desert safaris, and unforgettable cultural experiences.",
+      "Sandip's luxurious Dubai getaway showcased the city's iconic skyline, thrilling desert safaris, and unforgettable cultural experiences.",
     video: Video3,
     tags: ["Dubai", "Vacation", "Luxury", "Culture"],
-},
-{
+  },
+  {
     title: "Mayur's Australia Vacation",
     description:
-     "Mayur's adventure down under was a blend of stunning coastlines, unique wildlife, and captivating cityscapes.",
+      "Mayur's adventure down under was a blend of stunning coastlines, unique wildlife, and captivating cityscapes.",
     video: Video4,
     tags: ["Australia", "Vacation", "Nature", "Wildlife"],
-},
-{
+  },
+  {
     title: "Binieka's Dubai Vacation",
     description:
-     "Binieka's exploration of Dubai was nothing short of a dream, featuring luxurious hotels, grand malls, and vibrant souks.",
+      "Binieka's exploration of Dubai was nothing short of a dream, featuring luxurious hotels, grand malls, and vibrant souks.",
     video: Video5,
     tags: ["Dubai", "Vacation", "Luxury", "Shopping"],
-},
-{
+  },
+  {
     title: "Nidhi Mundra Bali Trip",
     description:
-     "Nidhi's Bali escapade was filled with cultural insights, picturesque beaches, and a blend of adventure and relaxation.",
+      "Nidhi's Bali escapade was filled with cultural insights, picturesque beaches, and a blend of adventure and relaxation.",
     video: Video6,
     tags: ["Bali", "Trip", "Adventure", "Relaxation"],
-},
-{
+  },
+  {
     title: "Prathamesh Dubai Trip",
     description:
-     "Prathamesh's journey was filled with memorable experiences, stunning views, and heartwarming moments.",
+      "Prathamesh's journey was filled with memorable experiences, stunning views, and heartwarming moments.",
     video: Video7,
     tags: ["Travel", "Experiences", "Memories"],
-},
-{
+  },
+  {
     title: "Mrs. Arjal Patel",
     description:
-     "Mrs. Arjal Patel had a rejuvenating trip with beautiful views, relaxing accommodations, and impeccable hospitality.",
+      "Mrs. Arjal Patel had a rejuvenating trip with beautiful views, relaxing accommodations, and impeccable hospitality.",
     video: Video8,
     tags: ["Relaxation", "Hospitality", "Travel"],
-},
+  },
 ];
 
 const VideoScroller: React.FC = () => {
-const location = useLocation();
-const params = new URLSearchParams(location.search);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const params = new URLSearchParams(location.search);
 
-console.log(location.search); // Log query string
-
-const initialIndex = parseInt(params.get("index") || "0", 10); // Read index from URL
-const [activeIndex, setActiveIndex] = useState(initialIndex);
-const containerRef = useRef<HTMLDivElement>(null);
-const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-const [isPlaying, setIsPlaying] = useState(true);
-const [liked, setLiked] = useState(false);
-const [saved, setSaved] = useState(false);
-const [isMuted, setIsMuted] = useState(true);
-const [playingIndex, setPlayingIndex] = useState<number | null>(null);
-
-const videoSources = [Video1, Video2, Video3, Video4, Video5, Video6, Video7, Video8];
-const setVideoRef = (index: number) => (el: HTMLVideoElement | null) => {
+  // Get the index from the URL parameter (default to 0 if not found)
+  const initialIndex = parseInt(params.get("index") || "0", 10);
+  const [activeIndex, setActiveIndex] = useState(initialIndex);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const [isMuted, setIsMuted] = useState(true);
+  const [liked, setLiked] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const setVideoRef = (index: number) => (el: HTMLVideoElement | null) => {
     videoRefs.current[index] = el;
-};
+  };
 
-// Ensure activeIndex updates correctly from URL on mount
-useEffect(() => {
+  const videoSources = videoData.map((item) => item.video);
+
+  // ✅ Autoplay the active video and pause others
+  useEffect(() => {
     setActiveIndex(initialIndex);
-}, [initialIndex]);
-// 🔥 Ensure activeIndex updates when navigating via thumbnail selection
-useEffect(() => {
-    videoRefs.current.forEach((video, index) => {
-     if (video) {
-        if (index === activeIndex) {
-         video.muted = isMuted;
-         video.play().catch((error) => console.error("Autoplay failed:", error));
-        } else {
-         video.pause();
-        }
-     }
-    });
-}, [activeIndex, isMuted]);
+  }, [initialIndex]);
 
-const handleScroll = () => {
+  useEffect(() => {
+    videoRefs.current.forEach((video, index) => {
+      if (video) {
+        if (index === activeIndex) {
+          video.muted = false;
+          video.play().catch((error) => console.error("Autoplay failed:", error));
+        } else {
+          video.muted = true;
+          video.pause();
+        }
+      }
+    });
+  }, [activeIndex]);
+  
+
+  const togglePlayPause = (index: number) => {
+    videoRefs.current.forEach((video, idx) => {
+      if (video) {
+        if (idx === index) {
+          if (video.paused) {
+            video.muted = false;
+            video.play().then(() => {
+              setActiveIndex(index);
+            }).catch((error) => console.error("Playback failed:", error));
+          } else {
+            video.pause();
+          }
+        } else {
+          video.pause();
+        }
+      }
+    });
+  };
+
+  const handleScroll = () => {
     if (!containerRef.current) return;
 
     const videos = containerRef.current.children;
     let newIndex = activeIndex;
 
     for (let i = 0; i < videos.length; i++) {
-     const rect = videos[i].getBoundingClientRect();
-     if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+      const rect = videos[i].getBoundingClientRect();
+      if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
         newIndex = i;
         break;
-     }
+      }
     }
 
     if (newIndex !== activeIndex) {
-     setActiveIndex(newIndex); // Update the activeIndex based on scroll position
+      setActiveIndex(newIndex); // Update the activeIndex based on scroll position
+      navigate(`?index=${newIndex}`); // Update URL when video changes
     }
-};
+  };
 
-
-const togglePlayPause = (index: number) => {
-    videoRefs.current.forEach((video, idx) => {
-     if (video) {
-        if (idx === index) {
-         if (video.paused) {
-            video.muted = false;
-            video.play().then(() => setIsPlaying(true)).catch((error) => console.error("Playback failed:", error));
-         } else {
-            video.pause();
-            setIsPlaying(false);
-         }
-        } else {
-         video.pause(); // Pause all other videos
-        }
-     }
-    });
-};
-
-
-const handleShare = () => {
+  const handleShare = () => {
     if (navigator.share) {
-     navigator
+      navigator
         .share({
-         title: videoData[activeIndex].title,
-         text: videoData[activeIndex].description,
-         url: window.location.href,
+          title: videoData[activeIndex].title,
+          text: videoData[activeIndex].description,
+          url: window.location.href,
         })
         .then(() => console.log("Shared successfully!"))
         .catch((error) => console.error("Error sharing:", error));
     } else {
-     alert("Sharing not supported on this browser.");
+      alert("Sharing not supported on this browser.");
     }
-};
+  };
 
-return (
+  return (
     <Container>
-     <VideoContainer ref={containerRef} onScroll={handleScroll}>
+      <VideoContainer ref={containerRef} onScroll={handleScroll}>
         {videoSources.map((source, index) => (
-         <VideoWrapper key={index}>
+          <VideoWrapper key={index}>
             <Video
-             ref={setVideoRef(index)} // Assign each video reference correctly
-             src={source}
-             muted={isMuted}
-             className={index === activeIndex ? "active-video" : "hidden-video"}
-             onClick={() => togglePlayPause(index)}
+             ref={setVideoRef(index)}
+              src={source}
+              muted={index !== activeIndex && isMuted}
+              className={index === activeIndex ? "active-video" : "hidden-video"}
             />
             <Overlay>
-             <OverlayTitle>{videoData[index].title}</OverlayTitle>
-             <OverlayDescription>
+              <OverlayTitle>{videoData[index].title}</OverlayTitle>
+              <OverlayDescription>
                 {videoData[index].description.length > 80
-                 ? `${videoData[index].description.substring(0, 80)}...`
-                 : videoData[index].description}
-             </OverlayDescription>
-             {videoData[index].tags && videoData[index].tags.length > 0 && (
+                  ? `${videoData[index].description.substring(0, 80)}...`
+                  : videoData[index].description}
+              </OverlayDescription>
+              {videoData[index].tags && videoData[index].tags.length > 0 && (
                 <OverlayTags>
-                 {videoData[index].tags.map((tag, idx) => (
+                  {videoData[index].tags.map((tag, idx) => (
                     <OverlayTag key={idx}>{tag}</OverlayTag>
-                 ))}
+                  ))}
                 </OverlayTags>
-             )}
-             <ViewButton>View Packages</ViewButton>
+              )}
+              <ViewButton>View Packages</ViewButton>
             </Overlay>
             <FloatingButtons>
-             <ActionButton active={liked} onClick={() => setLiked(!liked)}>
+              <ActionButton active={liked} onClick={() => setLiked(!liked)}>
                 <FaHeart />
-             </ActionButton>
-             <ActionButton onClick={handleShare}>
+              </ActionButton>
+              <ActionButton onClick={handleShare}>
                 <FaShare />
-             </ActionButton>
-             <ActionButton active={saved} onClick={() => setSaved(!saved)}>
+              </ActionButton>
+              <ActionButton active={saved} onClick={() => setSaved(!saved)}>
                 <FaBookmark />
-             </ActionButton>
+              </ActionButton>
             </FloatingButtons>
-         </VideoWrapper>
+          </VideoWrapper>
         ))}
-     </VideoContainer>
-     <DescriptionContainer>
+      </VideoContainer>
+      <DescriptionContainer>
         <Title>{videoData[activeIndex].title}</Title>
         {videoData[activeIndex].tags && videoData[activeIndex].tags.length > 0 && (
-         <Tags>
+          <Tags>
             {videoData[activeIndex].tags.map((tag, idx) => (
-             <Tag key={idx}>{tag}</Tag>
+              <Tag key={idx}>{tag}</Tag>
             ))}
-         </Tags>
+          </Tags>
         )}
         <Hr />
         <Text>{videoData[activeIndex].description}</Text>
         <ViewButton>View Packages</ViewButton>
-     </DescriptionContainer>
+      </DescriptionContainer>
     </Container>
-);
+  );
 };
 
 export default VideoScroller;
