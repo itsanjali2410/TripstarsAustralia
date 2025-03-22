@@ -87,7 +87,18 @@ scrollbar-width: none;
 @media (min-width: 1024px) {
     width: 50%;
 }
+.video {
+  opacity: 0.5;
+  transition: opacity 0.4s ease-in-out;
+}
 
+.video.active {
+  opacity: 1;
+}
+
+.video.inactive {
+  opacity: 0.5;
+}
 
 `;
 
