@@ -712,7 +712,7 @@ export const similar2 = [
   {
     title: "Europe",
     image:EuropeImage,
-    pricing: "₹2,75,000/- Onwards",
+    pricing: "₹2,74,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -721,7 +721,7 @@ export const similar2 = [
   {
     title: "Dubai",
     image: DubaiImage,
-    pricing: "₹19,999/- Onwards",
+    pricing: "₹79,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },

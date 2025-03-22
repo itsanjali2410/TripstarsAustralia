@@ -141,25 +141,25 @@ const cards = [
   {
     image: EuropeImage,
     location: "Europe",
-    price: "₹ 2,75,000/-",
+    price: "₹ 2,74,999/-",
     url: "/europe",
   },
   {
     image: AustraliaImage,
     location: "Australia",
-    price: "₹ 2,49,000/-",
+    price: "₹ 2,48,999/-",
     url: "/australia",
   },
   {
     image: JapanImage,
     location: "Japan",
-    price: "₹ 3,29,000/-",
+    price: "₹ 3,28,999/-",
     url: "/japan",
   },
   {
     image: NewZealandImage,
     location: "New Zealand",
-    price: "₹ 3,49,000/-",
+    price: "₹ 3,49,999/-",
     url: "/new-zealand",
   },
   {
@@ -171,7 +171,7 @@ const cards = [
   {
     image: SouthAfricaImage,
     location: "South Africa",
-    price: "₹ 2,79,000/-",
+    price: "₹ 2,79,999/-",
     url: "/southAfrica",
   },
 ];

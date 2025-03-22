@@ -39,6 +39,7 @@ import TravelItinerary from "./sections/TravelItinerary.tsx";
 import InclusionsExclusions from "./sections/InclusionsExclusions";
 import TabbedTable from "./sections/TabbedTable.tsx";
 import PackageCard from "./sections/PackageCard.tsx";
+import StaticForm from "./sections/StaticForm.tsx";
 const TrendingOffersWrapper = styled.div`
   max-width: 1200px; /* Adjust the width for desktop */
   margin: 0 20px auto; /* Center the box on the page */
@@ -201,7 +202,10 @@ export default function Thirdpage() {
           <PackageCard />
 
           <HelpCard />
+
+          <StaticForm/>
         </RightDiv>
+        
       </SplitContainer>
     </>
   );
