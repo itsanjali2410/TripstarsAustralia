@@ -87,6 +87,8 @@ scrollbar-width: none;
 @media (min-width: 1024px) {
     width: 50%;
 }
+
+
 `;
 
 const Video = styled.video`
@@ -94,6 +96,19 @@ width: 100%;
 height: 100%;
 object-fit: cover;
 cursor: pointer;
+.video {
+  opacity: 0.4;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.video.active {
+  opacity: 1;
+}
+
+.video.inactive {
+  opacity: 0.4;
+}
+
 `;
 
 const PlayPauseButton = styled.button<{ show: boolean }>`
@@ -271,21 +286,21 @@ const videoData = [
     title: "Nidhi Mundra Bali Trip",
     description:
       "Nidhi's Bali escapade was filled with cultural insights, picturesque beaches, and a blend of adventure and relaxation.",
-    video: Video6,
+    video: Video8,
     tags: ["Bali", "Trip", "Adventure", "Relaxation"],
   },
   {
     title: "Prathamesh Dubai Trip",
     description:
       "Prathamesh's journey was filled with memorable experiences, stunning views, and heartwarming moments.",
-    video: Video7,
+    video: Video6,
     tags: ["Travel", "Experiences", "Memories"],
   },
   {
     title: "Mrs. Arjal Patel",
     description:
       "Mrs. Arjal Patel had a rejuvenating trip with beautiful views, relaxing accommodations, and impeccable hospitality.",
-    video: Video8,
+    video: Video7,
     tags: ["Relaxation", "Hospitality", "Travel"],
   },
 ];
@@ -308,10 +323,16 @@ const VideoScroller: React.FC = () => {
   };
 
   const videoSources = videoData.map((item) => item.video);
-
-  // ✅ Autoplay the active video and pause others
   useEffect(() => {
-    setActiveIndex(initialIndex);
+    if (activeIndex !== initialIndex) {
+      setActiveIndex(initialIndex);
+      
+      // Scroll smoothly to the updated video
+      const targetVideo = videoRefs.current[initialIndex];
+      if (targetVideo) {
+        targetVideo.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
   }, [initialIndex]);
 
   useEffect(() => {
@@ -327,25 +348,19 @@ const VideoScroller: React.FC = () => {
       }
     });
   }, [activeIndex]);
-  
 
   const togglePlayPause = (index: number) => {
-    videoRefs.current.forEach((video, idx) => {
-      if (video) {
-        if (idx === index) {
-          if (video.paused) {
-            video.muted = false;
-            video.play().then(() => {
-              setActiveIndex(index);
-            }).catch((error) => console.error("Playback failed:", error));
-          } else {
-            video.pause();
-          }
-        } else {
-          video.pause();
-        }
-      }
-    });
+    const video = videoRefs.current[index];
+    if (!video) return;
+
+    if (video.paused) {
+      video.muted = false;
+      video.play()
+        .then(() => setActiveIndex(index))
+        .catch((error) => console.error("Playback failed:", error));
+    } else {
+      video.pause();
+    }
   };
 
   const handleScroll = () => {
@@ -389,9 +404,9 @@ const VideoScroller: React.FC = () => {
         {videoSources.map((source, index) => (
           <VideoWrapper key={index}>
             <Video
-             ref={setVideoRef(index)}
+              ref={(el) => (videoRefs.current[index] = el)}
               src={source}
-              muted={index !== activeIndex && isMuted}
+              muted={index !== activeIndex }
               className={index === activeIndex ? "active-video" : "hidden-video"}
             />
             <Overlay>
