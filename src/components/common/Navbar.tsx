@@ -123,7 +123,7 @@ const Dropdown = styled.div<DropdownProps>`
   transition: all 0.5s ease-in-out;
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   z-index: 1;
-  width: 400px; /* Adjust width for both categories */
+  width: 285px; /* Adjust width for both categories */
   border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   padding: 1px;
@@ -153,7 +153,8 @@ const Dropdown = styled.div<DropdownProps>`
   }
 
   li {
-    padding: 0 0.6rem;
+
+    padding: 0.6rem;
     a {
       color: #000;
       text-decoration: none;
@@ -164,7 +165,7 @@ const Dropdown = styled.div<DropdownProps>`
 
 
   a {
-    font-size: 0.9rem;
+    font-size: 0.5rem;
     color: #000;
     text-decoration: none;
 
@@ -175,17 +176,25 @@ const Dropdown = styled.div<DropdownProps>`
 
   /* Responsive Design */
   @media (max-width: 768px) {
-
-    padding: 20px;
+    width: 280px; /* Full width on mobile */
+    padding: 15px;
     
     ul {
-      flex-direction: column; /* Stack items vertically */
-      justify-content: flex-start;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+      gap: 10px; /* Add spacing */
     }
 
     .category {
       width: 100%;
-      margin-bottom: 15px;
+    }
+
+    .category strong {
+      font-size: 1rem; /* Slightly smaller headings */
+    }
+
+    a {
+      font-size: 0.9rem; /* Better readability */
     }
   }
 `;
@@ -284,7 +293,7 @@ export default function Navbar() {
           <Dropdown isOpen={destinationDropdownOpen}>
             <ul>
               <li className="category">
-                <strong>Domestic</strong>
+                <strong style={{ fontSize: "1.2rem" }}>Domestic</strong>
                 <Link to="https://tripstars.in/ladakh" onClick={isMobile ? toggleMenu : undefined}>Ladakh</Link>
                 <Link to="https://tripstars.in/kerala" onClick={isMobile ? toggleMenu : undefined}>Kerala</Link>
                 <Link to="https://tripstars.in/kashmir" onClick={isMobile ? toggleMenu : undefined}>Kashmir</Link>
@@ -292,7 +301,7 @@ export default function Navbar() {
                 <Link to="https://tripstars.in/goa" onClick={isMobile ? toggleMenu : undefined}>Goa</Link>
               </li>
               <li className="category">
-                <strong>International</strong>
+                <strong style={{ fontSize: "1.2rem" }}>International</strong>
                 <Link to="https://tripstars.in/dubai" onClick={isMobile ? toggleMenu : undefined}>Dubai</Link>
                 <Link to="https://tripstars.in/thailand" onClick={isMobile ? toggleMenu : undefined}>Thailand</Link>
                 <Link to="https://tripstars.in/singapore" onClick={isMobile ? toggleMenu : undefined}>Singapore</Link>

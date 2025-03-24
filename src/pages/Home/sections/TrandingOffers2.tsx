@@ -235,7 +235,7 @@ const cards = [
       ],
     },
     {
-      title: 'North East',
+      title: 'North',
       image: north,  // ✅ Correct imported image
       pricing: '₹55,999/- Onwards',
       info: [

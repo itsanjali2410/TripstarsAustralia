@@ -17,7 +17,7 @@ import ChooseTravelStyle from "./sections/ChooseTravelStyle";
 import TravelStyleCarousel from "./sections/TravelStyleCarousel";
 import ExploreDestinations from "../Home/sections/ExploreDestinations";
 import TrendingOffers2 from "../../components/TrendingOffers2";
-import { Bali,Kashmir,Kerala,Andaman1,similar, Vietnam, Thailand, Europe, Dubai, Australia, Baku, Hongkong, North_East, Maldives, Mauritius, Singapore, southAfrica, Turkey, Ladakh, Goa, Himachal} from "../../components/data";
+import { Bali,Kashmir,Kerala,Andaman1,similar, Vietnam, Thailand, Europe, Dubai, Australia, Baku, Hongkong, North, Maldives, Mauritius, Singapore, Turkey, Ladakh, Goa, Himachal} from "../../components/data";
 import DestinationSlider from "./sections/DestinationSlider";
 import Choose_your from "./sections/Choose_your";
 import PopularDestinations from "../Home/sections/PopularDestinations";
@@ -66,11 +66,11 @@ export default function Tripdetailspage() {
   // Define a mapping for trending offers by location
   const trendingOffersMapping: Record<string, any[]> = {
     turkey: Turkey,
-    southAfrica: southAfrica,
+    // southAfrica: southAfrica,
     singapore: Singapore,
     mauritius: Mauritius,
     maldives: Maldives,
-    hongkong: Hongkong,
+    // hongkong: Hongkong,
     baku: Baku,
     bali: Bali,
     vietnam: Vietnam,
@@ -79,7 +79,7 @@ export default function Tripdetailspage() {
     thailand: Thailand,
     australia: Australia,
     ladakh: Ladakh,
-    north: North_East,
+    north: North,
     kashmir: Kashmir,
     kerala : Kerala,
     andaman: Andaman1,
