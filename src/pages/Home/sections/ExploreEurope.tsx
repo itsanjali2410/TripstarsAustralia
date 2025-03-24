@@ -1,175 +1,130 @@
 import React from "react";
-import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import Australia from "../../../assets/images/ExploreEurope/Australia 1.png";
-import Eiffel from "../../../assets/images/ExploreEurope/eiffel.png";
-import Japan from "../../../assets/images/ExploreEurope/Japan 1.png";
-import Swiss from "../../../assets/images/ExploreEurope/Swiss 1.png";
-
-// Styled-components for styling
-const Container = styled.div`
-  padding: 0 15rem;
-  @media (max-width: 1340px) {
-    padding: 0 5rem;
-  }
-  @media (max-width: 1080px) {
-    padding: 0 3rem;
-  }
-  @media (max-width: 768px) {
-    padding: 0 1rem;
-  }
-`;
-
-const CardsWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-
-
-  @media (max-width: 768px) {
-    gap: 1rem;
-
-  }
-`;
-
-const ImageWrapper = styled.div`
-  border-radius: 50%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0px auto; /* ✅ Centers the image */
-
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  @media (max-width: 1080px) {
-    width: 6rem;
-    height: 6rem;
-  }
-
-  @media (max-width: 768px) {
-    width: 4rem;
-    height: 4rem;
-  }
-`;
-
-const SectionTitle = styled.div`
-  padding-top: 3rem;
-  padding-bottom: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-text: center;
-   
-  @media (max-width: 1340px) {
-    padding-top: 4rem;
-    padding-bottom: 1rem;
-  }
-  @media (max-width: 1080px) {
-  }
-  @media (max-width: 768px) {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-  }
-`;
-
-const TitleHeading = styled.h2`
-  font-size: 1.5rem;
-  padding-top: 1.5rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  @media (max-width: 1080px) {
-    font-size: 2.3rem;
-  }
-  @media (max-width: 768px) {
-    font-size: 1.1rem;
-  }
-`;
-
-
-// Define the type for card data
-interface CardData {
-  name: string;
-  image: string;
-}
-
-const cardData: CardData[] = [
-  { name: "Australia", image: "https://images.pickyourtrail.com/austria_min_3bcfd0c970.png?w=99&h=99&format=auto&dpr=1&q=40" },
-  { name: "Finland", image: "https://images.pickyourtrail.com/finland_min_6b2b83ba7b.png?w=99&h=99&format=auto&dpr=1&q=40" },
-  { name: "Norway", image: "https://images.pickyourtrail.com/norway_min_b6c1dbb1da.png?w=99&h=99&format=auto&dpr=1&q=40" }, // Replace with actual Norway URL
-  { name: "Italy", image: "https://images.pickyourtrail.com/italy_min_6b0dbc2ad0.png?w=99&h=99&format=auto&dpr=1&q=40" }, // Replace with actual Italy URL
-  { name: "Switzerland", image: "https://images.pickyourtrail.com/switzerland_min_523a70365c.png?w=99&h=99&format=auto&dpr=1&q=40" }, // Replace with actual Switzerland URL
-  { name: "France", image: "https://images.pickyourtrail.com/france_min_3510647d1e.png?w=99&h=99&format=auto&dpr=1&q=40" }, // Replace with actual France URL
-  { name: "United Kingdom", image: "https://images.pickyourtrail.com/uk_min_32ffe790a9.png?w=99&h=99&format=auto&dpr=1&q=40" }, // Replace with actual UK URL
-  { name: "Turkey", image: "https://images.pickyourtrail.com/turkey_min_2529e81509.png?w=99&h=99&format=auto&dpr=1&q=40" }, // Replace with actual Turkey URL
-  { name: "Spain", image: "https://images.pickyourtrail.com/spain_min_b811280a6a.png?w=99&h=99&format=auto&dpr=1&q=40" }, // Replace with actual Spain URL
+const cardData = [
+  { image: "https://cdn.mos.cms.futurecdn.net/xbELjBNkaox36YPsoBakF.jpg", route: "/europe" },
+  { image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF2o7CCVhX3L4ZltcrLl6MvFB3ZGAgcz9qFg&s", route: "/europe" },
+  { image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2RlPP8F-UbM40JFcbK4Ugff8gQx0EUoZuwN0xbYiIgf1UWk4w0yI2FZ_R-LZ-2gh4BwU&usqp=CAU", route: "/europe" },
+  { image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRohk3fKrjiaKShBWyVKpq0NccCP4svY5fy7g&s", route: "/europe" },
+  { image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj9zuT-4R7fcXNgE0-kq5HMuKjwJlh3ySb3Q&s", route: "/europe" },
 ];
 
-
-// ExploreEurope Component
-const ExploreEurope: React.FC = () => {
+const ImageCards: React.FC = () => {
   const navigate = useNavigate();
 
-  // Handle card click to navigate based on the card name
-  const handleCardClick = (name: string) => {
-    const routes: { [key: string]: string } = {
-      Australia: "/australia",
-      Eiffel: "/eiffel",
-      Japan: "/japan",
-      Swiss: "/swiss",
-    };
-
-    navigate(routes[name] || "/europe");
-  };
-
   return (
-    <Container>
-      <SectionTitle>
-        <TitleHeading>Explore Europe</TitleHeading>
-      </SectionTitle>
-      <CardsWrapper>
-        <Swiper
-          loop
-          speed={1200}
-          autoplay={{ delay: 1800 }}
-          modules={[Autoplay]}
-          slidesPerView={4}
-          spaceBetween={20}
-          direction="horizontal"
-          breakpoints={{
-            1080: {
-              slidesPerView: 7,
-              spaceBetween: 60,
-            },
-            768: {
-              slidesPerView: 5,
-              spaceBetween: 30,
-            },
-          }}
-        >
-          {cardData.map((item, index) => (
-            <SwiperSlide
-              key={index}
-              onClick={() => handleCardClick(item.name)} // On card click
-              style={{ cursor: "pointer" , textAlign: "center", fontSize:"17px"}}
+    <div className="container mt-4" style={{ maxWidth: "100%" }}>
+      <style>
+        {`
+          @media (min-width: 1400px) {
+            .container { padding: 0 15rem; }
+          }
+          @media (max-width: 1300px) {
+            .container { padding: 0 15rem; }
+          }
+          @media (max-width: 992px) {
+            .container { padding: 0 2rem; }
+          }
+          // @media (max-width: 768px) {
+          //   .container { padding: 0 1rem; }
+          // }
+          @media (max-width: 375px) {
+            .container { padding: 0 0.5rem; }
+          }
+        `}
+      </style>
+
+      {/* Mobile View: Horizontal Scroll */}
+      <div
+        className="d-flex d-md-none overflow-auto gap-2 p-2"
+        style={{
+          whiteSpace: "nowrap",
+          scrollSnapType: "x mandatory",
+          overflowX: "auto",
+          paddingBottom: "10px",
+        }}
+      >
+        {cardData.map((item, index) => (
+          <div key={index} className="flex-shrink-0" style={{ scrollSnapAlign: "center" }}>
+            <div
+              className="card shadow-sm text-center"
+              style={{
+                cursor: "pointer",
+                borderRadius: "10px",
+                minWidth: "120px",
+                transition: "transform 0.2s ease-in-out",
+                padding: "0", // Removed padding
+                overflow: "hidden", // Ensures no unwanted gaps
+              }}
+              onClick={() => navigate(item.route)}
+              onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.08)")}
+              onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
             >
-              <ImageWrapper>
-                <img src={item.image} alt={item.name} />
-              </ImageWrapper>
-              <div className="box_title">{item.name}</div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </CardsWrapper>
-    </Container>
+              <img
+                src={item.image}
+                className="img-fluid"
+                style={{
+                  borderRadius: "8px",
+                  height: "80px",
+                  objectFit: "cover",
+                  width: "100%", // Ensures full width
+                  display: "block", // Removes any unwanted spaces below the image
+                }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Medium & Large Screens: Grid Layout */}
+      <div
+        className="d-none d-md-grid"
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+          gap: "10px",
+          justifyContent: "center",
+        }}
+      >
+        {cardData.map((item, index) => (
+          <div key={index} className="p-1">
+            <div
+              className="card shadow-sm text-center"
+              style={{
+                cursor: "pointer",
+                borderRadius: "10px",
+                transition: "transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out",
+                padding: "0", // Removed padding
+                overflow: "hidden", // Ensures no unwanted gaps
+              }}
+              onClick={() => navigate(item.route)}
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = "scale(1.05)";
+                e.currentTarget.style.boxShadow = "0px 4px 10px rgba(0, 0, 0, 0.2)";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.boxShadow = "0px 2px 5px rgba(0, 0, 0, 0.1)";
+              }}
+            >
+              <img
+                src={item.image}
+                className="img"
+                style={{
+                  borderRadius: "8px",
+                  height: "100px",
+                  objectFit: "cover",
+                  width: "100%", // Ensures full width
+                  display: "block", // Removes unwanted spaces
+                }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
-export default ExploreEurope;
+export default ImageCards;

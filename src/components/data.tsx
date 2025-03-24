@@ -837,41 +837,41 @@ export const similar = [
 //tanvi added data
 export const Australia = [
   {
-    title: "Sydney Opera House",
+    title: "Best Of Australia",
     image: australia2,
-    pricing: "₹19,999/- Onwards",
+    pricing: "₹1,42,399/- Onwards",
     info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "9N/10D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
   {
-    title: "Sydney Harbour Bridge",
+    title: "Highlights of Australia",
     image: australia3,
-    pricing: "₹55,327/- Onwards",
+    pricing: "₹1,49,199/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
-  {
-    title: "Twelve Apostles",
-    image: australia4,
-    pricing: "₹35,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Eyre Highway",
-    image: australia5,
-    pricing: "₹49,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Twelve Apostles",
+  //   image: australia4,
+  //   pricing: "₹35,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "Eyre Highway",
+  //   image: australia5,
+  //   pricing: "₹49,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
 ];
 
 export const southAfrica = [
@@ -1086,24 +1086,24 @@ export const Baku = [
 ];
 
 export const  Hongkong = [
-  {
-    title: "Victoria Harbour",
-    image: hong1,
-    pricing: "₹60,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Disneyland",
-    image: hong2,
-    pricing: "₹19,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Victoria Harbour",
+  //   image: hong1,
+  //   pricing: "₹60,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "Disneyland",
+  //   image: hong2,
+  //   pricing: "₹19,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
   // {
   //   title: "Andaman",
   //   image: hong3,
@@ -1113,53 +1113,53 @@ export const  Hongkong = [
   //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
   //   ],
   // },
-  {
-    title: "Ocean Park Hong Kong",
-    image: hong4,
-    pricing: "₹35,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "The Venetian Macao",
-    image: hong5,
-    pricing: "₹49,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Ocean Park Hong Kong",
+  //   image: hong4,
+  //   pricing: "₹35,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "The Venetian Macao",
+  //   image: hong5,
+  //   pricing: "₹49,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
 
-  {
-    title: "Lan Kwai Fong & Soho",
-    image: hong7,
-    pricing: "₹19,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Lan Kwai Fong & Soho",
+  //   image: hong7,
+  //   pricing: "₹19,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
 
-  {
-    title: "Repulse Bay & Stanley Market",
-    image: hong9,
-    pricing: "₹35,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Tai O Fishing Village",
-    image: hong10,
-    pricing: "₹49,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Repulse Bay & Stanley Market",
+  //   image: hong9,
+  //   pricing: "₹35,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "Tai O Fishing Village",
+  //   image: hong10,
+  //   pricing: "₹49,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
 ];
 //kashmir
 export const Kashmir = [
@@ -1202,111 +1202,111 @@ export const Kashmir = [
 ];
 //japan
 export const Japan = [
-  {
-    title: "Visit Mt Fuji and Hakone ",
-    image: japan1,
-    pricing: "₹79,199/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Ride a go kart through the streets of Tokyo ",
-    image:japan2,
-    pricing: "₹19,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Take a food tour of the Tsukiji Fish Market ",
-    image: japan4,
-    pricing: "₹35,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Go bar hopping in Shinjuku ",
-    image: japan5,
-    pricing: "₹49,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Sumo show with an authentic wrestlers’ dinner",
-    image: japan6,
-    pricing: "₹49,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Kimono Tea Ceremony",
-    image: japan7,
-    pricing: "₹49,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Take a sushi-making class",
-    image: japan8,
-    pricing: "₹49,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Visit Mt Fuji and Hakone ",
+  //   image: japan1,
+  //   pricing: "₹79,199/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "Ride a go kart through the streets of Tokyo ",
+  //   image:japan2,
+  //   pricing: "₹19,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "Take a food tour of the Tsukiji Fish Market ",
+  //   image: japan4,
+  //   pricing: "₹35,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "Go bar hopping in Shinjuku ",
+  //   image: japan5,
+  //   pricing: "₹49,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "Sumo show with an authentic wrestlers’ dinner",
+  //   image: japan6,
+  //   pricing: "₹49,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "Kimono Tea Ceremony",
+  //   image: japan7,
+  //   pricing: "₹49,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "Take a sushi-making class",
+  //   image: japan8,
+  //   pricing: "₹49,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
   
 ];
 
 
 export const Malaysia = [
-  {
-    title: "Petronas Twin Towers",
-    image: malaysia1,
-    pricing: "₹29,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Batu Caves",
-    image: malaysia2,
-    pricing: "₹19,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Petronas Twin Towers",
+  //   image: malaysia1,
+  //   pricing: "₹29,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "Batu Caves",
+  //   image: malaysia2,
+  //   pricing: "₹19,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
 
-  {
-    title: "Jenting Hiland",
-    image: malaysia4,
-    pricing: "₹35,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Kuala Lumpur",
-    image: malaysia5,
-    pricing: "₹49,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Jenting Hiland",
+  //   image: malaysia4,
+  //   pricing: "₹35,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "Kuala Lumpur",
+  //   image: malaysia5,
+  //   pricing: "₹49,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
 ];
 
 export const Maldives = [
