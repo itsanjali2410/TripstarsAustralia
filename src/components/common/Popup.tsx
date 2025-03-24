@@ -311,7 +311,7 @@ const Popup: React.FC<PopupProps> = ({ title, image, pricing, info, onClose }) =
   const handlePaxChange = (increment: boolean) => setPax((prev) => (increment ? prev + 1 : prev - 1));
   const handleChildChange = (increment: boolean) => setChild((prev) => (increment ? prev + 1 : prev - 1));
 
-  const API_URL = "https://backend.tripstarsholidays.com"; // ✅ Ensure the correct backend URL
+  const API_URL = "https://stagingbackend.tripstars.in"; // ✅ Ensure the correct backend URL
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

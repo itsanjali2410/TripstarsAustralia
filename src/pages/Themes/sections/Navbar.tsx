@@ -255,7 +255,7 @@ export default function Navbar() {
                 <Link to="https://tripstarsholidays.com/singapore">Singapore</Link>
                 <Link to="https://tripstarsholidays.com/malaysia">Malaysia</Link>
                 <Link to="https://tripstarsholidays.com/bali">Bali</Link>
-                <Link to="https://tripstarsholidays.com/hong-kong">Hong Kong</Link>
+                <Link to="https://tripstarsholidays.com/hongkong">Hong Kong</Link>
                 <Link to="https://tripstarsholidays.com/europe">Europe</Link>
                 <Link to="https://tripstarsholidays.com/vietnam">Vietnam</Link>
                 <Link to="https://tripstarsholidays.com/maldives">Maldives</Link>

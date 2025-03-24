@@ -14,13 +14,17 @@ const ImageCards: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="container mt-4" style={{ maxWidth: "100%" }}>
+    <div className="container mt-3" style={{ maxWidth: "100%" }}
+    >
       <style>
         {`
+          @media (max-width: 2000px) {
+            .container { padding: 0 1rem; }
+          }
           @media (min-width: 1400px) {
             .container { padding: 0 15rem; }
           }
-          @media (max-width: 1300px) {
+          @media (max-width: 1370px) {
             .container { padding: 0 15rem; }
           }
           @media (max-width: 992px) {

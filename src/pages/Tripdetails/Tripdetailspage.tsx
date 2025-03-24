@@ -70,7 +70,6 @@ export default function Tripdetailspage() {
     singapore: Singapore,
     mauritius: Mauritius,
     maldives: Maldives,
-
     hongkong: Hongkong,
     baku: Baku,
     bali: Bali,
