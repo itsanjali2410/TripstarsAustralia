@@ -258,13 +258,7 @@ font-size: 1rem;
 `;
 // Video details with tags included
 const videoData = [
-  {
-    title: "Bonani Chatterjee",
-    description:
-      "An organized and well managed trip A special thanks to Alex for so efficiently planning everything. Also to our guides Lien in Hanoi, key in Da Nang and Leon in Saigon a big thank you for a wonderful job done. Also all the drivers were excellent and the cars were in excellent condition.",
-    video: Video1,
-    tags: ["Bali", "Vacation", "Beaches", "Culture"],
-  },
+  
   {
     title: "Roma's Bali Vacation",
     description:
@@ -313,6 +307,13 @@ const videoData = [
       "Mrs. Arjal Patel had a rejuvenating trip with beautiful views, relaxing accommodations, and impeccable hospitality.",
     video: Video7,
     tags: ["Relaxation", "Hospitality", "Travel"],
+  },
+  {
+    title: "Bonani Chatterjee",
+    description:
+      "An organized and well managed trip A special thanks to Alex for so efficiently planning everything. Also to our guides Lien in Hanoi, key in Da Nang and Leon in Saigon a big thank you for a wonderful job done. Also all the drivers were excellent and the cars were in excellent condition.",
+    video: Video1,
+    tags: ["Bali", "Vacation", "Beaches", "Culture"],
   },
 ];
 

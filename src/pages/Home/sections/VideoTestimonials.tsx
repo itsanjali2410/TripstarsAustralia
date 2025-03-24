@@ -126,7 +126,7 @@ const ImageWrapper = styled.div`
 
 const testimonials = [
   // { videoUrl: Video8, title: "Bonani Chatterjee"},
-  { videoUrl: Video1, title: "Bonani Chatterjee" },
+ 
   { videoUrl: Video2, title: "Roma's Bali Vacation" },
   { videoUrl: Video3, title: "Sandip's Dubai Vacation" },
   { videoUrl: Video4, title: "Mayur's Australia Vacation" },
@@ -134,6 +134,7 @@ const testimonials = [
   { videoUrl: Video6, title: "Nidhi Mundra Bali Trip" },
   { videoUrl: Video7, title: "Prathamesh Dubai Trip" },
   { videoUrl: Video8, title: "Mrs. Arjal Patel" },
+  { videoUrl: Video1, title: "Bonani Chatterjee" },
   ];
 
 export default function VideoTestimonials() {
