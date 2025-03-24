@@ -354,7 +354,7 @@ const footerSections: { title: string; links: FooterLink[] }[] = [
       { label: "Kashmir", href: "/kashmir" },
       { label: "Goa", href: "/goa" },
       { label: "Nepal", href: "/nepal" },
-      { label: "North East", href: "/northeast" },
+      { label: "North", href: "/northeast" },
     ],
   },
   {

@@ -14,34 +14,47 @@ const ImageCards: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="container mt-3" style={{ maxWidth: "100%" }}
-    >
+    <div className="container mt-3" style={{ maxWidth: "100%" }}>
+      {/* ✅ Responsive Padding Rules */}
       <style>
         {`
-          @media (max-width: 2000px) {
-            .container { padding: 0 1rem; }
-          }
           @media (min-width: 1400px) {
             .container { padding: 0 15rem; }
           }
+          @media (max-width: 1399px) {
+            .container { padding: 0 10rem; }
+          }
           @media (max-width: 1370px) {
-            .container { padding: 0 15rem; }
+            .container { padding: 0 8rem; }
+          }
+          @media (max-width: 1200px) {
+            .container { padding: 0 5rem; }
           }
           @media (max-width: 992px) {
             .container { padding: 0 2rem; }
           }
-          // @media (max-width: 768px) {
-          //   .container { padding: 0 1rem; }
-          // }
+          @media (max-width: 768px) {
+            .container { padding: 0 1rem; }
+          }
           @media (max-width: 375px) {
             .container { padding: 0 0.5rem; }
           }
         `}
       </style>
 
-      {/* Mobile View: Horizontal Scroll */}
+      {/* ✅ Title with Uppercase & Smaller Font */}
+      <h2 className="text-left mb-4" style={{
+        fontSize: "1.5rem",
+        fontWeight: "bold",
+        textTransform: "uppercase",
+        color: "#000"
+      }}>
+        Explore Europe
+      </h2>
+
+      {/* ✅ Mobile View: Horizontal Scroll */}
       <div
-        className="d-flex d-md-none overflow-auto gap-2 p-2"
+        className="d-flex d-md-none overflow-auto gap-2 p-2 mb-4"
         style={{
           whiteSpace: "nowrap",
           scrollSnapType: "x mandatory",
@@ -58,13 +71,12 @@ const ImageCards: React.FC = () => {
                 borderRadius: "10px",
                 minWidth: "120px",
                 transition: "transform 0.2s ease-in-out",
-                padding: "0", // Removed padding
-                overflow: "hidden", // Ensures no unwanted gaps
+                padding: "0",
+                overflow: "hidden",
               }}
               onClick={() => navigate(item.route)}
-              onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.08)")}
-              onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
-            >
+              onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.08)") }
+              onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}>
               <img
                 src={item.image}
                 className="img-fluid"
@@ -72,8 +84,8 @@ const ImageCards: React.FC = () => {
                   borderRadius: "8px",
                   height: "80px",
                   objectFit: "cover",
-                  width: "100%", // Ensures full width
-                  display: "block", // Removes any unwanted spaces below the image
+                  width: "100%",
+                  display: "block",
                 }}
               />
             </div>
@@ -81,14 +93,15 @@ const ImageCards: React.FC = () => {
         ))}
       </div>
 
-      {/* Medium & Large Screens: Grid Layout */}
+      {/* ✅ Medium & Large Screens: Grid Layout */}
       <div
-        className="d-none d-md-grid"
+        className="d-none d-md-grid mb-4"
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
-          gap: "10px",
+          gap: "15px",
           justifyContent: "center",
+          padding: "10px",
         }}
       >
         {cardData.map((item, index) => (
@@ -99,8 +112,8 @@ const ImageCards: React.FC = () => {
                 cursor: "pointer",
                 borderRadius: "10px",
                 transition: "transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out",
-                padding: "0", // Removed padding
-                overflow: "hidden", // Ensures no unwanted gaps
+                padding: "0",
+                overflow: "hidden",
               }}
               onClick={() => navigate(item.route)}
               onMouseOver={(e) => {
@@ -119,8 +132,8 @@ const ImageCards: React.FC = () => {
                   borderRadius: "8px",
                   height: "100px",
                   objectFit: "cover",
-                  width: "100%", // Ensures full width
-                  display: "block", // Removes unwanted spaces
+                  width: "100%",
+                  display: "block",
                 }}
               />
             </div>

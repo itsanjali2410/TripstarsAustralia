@@ -283,11 +283,11 @@ export const destinationsData = {
       ],
     },
   
-    north_east: {
+    north: {
       banner: {
         image: "https://www.northeastguide.com/wp-content/uploads/2022/09/Dzuko-Valley-Trekking.jpg",
-        title: "North East India",
-        description: "Discover the hidden beauty and vibrant culture of North East India.",
+        title: "North India",
+        description: "Discover the hidden beauty and vibrant culture of North India.",
       },
       thingsToDo: [
         { name: "Forest Trekking", image: vietnamImg1 },
@@ -449,8 +449,8 @@ export const destinationsData = {
       { name: "Hong Kong Disneyland", image: hongkongImg1 },
       { name: "Ocean Park", image: hongkongImg2 },
       { name: "Shanghai Tower", image: hongkongImg3 },
-      { name: "Sky 100 Hong Kong Observation Deck", image: hongkongImg4 },
-      { name: "Ten Thousand Buddhas Monastery", image: hongkongImg5 },
+      { name: "Sky 100 Hong Kong", image: hongkongImg4 },
+      { name: "Ten Thousand Buddhas ", image: hongkongImg5 },
       { name: "Tian Tan Buddha", image: hongkongImg6 },
       { name: "Victoria Harbour", image: hongkongImg7 },
     ],
@@ -630,8 +630,8 @@ export const destinationsData = {
       { name: "Hong Kong Disneyland", image: hongkongImg1 },
       { name: "Ocean Park", image: hongkongImg2 },
       { name: "Shanghai Tower", image: hongkongImg3 },
-      { name: "Hong Kong Observation Deck", image: hongkongImg4 },
-      { name: "Ten Thousand Buddhas Monastery", image: hongkongImg5 },
+      { name: "Observation Deck", image: hongkongImg4 },
+      { name: "Buddhas Monastery", image: hongkongImg5 },
       { name: "Tian Tan Buddha", image: hongkongImg6 },
       { name: "Victoria Harbour", image: hongkongImg7 },
     ],

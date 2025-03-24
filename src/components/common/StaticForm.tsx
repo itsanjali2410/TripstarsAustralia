@@ -211,7 +211,7 @@ const PaxCounter = styled.div`
   }
 
   button {
-    padding: 5px 10px;
+    padding: 5px 12px;
     background: #000;
     color: #fff;
     border: none;
@@ -224,7 +224,6 @@ const PaxCounter = styled.div`
     }
 
     &:disabled {
-      background: #666;
       cursor: not-allowed;
     }
   }
