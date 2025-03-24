@@ -244,7 +244,7 @@ export default function Navbar() {
   return (
     <NavbarContainer className={navBg ? "active" : ""}>
       <Logo>
-        <a href="https://tripstars.in/" target="_blank" rel="noopener noreferrer">
+        <a href="https://tripstars.in/" rel="noopener noreferrer">
           <img src={logoImg} alt="TripStars Holidays" />
         </a>
       </Logo>

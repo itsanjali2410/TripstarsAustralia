@@ -1201,7 +1201,7 @@ export const Kashmir = [
   },
 ];
 //japan
-export const Japan = [
+// export const Japan = [
   // {
   //   title: "Visit Mt Fuji and Hakone ",
   //   image: japan1,
@@ -1266,8 +1266,6 @@ export const Japan = [
   //   ],
   // },
   
-];
-
 
 export const Malaysia = [
   // {

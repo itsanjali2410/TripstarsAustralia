@@ -17,7 +17,7 @@ import ChooseTravelStyle from "./sections/ChooseTravelStyle";
 import TravelStyleCarousel from "./sections/TravelStyleCarousel";
 import ExploreDestinations from "../Home/sections/ExploreDestinations";
 import TrendingOffers2 from "../../components/TrendingOffers2";
-import { Bali,Kashmir,Kerala,Andaman1,similar, Vietnam, Thailand, Europe, Dubai, Australia, Baku, Hongkong, Japan, North_East, Maldives, Mauritius, Singapore, southAfrica, Turkey, Ladakh, Goa, Himachal} from "../../components/data";
+import { Bali,Kashmir,Kerala,Andaman1,similar, Vietnam, Thailand, Europe, Dubai, Australia, Baku, Hongkong, North_East, Maldives, Mauritius, Singapore, southAfrica, Turkey, Ladakh, Goa, Himachal} from "../../components/data";
 import DestinationSlider from "./sections/DestinationSlider";
 import Choose_your from "./sections/Choose_your";
 import PopularDestinations from "../Home/sections/PopularDestinations";
@@ -70,7 +70,7 @@ export default function Tripdetailspage() {
     singapore: Singapore,
     mauritius: Mauritius,
     maldives: Maldives,
-    japan: Japan,
+
     hongkong: Hongkong,
     baku: Baku,
     bali: Bali,
