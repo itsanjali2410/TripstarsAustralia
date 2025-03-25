@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate
 import styled from "styled-components";
 import { useSwipeable } from "react-swipeable";
 // Importing images from the assets folder
-import image1 from "../../../assets/advertisebanner/banner-1.jpg";
+import image1 from "../../../assets/advertisebanner/banner-1.webp";
 import image2 from "../../../assets/advertisebanner/banner-2.webp";
 import image3 from "../../../assets/advertisebanner/banner-3.webp";
 import image4 from "../../../assets/advertisebanner/banner-4.webp";

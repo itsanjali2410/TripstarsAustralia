@@ -1,5 +1,5 @@
 import React from "react";
-import abouthistory from "../../../assets/aboutus/AboutHistory.jpg";
+import abouthistory from "../../../assets/aboutus/AboutHistory.webp";
 
 function AboutHistory() {
   return (

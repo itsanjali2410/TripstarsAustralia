@@ -8,7 +8,7 @@ import emailjs from "@emailjs/browser";
 import logo1 from "../../assets/popup/Customers.png";
 import logo2 from "../../assets/popup/Awardwinners .png";
 import logo3 from "../../assets/popup/Customerservice.png";
-import logoImg from "../../assets/images/logo/logo.png";
+import logoImg from "../../assets/images/logo/logo.webp";
 import axios from "axios";
 // Optional fade-in animation (can be removed if not needed)
 const fadeIn = keyframes`

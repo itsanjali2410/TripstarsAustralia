@@ -1,10 +1,10 @@
 import React from "react";
-import img1 from "../../../assets/aboutus/premium/16 years of experience.png";
-import img2 from "../../../assets/aboutus/premium/20k+ customers.png";
-import img3 from "../../../assets/aboutus/premium/Destination guide.png";
-import img4 from "../../../assets/aboutus/premium/customer service (1).png";
-import img5 from "../../../assets/aboutus/premium/indian meals.png";
-import img6 from "../../../assets/aboutus/premium/managed HNIs & celebrities.png";
+import img1 from "../../../assets/aboutus/premium/16 years of experience.webp";
+import img2 from "../../../assets/aboutus/premium/20k+ customers.webp";
+import img3 from "../../../assets/aboutus/premium/Destination guide.webp";
+import img4 from "../../../assets/aboutus/premium/customer service (1).webp";
+import img5 from "../../../assets/aboutus/premium/indian meals.webp";
+import img6 from "../../../assets/aboutus/premium/managed HNIs & celebrities.webp";
 
 function Premium() {
   return (

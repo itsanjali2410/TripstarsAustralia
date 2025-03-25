@@ -4,8 +4,8 @@ import DesktopFooter from "./DesktopFooter";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { AiFillPhone } from "react-icons/ai";
 import { BsWhatsapp } from "react-icons/bs";
-import footerimage from "../../assets/footer/footer-desktop(2).png";
-import footermobike from "../../assets/footer/footer-mobile.png";
+import footerimage from "../../assets/footer/footer-desktop.webp";
+import footermobike from "../../assets/footer/footer-mobile.webp";
 // Styled Components
 const FooterContainer = styled.footer`
   background-color: #101820;
