@@ -70,7 +70,7 @@ const Table = styled.table`
   }
 
   th {
-    background-color: rgb(255, 218, 7);
+    background-color: rgb(0, 0, 0);
     color: #ffffff;
     font-weight: 600;
     text-transform: uppercase;

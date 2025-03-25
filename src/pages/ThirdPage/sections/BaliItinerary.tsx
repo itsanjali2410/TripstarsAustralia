@@ -5,7 +5,7 @@ import { FaChevronDown, FaChevronRight } from "react-icons/fa";
 // Styled Components
 const Container = styled.div`
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
+
   background-color: #fff;
   min-height: 100vh;
 `;
@@ -22,7 +22,7 @@ const BoxHead = styled.div<{ isOpen: boolean }>`
   background: linear-gradient(90deg, #c7dffe 0%, #d8f2ff 100%);
   padding: 10px 21px;
   border-bottom: 1px solid #bdbfc2;
-  font-size: 16px;
+  font-size: 15px;
   color: #000;
   font-weight: 600;
   border-radius: 14px 14px 0 0;
@@ -184,7 +184,7 @@ const BaliItinerary: React.FC = () => {
       {itinerary.map(({ day, title, activities, images, isOpen }) => (
         <ItineraryWrapper key={day}>
           <BoxHead isOpen={isOpen} onClick={() => toggleItinerary(day)}>
-            <h2>{title}</h2>
+            <p>{title}</p>
             {isOpen ? <FaChevronDown /> : <FaChevronRight />}
           </BoxHead>
           {isOpen && (
