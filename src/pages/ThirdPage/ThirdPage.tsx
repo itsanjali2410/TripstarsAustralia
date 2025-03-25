@@ -39,7 +39,7 @@ import TravelItinerary from "./sections/TravelItinerary.tsx";
 import InclusionsExclusions from "./sections/InclusionsExclusions";
 import TabbedTable from "./sections/TabbedTable.tsx";
 import PackageCard from "./sections/PackageCard.tsx";
-
+import StaticForm from "./sections/StaticForm.tsx";
 const TrendingOffersWrapper = styled.div`
   max-width: 1200px; /* Adjust the width for desktop */
   margin: 0 20px auto; /* Center the box on the page */
@@ -65,9 +65,10 @@ const PageWrapper = styled.div`
 const SplitContainer = styled.div`
   display: flex;
   width: 100%;
-  margin-top: 100px;
+
 
   @media (max-width: 768px) {
+    margin-top: 1px;
     flex-direction: column; /* Stacks the divs vertically on smaller screens */
   }
 `;
@@ -112,7 +113,7 @@ const Title = styled.h2`
 `;
 
 const OverviewWrapper = styled.div`
-  padding: 20px;
+  padding: 3%;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #fff;
@@ -187,7 +188,7 @@ export default function Thirdpage() {
             <OverviewWrapper>
               <Title>Iternary</Title>
               <TravelItinerary />
-              <Highlight />
+         
             </OverviewWrapper>
           </PageWrapper>
        
@@ -202,6 +203,7 @@ export default function Thirdpage() {
           <PackageCard />
 
           <HelpCard />
+
         </RightDiv>
         
       </SplitContainer>

@@ -11,7 +11,7 @@ const Container = styled.div`
 `;
 
 const OverviewWrapper = styled.div`
-  padding: 20px;
+
   margin-top: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
