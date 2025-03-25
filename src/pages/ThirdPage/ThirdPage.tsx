@@ -202,8 +202,6 @@ export default function Thirdpage() {
           <PackageCard />
 
           <HelpCard />
-
-{/*           <StaticForm/> */}
         </RightDiv>
         
       </SplitContainer>
