@@ -15,6 +15,7 @@ import SliderComponent from "./sections/SliderComponent";
 import PopularDestinations from "../Home/sections/PopularDestinations";
 import TrendingOffers from "../Tripdetails/sections/TrendingOffers.tsx";
 import CherryBlossomsSection from "../Tripdetails/sections/CherryBlossomsSection";
+import PackageInclude from "./sections/packageincludes.tsx";
 import styled from "styled-components";
 import DynamicSlider from "./sections/DynamicSlider";
 import img1 from "../../assets/Tripdetails/bali/ThingsToDoInBali/atv-ride.png";
@@ -184,6 +185,7 @@ export default function Thirdpage() {
               title={tabContents[activeTab].title}
               content={tabContents[activeTab].content}
             />
+            <PackageInclude/>
             <br></br>
             <OverviewWrapper>
               <Title>Iternary</Title>

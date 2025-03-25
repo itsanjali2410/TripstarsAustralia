@@ -98,7 +98,7 @@ const itineraryData: ItineraryDay[] = [
       "https://www.planetware.com/photos-large/AUS/australia-beautiful-places-sydney-harbour.jpg",
       "https://www.planetware.com/photos-large/AUS/australia-beautiful-places-sydney-harbour.jpg"
     ],
-    isOpen: true
+    isOpen: false
   },
   {
     day: 2,
@@ -113,7 +113,7 @@ const itineraryData: ItineraryDay[] = [
     images: [
       "https://www.planetware.com/photos-large/AUS/australia-beautiful-places-sydney-harbour.jpg"
     ],
-    isOpen: true
+    isOpen: false
   },
   {
     day: 3,
@@ -126,7 +126,7 @@ const itineraryData: ItineraryDay[] = [
       "Sunset at Tanah Lot Temple."
     ],
     images: [],
-    isOpen: true
+    isOpen: false
   },
   {
     day: 4,
@@ -138,7 +138,7 @@ const itineraryData: ItineraryDay[] = [
       "Experience Balinese dance performance in the evening."
     ],
     images: [],
-    isOpen: true
+    isOpen: false
   },
   {
     day: 5,
@@ -151,7 +151,7 @@ const itineraryData: ItineraryDay[] = [
       "Return to hotel and relax."
     ],
     images: [],
-    isOpen: true
+    isOpen: false
   },
   {
     day: 6,
