@@ -1,5 +1,5 @@
 import React from "react";
-import team from "../../../assets/aboutus/Team.png";
+import team from "../../../assets/aboutus/Team.webp";
 
 function Awards() {
   return (

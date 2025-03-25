@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 import { Navigate, useNavigate } from "react-router-dom";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import contactbanner from "../../assets/contact/contactbanner.png";
+import contactbanner from "../../assets/contact/contactbanner.webp";
 import ThankYou from "../../components/common/thankyou";
 import axios from "axios";
 const ContactContainer = styled.div`

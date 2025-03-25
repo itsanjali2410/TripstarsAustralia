@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../../assets/aboutus/fullteam.jpg";
+import image from "../../../assets/aboutus/fullteam.webp";
 
 function Strength() {
     return (

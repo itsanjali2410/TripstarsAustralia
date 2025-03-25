@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import logoImg from "../../assets/images/logo/logo.png";
+import logoImg from "../../assets/images/logo/logo.webp";
 import { useEffect, useState } from "react";
 import navbarbanner from "../../assets/banner/navbar2.jpg";
 

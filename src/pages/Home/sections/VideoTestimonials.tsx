@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import bgImage from "../../../assets/images/backgrounds/Videotestimonials-bg.png";
+import bgImage from "../../../assets/images/backgrounds/Videotestimonials-bg.webp";
 // import Video8 from "../../../assets/Videos/Testimonial gif/8.gif";
 import Video1 from "../../../assets/Videos/Testimonial gif/1.gif";
 import Video2 from "../../../assets/Videos/Testimonial gif/2.gif";

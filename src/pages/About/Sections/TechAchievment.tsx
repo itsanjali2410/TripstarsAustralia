@@ -1,5 +1,5 @@
 import React from "react";
-import abouthistory from "../../../assets/aboutus/Tripstarsahemdabad.jpg";
+import abouthistory from "../../../assets/aboutus/tripstarsahemdabad.webp";
 
 function AboutHistory() {
   return (

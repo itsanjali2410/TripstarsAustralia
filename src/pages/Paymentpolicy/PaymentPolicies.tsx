@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FaUniversity, FaQrcode, FaExclamationCircle } from "react-icons/fa";
-import upiQr from "../../assets/contact/UPI.png";
+import upiQr from "../../assets/contact/UPI.webp";
 
 // Styled Components
 const Container = styled.div`
