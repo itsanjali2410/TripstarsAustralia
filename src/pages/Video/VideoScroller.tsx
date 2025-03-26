@@ -295,8 +295,8 @@ const ScrollHint = styled.div`
   left: 50%;
   transform: translateX(-50%);
   color: white;
-  font-size: 20px;
-  font-width: 600;
+  font-size: 22px;
+  font-width: 800;
   opacity: 0.8;
   animation: fadeOut 3s forwards;
   @keyframes fadeOut {
@@ -312,7 +312,7 @@ const VideoScroller: React.FC = () => {
   const [liked, setLiked] = useState(false);
   const [saved, setSaved] = useState(false);
   const [isMuted, setIsMuted] = useState(true); // Start muted
-  const [showScrollHint, setShowScrollHint] = useState(true);
+  const [showScrollHint, setShowScrollHint] = useState(false);
 
   const videoSources = videoData.map((item) => item.video);
 
@@ -335,17 +335,13 @@ const VideoScroller: React.FC = () => {
     const isFirstVisit = localStorage.getItem("firstVisit");
     if (!isFirstVisit) {
       localStorage.setItem("firstVisit", "true");
-      setTimeout(() => {
-        if (containerRef.current) {
-          containerRef.current.scrollTo({ top: window.innerHeight, behavior: "smooth" });
-        }
-      }, 1000);
+      setShowScrollHint(true); // Show hint instead of auto-scrolling
     }
   }, []);
-
+  
   useEffect(() => {
-    if (activeIndex === 0) {
-      setShowScrollHint(true);
+    if (activeIndex !== 0) {
+      setShowScrollHint(false); // Hide hint when not on first video
     }
   }, [activeIndex]);
   const handleScroll = () => {
