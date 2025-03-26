@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import styled from "styled-components";
+import styled ,{ keyframes } from "styled-components";
 import { FaPlay, FaPause } from "react-icons/fa";
 import { FaHeart, FaShare, FaBookmark,FaArrowUp  } from "react-icons/fa";
 
@@ -289,21 +289,37 @@ const ViewButton = styled.button`
     background: #ffd700;
   }
 `;
+const fadeInOut = keyframes`
+0%, 100% {
+  opacity: 0;
+}
+50% {
+  opacity: 1;
+}
+`;
+const disappear = keyframes`
+  to { opacity: 0; visibility: hidden; }
+`;
+
 const ScrollHint = styled.div`
   position: absolute;
-  bottom: 300px;
+  bottom: 200px;
   left: 50%;
   transform: translateX(-50%);
-  color: white;
-  font-size: 22px;
-  font-width: 800;
-  opacity: 0.8;
-  animation: fadeOut 3s forwards;
-  @keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  animation: ${fadeInOut} 1.5s infinite, ${disappear} 0.5s forwards 5s;
+
+  &::after {
+    content: "↓";
+    display: block;
+    font-size: 24px;
+    margin-top: 5px;
   }
 `;
+
+
 const VideoScroller: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
@@ -312,9 +328,17 @@ const VideoScroller: React.FC = () => {
   const [liked, setLiked] = useState(false);
   const [saved, setSaved] = useState(false);
   const [isMuted, setIsMuted] = useState(true); // Start muted
-  const [showScrollHint, setShowScrollHint] = useState(false);
 
-  const videoSources = videoData.map((item) => item.video);
+  const videoSources = [
+    Video2,
+    Video3,
+    Video4,
+    Video5,
+    Video8,
+    Video6,
+    Video7,
+    Video1,
+  ];
 
   useEffect(() => {
     videoRefs.current.forEach((video, index) => {
@@ -331,19 +355,8 @@ const VideoScroller: React.FC = () => {
       }
     });
   }, [activeIndex]);
-  useEffect(() => {
-    const isFirstVisit = localStorage.getItem("firstVisit");
-    if (!isFirstVisit) {
-      localStorage.setItem("firstVisit", "true");
-      setShowScrollHint(true); // Show hint instead of auto-scrolling
-    }
-  }, []);
-  
-  useEffect(() => {
-    if (activeIndex !== 0) {
-      setShowScrollHint(false); // Hide hint when not on first video
-    }
-  }, [activeIndex]);
+
+
   const handleScroll = () => {
     if (!containerRef.current) return;
 
@@ -383,6 +396,7 @@ const VideoScroller: React.FC = () => {
       }
     });
   };
+
 
 
   const handleShare = () => {
@@ -447,7 +461,7 @@ const VideoScroller: React.FC = () => {
         ))}
         {ScrollHint && (
           <ScrollHint>
-            <FaArrowUp style={{ marginRight: "8px" }} />Scroll for more </ScrollHint>
+            Scroll for more </ScrollHint>
         )}
       </VideoContainer>
 
