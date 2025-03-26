@@ -4,7 +4,6 @@ import { FaCheckCircle, FaTimesCircle, FaCheck, FaTimes } from "react-icons/fa";
 
 // Styled Components
 const Container = styled.div`
-  font-family: "Roboto", sans-serif;
   display: flex;
   justify-content: center;
   padding: 20px;

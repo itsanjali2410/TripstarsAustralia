@@ -4,24 +4,21 @@ import { FaChevronDown, FaChevronRight } from "react-icons/fa";
 
 // Styled Components
 const Container = styled.div`
-  font-family: "Roboto", sans-serif;
-
   background-color: #fff;
+
 `;
 
 const ItineraryWrapper = styled.div`
   background-color: #ffffff;
   border-radius: 14px;
   margin: 20px auto;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 `;
 
 const BoxHead = styled.div<{ isOpen: boolean }>`
-  background: linear-gradient(90deg, #c7dffe 0%, #d8f2ff 100%);
   padding: 10px 21px;
   border-bottom: 1px solid #bdbfc2;
-  font-size: 15px;
+  font-size: 13px;
   color: #000;
   font-weight: 600;
   border-radius: 14px 14px 0 0;
@@ -32,7 +29,6 @@ const BoxHead = styled.div<{ isOpen: boolean }>`
 `;
 
 const ItineraryContent = styled.div`
-  padding-bottom: 20px;
   overflow: hidden;
 `;
 
