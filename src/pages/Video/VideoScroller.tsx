@@ -296,6 +296,7 @@ const ScrollHint = styled.div`
   transform: translateX(-50%);
   color: white;
   font-size: 20px;
+  font-width: 600;
   opacity: 0.8;
   animation: fadeOut 3s forwards;
   @keyframes fadeOut {
