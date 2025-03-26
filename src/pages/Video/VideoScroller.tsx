@@ -4,7 +4,7 @@ import { FaPlay, FaPause } from "react-icons/fa";
 import { FaHeart, FaShare, FaBookmark,FaArrowUp  } from "react-icons/fa";
 
 // Import videos
-// import Video8 from "../../assets/Videos/Testimonial/8.mp4";
+import Video8 from "../../assets/Videos/Testimonial/8.mp4";
 import Video1 from "../../assets/Videos/Testimonial/1.mp4";
 import Video2 from "../../assets/Videos/Testimonial/2.mp4";
 import Video3 from "../../assets/Videos/Testimonial/3.mp4";
@@ -43,13 +43,13 @@ const videoData = [
     video: Video5,
     tags: ["Dubai", "Vacation", "Luxury", "Shopping"],
   },
-  // {
-  //   title: "Nidhi Mundra Bali Trip",
-  //   description:
-  //     "Nidhi's Bali escapade was filled with cultural insights, picturesque beaches, and a blend of adventure and relaxation.",
-  //   video: Video8,
-  //   tags: ["Bali", "Trip", "Adventure", "Relaxation"],
-  // },
+  {
+    title: "Nidhi Mundra Bali Trip",
+    description:
+      "Nidhi's Bali escapade was filled with cultural insights, picturesque beaches, and a blend of adventure and relaxation.",
+    video: Video8,
+    tags: ["Bali", "Trip", "Adventure", "Relaxation"],
+  },
   {
     title: "Prathamesh Dubai Trip",
     description:
