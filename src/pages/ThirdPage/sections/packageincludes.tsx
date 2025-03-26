@@ -3,11 +3,8 @@ import React from "react";
 import styled from "styled-components";
 
 const CardWrapper = styled.div`
-  border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 20px;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
   margin: 0 auto;
   font-family: Arial, sans-serif;
@@ -71,34 +68,13 @@ const Divider = styled.hr`
   z-index: 0; /* Place behind the button text */
 `;
 
-const PackageIncludesButton = styled.div`
-  display: inline-block;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  font-size: 14px;
-  color: #333;
-  padding: 5px 15px;
-  position: relative;
-  z-index: 1; /* Place above the divider */
-
-  &:hover {
-    background-color: #f0f0f0;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 13px;
-    padding: 5px 10px;
-  }
-`;
 
 const IconsWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
   margin-top: 10px;
 
   @media (max-width: 768px) {
-    flex-wrap: wrap;
+
   }
 `;
 
@@ -135,7 +111,6 @@ export default function PackageInclude() {
       <CardWrapper>
         <PackageIncludesWrapper>
           <Divider />
-          <PackageIncludesButton>Package Includes</PackageIncludesButton>
         </PackageIncludesWrapper>
         <IconsWrapper>
           <IconContainer>
