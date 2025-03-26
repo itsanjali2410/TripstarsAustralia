@@ -147,40 +147,8 @@ export default function PackageCard() {
         />
         <strong>Places to Visit:</strong> 1N Athirapally | 2N Munnar | 1N Thekkady | 1N Alleppy
       </PlacesToVisit>
-      <PackageIncludesWrapper>
-        <Divider />
-        <PackageIncludesButton>Package Includes</PackageIncludesButton>
-      </PackageIncludesWrapper>
-      <IconsWrapper>
-        <IconContainer>
-          <img
-            src="https://www.easemytrip.com/holidays/Content/customize/img/hotel-1.svg"
-            alt="Hotel"
-          />
-          <span>Hotel</span>
-        </IconContainer>
-        <IconContainer>
-          <img
-            src="https://www.easemytrip.com/holidays/Content/customize/img/sightseeing-1.svg"
-            alt="Sightseeing"
-          />
-          <span>Sightseeing</span>
-        </IconContainer>
-        <IconContainer>
-          <img
-            src="https://www.easemytrip.com/holidays/Content/customize/img/transfer-1.svg"
-            alt="Transfer"
-          />
-          <span>Transfer</span>
-        </IconContainer>
-        <IconContainer>
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/3313/3313509.png"
-            alt="Meal"
-          />
-          <span>Meal</span>
-        </IconContainer>
-      </IconsWrapper>
-    </CardWrapper>
+
+      </CardWrapper>
+        
   );
 }
