@@ -5,19 +5,17 @@ import styled from "styled-components";
 const TabsContainer = styled.div`
   display: flex;
   justify-content: flex-start;
-  padding: 10px;
   background-color: #f9fafc;
   border-bottom: 2px solid #d1d9e0;
-  flex-wrap: wrap; // Allow wrapping on small screens
 
   @media (max-width: 768px) {
-    flex-direction: column; // Stack tabs vertically
+    flex-direction: row; // Stack tabs vertically
   }
 `;
 
 const Tab = styled.div<{ active: boolean }>`
-  padding: 10px 20px;
-  margin: 5px 5px;
+  padding: 10px 5px;
+  margin: 5px 2px;
   border-radius: 8px;
   cursor: pointer;
   border: 1px solid #d1d9e0;
@@ -34,21 +32,17 @@ const Tab = styled.div<{ active: boolean }>`
 
   @media (max-width: 768px) {
     width: 100%; // Make tabs full-width
-    text-align: center; // Center-align text for better readability
+    font-size:12px;
   }
 `;
 
 const TabContent = styled.div`
-  // padding: 20px;
-  border: 1px solid #d1d9e0;
   border-radius: 10px;
   background-color: #ffffff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  // margin: 20px;
+
 
   @media (max-width: 768px) {
-    padding: 15px;
-    margin: 10px;
+
   }
 `;
 
@@ -63,7 +57,7 @@ const Table = styled.table`
 
   th,
   td {
-    padding: 15px;
+    padding: 12px;
     border: 1px solid #d1d9e0;
     text-align: left;
     color: #333;
@@ -83,7 +77,7 @@ const Table = styled.table`
   @media (max-width: 768px) {
     th,
     td {
-      font-size: 14px; // Reduce font size for small screens
+      font-size: 12px; // Reduce font size for small screens
     }
   }
 `;

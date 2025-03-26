@@ -7,12 +7,10 @@ const CardWrapper = styled.div`
   background-color: #fff;
   width: 100%;
   margin: 0 auto;
-  font-family: Arial, sans-serif;
   margin-bottom: 20px;
   @media (max-width: 768px) {
     width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
+
   }
 `;
 
@@ -39,12 +37,11 @@ const PlacesToVisit = styled.div`
   align-items: center;
   font-size: 14px;
   color: #333;
-  margin-bottom: 15px;
+
 
   img {
     width: 20px;
     height: 20px;
-    margin-right: 8px;
   }
 
   @media (max-width: 768px) {
@@ -71,7 +68,6 @@ const Divider = styled.hr`
 
 const IconsWrapper = styled.div`
   display: flex;
-  margin-top: 10px;
 
   @media (max-width: 768px) {
 

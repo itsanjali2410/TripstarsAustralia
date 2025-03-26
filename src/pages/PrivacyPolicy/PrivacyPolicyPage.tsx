@@ -41,7 +41,6 @@ const YellowDiv = styled.div`
   color: #333;
   font-size: 1.75rem;
   font-weight: bold;
-  font-family: Arial, sans-serif;
   width: 100%;
   position: relative;
   z-index: 1;
@@ -67,7 +66,6 @@ const Section = styled.section`
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
   line-height: 1.6;
   position: relative;
   z-index: 2;

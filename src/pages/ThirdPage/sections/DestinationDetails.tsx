@@ -8,7 +8,10 @@ import PackageInclude from "../sections/packageincludes"; // Importing the Packa
 
 // Styled Components
 const Container = styled.div`
-  padding: 20px;
+  padding: 15px;
+  @media (max-width: 768px) {
+    padding:0px;
+  }
 `;
 
 const HeadingSmall = styled.h4`
@@ -47,7 +50,9 @@ const DestinationInfo = styled.div`
     gap: 5px;
   }
 `;
-
+const P = styled.p`
+    font-size: 13px;
+`;
 const PackageWrapper = styled.div`
   flex-shrink: 0;
 `;

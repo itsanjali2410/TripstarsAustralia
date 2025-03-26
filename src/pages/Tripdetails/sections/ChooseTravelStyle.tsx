@@ -10,7 +10,6 @@ const Container = styled.div`
   align-items: center;
   padding: 2rem;
   background-color: #f5f5f5;
-  font-family: Arial, sans-serif;
 `;
 
 const Header = styled.div`

@@ -6,7 +6,7 @@ const FooterContainer = styled.div`
   padding: 20px 40px;
   background-color: #101820;
   color: white;
-  font-family: Arial, sans-serif;
+
 `;
 
 const LinksLeft = styled.div`
