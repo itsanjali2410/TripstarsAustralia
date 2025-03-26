@@ -7,7 +7,6 @@ const Container = styled.div`
   font-family: "Roboto", sans-serif;
 
   background-color: #fff;
-  min-height: 100vh;
 `;
 
 const ItineraryWrapper = styled.div`
