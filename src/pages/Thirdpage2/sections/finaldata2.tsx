@@ -3,6 +3,7 @@ import { Vietnam } from "../../../components/data";
 interface PackageData {
   packageId: string;
   packageName: string;
+  
   totalGuests: number;
   nights: number;
   days: number;
