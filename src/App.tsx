@@ -2,7 +2,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import HomePage from "./pages/Home/Homepage";
 import Themes from "./pages/Themes/Themes";
 import Thirdpage from "./pages/ThirdPage/ThirdPage";
-import Thirdpage2 from "./pages/Thirdpage2/Thirdpage"
+import Thirdpage2 from "./pages/Thirdpage2/ThirdPage"
 import PrivacyPolicyPage from "./pages/PrivacyPolicy/PrivacyPolicyPage";
 import Tripdetailspage from "./pages/Tripdetails/Tripdetailspage";
 import NotFoundPage from "./pages/NotFoundPage";

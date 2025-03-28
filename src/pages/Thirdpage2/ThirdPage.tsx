@@ -12,6 +12,8 @@ import TabbedTable from "./sections/TabbedTable";
 import PackageOverview from "./sections/PackageOverview";
 // Styled Components
 const Container = styled.div`
+
+
   display: flex;
   width: 100%;
   gap: 20px;
@@ -20,6 +22,10 @@ const Container = styled.div`
     flex-direction: column;
   }
 `;
+
+
+
+
 
 const LeftSection = styled.div`
   width: 70%;
