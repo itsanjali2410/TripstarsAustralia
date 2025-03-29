@@ -2,13 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const OverviewWrapper = styled.div`
-  padding: 20px;
-  border: 1px solid #ddd;
+  padding-top: 20px;
   border-radius: 8px;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
- 
 `;
 
 const Title = styled.h2`
@@ -23,13 +19,13 @@ const Title = styled.h2`
 `;
 
 const Paragraph = styled.p`
-  font-size: 13px;
+  font-size: 15px;
   color: #555;
   line-height: 1.5;
   color:black;
 
   @media (max-width: 768px) {
-    font-size: 11px; /* Adjust for smaller screens */
+    font-size: 13px; /* Adjust for smaller screens */
   }
 `;
 

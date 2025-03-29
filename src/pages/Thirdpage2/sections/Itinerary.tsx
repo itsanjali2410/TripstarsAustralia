@@ -4,7 +4,39 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import styled from "styled-components";
 
 // Styled Components
-const Container = styled.div``;
+const Container = styled.div`
+  width: 100%;
+
+`;
+
+const StyledAccordion = styled(Accordion)`
+  margin: 10px 0;
+  &:hover {
+    background-color: #f9f9f9;
+  }
+`;
+
+const StyledAccordionSummary = styled(AccordionSummary)`
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  padding: 12px 16px;
+  & .{
+    font-size: 1rem;
+  }
+`;
+
+const StyledAccordionDetails = styled(AccordionDetails)`
+  background-color: #fff;
+  padding: 16px;
+  & ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  & li {
+    color: #555;
+    line-height: 1.6;
+  }
+`;
 
 // Props Interface
 interface ItineraryProps {
@@ -20,18 +52,19 @@ const Itinerary: React.FC<ItineraryProps> = ({ itinerary }) => {
         const activities = dayData[dayKey]; // Extract activities
 
         return (
-          <Accordion key={index}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6">Day {dayKey}</Typography> {/* ✅ FIXED HERE */}
-            </AccordionSummary>
-            <AccordionDetails>
+          <StyledAccordion key={index}>
+            <StyledAccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <h6>{dayKey}</h6>
+            </StyledAccordionSummary>
+
+            <StyledAccordionDetails>
               <ul>
                 {activities.map((activity, i) => (
                   <li key={i}>{activity}</li>
                 ))}
               </ul>
-            </AccordionDetails>
-          </Accordion>
+            </StyledAccordionDetails>
+          </StyledAccordion>
         );
       })}
     </Container>
