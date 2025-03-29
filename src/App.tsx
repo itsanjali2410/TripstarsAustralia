@@ -39,10 +39,7 @@ function App() {
           <Route path="/faqs" element={<Faq />} />
           <Route path="/:location" element={<Tripdetailspage />} />
           <Route path="/tripdetails" element={<Thirdpage />} />
-<<<<<<< HEAD
           <Route path="/:destination/:packageName" element={<Thirdpage2 />} />
-=======
->>>>>>> 04684fadd086780763377be32d4f31dc93478990
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/terms-conditions" element={<PrivacyPolicyPage title="Terms & Conditions" />} />
           <Route path="privacy-policy" element={<PrivacyPolicyPage title="Privacy Policy" />} />

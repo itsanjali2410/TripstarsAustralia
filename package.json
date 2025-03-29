@@ -13,13 +13,6 @@
     "@cloudinary/react": "^1.13.1",
     "@cloudinary/url-gen": "^1.21.0",
     "@emailjs/browser": "^4.4.1",
-<<<<<<< HEAD
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@mui/icons-material": "^7.0.0",
-    "@mui/material": "^7.0.0",
-=======
->>>>>>> 04684fadd086780763377be32d4f31dc93478990
     "@radix-ui/react-slot": "^1.1.2",
     "@shadcn/ui": "^0.0.4",
     "axios": "^1.8.2",
