@@ -68,7 +68,7 @@ interface TabbedTableProps {
 }
 
 const TabbedTable: React.FC<TabbedTableProps> = ({ tableData }) => {
-  const [activeTab, setActiveTab] = useState<"tab1" | "tab2" | "tab3">("tab1");
+  const [activeTab, setActiveTab] = useState<"tab1" | "tab2" | "tab3">("tab2");
 
   const renderTable = () => {
     const data = tableData[activeTab];
