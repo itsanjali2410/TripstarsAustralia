@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import bgImage from "../../../assets/images/backgrounds/Videotestimonials-bg.webp";
 // import Video8 from "../../../assets/Videos/Testimonial gif/8.gif";
-import Video1 from "../../../assets/Videos/Testimonial gif/1.gif";
+// import Video1 from "../../../assets/Videos/Testimonial gif/1.gif";
 import Video2 from "../../../assets/Videos/Testimonial gif/2.gif";
 import Video3 from "../../../assets/Videos/Testimonial gif/3.gif";
 import Video4 from "../../../assets/Videos/Testimonial gif/4.gif";
@@ -134,7 +134,7 @@ const testimonials = [
   { videoUrl: Video6, title: "Nidhi Mundra Bali Trip" },
   { videoUrl: Video7, title: "Prathamesh Dubai Trip" },
   { videoUrl: Video8, title: "Mrs. Arjal Patel" },
-  { videoUrl: Video1, title: "Bonani Chatterjee" },
+  // { videoUrl: Video1, title: "Bonani Chatterjee" },
   ];
 
 export default function VideoTestimonials() {
