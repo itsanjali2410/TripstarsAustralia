@@ -158,10 +158,13 @@ import southafricaImg5 from "../../assets/Tripdetails/new/south affrica/things-t
 import southafricaImg6 from "../../assets/Tripdetails/new/south affrica/things-to-do-south-africa/maclear_s-beacon.png";
 import { Andaman, Himachal } from "../../components/data";
 
-// himachal hings to do 
-import himachal1 from "../../assets/Tripdetails/domestic/Himachal/things-to-do/2.png";
-import himachal2 from "../../assets/Tripdetails/domestic/Himachal/things-to-do/3.png";
-
+// himachal things to do 
+import himachal1 from "../../assets/Tripdetails/domestic/Himachal/things-to-do/Rohtang.png";
+import himachal2 from "../../assets/Tripdetails/domestic/Himachal/things-to-do/Temple.png";
+import himachal3 from "../../assets/Tripdetails/domestic/Himachal/things-to-do/beas_r.png";
+import himachal4 from "../../assets/Tripdetails/domestic/Himachal/things-to-do/chandratal.png";
+import himachal5 from "../../assets/Tripdetails/domestic/Himachal/things-to-do/national.png";
+import himachal6 from "../../assets/Tripdetails/domestic/Himachal/things-to-do/solang_valley.png";
 //things to do goa
 import goa1 from "../../assets/Tripdetails/domestic/Goa/thingstodo/AnjunaBeach.webp";
 import goa2 from "../../assets/Tripdetails/domestic/Goa/thingstodo/bagabeachNightlife.webp";
@@ -306,12 +309,12 @@ export const destinationsData = {
         description: "Experience the adventure, spirituality, and scenic beauty of Himachal Pradesh.",
       },
       thingsToDo: [
-        { name: "Shikara ride", image: himachal1 },
-        { name: "Paragliding Sports", image: australiaImg2 },
-        { name: "Temple Visits", image: australiaImg3 },
-        { name: "Hill Stations", image: australiaImg4 },
-        { name: "River Rafting", image: australiaImg5 },
-        { name: "Scenic Drives", image: australiaImg6 },
+        { name: "Rohtang Pass", image: himachal1 },
+        { name: "Temple Visits", image: himachal2 },
+        { name: "Beas River", image: himachal3 },
+        { name: "Chandratal", image: himachal4 },
+        { name: "National Park", image: himachal5 },
+        { name: "Solang Valley", image:himachal6 },
       ],
     },
     andaman: {
