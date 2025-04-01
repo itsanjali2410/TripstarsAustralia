@@ -34,7 +34,7 @@ const Table = styled.table`
   th,
   td {
     padding: 12px;
-    border: 1px solid #d1d9e0;
+
     text-align: left;
     color: #333;
   }
@@ -49,7 +49,6 @@ const Table = styled.table`
 interface TableRow {
   name?: string;
   costPerAdult?: string;
-  city?: string;
   star4?: string;
   star5?: string;
   label?: string;
@@ -68,7 +67,7 @@ interface TabbedTableProps {
 }
 
 const TabbedTable: React.FC<TabbedTableProps> = ({ tableData }) => {
-  const [activeTab, setActiveTab] = useState<"tab1" | "tab2" | "tab3">("tab2");
+  const [activeTab, setActiveTab] = useState<"tab1" | "tab2" | "tab3">("tab1");
 
   const renderTable = () => {
     const data = tableData[activeTab];
@@ -83,7 +82,6 @@ const TabbedTable: React.FC<TabbedTableProps> = ({ tableData }) => {
             </tr>
           ) : (
             <tr>
-              <th>City</th>
               <th>4 Star Hotels</th>
               <th>5 Star Hotels</th>
             </tr>
@@ -99,7 +97,6 @@ const TabbedTable: React.FC<TabbedTableProps> = ({ tableData }) => {
                 </>
               ) : (
                 <>
-                  <td>{row.city || row.label}</td>
                   <td>{row.star4 || row.cost4}</td>
                   <td>{row.star5 || row.cost5}</td>
                 </>

@@ -51,7 +51,6 @@ import australia3 from "../assets/Tripdetails/new/australia/Australia 3.webp"
 import australia4 from "../assets/Tripdetails/new/australia/Australia 4.webp"
 import australia5 from "../assets/Tripdetails/new/australia/Australia 5.webp"
 
-
 //baku
 import baku1 from "../assets/Tripdetails/new/baku/baku 1.webp";
 import baku2 from "../assets/Tripdetails/new/baku/baku 2.webp";
@@ -197,6 +196,8 @@ export const Bali = [
     title: "Ultimate Bali & Nusa Penida",
     image: bali1,
     pricing: "₹74,999/- Onwards",
+    destination: "bali", 
+    packageName: "Ultimate Bali & Nusa Penida Adventure", 
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -206,6 +207,8 @@ export const Bali = [
     title: "Bali with Gili",
     image: bali2,
     pricing: "₹82,499/- Onwards",
+    destination: "bali", 
+    packageName: "Bali with gili", 
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -215,6 +218,8 @@ export const Bali = [
     title: "Bali Essence",
     image: bali5,
     pricing: "₹65,499/- Onwards",
+    destination: "bali", 
+    packageName: "Island hopping Tour", 
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -224,6 +229,8 @@ export const Bali = [
     title: "Enchanting Bali",
     image: bali4,
     pricing: "₹64,999/- Onwards",
+    destination: "bali", 
+    packageName: "Enchanting Bali Getaway without Nusa Penida", 
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },

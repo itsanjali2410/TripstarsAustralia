@@ -35,6 +35,7 @@ const StyledAccordionDetails = styled(AccordionDetails)`
   & li {
     color: #555;
     line-height: 1.6;
+    list-style: none;
   }
 `;
 
@@ -58,11 +59,11 @@ const Itinerary: React.FC<ItineraryProps> = ({ itinerary }) => {
             </StyledAccordionSummary>
 
             <StyledAccordionDetails>
-              <ul>
+
                 {activities.map((activity, i) => (
                   <li key={i}>{activity}</li>
                 ))}
-              </ul>
+
             </StyledAccordionDetails>
           </StyledAccordion>
         );
