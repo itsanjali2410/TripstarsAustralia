@@ -5,7 +5,8 @@ interface PackageData {
   totalGuests: number;
   nights: number;
   days: number;
-  startCity: string;
+  theme: string;
+  highlights: string;
   destinationCovered: string;
   totalPackagePrice: string;
   packageImage: string;
@@ -56,8 +57,9 @@ const Finaldata: Record<string, Record<string, PackageData>> = {
       totalGuests: 2,
       nights: 6,
       days: 7,
-      startCity: "Mumbai",
-      destinationCovered: "Bali",
+      theme: "Mumbai",
+      destinationCovered: "Bali -- Kuta -- Ubud -- Nusa Penida",
+      highlights: "Private Transport English speaking guide, Nusa penida Iland Tour",
       totalPackagePrice: "INR 64,499",
 
       includes: [
@@ -156,8 +158,9 @@ const Finaldata: Record<string, Record<string, PackageData>> = {
       totalGuests: 2,
       nights: 6,
       days: 7,
-      startCity: "Mumbai",
+      theme: "Mumbai",
       destinationCovered: "Bali",
+      highlights: "Private Transport English speaking guide, Nusa penida Iland Tour",
       totalPackagePrice: "INR 64,499",
 
       packageImage:
@@ -249,8 +252,9 @@ const Finaldata: Record<string, Record<string, PackageData>> = {
       totalGuests: 2,
       nights: 7,
       days: 8,
-      startCity: "Mumbai",
+      theme: "Mumbai",
       destinationCovered: "Bali",
+      highlights: "Private Transport English speaking guide, Nusa penida Iland Tour",
       totalPackagePrice: "INR 82,999",
 
       packageImage:
@@ -342,8 +346,9 @@ const Finaldata: Record<string, Record<string, PackageData>> = {
       totalGuests: 2,
       nights: 6,
       days: 7,
-      startCity: "Mumbai",
+      theme: "Mumbai",
       destinationCovered: "Bali",
+      highlights: "Private Transport English speaking guide, Nusa penida Iland Tour",
       totalPackagePrice: "INR 64,999",
 
       packageImage:
@@ -433,8 +438,10 @@ const Finaldata: Record<string, Record<string, PackageData>> = {
       totalGuests: 2,
       nights: 6,
       days: 7,
-      startCity: "Mumbai",
+      theme: "Mumbai",
       destinationCovered: "vietnam",
+      highlights: "Private Transport English speaking guide, Nusa penida Iland Tour",
+
       totalPackagePrice: "INR ₹ 1,00,999/-",
 
       packageImage:
@@ -503,7 +510,8 @@ const Finaldata: Record<string, Record<string, PackageData>> = {
       duration: "8 Days",
       country: "Indonesia",
       cities: "Hanoi, Halong Bay, Da nang, Ho chi Minh",
-      startCity: "Mumbai",
+      theme: "Mumbai",
+      highlights: "Private Transport English speaking guide, Nusa penida Iland Tour",
       destinationCovered: "Vietnam",
       totalPackagePrice: "INR ₹ 1,04,599/-",
 
@@ -545,9 +553,11 @@ const Finaldata: Record<string, Record<string, PackageData>> = {
       totalGuests: 2,
       nights: 8,
       days: 9,
-      startCity: "Mumbai",
+      theme: "Mumbai",
       destinationCovered: "Vietnam",
       totalPackagePrice: "INR ₹ 1,10,490/-",
+      highlights: "Private Transport English speaking guide, Nusa penida Iland Tour",
+
       overviewData: {
         title: "Package Overview",
         content: "Experience the best of Vietnam on this 8-day tour, exploring the bustling streets of Hanoi, the serene beauty of Halong Bay, the historical charm of Da Nang, and the tropical paradise of Phu Quoc. Stay in deluxe accommodations throughout the journey, ensuring comfort and relaxation as you uncover the rich culture, history, and natural beauty of this stunning country.",
@@ -593,7 +603,9 @@ const Finaldata: Record<string, Record<string, PackageData>> = {
       totalGuests: 2,
       nights: 8,
       days: 9,
-      startCity: "Mumbai",
+      highlights: "Private Transport English speaking guide, Nusa penida Iland Tour",
+
+      theme: "Mumbai",
       destinationCovered: "Vietnam",
       totalPackagePrice: "INR 70,000",
       overviewData: {

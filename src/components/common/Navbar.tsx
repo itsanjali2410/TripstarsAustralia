@@ -41,7 +41,7 @@ const Logo = styled.div`
   @media (max-width: 768px) {
     width: 25%;
     img {
-      width: 5rem;
+      width: 7rem;
     }
   }
 `;
@@ -329,7 +329,7 @@ export default function Navbar() {
           <Dropdown isOpen={themeDropdownOpen}>
             <li className="category">
               <Link to="">Family</Link>
-              <Link to="/theme" onClick={isMobile ? toggleMenu : undefined}>Honeymoon</Link>
+              <Link to="/themes" onClick={isMobile ? toggleMenu : undefined}>Honeymoon</Link>
               <Link to="">Adventure</Link>
               <Link to="">Beach</Link>
             </li>

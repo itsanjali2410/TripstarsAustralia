@@ -32,14 +32,22 @@ const HelpCard = styled.div`
     left: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(180deg, #4361ee 0%, #3a0ca3 100%);
+    background: linear-gradient(to right,
+                #C99603 0%,
+                #F4E628 24%,
+                #CD9C01 65%,
+                #B38201 100%);
     border-radius: 12px 0 0 12px;
   }
 `;
 
 const IconWrapper = styled.div`
   font-size: 28px;
-  color: #4361ee;
+  background: linear-gradient(to right,
+                #C99603 0%,
+                #F4E628 24%,
+                #CD9C01 65%,
+                #B38201 100%);
   margin-right: 16px;
   padding: 12px;
   background: rgba(67, 97, 238, 0.1);
@@ -112,11 +120,11 @@ export default function NeedHelpCard() {
         <Title>Need Assistance?</Title>
         <ContactDetail>
           <FaPhoneAlt />
-          <a href="tel:011-43030303">011-4303 0303</a> / <a href="tel:011-43131313">4313 1313</a>
+          <a href="tel:011-43030303">+91 9875097159</a>  <a href="tel:+91 9875097159"></a>
         </ContactDetail>
         <ContactDetail>
           <FaEnvelope />
-          <a href="mailto:Holidays@easemytrip.com">Holidays@easemytrip.com</a>
+          <a href="mailto:Holidays@easemytrip.com">Info@tripstars.in</a>
         </ContactDetail>
       </TextWrapper>
     </HelpCard>

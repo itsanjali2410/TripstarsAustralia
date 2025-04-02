@@ -393,13 +393,7 @@ const StaticForm: React.FC = () => {
             />
             <div className="row">
               <div>
-                <select
-                  name="destination"
-                  value={formData.destination}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">Select Destination</option>
+              <select name="destination" value={formData.destination} onChange={handleChange} required>
                   <option value="maldives">Maldives</option>
                   <option value="bali">Bali</option>
                   <option value="dubai">Dubai</option>
@@ -410,6 +404,19 @@ const StaticForm: React.FC = () => {
                   <option value="europe">Europe</option>
                   <option value="vietnam">Vietnam</option>
                   <option value="australia">Australia</option>
+                  <option value="ladakh">Ladakh</option>
+                  <option value="srilanka">Sri Lanka</option>
+                  <option value="nepal">Nepal</option>
+                  <option value="kashmir">Kashmir</option>
+                  <option value="goa">Goa</option>
+                  <option value="mauritius">Mauritius</option>
+                  <option value="bhutan">Bhutan</option>
+                  <option value="himachal">Himachal</option>
+                  <option value="kerala">Kerala</option>
+                  <option value="bangkok">Bangkok</option>
+                  <option value="baku">Baku</option>
+                  <option value="turkey">Turkey</option>
+                  <option value="Other">Any other place ?</option>
                 </select>
               </div>
               <div>

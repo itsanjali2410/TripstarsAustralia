@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import Finaldata from "./sections/finaldata2"; // Import package data
+import Finaldata from "./sections/finaldata2";
 import PriceCard from "./sections/PriceCard";
 import PackageCard from "./sections/PackageCard";
 import HelpCard from "../ThirdPage/sections/HelpCard";
@@ -10,8 +10,8 @@ import TermsAndConditions from "./sections/TermsAndConditions";
 import Itinerary from "./sections/Itinerary";
 import TabbedTable from "./sections/TabbedTable";
 import PackageOverview from "./sections/PackageOverview";
-import PackageInclude from "../ThirdPage/sections/packageincludes";
-// Styled Components
+import Tourdetails from "./sections/Tourdetails";
+
 const Container = styled.div`
   display: flex;
   width: 100%;
@@ -21,6 +21,7 @@ const Container = styled.div`
     flex-direction: column;
   }
 `;
+
 const LeftSection = styled.div`
   width: 70%;
   padding: 20px;
@@ -42,10 +43,18 @@ const RightSection = styled.div`
     height: auto;
   }
 `;
+
+const PackageName = styled.span`
+  font-size: 19px;  
+  font-weight: 500; 
+  color: #333; 
+`;
+
 const IconContainer = styled.div`
   display: flex;
   gap: 20px;
   margin-top: 20px;
+  flex-wrap: wrap;
 `;
 
 const IconWrapper = styled.div`
@@ -61,17 +70,13 @@ const IconImage = styled.img`
   height: 40px;
 `;
 
-type RouteParams = {
-  destination?: string;
-  packageName?: string;
-};
-
-// Normalize package names for URL-safe comparison
 const normalizeString = (str: string): string =>
-  str.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-");
+  str.toLowerCase().trim().replace(/\s+/g, "-");
 
 export default function ThirdPage() {
-  const { destination, packageName } = useParams<RouteParams>();
+  const params = useParams();
+  const destination = params.destination;
+  const packageName = params.packageName;
 
   if (!destination || !packageName) {
     return (
@@ -95,7 +100,7 @@ export default function ThirdPage() {
     );
   }
 
-  const destinationData = Finaldata[destination];
+  const destinationData = Finaldata[destination] || {};
 
   const normalizedPackageName = normalizeString(decodeURIComponent(packageName));
 
@@ -114,23 +119,37 @@ export default function ThirdPage() {
     );
   }
 
+  const totalPackagePrice = parseFloat(packageData?.totalPackagePrice?.replace(/[^0-9.]/g, "") || "0");
+
   return (
     <Container>
-      {/* Left Section - Package Details */}
       <LeftSection>
-        <h1>{packageData.packageName}</h1>
+        <h1><PackageName>{packageData.packageName}</PackageName></h1>
         <img
           src={packageData.packageImage}
           alt={packageData.packageName}
-          style={{ width: "100%", borderRadius: "10px", height: "200px", objectFit: "cover"}}
+          style={{ width: "100%", borderRadius: "10px", height: "300px", objectFit: "cover" }}
         />
-        <PackageOverview
-          title={packageData.overviewData.title}
-          content={packageData.overviewData.content}
-        />
-        {/* ✅ Dynamic Package Inclusions with Icons */}
         
-        {packageData.includes && (
+        {packageData.overviewData && (
+          <PackageOverview
+            title={packageData.overviewData.title}
+            content={packageData.overviewData.content}
+          />
+        )}
+
+        {packageData && (
+          <Tourdetails
+            nights={packageData.nights}
+            days={packageData.days}
+            highlights={packageData.highlights}
+            destinationCovered={packageData.destinationCovered}
+            totalPackagePrice={packageData.totalPackagePrice}
+            theme={packageData.highlights}
+          />
+        )}
+
+        {packageData.includes && packageData.includes.length > 0 && (
           <IconContainer>
             {packageData.includes.map((item, index) => (
               <IconWrapper key={index}>
@@ -141,33 +160,23 @@ export default function ThirdPage() {
           </IconContainer>
         )}
 
-        {/* <p><strong>Destination:</strong> {packageData.destinationCovered}</p>
-          <p><strong>Total Price:</strong> {packageData.totalPackagePrice}</p> */}
-
-        {/* ✅ Conditionally render "Price Per Adult" */}
         {packageData.pricePerAdult && (
           <p><strong>Price Per Adult:</strong> {packageData.pricePerAdult}</p>
         )}
 
-        {/* Pass Itinerary Data */}
-        <Itinerary itinerary={packageData.itinerary} />
-        {/* Pass Dynamic Data */}
-        <TermsAndConditions />
-        {/* ✅ Render the tabbed table only if tableData exists */}
+        {packageData.itinerary && <Itinerary itinerary={packageData.itinerary} />}
         {packageData.tableData && <TabbedTable tableData={packageData.tableData} />}
-
         <InclusionsExclusions inclusions={packageData.inclusions} exclusions={packageData.exclusions} />
+        <TermsAndConditions />
       </LeftSection>
 
-      {/* Right Section - Pricing, Help, and Package Summary */}
       <RightSection>
         <PriceCard
-          totalPackagePrice={parseFloat(packageData.totalPackagePrice.replace(/[^0-9.]/g, ""))}
+          totalPackagePrice={totalPackagePrice}
           nights={packageData.nights}
           emiPrice={3590}
           emiLink="/emi-options"
-          // ✅ Only pass pricePerAdult if it exists
-          {...(packageData.pricePerAdult && { pricePerAdult: parseFloat(packageData.pricePerAdult.replace(/[^0-9.]/g, "")) })}
+          {...(packageData.pricePerAdult && { pricePerAdult: parseFloat(packageData.pricePerAdult.replace(/[^0-9.]/g, "") || "0") })}
         />
 
         <PackageCard
@@ -175,7 +184,6 @@ export default function ThirdPage() {
           days={packageData.days}
           destinationCovered={packageData.destinationCovered}
         />
-
 
         <HelpCard />
       </RightSection>

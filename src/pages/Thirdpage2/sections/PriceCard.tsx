@@ -111,8 +111,12 @@ const NightsText = styled.div`
 `;
 
 const SubmitButton = styled.button`
-  background: linear-gradient(135deg, #0066cc, #004aad);
-  color: #ffffff;
+  background: linear-gradient(to right,
+                #C99603 0%,
+                #F4E628 24%,
+                #CD9C01 65%,
+                #B38201 100%);
+  color: #000;
   font-size: 16px;
   font-weight: bold;
   padding: 12px 25px;
@@ -122,7 +126,11 @@ const SubmitButton = styled.button`
   transition: all 0.3s ease;
 
   &:hover {
-    background: linear-gradient(135deg, #004aad, #003080);
+    background: linear-gradient(to right,
+                #C99603 0%,
+                #F4E628 24%,
+                #CD9C01 65%,
+                #B38201 100%);
     transform: scale(1.05);
   }
 
