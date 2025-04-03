@@ -24,26 +24,14 @@ const Tab = styled.div<{ active: boolean }>`
   }
 `;
 
-const Table = styled.table`
-  width: 100%;
-  border-collapse: collapse;
+const ContentContainer = styled.div`
   margin-top: 10px;
+  padding: 10px;
   background-color: #f9fafc;
   border-radius: 8px;
-
-  th,
-  td {
-    padding: 12px;
-
-    text-align: left;
-    color: #333;
-  }
-
-  th {
-    background-color: black;
-    color: white;
-    text-transform: uppercase;
-  }
+  color: #333;
+  font-size: 16px;
+  white-space: pre-line;
 `;
 
 interface TableRow {
@@ -62,49 +50,30 @@ interface TableData {
   tab3: TableRow[];
 }
 
-interface TabbedTableProps {
+interface TabbedContentProps {
   tableData: TableData;
 }
 
-const TabbedTable: React.FC<TabbedTableProps> = ({ tableData }) => {
+const TabbedContent: React.FC<TabbedContentProps> = ({ tableData }) => {
   const [activeTab, setActiveTab] = useState<"tab1" | "tab2" | "tab3">("tab1");
 
-  const renderTable = () => {
+  const renderContent = () => {
     const data = tableData[activeTab];
-
     return (
-      <Table>
-        <thead>
-          {activeTab === "tab3" ? (
-            <tr>
-              <th>Name</th>
-              <th>Cost Per Adult</th>
-            </tr>
-          ) : (
-            <tr>
-              <th>4 Star Hotels</th>
-              <th>5 Star Hotels</th>
-            </tr>
-          )}
-        </thead>
-        <tbody>
-          {data.map((row, index) => (
-            <tr key={index}>
-              {activeTab === "tab3" ? (
-                <>
-                  <td>{row.name}</td>
-                  <td>{row.costPerAdult}</td>
-                </>
-              ) : (
-                <>
-                  <td>{row.star4 || row.cost4}</td>
-                  <td>{row.star5 || row.cost5}</td>
-                </>
-              )}
-            </tr>
-          ))}
-        </tbody>
-      </Table>
+      <ContentContainer>
+        {data.map((row, index) => (
+          <div key={index}>
+            {activeTab === "tab3" ? (
+              <p>{row.name} costs {row.costPerAdult} per adult.</p>
+            ) : (
+              <>
+                <p>4-star hotel: {row.star4 || row.cost4}</p>
+                <p>5-star hotel: {row.star5 || row.cost5}</p>
+              </>
+            )}
+          </div>
+        ))}
+      </ContentContainer>
     );
   };
 
@@ -121,9 +90,9 @@ const TabbedTable: React.FC<TabbedTableProps> = ({ tableData }) => {
           Optional Cost
         </Tab>
       </TabsContainer>
-      {renderTable()}
+      {renderContent()}
     </div>
   );
 };
 
-export default TabbedTable;
+export default TabbedContent;

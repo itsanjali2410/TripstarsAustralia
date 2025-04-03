@@ -11,7 +11,7 @@ import Itinerary from "./sections/Itinerary";
 import TabbedTable from "./sections/TabbedTable";
 import PackageOverview from "./sections/PackageOverview";
 import Tourdetails from "./sections/Tourdetails";
-
+import TravelInclude from "./sections/TravelInclude"
 const Container = styled.div`
   display: flex;
   width: 100%;
@@ -45,7 +45,7 @@ const RightSection = styled.div`
 `;
 
 const PackageName = styled.span`
-  font-size: 24px;  
+  font-size: 19px;  
   font-weight: 500; 
   color: #333; 
 `;
@@ -128,9 +128,9 @@ export default function ThirdPage() {
         <img
           src={packageData.packageImage}
           alt={packageData.packageName}
-          style={{ width: "100%", borderRadius: "10px", height: "300px", objectFit: "cover" }}
+          style={{ width: "100%", borderRadius: "10px", height: "400px", objectFit: "cover" }}
         />
-        
+
         {packageData.overviewData && (
           <PackageOverview
             title={packageData.overviewData.title}
@@ -139,26 +139,19 @@ export default function ThirdPage() {
         )}
 
         {packageData && (
-          <Tourdetails
-            nights={packageData.nights}
-            days={packageData.days}
-            highlights={packageData.highlights}
-            destinationCovered={packageData.destinationCovered}
-            totalPackagePrice={packageData.totalPackagePrice}
-            theme={packageData.highlights}
-          />
+         <Tourdetails
+         nights={packageData.nights}
+         days={packageData.days}
+         highlights={Array.isArray(packageData.highlights) ? packageData.highlights : [packageData.highlights]} // ✅ Ensure array
+         destinationCovered={packageData.destinationCovered}
+         totalPackagePrice={packageData.totalPackagePrice}
+         theme={packageData.theme}
+       />
+       
         )}
 
-        {packageData.includes && packageData.includes.length > 0 && (
-          <IconContainer>
-            {packageData.includes.map((item, index) => (
-              <IconWrapper key={index}>
-                <IconImage src={item.iconUrl} alt={item.name} />
-                <span>{item.name}</span>
-              </IconWrapper>
-            ))}
-          </IconContainer>
-        )}
+        {packageData.includes && <TravelInclude includes={packageData.includes} />}
+
 
         {packageData.pricePerAdult && (
           <p><strong>Price Per Adult:</strong> {packageData.pricePerAdult}</p>

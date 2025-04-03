@@ -1,4 +1,6 @@
+import { ElementType, ReactElement } from "react";
 import { Vietnam } from "../../../components/data";
+import { Plane, Hotel, Utensils, Landmark, Bus } from "lucide-react";
 interface PackageData {
   packageId: string;
   packageName: string;
@@ -6,13 +8,13 @@ interface PackageData {
   nights: number;
   days: number;
   theme: string;
-  highlights: string;
+  highlights: string | string[];
   destinationCovered: string;
   totalPackagePrice: string;
   packageImage: string;
   pricePerAdult?: string; // ✅ Optional
   itinerary: { [day: string]: string[] }[];
-  includes?: { name: string; iconUrl: string }[];
+  includes?: { name: string; icon: ElementType }[];
   inclusions: string[];
   exclusions: string[];
   termsConditions: string[];
@@ -59,16 +61,20 @@ const Finaldata: Record<string, Record<string, PackageData>> = {
       days: 7,
       theme: "Mumbai",
       destinationCovered: "Bali -- Kuta -- Ubud -- Nusa Penida",
-      highlights: "Private Transport English speaking guide, Nusa penida Iland Tour",
+      "highlights": [
+        "Private Transport",
+        "English speaking guide",
+        "Nusa Penida Island Tour"
+      ],
       totalPackagePrice: "INR 64,499",
 
-      includes: [
-        { name: "Flight", iconUrl: "https://www.easemytrip.com/holidays/Content/customize/img/flight-1.svg" },
-        { name: "Hotel", iconUrl: "https://www.easemytrip.com/holidays/Content/customize/img/hotel-1.svg" },
-        { name: "Meal", iconUrl: "https://www.easemytrip.com/holidays/Content/customize/img/meal-1.svg" },
-        { name: "Sightseeing", iconUrl: "https://www.easemytrip.com/holidays/Content/customize/img/sightseeing-1.svg" },
-        { name: "Transfer", iconUrl: "https://www.easemytrip.com/holidays/Content/customize/img/transfer-1.svg" }
+    includes : [
+        { name: "Flights", icon: Plane }, // ✅ Changed "Icon" to "icon"{ name: "Hotel", icon: Hotel },
+        { name: "Meal", icon: Utensils },
+        { name: "Sightseeing", icon: Landmark },
+        { name: "Transfer", icon: Bus },
       ],
+      
 
       packageImage:
         "https://www.travelwithcg.com/wp-content/uploads/2023/09/Kelingking-Beach-Nusa-Penida.jpg",

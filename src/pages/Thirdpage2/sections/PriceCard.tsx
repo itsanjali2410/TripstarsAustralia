@@ -5,7 +5,7 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  background: linear-gradient(135deg, #f5f7fa,rgb(230, 202, 133));
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   width: 100%;
@@ -79,7 +79,7 @@ const EMIContainer = styled.div`
   }
 
   a {
-    color: #0066cc;
+    color: #B38201;
     margin-left: 5px;
     font-weight: 500;
     text-decoration: none;

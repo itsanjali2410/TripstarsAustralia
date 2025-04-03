@@ -8,24 +8,23 @@ const OverviewWrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 1.25rem;
   color: #333;
   margin-bottom: 10px;
 
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: 1.25rem;
   }
 `;
 
 const Paragraph = styled.p`
-  font-size: 15px;
+  font-size: 1rem;
   color: #555;
   line-height: 1.5;
   color:black;
 
   @media (max-width: 768px) {
-    font-size: 13px; /* Adjust for smaller screens */
+    font-size: 1rem; /* Adjust for smaller screens */
   }
 `;
 

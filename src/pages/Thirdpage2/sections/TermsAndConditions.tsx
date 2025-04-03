@@ -28,7 +28,7 @@ const SectionHeader = styled.div<{ isOpen: boolean }>`
   justify-content: space-between;
   align-items: center;
   padding: 10px 15px;
-  background: linear-gradient(90deg, #e3f2fd, #bbdefb);
+  background: linear-gradient(90deg, #e3f2fd, rgb(230, 202, 133));
   border-radius: 8px;
   cursor: pointer;
 

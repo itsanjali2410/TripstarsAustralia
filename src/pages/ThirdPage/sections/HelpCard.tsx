@@ -95,13 +95,13 @@ const ContactDetail = styled.div`
     transition: color 0.2s ease;
 
     &:hover {
-      color: #4361ee;
+      color: #D8C057;
     }
   }
 
   svg {
     flex-shrink: 0;
-    color: #4361ee;
+    color: #D8C057;
     font-size: 14px;
   }
 
@@ -124,7 +124,7 @@ export default function NeedHelpCard() {
         </ContactDetail>
         <ContactDetail>
           <FaEnvelope />
-          <a href="mailto:Holidays@easemytrip.com">Info@tripstars.in</a>
+          <a href="mailto:Info@tripstars.in">Info@tripstars.in</a>
         </ContactDetail>
       </TextWrapper>
     </HelpCard>

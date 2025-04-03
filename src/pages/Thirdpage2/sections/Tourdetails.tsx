@@ -7,11 +7,7 @@ interface TourDetails {
   theme: string;
   destinationCovered: string;
   totalPackagePrice: string;
-  highlights: string;
-}
-
-interface TourdetailsProps {
-  details: { [day: string]: string[] }[]; // Itinerary data structure
+  highlights: string[]; // ✅ Ensure highlights is an array of strings
 }
 
 const TourCard: React.FC<TourDetails> = ({
@@ -23,15 +19,14 @@ const TourCard: React.FC<TourDetails> = ({
   highlights,
 }) => {
   return (
-    <div className="tour-card">
+    <div className="tour-card bg-white">
       <div className="tour-info">
+        {/* <div className="flex items-center mb-2">
+          <MapPin className="mr-2 text-gray-600" />
+          <span className="text-lg font-semibold">{theme}</span>
+        </div> */}
         <div className="flex items-center mb-2">
-          {/* <MapPin className="mr-2 text-gray-600" /> */}
-          {/* <span className="text-lg font-semibold">{theme}</span> */}
-          {/* <span className="text-lg font-semibold">{highlights}</span> */}
-        </div>
-        <div className="flex items-center mb-2">
-          {/* <CheckCircle className="mr-2 text-green-600" /> */}
+          <CheckCircle className="mr-2 text-green-600" />
           <span className="text-sm">{destinationCovered}</span>
         </div>
         <div className="flex items-center mb-2">
@@ -40,30 +35,30 @@ const TourCard: React.FC<TourDetails> = ({
             {days} Days, {nights} Nights
           </span>
         </div>
+
+        {/* Highlights Section */}
         <div className="mb-4">
-          <h5 className="text-lg font-bold mb-2">Highlights</h5>
-          <div className="flex flex-wrap gap-2"> {/* Add flex and gap for spacing */}
-            {Array.isArray(highlights) &&
-              highlights.map((highlight: string, index: number) => (
+          <h5 className="text-lg mb-2 font-semibold">Highlights</h5>
+          <div className="flex flex-wrap gap-2">
+            {highlights && highlights.length > 0 ? (
+              highlights.map((highlight, index) => (
                 <span
                   key={index}
-                  className="flex items-center text-sm text-gray-700 bg-gray-100 p-2 rounded-md" 
-                  // You can customize this class for better styling
+                  className="text-sm text-gray-700 bg-gray-100 p-2 rounded-md"
                 >
-                  <Star className="mr-1 text-yellow-500" />
                   {highlight}
                 </span>
-              ))}
+              ))
+            ) : (
+              <p className="text-sm text-gray-500">No highlights available</p>
+            )}
           </div>
         </div>
-        {/* <div className="flex items-center mb-2">
-            <Camera className="mr-2 text-blue-600" />
-            <span className="text-lg">Capture memories on this trip!</span>
-        </div> */}
+        {/* Total Package Price */}
         {/* <div className="flex items-center mt-4">
-            <span className="text-xl font-bold text-gray-700">
-                Total Price: {totalPackagePrice}
-            </span>
+          <span className="text-xl font-bold text-gray-700">
+            Total Price: {totalPackagePrice}
+          </span>
         </div> */}
       </div>
     </div>
