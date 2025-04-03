@@ -45,7 +45,7 @@ const RightSection = styled.div`
 `;
 
 const PackageName = styled.span`
-  font-size: 19px;  
+  font-size: 24px;  
   font-weight: 500; 
   color: #333; 
 `;

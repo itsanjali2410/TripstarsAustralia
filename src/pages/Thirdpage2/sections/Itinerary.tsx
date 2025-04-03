@@ -48,6 +48,7 @@ interface ItineraryProps {
 const Itinerary: React.FC<ItineraryProps> = ({ itinerary }) => {
   return (
     <Container>
+      <h5>Day-wise Itinerary</h5>
       {itinerary.map((dayData, index) => {
         const dayKey = Object.keys(dayData)[0]; // Extract Day number
         const activities = dayData[dayKey]; // Extract activities
