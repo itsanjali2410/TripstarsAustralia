@@ -381,7 +381,7 @@ const VideoScroller: React.FC = () => {
       if (video) {
         if (idx === index) {
           if (video.paused) {
-            video.muted = false; // Ensure audio starts immediately
+            video.muted = false; // Ensure io starts immediately
             video
               .play()
               .then(() => setIsPlaying(true))

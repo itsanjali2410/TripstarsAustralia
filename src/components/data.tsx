@@ -196,7 +196,7 @@ export const Bali = [
   {
     title: "Ultimate Bali and Nusa Penida",
     image: bali4,
-    pricing: "AUD $1,364 Onwards",
+    pricing: " $1,364 Onwards",
     destination: "bali", 
     packageName: "Ultimate Bali & Nusa Penida Adventure", 
     info: [
@@ -207,7 +207,7 @@ export const Bali = [
   {
     title: "Bali with Gili",
     image: bali2,
-    pricing: "AUD $1,500 Onwards",
+    pricing: " $1,500 Onwards",
     destination: "bali", 
     packageName: "Bali with gili", 
     info: [
@@ -218,7 +218,7 @@ export const Bali = [
   {
     title: "Bali Essence",
     image: bali5,
-    pricing: "AUD $1,191 Onwards",
+    pricing: " $1,191 Onwards",
     destination: "bali", 
     packageName: "Island hopping Tour", 
     info: [
@@ -229,7 +229,7 @@ export const Bali = [
   {
     title: "Enchanting Bali",
     image: bali1,
-    pricing: "AUD $1,182 Onwards",
+    pricing: " $1,182 Onwards",
     destination: "bali", 
     packageName: "Enchanting Bali Getaway without Nusa Penida", 
     info: [
@@ -244,7 +244,7 @@ export const Vietnam = [
   {
     title: "Vietnam Highlights",
     image: Vietnam1,
-    pricing: "AUD $1,836 Onwards",
+    pricing: " $1,836 Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -253,7 +253,7 @@ export const Vietnam = [
   {
     title: "Vietnam Explorer",
     image: Vietnam2,
-    pricing: "AUD $1,902 Onwards",
+    pricing: " $1,902 Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -262,7 +262,7 @@ export const Vietnam = [
   {
     title: "Vietnam Wonders",
     image: Vietnam3,
-    pricing: "AUD $2,009 Onwards",
+    pricing: " $2,009 Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "8N/9D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -271,7 +271,7 @@ export const Vietnam = [
   {
     title: "Classic Vietnam",
     image: Vietnam4,
-    pricing: "AUD $1,683 Onwards",
+    pricing: " $1,683 Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -280,7 +280,7 @@ export const Vietnam = [
   {
     title: "Vietnam with Sapa",
     image: Vietnam5,
-    pricing: "AUD $2,236 Onwards",
+    pricing: " $2,236 Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "9N/10D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -289,7 +289,7 @@ export const Vietnam = [
   {
     title: "Vietnam with Phu Quoc",
     image: Vietnam6,
-    pricing: "AUD $2,109 Onwards",
+    pricing: " $2,109 Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "9N/10D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -302,7 +302,7 @@ export const Dubai = [
   {
     title: "Dream Dubai",
     image: dubai1,
-    pricing: "AUD $1,509 Onwards",
+    pricing: " $1,509 Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -311,7 +311,7 @@ export const Dubai = [
   {
     title: "Dubai with Abu Dhabi",
     image: dubai2,
-    pricing: "AUD $1,663 Onwards",
+    pricing: " $1,663 Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: " 5N/6D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -320,7 +320,7 @@ export const Dubai = [
   {
     title: "Dubai & Abu Dhabi Wonders",
     image: dubai3,
-    pricing: "AUD $1,845 Onwards",
+    pricing: " $1,845 Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -329,7 +329,7 @@ export const Dubai = [
   {
     title: "Dubai Delights",
     image: dubai4,
-    pricing: "AUD $1,410 Onwards",
+    pricing: " $1,410 Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -342,7 +342,7 @@ export const Thailand = [
   {
     title: "Vibrant Thailand",
     image: thailand1,
-    pricing: "A$898 Onwards",
+    pricing: "$898 Onwards",
     info: [
       { icon: "...calendar icon...", text: "4N/5D" },
       { icon: "...flight icon...", text: "Flight" },
@@ -351,7 +351,7 @@ export const Thailand = [
   {
     title: "Phuket, Krabi and Bangkok Thailand",
     image: thailand2,
-    pricing: "A$1,624 Onwards",
+    pricing: "$1,624 Onwards",
     info: [
       { icon: "...calendar icon...", text: "6N/7D" },
       { icon: "...flight icon...", text: "Flight" },
@@ -360,7 +360,7 @@ export const Thailand = [
   {
     title: "Super Saver Krabi and Phuket Thailand",
     image: thailand3,
-    pricing: "A$1,182 Onwards",
+    pricing: "$1,182 Onwards",
     info: [
       { icon: "...calendar icon...", text: "5N/6D" },
       { icon: "...flight icon...", text: "Flight" },
@@ -369,7 +369,7 @@ export const Thailand = [
   {
     title: "Fun and Fiesta Thailand",
     image: thailand4,
-    pricing: "A$855 Onwards",
+    pricing: "$855 Onwards",
     info: [
       { icon: "...calendar icon...", text: "4N/5D" },
       { icon: "...flight icon...", text: "Flight" },
@@ -382,7 +382,7 @@ export const Europe = [
   {
     title: "Melodies of eastern Europe",
     image: europe1,
-    pricing: "A$5,455 Onwards",
+    pricing: "$5,455 Onwards",
     info: [
       { icon: "...calendar icon...", text: "7N/8D" },
       { icon: "...flight icon...", text: "Flight" },
@@ -391,7 +391,7 @@ export const Europe = [
   {
     title: "Europian highlights",
     image: europe3,
-    pricing: "A$5,455 Onwards",
+    pricing: "$5,455 Onwards",
     info: [
       { icon: "...calendar icon...", text: "8N/9D" },
       { icon: "...flight icon...", text: "Flight" },
@@ -400,7 +400,7 @@ export const Europe = [
   {
     title: "Europian Dreams",
     image: europe4,
-    pricing: "A$5,455 Onwards",
+    pricing: "$5,455 Onwards",
     info: [
       { icon: "...calendar icon...", text: "8N/9D" },
       { icon: "...flight icon...", text: "Flight" },
@@ -677,7 +677,7 @@ export const similar2 = [
   {
     title: "Vietnam",
     image: VietnamImage,
-    pricing: "A$1,836 Onwards", // ₹1,00,999
+    pricing: "$1,836 Onwards", // ₹1,00,999
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -686,7 +686,7 @@ export const similar2 = [
   {
     title: "Bali",
     image: BaliImage,
-    pricing: "A$1,364 Onwards", // ₹74,999
+    pricing: "$1,364 Onwards", // ₹74,999
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -695,7 +695,7 @@ export const similar2 = [
   {
     title: "Thailand",
     image: ThailandImage,
-    pricing: "A$855 Onwards", // ₹46,999
+    pricing: "$855 Onwards", // ₹46,999
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -704,7 +704,7 @@ export const similar2 = [
   {
     title: "Turkey",
     image: TurkeyImage,
-    pricing: "A$2,364 Onwards", // ₹1,29,999
+    pricing: "$2,364 Onwards", // ₹1,29,999
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -713,7 +713,7 @@ export const similar2 = [
   {
     title: "Mauritius",
     image: MauritiusImage,
-    pricing: "A$1,636 Onwards", // ₹89,999
+    pricing: "$1,636 Onwards", // ₹89,999
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -722,7 +722,7 @@ export const similar2 = [
   {
     title: "Maldives",
     image: MaldivesImage,
-    pricing: "A$1,819 Onwards", // ₹1,00,099
+    pricing: "$1,819 Onwards", // ₹1,00,099
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -731,7 +731,7 @@ export const similar2 = [
   {
     title: "Europe",
     image: EuropeImage,
-    pricing: "A$5,090 Onwards", // ₹2,79,999
+    pricing: "$5,090 Onwards", // ₹2,79,999
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "9N/10D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -740,7 +740,7 @@ export const similar2 = [
   {
     title: "Dubai",
     image: DubaiImage,
-    pricing: "A$1,455 Onwards", // ₹79,999
+    pricing: "$1,455 Onwards", // ₹79,999
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -857,7 +857,7 @@ export const Australia = [
   {
     title: "Best Of Australia",
     image: australia2,
-    pricing: "A$2,589 Onwards", // ₹1,42,399
+    pricing: "$2,589 Onwards", // ₹1,42,399
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "9N/10D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -866,7 +866,7 @@ export const Australia = [
   {
     title: "Highlights of Australia",
     image: australia3,
-    pricing: "A$2,712 Onwards", // ₹1,49,199
+    pricing: "$2,712 Onwards", // ₹1,49,199
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "12N/13D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -875,7 +875,7 @@ export const Australia = [
   // {
   //   title: "Twelve Apostles",
   //   image: australia4,
-  //   pricing: "A$654 Onwards", // ₹35,999
+  //   pricing: "$654 Onwards", // ₹35,999
   //   info: [
   //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
   //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -884,7 +884,7 @@ export const Australia = [
   // {
   //   title: "Eyre Highway",
   //   image: australia5,
-  //   pricing: "A$909 Onwards", // ₹49,999
+  //   pricing: "$909 Onwards", // ₹49,999
   //   info: [
   //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6
 
@@ -999,7 +999,7 @@ export const Singapore = [
   {
     title: "Singapore Highlights",
     image: singapore1,
-    pricing: "A$1,391 Onwards", // ₹76,499
+    pricing: "$1,391 Onwards", // ₹76,499
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -1008,7 +1008,7 @@ export const Singapore = [
   {
     title: "Enchanting Singapore",
     image: singapore2,
-    pricing: "A$1,482 Onwards", // ₹81,499
+    pricing: "$1,482 Onwards", // ₹81,499
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -1017,7 +1017,7 @@ export const Singapore = [
   {
     title: "Singapore Malaysia Delights",
     image: singapore4,
-    pricing: "A$1,731 Onwards", // ₹95,199
+    pricing: "$1,731 Onwards", // ₹95,199
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -1026,7 +1026,7 @@ export const Singapore = [
   {
     title: "Singapore and Malaysia",
     image: singapore3,
-    pricing: "A$1,782 Onwards", // ₹97,999
+    pricing: "$1,782 Onwards", // ₹97,999
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
